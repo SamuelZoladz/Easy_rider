@@ -1,0 +1,3 @@
+/home/szoladz/CLionProjects/Easy_rider/cmake-build-debug/CMakeFiles/Easy_rider.dir
+/home/szoladz/CLionProjects/Easy_rider/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/szoladz/CLionProjects/Easy_rider/cmake-build-debug/CMakeFiles/rebuild_cache.dir
