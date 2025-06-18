@@ -1,0 +1,7 @@
+<map id="include/Easy_rider/HelloWorldApp.h" name="include/Easy_rider/HelloWorldApp.h">
+<area shape="rect" id="Node000001" title="Declares the HelloWorldApp class, which encapsulates a simple SFML application that displays &quot;Hello,..." alt="" coords="99,5,240,45"/>
+<area shape="rect" id="Node000002" href="$HelloWorldApp_8cpp.html" title="Implements the HelloWorldApp class for a simple SFML &quot;Hello, World!&quot; demo." alt="" coords="5,93,173,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,57,103,95,99,91,138,53"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Entry point for the Easy_rider application." alt="" coords="198,93,303,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,53,240,91,237,95,197,57"/>
+</map>
