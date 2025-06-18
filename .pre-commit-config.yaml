@@ -5,3 +5,32 @@ repos:
       - id: clang-format
         args: [--style=file]
         files: \.(cpp|hpp|h)$
+
+  - repo: local
+    hooks:
+      - id: generate-doxygen
+        name: Generate Doxygen documentation
+        entry: doxygen Doxyfile
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: generate-doc-coverage
+        name: Generate documentation coverage report
+        entry: >
+          python -m coverxygen
+            --xml-dir docs/xml
+            --src-dir src
+            --src-dir include
+            --output docs/doc_coverage.txt
+            --format json-v3
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: run-tests
+        name: Run C++ unit tests
+        entry: bash -lc 'mkdir -p build && cd build && cmake .. && cmake --build . && ctest --output-on-failure'
+        language: system
+        pass_filenames: false
+        always_run: true
