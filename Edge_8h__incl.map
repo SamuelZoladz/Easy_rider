@@ -1,0 +1,7 @@
+<map id="include/Easy_rider/Edge.h" name="include/Easy_rider/Edge.h">
+<area shape="rect" id="Node000001" title="Declaration of the Edge class representing a connection between two Nodes." alt="" coords="5,5,147,45"/>
+<area shape="rect" id="Node000002" href="$Node_8h.html" title="Declaration of the Node class representing a point in 2D space." alt="" coords="42,93,110,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,46,79,79,73,79,73,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="46,167,106,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,119,79,153,73,153,73,119"/>
+</map>
