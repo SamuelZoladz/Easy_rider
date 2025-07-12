@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['helloworldapp_0',['HelloWorldApp',['../classHelloWorldApp.html#ad99662135490415c74a184ab1e56e2ad',1,'HelloWorldApp']]]
+  ['node_0',['node',['../classNode.html#ad7a34779cad45d997bfd6d3d8043c75f',1,'Node::Node()'],['../classNode.html#a23a19f53dfbb18fec58cdac90de3d144',1,'Node::Node(int x, int y)']]]
 ];

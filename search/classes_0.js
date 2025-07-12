@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['helloworldapp_0',['HelloWorldApp',['../classHelloWorldApp.html',1,'']]]
+  ['node_0',['Node',['../classNode.html',1,'']]]
 ];
