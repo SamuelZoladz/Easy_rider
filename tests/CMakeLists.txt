@@ -6,7 +6,6 @@ add_executable(test_HelloWorldApp
 target_link_libraries(test_HelloWorldApp
         PRIVATE
         Catch2::Catch2
-        HelloWorldApp
 )
 
 add_test(NAME HelloWorldAppTests COMMAND test_HelloWorldApp)

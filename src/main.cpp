@@ -1,17 +1,14 @@
-/**
- * @file main.cpp
- * @brief Entry point for the Easy_rider application.
- */
+#include "Easy_rider/Node.h"
+#include <iostream>
 
-#include "Easy_rider/HelloWorldApp.h"
-
-/**
- * @brief Application entry point.
- *
- * Initializes and runs the HelloWorldApp.
- * @return EXIT_SUCCESS on normal exit, EXIT_FAILURE on error.
- */
 int main() {
-  HelloWorldApp app{800, 600, "Hello World"};
-  return app.run();
+  Node n1;
+  n1.setPosition(3, 2);
+  auto [x1, y1] = n1.getPosition();
+  std::cout << "n1 position: (" << x1 << ", " << y1 << ")\n";
+
+  const Node n2(10, 20);
+  std::cout << "n2 position: (" << n2.getX() << ", " << n2.getY() << ")\n";
+
+  return 0;
 }
