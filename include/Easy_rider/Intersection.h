@@ -1,40 +1,41 @@
 /**
- * @file Node.h
- * @brief Declaration of the Node class representing a point in 2D space.
+ * @file Intersection.h
+ * @brief Declaration of the Intersection class representing a point in 2D
+ * space.
  */
 
-#ifndef NODE_H
-#define NODE_H
+#ifndef INTERSECTION_H
+#define INTERSECTION_H
 
 #include <utility>
 
 /**
- * @class Node
- * @brief Represents a point (node) in a 2D coordinate system.
+ * @class Intersection
+ * @brief Represents a point (intersection) in a 2D coordinate system.
  */
-class Node {
+class Intersection {
 public:
   /**
    * @brief Default constructor.
    */
-  Node();
+  Intersection();
 
   /**
    * @brief Parameterized constructor.
    * @param x The x-coordinate.
    * @param y The y-coordinate.
    */
-  Node(int x, int y);
+  Intersection(int x, int y);
 
   /**
-   * @brief Sets a new position for the node.
+   * @brief Sets a new position for the intersection.
    * @param x The new x-coordinate.
    * @param y The new y-coordinate.
    */
   void setPosition(int x, int y);
 
   /**
-   * @brief Retrieves the current position of the node.
+   * @brief Retrieves the current position of the intersection.
    * @return A std::pair where first is x-coordinate and second is y-coordinate.
    */
   std::pair<int, int> getPosition() const;
@@ -56,4 +57,4 @@ private:
   int y_; /**< The y-coordinate. */
 };
 
-#endif // NODE_H
+#endif // INTERSECTION_H
