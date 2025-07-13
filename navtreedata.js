@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Easy_rider", "index.html", [
+    [ "Concepts", "concepts.html", "concepts" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -41,7 +42,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Edge_8cpp.html"
+"Graph_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

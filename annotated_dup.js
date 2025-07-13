@@ -1,5 +1,6 @@
 var annotated_dup =
 [
-    [ "Edge", "classEdge.html", "classEdge" ],
-    [ "Node", "classNode.html", "classNode" ]
+    [ "Graph", "classGraph.html", "classGraph" ],
+    [ "Intersection", "classIntersection.html", "classIntersection" ],
+    [ "Road", "classRoad.html", "classRoad" ]
 ];

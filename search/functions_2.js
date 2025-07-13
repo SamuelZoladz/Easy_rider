@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node_0',['node',['../classNode.html#ad7a34779cad45d997bfd6d3d8043c75f',1,'Node::Node()'],['../classNode.html#a23a19f53dfbb18fec58cdac90de3d144',1,'Node::Node(int x, int y)']]]
+  ['intersection_0',['intersection',['../classIntersection.html#a67497e3efe2793b23909052eeb82c4f3',1,'Intersection::Intersection()'],['../classIntersection.html#ae6087c977674f8338ef3b6a0fede4714',1,'Intersection::Intersection(int x, int y)']]]
 ];
