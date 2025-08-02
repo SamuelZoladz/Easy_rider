@@ -9,6 +9,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include <algorithm>
 #include <concepts>
 #include <utility>
 #include <vector>
@@ -74,28 +75,37 @@ public:
   void addEdge(const U &edge) { edges_.push_back(edge); }
 
   /**
-   * @brief Add an edge only if there is not already an edge between the same
-   * nodes.
-   *
-   * Compares by positions of the endpoints (via getPosition()).
+   * @enum    AddEdgeResult
+   * @brief   Result of attempting to insert an edge with checks.
+   */
+  enum class AddEdgeResult {
+    Success,       /**< Edge was inserted. */
+    AlreadyExists, /**< Duplicate edge. */
+    Crosses        /**< Would cross/overlap an existing edge. */
+  };
+
+  /**
+   * @brief  Attempt to add a directed edge, rejecting duplicates or crossings.
    *
    * @param edge The edge to add.
-   * @return true if the edge was inserted; false if an equivalent edge already
-   * existed.
+   * @return
+   *   - AddEdgeResult::AlreadyExists if an identical from->to edge is present.
+   *   - AddEdgeResult::Crosses       if it would intersect or overlap any
+   * existing edge (excluding shared endpoints).
+   *   - AddEdgeResult::Success       otherwise (and the edge is inserted).
    */
-  bool addEdgeIfNotExists(const U &edge) {
-    auto fromPos = edge.getFrom().getPosition();
-    auto toPos = edge.getTo().getPosition();
+  AddEdgeResult addEdgeIfNotExists(const U &edge) {
+    auto f = edge.getFrom().getPosition();
+    auto t = edge.getTo().getPosition();
 
-    for (auto const &e : edges_) {
-      if (e.getFrom().getPosition() == fromPos &&
-          e.getTo().getPosition() == toPos) {
-        return false;
-      }
-    }
+    if (isDuplicate(f, t))
+      return AddEdgeResult::AlreadyExists;
+
+    if (crossesAnyEdge(f, t))
+      return AddEdgeResult::Crosses;
 
     edges_.push_back(edge);
-    return true;
+    return AddEdgeResult::Success;
   }
 
   /**
@@ -113,6 +123,113 @@ public:
 private:
   std::vector<T> nodes_; /**< Stored nodes. */
   std::vector<U> edges_; /**< Stored edges. */
+
+  /**
+   * @brief  Compute the 2D orientation (cross product) of the triplet (A, B,
+   * C).
+   *
+   * @param A  First point (std::pair<int,int>).
+   * @param B  Second point.
+   * @param C  Third point.
+   * @return
+   *   Positive if ABC is counter-clockwise, negative if clockwise, zero if
+   * colinear.
+   */
+  static long long orient(const std::pair<int, int> &A,
+                          const std::pair<int, int> &B,
+                          const std::pair<int, int> &C) {
+    return static_cast<long long>(B.first - A.first) * (C.second - A.second) -
+           static_cast<long long>(B.second - A.second) * (C.first - A.first);
+  }
+
+  /**
+   * @brief  Check if point C lies on the segment AB.
+   *
+   * @param A  One endpoint of the segment (std::pair<int,int>).
+   * @param B  Other endpoint of the segment.
+   * @param C  Point to test.
+   * @return  True if C is between A and B (inclusive) in both x and y.
+   */
+  static bool onSegment(const std::pair<int, int> &A,
+                        const std::pair<int, int> &B,
+                        const std::pair<int, int> &C) {
+    return std::min(A.first, B.first) <= C.first &&
+           C.first <= std::max(A.first, B.first) &&
+           std::min(A.second, B.second) <= C.second &&
+           C.second <= std::max(A.second, B.second);
+  }
+
+  /**
+   * @brief  Check if the directed segment f->t is a duplicate of an existing
+   * one.
+   *
+   * @param f  Source point of new edge (std::pair<int,int>).
+   * @param t  Target point of new edge.
+   * @return  True if an edge with the same from/to already exists.
+   */
+  bool isDuplicate(const std::pair<int, int> &f,
+                   const std::pair<int, int> &t) const {
+    return std::any_of(edges_.begin(), edges_.end(), [&](auto const &e) {
+      auto p = e.getFrom().getPosition();
+      auto q = e.getTo().getPosition();
+      return (p == f) && (q == t);
+    });
+  }
+
+  /**
+   * @brief  Test whether segment f->t crosses or overlaps segment q1->q2.
+   *
+   * Shared endpoints are considered non-crossing.
+   *
+   * @param f   Source of the new edge (std::pair<int,int>).
+   * @param t   Target of the new edge.
+   * @param q1  Source of an existing edge.
+   * @param q2  Target of an existing edge.
+   * @return   True if the two segments intersect or overlap.
+   */
+  bool segmentCrosses(const std::pair<int, int> &f,
+                      const std::pair<int, int> &t,
+                      const std::pair<int, int> &q1,
+                      const std::pair<int, int> &q2) const {
+    if (q1 == f || q1 == t || q2 == f || q2 == t)
+      return false;
+
+    long long o1 = orient(f, t, q1);
+    long long o2 = orient(f, t, q2);
+    long long o3 = orient(q1, q2, f);
+    long long o4 = orient(q1, q2, t);
+
+    if (((o1 > 0 && o2 < 0) || (o1 < 0 && o2 > 0)) &&
+        ((o3 > 0 && o4 < 0) || (o3 < 0 && o4 > 0)))
+      return true;
+
+    if (o1 == 0 && onSegment(f, t, q1))
+      return true;
+    if (o2 == 0 && onSegment(f, t, q2))
+      return true;
+    if (o3 == 0 && onSegment(q1, q2, f))
+      return true;
+    if (o4 == 0 && onSegment(q1, q2, t))
+      return true;
+
+    return false;
+  }
+
+  /**
+   * @brief  Determine if the new segment f->t crosses any edge in the graph.
+   *
+   * @param f  Source point of the new edge (std::pair<int,int>).
+   * @param t  Target point of the new edge.
+   * @return     True if it crosses or overlaps at least one existing edge.
+   */
+  bool crossesAnyEdge(const std::pair<int, int> &f,
+                      const std::pair<int, int> &t) const {
+    return std::any_of(edges_.begin(), edges_.end(), [&](auto const &e) {
+      auto q1 = e.getFrom().getPosition();
+      auto q2 = e.getTo().getPosition();
+      return segmentCrosses(f, t, q1, q2);
+    });
+  }
 };
 
 #endif // GRAPH_H
