@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['graph_0',['Graph',['../classGraph.html',1,'']]]
+  ['disjointset_0',['DisjointSet',['../structDisjointSet.html',1,'']]]
 ];

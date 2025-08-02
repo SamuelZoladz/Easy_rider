@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('classGraph.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classGraph-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Graph&lt; T, U &gt; Class Template Reference</div></div>
@@ -107,6 +108,15 @@ $(document).ready(function(){initNavTree('classGraph.html',''); initResizable();
 
 <p><code>#include &lt;<a class="el" href="Graph_8h_source.html">Graph.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ad4551558ed2438d068f9a2efd09508c3" id="r_ad4551558ed2438d068f9a2efd09508c3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3">AddEdgeResult</a> { <a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3a505a83f220c02df2f85c3810cd9ceb38">Success</a>
+, <a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3a89b69484680b18e9179e826c6e023805">AlreadyExists</a>
+, <a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3a4bebc367b168a1cb16cf18978551c6d9">Crosses</a>
+ }</td></tr>
+<tr class="memdesc:ad4551558ed2438d068f9a2efd09508c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result of attempting to insert an edge with checks.  <a href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3">More...</a><br /></td></tr>
+<tr class="separator:ad4551558ed2438d068f9a2efd09508c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a80d842e68660c358d9d004745fe39f20" id="r_a80d842e68660c358d9d004745fe39f20"><td class="memItemLeft" align="right" valign="top"><a id="a80d842e68660c358d9d004745fe39f20" name="a80d842e68660c358d9d004745fe39f20"></a>
@@ -119,9 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac04f1a4b049efa9f3752fe9a20b5b1bc" id="r_ac04f1a4b049efa9f3752fe9a20b5b1bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ac04f1a4b049efa9f3752fe9a20b5b1bc">addEdge</a> (const U &amp;edge)</td></tr>
 <tr class="memdesc:ac04f1a4b049efa9f3752fe9a20b5b1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an edge to the graph without checking for duplicates.  <br /></td></tr>
 <tr class="separator:ac04f1a4b049efa9f3752fe9a20b5b1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c7fe1e0b8f64a60da7638bb5434b1c3" id="r_a2c7fe1e0b8f64a60da7638bb5434b1c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a2c7fe1e0b8f64a60da7638bb5434b1c3">addEdgeIfNotExists</a> (const U &amp;edge)</td></tr>
-<tr class="memdesc:a2c7fe1e0b8f64a60da7638bb5434b1c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an edge only if there is not already an edge between the same nodes.  <br /></td></tr>
-<tr class="separator:a2c7fe1e0b8f64a60da7638bb5434b1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac19fa1d497545002fb46de21848096ed" id="r_ac19fa1d497545002fb46de21848096ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3">AddEdgeResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ac19fa1d497545002fb46de21848096ed">addEdgeIfNotExists</a> (const U &amp;edge)</td></tr>
+<tr class="memdesc:ac19fa1d497545002fb46de21848096ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to add a directed edge, rejecting duplicates or crossings.  <br /></td></tr>
+<tr class="separator:ac19fa1d497545002fb46de21848096ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdcb34e50215f0f72bebcb83b33a7922" id="r_acdcb34e50215f0f72bebcb83b33a7922"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#acdcb34e50215f0f72bebcb83b33a7922">getNodes</a> () const</td></tr>
 <tr class="memdesc:acdcb34e50215f0f72bebcb83b33a7922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve all nodes in the graph.  <br /></td></tr>
 <tr class="separator:acdcb34e50215f0f72bebcb83b33a7922"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,7 +150,42 @@ class Graph&lt; T, U &gt;</div><p>A templated graph storing nodes of type T and 
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ad4551558ed2438d068f9a2efd09508c3" name="ad4551558ed2438d068f9a2efd09508c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4551558ed2438d068f9a2efd09508c3">&#9670;&#160;</a></span>AddEdgeResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3">Graph::AddEdgeResult</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Result of attempting to insert an edge with checks. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad4551558ed2438d068f9a2efd09508c3a505a83f220c02df2f85c3810cd9ceb38" name="ad4551558ed2438d068f9a2efd09508c3a505a83f220c02df2f85c3810cd9ceb38"></a>Success&#160;</td><td class="fielddoc"><p>Edge was inserted. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4551558ed2438d068f9a2efd09508c3a89b69484680b18e9179e826c6e023805" name="ad4551558ed2438d068f9a2efd09508c3a89b69484680b18e9179e826c6e023805"></a>AlreadyExists&#160;</td><td class="fielddoc"><p>Duplicate edge. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4551558ed2438d068f9a2efd09508c3a4bebc367b168a1cb16cf18978551c6d9" name="ad4551558ed2438d068f9a2efd09508c3a4bebc367b168a1cb16cf18978551c6d9"></a>Crosses&#160;</td><td class="fielddoc"><p>Would cross/overlap an existing edge. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac04f1a4b049efa9f3752fe9a20b5b1bc" name="ac04f1a4b049efa9f3752fe9a20b5b1bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac04f1a4b049efa9f3752fe9a20b5b1bc">&#9670;&#160;</a></span>addEdge()</h2>
 
@@ -177,8 +222,8 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
 
 </div>
 </div>
-<a id="a2c7fe1e0b8f64a60da7638bb5434b1c3" name="a2c7fe1e0b8f64a60da7638bb5434b1c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c7fe1e0b8f64a60da7638bb5434b1c3">&#9670;&#160;</a></span>addEdgeIfNotExists()</h2>
+<a id="ac19fa1d497545002fb46de21848096ed" name="ac19fa1d497545002fb46de21848096ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac19fa1d497545002fb46de21848096ed">&#9670;&#160;</a></span>addEdgeIfNotExists()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +234,7 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::addEdgeIfNotExists </td>
+          <td class="memname"><a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3">AddEdgeResult</a> <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::addEdgeIfNotExists </td>
           <td>(</td>
           <td class="paramtype">const U &amp;&#160;</td>
           <td class="paramname"><em>edge</em></td><td>)</td>
@@ -203,15 +248,19 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
 </table>
 </div><div class="memdoc">
 
-<p>Add an edge only if there is not already an edge between the same nodes. </p>
-<p>Compares by positions of the endpoints (via getPosition()).</p>
+<p>Attempt to add a directed edge, rejecting duplicates or crossings. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">edge</td><td>The edge to add. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the edge was inserted; false if an equivalent edge already existed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li><a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3a89b69484680b18e9179e826c6e023805">AddEdgeResult::AlreadyExists</a> if an identical from-&gt;to edge is present.</li>
+<li><a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3a4bebc367b168a1cb16cf18978551c6d9">AddEdgeResult::Crosses</a> if it would intersect or overlap any existing edge (excluding shared endpoints).</li>
+<li><a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3a505a83f220c02df2f85c3810cd9ceb38">AddEdgeResult::Success</a> otherwise (and the edge is inserted). </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>

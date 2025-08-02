@@ -1,0 +1,9 @@
+<map id="RoadGenerator" name="RoadGenerator">
+<area shape="rect" id="Node000001" title="Abstract base class for generating roads on a Graph&lt;Intersection,Road&gt;." alt="" coords="189,5,309,31"/>
+<area shape="rect" id="Node000002" href="$classHighwayGenerator.html" title="Builds a minimum spanning tree (Kruskal) over all intersections — Highway generator." alt="" coords="5,79,149,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,38,106,81,104,76,208,33"/>
+<area shape="rect" id="Node000003" href="$classMotorwayGenerator.html" title="Builds a continuous &quot;motorway&quot; route by:" alt="" coords="173,79,325,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="252,44,252,79,247,79,247,44"/>
+<area shape="rect" id="Node000004" href="$classStreetGenerator.html" title="For each intersection, connects it to its k nearest neighbors &#45; Street generator." alt="" coords="350,79,477,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="289,34,388,76,385,81,287,39"/>
+</map>

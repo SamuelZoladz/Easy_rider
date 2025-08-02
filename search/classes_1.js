@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['intersection_0',['Intersection',['../classIntersection.html',1,'']]]
+  ['graph_0',['Graph',['../classGraph.html',1,'']]],
+  ['graphvisualizer_1',['GraphVisualizer',['../classGraphVisualizer.html',1,'']]]
 ];
