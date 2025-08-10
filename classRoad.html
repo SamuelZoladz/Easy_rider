@@ -102,35 +102,31 @@ $(document).ready(function(){initNavTree('classRoad.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a road connecting two Intersections in 2D space, with a computed length and a maximum speed.  
+<p>Represents a direcred road connecting two intersections (by ids), with a computed length and a maximum speed.  
  <a href="classRoad.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Road_8h_source.html">Road.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a90bb6be2a5c3b6997849a915e2af0cf0" id="r_a90bb6be2a5c3b6997849a915e2af0cf0"><td class="memItemLeft" align="right" valign="top"><a id="a90bb6be2a5c3b6997849a915e2af0cf0" name="a90bb6be2a5c3b6997849a915e2af0cf0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Road</b> ()</td></tr>
-<tr class="memdesc:a90bb6be2a5c3b6997849a915e2af0cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Initializes both endpoints at (0,0), length to 0.0, and maxSpeed to 0. <br /></td></tr>
-<tr class="separator:a90bb6be2a5c3b6997849a915e2af0cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2f0794c5f2097c483f5ebb5d9043917" id="r_ae2f0794c5f2097c483f5ebb5d9043917"><td class="memItemLeft" align="right" valign="top"><a id="ae2f0794c5f2097c483f5ebb5d9043917" name="ae2f0794c5f2097c483f5ebb5d9043917"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Road</b> ()=delete</td></tr>
+<tr class="memdesc:ae2f0794c5f2097c483f5ebb5d9043917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor is deleted. <br /></td></tr>
+<tr class="separator:ae2f0794c5f2097c483f5ebb5d9043917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7376fdb5c35c7563c9f85365dd483494" id="r_a7376fdb5c35c7563c9f85365dd483494"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a7376fdb5c35c7563c9f85365dd483494">Road</a> (const <a class="el" href="classIntersection.html">Intersection</a> &amp;from, const <a class="el" href="classIntersection.html">Intersection</a> &amp;to, int maxSpeed)</td></tr>
-<tr class="memdesc:a7376fdb5c35c7563c9f85365dd483494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterized constructor.  <br /></td></tr>
+<tr class="memdesc:a7376fdb5c35c7563c9f85365dd483494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a road from two intersections and computes its length.  <br /></td></tr>
 <tr class="separator:a7376fdb5c35c7563c9f85365dd483494"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a76ae8e97e6880a61f3ce307811d945" id="r_a9a76ae8e97e6880a61f3ce307811d945"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIntersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a9a76ae8e97e6880a61f3ce307811d945">getFrom</a> () const</td></tr>
-<tr class="memdesc:a9a76ae8e97e6880a61f3ce307811d945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the starting <a class="el" href="classIntersection.html" title="Represents a point (intersection) in a 2D coordinate system.">Intersection</a>.  <br /></td></tr>
-<tr class="separator:a9a76ae8e97e6880a61f3ce307811d945"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66d143fc56216554cb86104478ba55be" id="r_a66d143fc56216554cb86104478ba55be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIntersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a66d143fc56216554cb86104478ba55be">getTo</a> () const</td></tr>
-<tr class="memdesc:a66d143fc56216554cb86104478ba55be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the ending <a class="el" href="classIntersection.html" title="Represents a point (intersection) in a 2D coordinate system.">Intersection</a>.  <br /></td></tr>
-<tr class="separator:a66d143fc56216554cb86104478ba55be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15cbdbe06e0d626ff2ddc04ddfeba01b" id="r_a15cbdbe06e0d626ff2ddc04ddfeba01b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a15cbdbe06e0d626ff2ddc04ddfeba01b">getFromId</a> () const</td></tr>
+<tr class="separator:a15cbdbe06e0d626ff2ddc04ddfeba01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67a4ce1bddd2df17d85ea8e4db038e01" id="r_a67a4ce1bddd2df17d85ea8e4db038e01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a67a4ce1bddd2df17d85ea8e4db038e01">getToId</a> () const</td></tr>
+<tr class="separator:a67a4ce1bddd2df17d85ea8e4db038e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af09249f48e29b8daae4e86b33c032a9d" id="r_af09249f48e29b8daae4e86b33c032a9d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#af09249f48e29b8daae4e86b33c032a9d">getLength</a> () const</td></tr>
-<tr class="memdesc:af09249f48e29b8daae4e86b33c032a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the computed length of the road.  <br /></td></tr>
 <tr class="separator:af09249f48e29b8daae4e86b33c032a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a897584fd663475c4ab3bb5f27f8e0442" id="r_a897584fd663475c4ab3bb5f27f8e0442"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a897584fd663475c4ab3bb5f27f8e0442">getMaxSpeed</a> () const</td></tr>
-<tr class="memdesc:a897584fd663475c4ab3bb5f27f8e0442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the maximum speed for this road.  <br /></td></tr>
 <tr class="separator:a897584fd663475c4ab3bb5f27f8e0442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a road connecting two Intersections in 2D space, with a computed length and a maximum speed. </p>
+<div class="textblock"><p>Represents a direcred road connecting two intersections (by ids), with a computed length and a maximum speed. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7376fdb5c35c7563c9f85365dd483494" name="a7376fdb5c35c7563c9f85365dd483494"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7376fdb5c35c7563c9f85365dd483494">&#9670;&#160;</a></span>Road()</h2>
@@ -164,37 +160,34 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Parameterized constructor. </p>
+<p>Constructs a road from two intersections and computes its length. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">from</td><td>The starting <a class="el" href="classIntersection.html" title="Represents a point (intersection) in a 2D coordinate system.">Intersection</a>. </td></tr>
-    <tr><td class="paramname">to</td><td>The ending <a class="el" href="classIntersection.html" title="Represents a point (intersection) in a 2D coordinate system.">Intersection</a>. </td></tr>
-    <tr><td class="paramname">maxSpeed</td><td>The maximum allowed speed on this road.</td></tr>
+    <tr><td class="paramname">from</td><td>Source intersection (its id and position are used). </td></tr>
+    <tr><td class="paramname">to</td><td>Target intersection (its id and position are used). </td></tr>
+    <tr><td class="paramname">maxSpeed</td><td>Maximum allowed speed on this road. </td></tr>
   </table>
   </dd>
 </dl>
-<p>Automatically computes the Euclidean length between <code>from</code> and <code>to</code>. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9a76ae8e97e6880a61f3ce307811d945" name="a9a76ae8e97e6880a61f3ce307811d945"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a76ae8e97e6880a61f3ce307811d945">&#9670;&#160;</a></span>getFrom()</h2>
+<a id="a15cbdbe06e0d626ff2ddc04ddfeba01b" name="a15cbdbe06e0d626ff2ddc04ddfeba01b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15cbdbe06e0d626ff2ddc04ddfeba01b">&#9670;&#160;</a></span>getFromId()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classIntersection.html">Intersection</a> Road::getFrom </td>
+          <td class="memname">int Road::getFromId </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Retrieves the starting <a class="el" href="classIntersection.html" title="Represents a point (intersection) in a 2D coordinate system.">Intersection</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>A copy of the 'from' <a class="el" href="classIntersection.html" title="Represents a point (intersection) in a 2D coordinate system.">Intersection</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Source node id. </dd></dl>
 
 </div>
 </div>
@@ -212,9 +205,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Retrieves the computed length of the road. </p>
-<dl class="section return"><dt>Returns</dt><dd>The Euclidean distance between 'from' and 'to'. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Euclidean length. </dd></dl>
 
 </div>
 </div>
@@ -232,29 +223,25 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Retrieves the maximum speed for this road. </p>
-<dl class="section return"><dt>Returns</dt><dd>The maximum speed (int). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Maximum allowed speed. </dd></dl>
 
 </div>
 </div>
-<a id="a66d143fc56216554cb86104478ba55be" name="a66d143fc56216554cb86104478ba55be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66d143fc56216554cb86104478ba55be">&#9670;&#160;</a></span>getTo()</h2>
+<a id="a67a4ce1bddd2df17d85ea8e4db038e01" name="a67a4ce1bddd2df17d85ea8e4db038e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a4ce1bddd2df17d85ea8e4db038e01">&#9670;&#160;</a></span>getToId()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classIntersection.html">Intersection</a> Road::getTo </td>
+          <td class="memname">int Road::getToId </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Retrieves the ending <a class="el" href="classIntersection.html" title="Represents a point (intersection) in a 2D coordinate system.">Intersection</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>A copy of the 'to' <a class="el" href="classIntersection.html" title="Represents a point (intersection) in a 2D coordinate system.">Intersection</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Target node id. </dd></dl>
 
 </div>
 </div>

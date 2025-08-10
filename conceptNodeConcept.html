@@ -106,14 +106,16 @@ $(document).ready(function(){initNavTree('conceptNodeConcept.html',''); initResi
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptNodeConcept.html">NodeConcept</a> =  <span class="keyword">requires</span>(<span class="keyword">const</span> T &amp;n) {</div>
+<div class="line">  { n.getId() } -&gt; std::same_as&lt;int&gt;;</div>
 <div class="line">  { n.getX() } -&gt; std::same_as&lt;int&gt;;</div>
 <div class="line">  { n.getY() } -&gt; std::same_as&lt;int&gt;;</div>
 <div class="line">  { n.getPosition() } -&gt; std::same_as&lt;std::pair&lt;int, int&gt;&gt;;</div>
 <div class="line">}</div>
-<div class="ttc" id="aconceptNodeConcept_html"><div class="ttname"><a href="conceptNodeConcept.html">NodeConcept</a></div><div class="ttdoc">Concept that a Node type must satisfy.</div><div class="ttdef"><b>Definition</b> Graph.h:26</div></div>
+<div class="ttc" id="aconceptNodeConcept_html"><div class="ttname"><a href="conceptNodeConcept.html">NodeConcept</a></div><div class="ttdoc">Concept that a Node type must satisfy.</div><div class="ttdef"><b>Definition</b> Graph.h:44</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Concept that a Node type must satisfy. </p>
 <p>A Node must provide:</p><ul>
+<li>int getId()</li>
 <li>int getX()</li>
 <li>int getY()</li>
 <li>std::pair&lt;int,int&gt; getPosition() </li>

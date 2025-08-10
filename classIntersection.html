@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('classIntersection.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a point (intersection) in a 2D coordinate system.  
+<p>Represents a point (intersection) in a 2D coordinate system. IDs are auto-assigned from a static counter.  
  <a href="classIntersection.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Intersection_8h_source.html">Intersection.h</a>&gt;</code></p>
@@ -111,16 +111,16 @@ $(document).ready(function(){initNavTree('classIntersection.html',''); initResiz
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a67497e3efe2793b23909052eeb82c4f3" id="r_a67497e3efe2793b23909052eeb82c4f3"><td class="memItemLeft" align="right" valign="top"><a id="a67497e3efe2793b23909052eeb82c4f3" name="a67497e3efe2793b23909052eeb82c4f3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Intersection</b> ()</td></tr>
-<tr class="memdesc:a67497e3efe2793b23909052eeb82c4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="memdesc:a67497e3efe2793b23909052eeb82c4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-constructs an intersection at (0, 0) with an auto-assigned id. <br /></td></tr>
 <tr class="separator:a67497e3efe2793b23909052eeb82c4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6087c977674f8338ef3b6a0fede4714" id="r_ae6087c977674f8338ef3b6a0fede4714"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntersection.html#ae6087c977674f8338ef3b6a0fede4714">Intersection</a> (int x, int y)</td></tr>
-<tr class="memdesc:ae6087c977674f8338ef3b6a0fede4714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterized constructor.  <br /></td></tr>
+<tr class="memdesc:ae6087c977674f8338ef3b6a0fede4714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an intersection at the given coordinates with an auto-assigned id.  <br /></td></tr>
 <tr class="separator:ae6087c977674f8338ef3b6a0fede4714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50db8893f134c1f668344a43094dd1aa" id="r_a50db8893f134c1f668344a43094dd1aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntersection.html#a50db8893f134c1f668344a43094dd1aa">setPosition</a> (int x, int y)</td></tr>
-<tr class="memdesc:a50db8893f134c1f668344a43094dd1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new position for the intersection.  <br /></td></tr>
+<tr class="memdesc:a50db8893f134c1f668344a43094dd1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the (x, y) position.  <br /></td></tr>
 <tr class="separator:a50db8893f134c1f668344a43094dd1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c2f2cc893bd2da89289f1f143af8d4c" id="r_a9c2f2cc893bd2da89289f1f143af8d4c"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntersection.html#a9c2f2cc893bd2da89289f1f143af8d4c">getPosition</a> () const</td></tr>
-<tr class="memdesc:a9c2f2cc893bd2da89289f1f143af8d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current position of the intersection.  <br /></td></tr>
+<tr class="memdesc:a9c2f2cc893bd2da89289f1f143af8d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current (x, y) position.  <br /></td></tr>
 <tr class="separator:a9c2f2cc893bd2da89289f1f143af8d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a877a6beb68049742cf118b6efcfd31e6" id="r_a877a6beb68049742cf118b6efcfd31e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntersection.html#a877a6beb68049742cf118b6efcfd31e6">getX</a> () const</td></tr>
 <tr class="memdesc:a877a6beb68049742cf118b6efcfd31e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the x-coordinate.  <br /></td></tr>
@@ -128,9 +128,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a45822fedb0b15b4ec13a015ce1ef164d" id="r_a45822fedb0b15b4ec13a015ce1ef164d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntersection.html#a45822fedb0b15b4ec13a015ce1ef164d">getY</a> () const</td></tr>
 <tr class="memdesc:a45822fedb0b15b4ec13a015ce1ef164d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the y-coordinate.  <br /></td></tr>
 <tr class="separator:a45822fedb0b15b4ec13a015ce1ef164d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91febcb71aa99f55954ab37ecc3ea1af" id="r_a91febcb71aa99f55954ab37ecc3ea1af"><td class="memItemLeft" align="right" valign="top"><a id="a91febcb71aa99f55954ab37ecc3ea1af" name="a91febcb71aa99f55954ab37ecc3ea1af"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const</td></tr>
+<tr class="memdesc:a91febcb71aa99f55954ab37ecc3ea1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the unique identifier of this intersection. <br /></td></tr>
+<tr class="separator:a91febcb71aa99f55954ab37ecc3ea1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a point (intersection) in a 2D coordinate system. </p>
+<div class="textblock"><p>Represents a point (intersection) in a 2D coordinate system. IDs are auto-assigned from a static counter. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae6087c977674f8338ef3b6a0fede4714" name="ae6087c977674f8338ef3b6a0fede4714"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6087c977674f8338ef3b6a0fede4714">&#9670;&#160;</a></span>Intersection()</h2>
@@ -158,11 +162,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Parameterized constructor. </p>
+<p>Constructs an intersection at the given coordinates with an auto-assigned id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>The x-coordinate. </td></tr>
-    <tr><td class="paramname">y</td><td>The y-coordinate. </td></tr>
+    <tr><td class="paramname">x</td><td>X coordinate. </td></tr>
+    <tr><td class="paramname">y</td><td>Y coordinate. </td></tr>
   </table>
   </dd>
 </dl>
@@ -185,8 +189,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves the current position of the intersection. </p>
-<dl class="section return"><dt>Returns</dt><dd>A std::pair where first is x-coordinate and second is y-coordinate. </dd></dl>
+<p>Returns the current (x, y) position. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pair {x, y}. </dd></dl>
 
 </div>
 </div>
@@ -256,11 +260,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets a new position for the intersection. </p>
+<p>Sets the (x, y) position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>The new x-coordinate. </td></tr>
-    <tr><td class="paramname">y</td><td>The new y-coordinate. </td></tr>
+    <tr><td class="paramname">x</td><td>New x-coordinate. </td></tr>
+    <tr><td class="paramname">y</td><td>New y-coordinate. </td></tr>
   </table>
   </dd>
 </dl>

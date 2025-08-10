@@ -124,29 +124,46 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a80d842e68660c358d9d004745fe39f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-constructs an empty graph. <br /></td></tr>
 <tr class="separator:a80d842e68660c358d9d004745fe39f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fff71816a6c58146fca30f807f7dc0c" id="r_a5fff71816a6c58146fca30f807f7dc0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a5fff71816a6c58146fca30f807f7dc0c">addNode</a> (const T &amp;node)</td></tr>
-<tr class="memdesc:a5fff71816a6c58146fca30f807f7dc0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a node to the graph.  <br /></td></tr>
+<tr class="memdesc:a5fff71816a6c58146fca30f807f7dc0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a node to the graph. Updates id to index map.  <br /></td></tr>
 <tr class="separator:a5fff71816a6c58146fca30f807f7dc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04f1a4b049efa9f3752fe9a20b5b1bc" id="r_ac04f1a4b049efa9f3752fe9a20b5b1bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ac04f1a4b049efa9f3752fe9a20b5b1bc">addEdge</a> (const U &amp;edge)</td></tr>
-<tr class="memdesc:ac04f1a4b049efa9f3752fe9a20b5b1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an edge to the graph without checking for duplicates.  <br /></td></tr>
+<tr class="memdesc:ac04f1a4b049efa9f3752fe9a20b5b1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an edge to the graph without checks.  <br /></td></tr>
 <tr class="separator:ac04f1a4b049efa9f3752fe9a20b5b1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac19fa1d497545002fb46de21848096ed" id="r_ac19fa1d497545002fb46de21848096ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3">AddEdgeResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ac19fa1d497545002fb46de21848096ed">addEdgeIfNotExists</a> (const U &amp;edge)</td></tr>
 <tr class="memdesc:ac19fa1d497545002fb46de21848096ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to add a directed edge, rejecting duplicates or crossings.  <br /></td></tr>
 <tr class="separator:ac19fa1d497545002fb46de21848096ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdcb34e50215f0f72bebcb83b33a7922" id="r_acdcb34e50215f0f72bebcb83b33a7922"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#acdcb34e50215f0f72bebcb83b33a7922">getNodes</a> () const</td></tr>
-<tr class="memdesc:acdcb34e50215f0f72bebcb83b33a7922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve all nodes in the graph.  <br /></td></tr>
-<tr class="separator:acdcb34e50215f0f72bebcb83b33a7922"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe11f4f41e8226df69eafdf7826cc9c5" id="r_abe11f4f41e8226df69eafdf7826cc9c5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; U &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#abe11f4f41e8226df69eafdf7826cc9c5">getEdges</a> () const</td></tr>
-<tr class="memdesc:abe11f4f41e8226df69eafdf7826cc9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve all edges in the graph.  <br /></td></tr>
-<tr class="separator:abe11f4f41e8226df69eafdf7826cc9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a75b8d35d158c240519be7882a93366" id="r_a7a75b8d35d158c240519be7882a93366"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a7a75b8d35d158c240519be7882a93366">getNodes</a> () const</td></tr>
+<tr class="memdesc:a7a75b8d35d158c240519be7882a93366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get read-only access to the all nodes in the graph.  <br /></td></tr>
+<tr class="separator:a7a75b8d35d158c240519be7882a93366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07bb5a27c4b7d1044e5abffa5a0cdae" id="r_ab07bb5a27c4b7d1044e5abffa5a0cdae"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; U &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ab07bb5a27c4b7d1044e5abffa5a0cdae">getEdges</a> () const</td></tr>
+<tr class="memdesc:ab07bb5a27c4b7d1044e5abffa5a0cdae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get read-only access to the all edges in the graph.  <br /></td></tr>
+<tr class="separator:ab07bb5a27c4b7d1044e5abffa5a0cdae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c2a0c504bb43a4e967282b68109175" id="r_ad0c2a0c504bb43a4e967282b68109175"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ad0c2a0c504bb43a4e967282b68109175">indexOfId</a> (int id) const</td></tr>
+<tr class="memdesc:ad0c2a0c504bb43a4e967282b68109175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get node index by id.  <br /></td></tr>
+<tr class="separator:ad0c2a0c504bb43a4e967282b68109175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a657564f4c920794ea08e89a2595891aa" id="r_a657564f4c920794ea08e89a2595891aa"><td class="memItemLeft" align="right" valign="top"><a id="a657564f4c920794ea08e89a2595891aa" name="a657564f4c920794ea08e89a2595891aa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasId</b> (int id) const</td></tr>
+<tr class="memdesc:a657564f4c920794ea08e89a2595891aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the graph contains a node with the given id. <br /></td></tr>
+<tr class="separator:a657564f4c920794ea08e89a2595891aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735a4691ffdde5a61f143fba1eab6abf" id="r_a735a4691ffdde5a61f143fba1eab6abf"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a735a4691ffdde5a61f143fba1eab6abf">positionOf</a> (int id) const</td></tr>
+<tr class="memdesc:a735a4691ffdde5a61f143fba1eab6abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position lookup helper (id → {x,y}).  <br /></td></tr>
+<tr class="separator:a735a4691ffdde5a61f143fba1eab6abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefa92d7487bdd44d1f0593ca5150575c" id="r_aefa92d7487bdd44d1f0593ca5150575c"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aefa92d7487bdd44d1f0593ca5150575c">outgoing</a> (int id) const</td></tr>
+<tr class="memdesc:aefa92d7487bdd44d1f0593ca5150575c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outgoing adjacency by node id (neighbor node ids).  <br /></td></tr>
+<tr class="separator:aefa92d7487bdd44d1f0593ca5150575c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9606e11cd2a70b01c9aa2df5b60fd34a" id="r_a9606e11cd2a70b01c9aa2df5b60fd34a"><td class="memItemLeft" align="right" valign="top"><a id="a9606e11cd2a70b01c9aa2df5b60fd34a" name="a9606e11cd2a70b01c9aa2df5b60fd34a"></a>
+const std::unordered_map&lt; int, std::size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>nodeIndexById</b> () const</td></tr>
+<tr class="memdesc:a9606e11cd2a70b01c9aa2df5b60fd34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the id→index map (read-only). <br /></td></tr>
+<tr class="separator:a9606e11cd2a70b01c9aa2df5b60fd34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, typename U&gt;<br />
-requires <a class="el" href="conceptEdgeConcept.html">EdgeConcept</a>&lt;U, T&gt;<br />
+requires <a class="el" href="conceptEdgeConcept.html">EdgeConcept</a>&lt;U&gt;<br />
 class Graph&lt; T, U &gt;</div><p>A templated graph storing nodes of type T and edges of type U. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>A Node type satisfying NodeConcept. </td></tr>
-    <tr><td class="paramname">U</td><td>An Edge type satisfying EdgeConcept&lt;U,T&gt;. </td></tr>
+    <tr><td class="paramname">U</td><td>An Edge type satisfying EdgeConcept. </td></tr>
   </table>
   </dd>
 </dl>
@@ -212,7 +229,7 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
 </table>
 </div><div class="memdoc">
 
-<p>Add an edge to the graph without checking for duplicates. </p>
+<p>Add an edge to the graph without checks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">edge</td><td>The edge to add. </td></tr>
@@ -290,7 +307,7 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
 </table>
 </div><div class="memdoc">
 
-<p>Add a node to the graph. </p>
+<p>Add a node to the graph. Updates id to index map. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">node</td><td>The node to add. </td></tr>
@@ -300,8 +317,8 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
 
 </div>
 </div>
-<a id="abe11f4f41e8226df69eafdf7826cc9c5" name="abe11f4f41e8226df69eafdf7826cc9c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe11f4f41e8226df69eafdf7826cc9c5">&#9670;&#160;</a></span>getEdges()</h2>
+<a id="ab07bb5a27c4b7d1044e5abffa5a0cdae" name="ab07bb5a27c4b7d1044e5abffa5a0cdae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07bb5a27c4b7d1044e5abffa5a0cdae">&#9670;&#160;</a></span>getEdges()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +329,7 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; U &gt; <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::getEdges </td>
+          <td class="memname">const std::vector&lt; U &gt; &amp; <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::getEdges </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -325,13 +342,13 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
 </table>
 </div><div class="memdoc">
 
-<p>Retrieve all edges in the graph. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector of edges. </dd></dl>
+<p>Get read-only access to the all edges in the graph. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the vector of edges. </dd></dl>
 
 </div>
 </div>
-<a id="acdcb34e50215f0f72bebcb83b33a7922" name="acdcb34e50215f0f72bebcb83b33a7922"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdcb34e50215f0f72bebcb83b33a7922">&#9670;&#160;</a></span>getNodes()</h2>
+<a id="a7a75b8d35d158c240519be7882a93366" name="a7a75b8d35d158c240519be7882a93366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a75b8d35d158c240519be7882a93366">&#9670;&#160;</a></span>getNodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -342,7 +359,7 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; T &gt; <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::getNodes </td>
+          <td class="memname">const std::vector&lt; T &gt; &amp; <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::getNodes </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -355,8 +372,121 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
 </table>
 </div><div class="memdoc">
 
-<p>Retrieve all nodes in the graph. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector of nodes. </dd></dl>
+<p>Get read-only access to the all nodes in the graph. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the vector of nodes. </dd></dl>
+
+</div>
+</div>
+<a id="ad0c2a0c504bb43a4e967282b68109175" name="ad0c2a0c504bb43a4e967282b68109175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c2a0c504bb43a4e967282b68109175">&#9670;&#160;</a></span>indexOfId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::indexOfId </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get node index by id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Node identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Index into <a class="el" href="classGraph.html#a7a75b8d35d158c240519be7882a93366" title="Get read-only access to the all nodes in the graph.">getNodes()</a>. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Throws std::out_of_range if id is not present. </dd></dl>
+
+</div>
+</div>
+<a id="aefa92d7487bdd44d1f0593ca5150575c" name="aefa92d7487bdd44d1f0593ca5150575c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefa92d7487bdd44d1f0593ca5150575c">&#9670;&#160;</a></span>outgoing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; int &gt; &amp; <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::outgoing </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Outgoing adjacency by node id (neighbor node ids). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Source node id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const reference to a vector of neighbor node ids. Empty if none.</dd></dl>
+<p>Maintained incrementally on every successful edge insertion. </p>
+
+</div>
+</div>
+<a id="a735a4691ffdde5a61f143fba1eab6abf" name="a735a4691ffdde5a61f143fba1eab6abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735a4691ffdde5a61f143fba1eab6abf">&#9670;&#160;</a></span>positionOf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; int, int &gt; <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::positionOf </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Position lookup helper (id → {x,y}). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Node identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pair {x,y} of the node position. </dd></dl>
 
 </div>
 </div>

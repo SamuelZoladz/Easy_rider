@@ -99,24 +99,24 @@ $(document).ready(function(){initNavTree('conceptEdgeConcept.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>Concept that an Edge type must satisfy, given a Node type T.  
+<p>Concept that an Edge type must satisfy.  
 <a href="conceptEdgeConcept.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Graph_8h_source.html">Graph.h</a>&gt;</code></p>
 <h2 class="groupheader">Concept definition</h2>
-<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U, <span class="keyword">typename</span> T&gt;</div>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptEdgeConcept.html">EdgeConcept</a> =  <span class="keyword">requires</span>(<span class="keyword">const</span> U &amp;e) {</div>
-<div class="line">  { e.getFrom() } -&gt; std::same_as&lt;T&gt;;</div>
-<div class="line">  { e.getTo() } -&gt; std::same_as&lt;T&gt;;</div>
+<div class="line">  { e.getFromId() } -&gt; std::same_as&lt;int&gt;;</div>
+<div class="line">  { e.getToId() } -&gt; std::same_as&lt;int&gt;;</div>
 <div class="line">  { e.getLength() } -&gt; std::same_as&lt;double&gt;;</div>
 <div class="line">  { e.getMaxSpeed() } -&gt; std::same_as&lt;int&gt;;</div>
 <div class="line">}</div>
-<div class="ttc" id="aconceptEdgeConcept_html"><div class="ttname"><a href="conceptEdgeConcept.html">EdgeConcept</a></div><div class="ttdoc">Concept that an Edge type must satisfy, given a Node type T.</div><div class="ttdef"><b>Definition</b> Graph.h:42</div></div>
+<div class="ttc" id="aconceptEdgeConcept_html"><div class="ttname"><a href="conceptEdgeConcept.html">EdgeConcept</a></div><div class="ttdoc">Concept that an Edge type must satisfy.</div><div class="ttdef"><b>Definition</b> Graph.h:61</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Concept that an Edge type must satisfy, given a Node type T. </p>
+<div class="textblock"><p>Concept that an Edge type must satisfy. </p>
 <p>An Edge must provide:</p><ul>
-<li>T getFrom()</li>
-<li>T getTo()</li>
+<li>int getFromId()</li>
+<li>int getToId()</li>
 <li>double getLength()</li>
 <li>int getMaxSpeed() </li>
 </ul>

@@ -9,6 +9,11 @@ var classGraph =
     [ "addEdge", "classGraph.html#ac04f1a4b049efa9f3752fe9a20b5b1bc", null ],
     [ "addEdgeIfNotExists", "classGraph.html#ac19fa1d497545002fb46de21848096ed", null ],
     [ "addNode", "classGraph.html#a5fff71816a6c58146fca30f807f7dc0c", null ],
-    [ "getEdges", "classGraph.html#abe11f4f41e8226df69eafdf7826cc9c5", null ],
-    [ "getNodes", "classGraph.html#acdcb34e50215f0f72bebcb83b33a7922", null ]
+    [ "getEdges", "classGraph.html#ab07bb5a27c4b7d1044e5abffa5a0cdae", null ],
+    [ "getNodes", "classGraph.html#a7a75b8d35d158c240519be7882a93366", null ],
+    [ "hasId", "classGraph.html#a657564f4c920794ea08e89a2595891aa", null ],
+    [ "indexOfId", "classGraph.html#ad0c2a0c504bb43a4e967282b68109175", null ],
+    [ "nodeIndexById", "classGraph.html#a9606e11cd2a70b01c9aa2df5b60fd34a", null ],
+    [ "outgoing", "classGraph.html#aefa92d7487bdd44d1f0593ca5150575c", null ],
+    [ "positionOf", "classGraph.html#a735a4691ffdde5a61f143fba1eab6abf", null ]
 ];
