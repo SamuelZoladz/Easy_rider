@@ -1,71 +1,55 @@
 /**
  * @file Road.h
  * @brief Declaration of the Road class representing a connection between two
- * Intersections.
+ * nodes (intersections) by identifiers.
  */
 #ifndef ROAD_H
 #define ROAD_H
 
 #include "Intersection.h"
+#include <utility>
 
 /**
  * @class Road
- * @brief Represents a road connecting two Intersections in 2D space, with a
- * computed length and a maximum speed.
+ * @brief Represents a direcred road connecting two intersections (by ids), with
+ * a computed length and a maximum speed.
  */
 class Road {
 public:
   /**
-   * @brief Default constructor.
-   *        Initializes both endpoints at (0,0), length to 0.0, and maxSpeed to
-   * 0.
+   * @brief Default constructor is deleted.
    */
-  Road();
+  Road() = delete;
 
   /**
-   * @brief Parameterized constructor.
-   * @param from The starting Intersection.
-   * @param to The ending Intersection.
-   * @param maxSpeed The maximum allowed speed on this road.
-   *
-   * Automatically computes the Euclidean length between \p from and \p to.
+   * @brief Constructs a road from two intersections and computes its length.
+   * @param from Source intersection (its id and position are used).
+   * @param to   Target intersection (its id and position are used).
+   * @param maxSpeed Maximum allowed speed on this road.
    */
   Road(const Intersection &from, const Intersection &to, int maxSpeed);
 
-  /**
-   * @brief Retrieves the starting Intersection.
-   * @return A copy of the 'from' Intersection.
-   */
-  Intersection getFrom() const;
+  /// @return Source node id.
+  int getFromId() const;
 
-  /**
-   * @brief Retrieves the ending Intersection.
-   * @return A copy of the 'to' Intersection.
-   */
-  Intersection getTo() const;
+  /// @return Target node id.
+  int getToId() const;
 
-  /**
-   * @brief Retrieves the computed length of the road.
-   * @return The Euclidean distance between 'from' and 'to'.
-   */
+  /// @return Euclidean length.
   double getLength() const;
 
-  /**
-   * @brief Retrieves the maximum speed for this road.
-   * @return The maximum speed (int).
-   */
+  /// @return Maximum allowed speed.
   int getMaxSpeed() const;
 
 private:
-  Intersection from_; /**< The starting intersection. */
-  Intersection to_;   /**< The ending intersection. */
-  double length_;     /**< Computed Euclidean distance between from_ and to_. */
-  int maxSpeed_;      /**< Maximum speed allowed along this road. */
+  int fromId_;    /**< Source node id. */
+  int toId_;      /**< Target node id. */
+  double length_; /**< Cached Euclidean distance between endpoints. */
+  int maxSpeed_;  /**< Maximum allowed speed along this road. */
 
-  /**
-   * @brief Computes and updates length_ as the distance between from_ and to_.
-   */
-  void computeLength();
+  /// @brief Helper to compute distance from two positions.
+  static double computeLength(const std::pair<int, int> &a,
+                              const std::pair<int, int> &b);
 };
 
 #endif // ROAD_H

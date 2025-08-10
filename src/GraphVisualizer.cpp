@@ -41,8 +41,8 @@ void GraphVisualizer::draw(const Graph<Intersection, Road> &graph) {
   const float t_max = 6.f;
 
   for (auto const &edge : graph.getEdges()) {
-    auto [x1, y1] = edge.getFrom().getPosition();
-    auto [x2, y2] = edge.getTo().getPosition();
+    auto [x1, y1] = graph.positionOf(edge.getFromId());
+    auto [x2, y2] = graph.positionOf(edge.getToId());
 
     float speed = float(edge.getMaxSpeed() - minSpeed);
     float norm = speed / float(speedRange);

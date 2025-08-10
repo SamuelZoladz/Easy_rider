@@ -7,6 +7,7 @@
 #include "Easy_rider/MotorwayGenerator.h"
 #include "Easy_rider/StreetGenerator.h"
 
+#include <iostream>
 #include <random>
 
 int main() {
@@ -34,5 +35,9 @@ int main() {
   GraphVisualizer viz{800, 600, "Random Graph SFML"};
   viz.run(graph);
 
+  for (auto const &node : graph.getNodes()) {
+    std::cout << "Node " << node.getId() << ": (" << node.getX() << ", "
+              << node.getY() << ")\n";
+  }
   return 0;
 }
