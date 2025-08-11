@@ -12,14 +12,16 @@
  */
 class GraphVisualizer {
 public:
-  GraphVisualizer(unsigned int width = 800, unsigned int height = 600,
-                  const std::string &title = "Graph Visualizer");
+  explicit GraphVisualizer(unsigned int width = 800, unsigned int height = 600,
+                           const std::string &title = "Graph Visualizer");
 
-  void run(const Graph<Intersection, Road> &graph);
+  void run(const Graph<Intersection, Road> &graph,
+           const std::vector<int> &pathIds1, const std::vector<int> &pathIds2);
 
 private:
   void processEvents();
-  void draw(const Graph<Intersection, Road> &graph);
+  void draw(const Graph<Intersection, Road> &graph,
+            const std::vector<int> &pathIds1, const std::vector<int> &pathIds2);
 
   sf::RenderWindow window_;
   sf::Font font_;

@@ -2,3 +2,9 @@
 /cmake-build-debug/
 /docs/
 /build/
+/.idea/.gitignore
+/.idea/Easy_rider.iml
+/.idea/editor.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml

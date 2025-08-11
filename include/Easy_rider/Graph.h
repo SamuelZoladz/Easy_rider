@@ -27,6 +27,7 @@
 #include <algorithm>
 #include <concepts>
 #include <cstddef>
+#include <functional>
 #include <unordered_map>
 #include <utility>
 #include <vector>
@@ -97,9 +98,14 @@ public:
    */
   void addEdge(const U &edge) {
     edges_.push_back(edge);
-    const int u = edge.getFromId();
-    const int v = edge.getToId();
-    outgoing_[u].push_back(v);
+    const int uId = edge.getFromId();
+    const int vId = edge.getToId();
+
+    const int uIdx = static_cast<int>(indexOfId(uId));
+    const int vIdx = static_cast<int>(indexOfId(vId));
+
+    const std::size_t eIdx = edges_.size() - 1;
+    outgoingIndex_[uIdx].emplace_back(vIdx, eIdx);
   }
 
   /**
@@ -179,15 +185,27 @@ public:
   /**
    * @brief Outgoing adjacency by node id (neighbor node ids).
    * @param id Source node id.
-   * @return const reference to a vector of neighbor node ids. Empty if none.
+   * @return const reference to a vector of pair of neighbor node ids and edge
+   * indexes. Empty if none.
    *
    * Maintained incrementally on every successful edge insertion.
    */
-  const std::vector<int> &outgoing(int id) const {
-    auto it = outgoing_.find(id);
-    if (it == outgoing_.end())
-      return {};
-    return it->second;
+  using NeighborEdge = std::pair<int, std::reference_wrapper<const U>>;
+
+  std::vector<NeighborEdge> outgoing(int uIdx) const {
+    std::vector<NeighborEdge> result;
+    auto it = outgoingIndex_.find(uIdx);
+    if (it == outgoingIndex_.end())
+      return result;
+
+    const auto &lst = it->second;
+    result.reserve(lst.size());
+    for (const auto &p : lst) {
+      const int vIdx = p.first;
+      const std::size_t eIdx = p.second;
+      result.emplace_back(vIdx, std::cref(edges_.at(eIdx)));
+    }
+    return result;
   }
 
   /**
@@ -202,8 +220,8 @@ private:
   std::vector<U> edges_; /**< Stored edges. */
 
   std::unordered_map<int, std::size_t> nodeIndexById_; /**< Fast id->index. */
-  std::unordered_map<int, std::vector<int>>
-      outgoing_; /**< Adjacency: u -> {v,...}. */
+  std::unordered_map<int, std::vector<std::pair<int, std::size_t>>>
+      outgoingIndex_;
 
   /**
    * @brief  Compute the 2D orientation (cross product) of the triplet (A, B,
