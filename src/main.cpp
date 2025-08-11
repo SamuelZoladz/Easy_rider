@@ -136,6 +136,12 @@ int main() {
     std::cout << id << ", ";
   std::cout << std::endl;
 
+  for (auto road : graph.getEdges()) {
+    std::cout << "Road from " << road.getFromId() << " to " << road.getToId()
+              << " with length " << road.getLength() << " and max speed "
+              << road.getMaxSpeed() << std::endl;
+  }
+
   GraphVisualizer viz{800, 600, "Random Graph SFML"};
   viz.run(graph, path1, path2);
 

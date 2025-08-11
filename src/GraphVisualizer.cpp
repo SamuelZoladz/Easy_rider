@@ -99,7 +99,12 @@ void GraphVisualizer::draw(const Graph<Intersection, Road> &graph,
 
     window_.draw(line);
   }
-
+  sf::Text label;
+  label.setFont(font_);
+  label.setCharacterSize(14);
+  label.setFillColor(sf::Color::Black);
+  label.setOutlineColor(sf::Color::White);
+  label.setOutlineThickness(2.f);
   for (auto const &node : graph.getNodes()) {
     auto [x, y] = node.getPosition();
     sf::CircleShape circle(6.f);
@@ -107,5 +112,9 @@ void GraphVisualizer::draw(const Graph<Intersection, Road> &graph,
     circle.setPosition(static_cast<float>(x) - 6.f,
                        static_cast<float>(y) - 6.f);
     window_.draw(circle);
+    label.setString(std::to_string(node.getId()));
+    label.setPosition(static_cast<float>(x) + 8.f,
+                      static_cast<float>(y) - 10.f);
+    window_.draw(label);
   }
 }
