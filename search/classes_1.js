@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['graph_0',['Graph',['../classGraph.html',1,'']]],
-  ['graphvisualizer_1',['GraphVisualizer',['../classGraphVisualizer.html',1,'']]]
+  ['dijkstrastrategy_0',['DijkstraStrategy',['../classDijkstraStrategy.html',1,'']]],
+  ['disjointset_1',['DisjointSet',['../structDisjointSet.html',1,'']]]
 ];

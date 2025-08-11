@@ -9,5 +9,10 @@ var hierarchy =
       [ "HighwayGenerator", "classHighwayGenerator.html", null ],
       [ "MotorwayGenerator", "classMotorwayGenerator.html", null ],
       [ "StreetGenerator", "classStreetGenerator.html", null ]
-    ] ]
+    ] ],
+    [ "RouteStrategy", "classRouteStrategy.html", [
+      [ "AStarStrategy", "classAStarStrategy.html", null ],
+      [ "DijkstraStrategy", "classDijkstraStrategy.html", null ]
+    ] ],
+    [ "StrictTimeContext", "structStrictTimeContext.html", null ]
 ];

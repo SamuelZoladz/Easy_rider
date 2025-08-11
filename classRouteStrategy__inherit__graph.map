@@ -1,0 +1,7 @@
+<map id="RouteStrategy" name="RouteStrategy">
+<area shape="rect" id="Node000001" title=" " alt="" coords="76,5,191,31"/>
+<area shape="rect" id="Node000002" href="$classAStarStrategy.html" title="A* using:" alt="" coords="5,79,117,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,43,75,80,71,77,110,39"/>
+<area shape="rect" id="Node000003" href="$classDijkstraStrategy.html" title="Dijkstra using a min&#45;heap; edge weight is always travel time." alt="" coords="141,79,269,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,39,196,77,192,80,153,43"/>
+</map>

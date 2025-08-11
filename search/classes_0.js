@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['disjointset_0',['DisjointSet',['../structDisjointSet.html',1,'']]]
+  ['astarstrategy_0',['AStarStrategy',['../classAStarStrategy.html',1,'']]]
 ];

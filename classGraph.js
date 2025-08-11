@@ -1,5 +1,6 @@
 var classGraph =
 [
+    [ "NeighborEdge", "classGraph.html#ab331420c35fae3b59718d4304817ff8b", null ],
     [ "AddEdgeResult", "classGraph.html#ad4551558ed2438d068f9a2efd09508c3", [
       [ "Success", "classGraph.html#ad4551558ed2438d068f9a2efd09508c3a505a83f220c02df2f85c3810cd9ceb38", null ],
       [ "AlreadyExists", "classGraph.html#ad4551558ed2438d068f9a2efd09508c3a89b69484680b18e9179e826c6e023805", null ],
@@ -14,6 +15,5 @@ var classGraph =
     [ "hasId", "classGraph.html#a657564f4c920794ea08e89a2595891aa", null ],
     [ "indexOfId", "classGraph.html#ad0c2a0c504bb43a4e967282b68109175", null ],
     [ "nodeIndexById", "classGraph.html#a9606e11cd2a70b01c9aa2df5b60fd34a", null ],
-    [ "outgoing", "classGraph.html#aefa92d7487bdd44d1f0593ca5150575c", null ],
     [ "positionOf", "classGraph.html#a735a4691ffdde5a61f143fba1eab6abf", null ]
 ];

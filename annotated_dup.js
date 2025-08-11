@@ -1,5 +1,7 @@
 var annotated_dup =
 [
+    [ "AStarStrategy", "classAStarStrategy.html", "classAStarStrategy" ],
+    [ "DijkstraStrategy", "classDijkstraStrategy.html", "classDijkstraStrategy" ],
     [ "DisjointSet", "structDisjointSet.html", null ],
     [ "Graph", "classGraph.html", "classGraph" ],
     [ "GraphVisualizer", "classGraphVisualizer.html", null ],
@@ -8,5 +10,7 @@ var annotated_dup =
     [ "MotorwayGenerator", "classMotorwayGenerator.html", "classMotorwayGenerator" ],
     [ "Road", "classRoad.html", "classRoad" ],
     [ "RoadGenerator", "classRoadGenerator.html", "classRoadGenerator" ],
-    [ "StreetGenerator", "classStreetGenerator.html", "classStreetGenerator" ]
+    [ "RouteStrategy", "classRouteStrategy.html", "classRouteStrategy" ],
+    [ "StreetGenerator", "classStreetGenerator.html", "classStreetGenerator" ],
+    [ "StrictTimeContext", "structStrictTimeContext.html", null ]
 ];

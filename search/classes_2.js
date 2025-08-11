@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['highwaygenerator_0',['HighwayGenerator',['../classHighwayGenerator.html',1,'']]]
+  ['graph_0',['Graph',['../classGraph.html',1,'']]],
+  ['graphvisualizer_1',['GraphVisualizer',['../classGraphVisualizer.html',1,'']]]
 ];

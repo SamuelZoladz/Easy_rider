@@ -4,5 +4,7 @@ var searchData=
   ['addedgeifnotexists_1',['addEdgeIfNotExists',['../classGraph.html#ac19fa1d497545002fb46de21848096ed',1,'Graph']]],
   ['addedgeresult_2',['AddEdgeResult',['../classGraph.html#ad4551558ed2438d068f9a2efd09508c3',1,'Graph']]],
   ['addnode_3',['addNode',['../classGraph.html#a5fff71816a6c58146fca30f807f7dc0c',1,'Graph']]],
-  ['alreadyexists_4',['AlreadyExists',['../classGraph.html#ad4551558ed2438d068f9a2efd09508c3a89b69484680b18e9179e826c6e023805',1,'Graph']]]
+  ['alreadyexists_4',['AlreadyExists',['../classGraph.html#ad4551558ed2438d068f9a2efd09508c3a89b69484680b18e9179e826c6e023805',1,'Graph']]],
+  ['astarstrategy_5',['AStarStrategy',['../classAStarStrategy.html',1,'']]],
+  ['astarstrategy_2eh_6',['AStarStrategy.h',['../AStarStrategy_8h.html',1,'']]]
 ];

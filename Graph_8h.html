@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('Graph_8h.html',''); initResizable(); }
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -115,19 +116,21 @@ Include dependency graph for Graph.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Graph_8h__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Graph_8h" alt=""/></div>
 <map name="ainclude_2Easy__rider_2Graph_8h" id="ainclude_2Easy__rider_2Graph_8h">
-<area shape="rect" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="244,5,385,45"/>
+<area shape="rect" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="287,5,428,45"/>
 <area shape="rect" title=" " alt="" coords="5,93,91,119"/>
-<area shape="poly" title=" " alt="" coords="252,48,101,92,100,87,250,43"/>
+<area shape="poly" title=" " alt="" coords="287,47,105,93,103,88,286,42"/>
 <area shape="rect" title=" " alt="" coords="115,93,195,119"/>
-<area shape="poly" title=" " alt="" coords="278,48,192,90,189,85,275,43"/>
+<area shape="poly" title=" " alt="" coords="310,48,198,91,196,86,308,43"/>
 <area shape="rect" title=" " alt="" coords="219,93,290,119"/>
-<area shape="poly" title=" " alt="" coords="302,47,274,84,270,81,298,44"/>
-<area shape="rect" title=" " alt="" coords="314,93,438,119"/>
-<area shape="poly" title=" " alt="" coords="332,44,361,81,356,84,327,47"/>
-<area shape="rect" title=" " alt="" coords="462,93,522,119"/>
-<area shape="poly" title=" " alt="" coords="358,43,455,85,452,90,356,48"/>
-<area shape="rect" title=" " alt="" coords="546,93,609,119"/>
-<area shape="poly" title=" " alt="" coords="378,43,534,89,532,94,377,48"/>
+<area shape="poly" title=" " alt="" coords="334,48,282,87,279,83,331,43"/>
+<area shape="rect" title=" " alt="" coords="314,93,401,119"/>
+<area shape="poly" title=" " alt="" coords="360,46,360,79,355,79,355,46"/>
+<area shape="rect" title=" " alt="" coords="425,93,549,119"/>
+<area shape="poly" title=" " alt="" coords="390,43,457,84,455,88,387,48"/>
+<area shape="rect" title=" " alt="" coords="573,93,633,119"/>
+<area shape="poly" title=" " alt="" coords="417,43,560,88,558,93,415,48"/>
+<area shape="rect" title=" " alt="" coords="657,93,719,119"/>
+<area shape="poly" title=" " alt="" coords="429,40,644,90,642,95,428,45"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -135,17 +138,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Graph_8h__dep__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Graph_8hdep" alt=""/></div>
 <map name="ainclude_2Easy__rider_2Graph_8hdep" id="ainclude_2Easy__rider_2Graph_8hdep">
-<area shape="rect" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="118,5,259,45"/>
-<area shape="rect" href="GraphVisualizer_8h_source.html" title=" " alt="" coords="35,93,177,133"/>
-<area shape="poly" title=" " alt="" coords="163,57,126,95,122,91,159,54"/>
-<area shape="rect" href="RoadGenerator_8h_source.html" title=" " alt="" coords="201,93,342,133"/>
-<area shape="poly" title=" " alt="" coords="219,54,255,91,251,95,215,57"/>
+<area shape="rect" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="462,5,603,45"/>
+<area shape="rect" href="GraphVisualizer_8h_source.html" title=" " alt="" coords="214,93,355,133"/>
+<area shape="poly" title=" " alt="" coords="466,52,340,96,338,91,464,47"/>
+<area shape="rect" href="RoadGenerator_8h_source.html" title=" " alt="" coords="379,93,521,133"/>
+<area shape="poly" title=" " alt="" coords="507,57,470,95,466,91,503,54"/>
+<area shape="rect" href="RouteStrategy_8h.html" title="Strategy interface for route computation on Graph&lt;Intersection, Road&gt;." alt="" coords="545,93,686,133"/>
+<area shape="poly" title=" " alt="" coords="563,54,599,91,595,95,559,57"/>
+<area shape="rect" href="RoutingCommon_8h.html" title="Shared types and helpers for shortest&#45;time routing strategies." alt="" coords="710,93,857,133"/>
+<area shape="poly" title=" " alt="" coords="601,47,729,91,728,96,599,52"/>
 <area shape="rect" href="HighwayGenerator_8h_source.html" title=" " alt="" coords="5,181,164,221"/>
-<area shape="poly" title=" " alt="" coords="219,141,127,184,124,179,217,137"/>
+<area shape="poly" title=" " alt="" coords="367,137,165,184,164,179,366,132"/>
 <area shape="rect" href="MotorwayGenerator_8h_source.html" title=" " alt="" coords="188,181,355,221"/>
-<area shape="poly" title=" " alt="" coords="274,147,274,181,269,181,269,147"/>
+<area shape="poly" title=" " alt="" coords="400,142,312,184,309,179,397,137"/>
 <area shape="rect" href="StreetGenerator_8h_source.html" title=" " alt="" coords="379,181,521,221"/>
-<area shape="poly" title=" " alt="" coords="324,137,412,179,410,184,322,142"/>
+<area shape="poly" title=" " alt="" coords="453,147,453,181,447,181,447,147"/>
+<area shape="rect" href="AStarStrategy_8h.html" title="A* shortest&#45;time strategy with injected time function and heuristic." alt="" coords="713,181,854,221"/>
+<area shape="poly" title=" " alt="" coords="665,137,748,179,745,184,663,142"/>
+<area shape="rect" href="DijkstraStrategy_8h.html" title="Dijkstra shortest&#45;time strategy with injected time function." alt="" coords="545,181,688,221"/>
+<area shape="poly" title=" " alt="" coords="619,147,619,181,614,181,613,147"/>
+<area shape="poly" title=" " alt="" coords="786,147,786,181,781,181,781,147"/>
+<area shape="poly" title=" " alt="" coords="736,142,654,184,652,179,734,137"/>
 </map>
 </div>
 </div>

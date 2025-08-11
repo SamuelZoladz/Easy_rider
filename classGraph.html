@@ -116,6 +116,9 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ad4551558ed2438d068f9a2efd09508c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result of attempting to insert an edge with checks.  <a href="classGraph.html#ad4551558ed2438d068f9a2efd09508c3">More...</a><br /></td></tr>
 <tr class="separator:ad4551558ed2438d068f9a2efd09508c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab331420c35fae3b59718d4304817ff8b" id="r_ab331420c35fae3b59718d4304817ff8b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#ab331420c35fae3b59718d4304817ff8b">NeighborEdge</a> = std::pair&lt; int, std::reference_wrapper&lt; const U &gt; &gt;</td></tr>
+<tr class="memdesc:ab331420c35fae3b59718d4304817ff8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outgoing adjacency by node id (neighbor node ids).  <br /></td></tr>
+<tr class="separator:ab331420c35fae3b59718d4304817ff8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -148,9 +151,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasId</b> (int id) co
 <tr class="memitem:a735a4691ffdde5a61f143fba1eab6abf" id="r_a735a4691ffdde5a61f143fba1eab6abf"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a735a4691ffdde5a61f143fba1eab6abf">positionOf</a> (int id) const</td></tr>
 <tr class="memdesc:a735a4691ffdde5a61f143fba1eab6abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position lookup helper (id → {x,y}).  <br /></td></tr>
 <tr class="separator:a735a4691ffdde5a61f143fba1eab6abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefa92d7487bdd44d1f0593ca5150575c" id="r_aefa92d7487bdd44d1f0593ca5150575c"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aefa92d7487bdd44d1f0593ca5150575c">outgoing</a> (int id) const</td></tr>
-<tr class="memdesc:aefa92d7487bdd44d1f0593ca5150575c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outgoing adjacency by node id (neighbor node ids).  <br /></td></tr>
-<tr class="separator:aefa92d7487bdd44d1f0593ca5150575c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba3a3cbace23f18add6c099ec6280f9" id="r_aaba3a3cbace23f18add6c099ec6280f9"><td class="memItemLeft" align="right" valign="top"><a id="aaba3a3cbace23f18add6c099ec6280f9" name="aaba3a3cbace23f18add6c099ec6280f9"></a>
+std::vector&lt; <a class="el" href="classGraph.html#ab331420c35fae3b59718d4304817ff8b">NeighborEdge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>outgoing</b> (int uIdx) const</td></tr>
+<tr class="separator:aaba3a3cbace23f18add6c099ec6280f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9606e11cd2a70b01c9aa2df5b60fd34a" id="r_a9606e11cd2a70b01c9aa2df5b60fd34a"><td class="memItemLeft" align="right" valign="top"><a id="a9606e11cd2a70b01c9aa2df5b60fd34a" name="a9606e11cd2a70b01c9aa2df5b60fd34a"></a>
 const std::unordered_map&lt; int, std::size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>nodeIndexById</b> () const</td></tr>
 <tr class="memdesc:a9606e11cd2a70b01c9aa2df5b60fd34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the id→index map (read-only). <br /></td></tr>
@@ -167,7 +170,34 @@ class Graph&lt; T, U &gt;</div><p>A templated graph storing nodes of type T and 
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ab331420c35fae3b59718d4304817ff8b" name="ab331420c35fae3b59718d4304817ff8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab331420c35fae3b59718d4304817ff8b">&#9670;&#160;</a></span>NeighborEdge</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::NeighborEdge =  std::pair&lt;int, std::reference_wrapper&lt;const U&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Outgoing adjacency by node id (neighbor node ids). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Source node id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const reference to a vector of pair of neighbor node ids and edge indexes. Empty if none.</dd></dl>
+<p>Maintained incrementally on every successful edge insertion. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ad4551558ed2438d068f9a2efd09508c3" name="ad4551558ed2438d068f9a2efd09508c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad4551558ed2438d068f9a2efd09508c3">&#9670;&#160;</a></span>AddEdgeResult</h2>
 
@@ -412,44 +442,6 @@ template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, type
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Index into <a class="el" href="classGraph.html#a7a75b8d35d158c240519be7882a93366" title="Get read-only access to the all nodes in the graph.">getNodes()</a>. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Throws std::out_of_range if id is not present. </dd></dl>
-
-</div>
-</div>
-<a id="aefa92d7487bdd44d1f0593ca5150575c" name="aefa92d7487bdd44d1f0593ca5150575c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefa92d7487bdd44d1f0593ca5150575c">&#9670;&#160;</a></span>outgoing()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="conceptNodeConcept.html">NodeConcept</a> T, typename U &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; int &gt; &amp; <a class="el" href="classGraph.html">Graph</a>&lt; T, U &gt;::outgoing </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Outgoing adjacency by node id (neighbor node ids). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id</td><td>Source node id. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>const reference to a vector of neighbor node ids. Empty if none.</dd></dl>
-<p>Maintained incrementally on every successful edge insertion. </p>
 
 </div>
 </div>
