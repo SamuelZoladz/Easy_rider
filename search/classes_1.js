@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dijkstrastrategy_0',['DijkstraStrategy',['../classDijkstraStrategy.html',1,'']]],
-  ['disjointset_1',['DisjointSet',['../structDisjointSet.html',1,'']]]
+  ['car_0',['Car',['../classCar.html',1,'']]],
+  ['congestionmodel_1',['CongestionModel',['../classCongestionModel.html',1,'']]]
 ];

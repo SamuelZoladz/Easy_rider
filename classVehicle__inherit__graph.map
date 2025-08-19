@@ -1,0 +1,7 @@
+<map id="Vehicle" name="Vehicle">
+<area shape="rect" id="Node000001" title="Base vehicle with simple longitudinal dynamics and routing policy." alt="" coords="30,5,99,31"/>
+<area shape="rect" id="Node000002" href="$classCar.html" title="Passenger car — nimble, higher acceleration." alt="" coords="5,79,49,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,44,36,80,31,77,50,42"/>
+<area shape="rect" id="Node000003" href="$classTruck.html" title="Heavy truck — lower acceleration and braking." alt="" coords="74,79,130,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="79,42,98,77,94,80,75,44"/>
+</map>

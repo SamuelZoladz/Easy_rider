@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['highwaygenerator_0',['HighwayGenerator',['../classHighwayGenerator.html',1,'']]]
+  ['edgekey_0',['EdgeKey',['../structEdgeKey.html',1,'']]],
+  ['edgekeyhash_1',['EdgeKeyHash',['../structEdgeKeyHash.html',1,'']]]
 ];

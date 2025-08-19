@@ -1,0 +1,7 @@
+<map id="Vehicle" name="Vehicle">
+<area shape="rect" id="Node000001" title="Base vehicle with simple longitudinal dynamics and routing policy." alt="" coords="135,108,204,133"/>
+<area shape="rect" id="Node000002" href="$classGraph.html" title=" " alt="" coords="5,5,163,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,53,161,106,157,109,108,57"/>
+<area shape="rect" id="Node000003" href="$classCongestionModel.html" title="Tracks per&#45;edge load and provides effective speeds/time for routing." alt="" coords="187,13,322,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,50,182,110,178,106,233,46"/>
+</map>

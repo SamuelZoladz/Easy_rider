@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['positionof_0',['positionOf',['../classGraph.html#a735a4691ffdde5a61f143fba1eab6abf',1,'Graph']]]
+  ['nodeindexbyid_0',['nodeIndexById',['../classGraph.html#a9606e11cd2a70b01c9aa2df5b60fd34a',1,'Graph']]]
 ];

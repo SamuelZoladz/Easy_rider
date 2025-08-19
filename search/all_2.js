@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['dijkstrastrategy_0',['DijkstraStrategy',['../classDijkstraStrategy.html',1,'']]],
-  ['dijkstrastrategy_2eh_1',['DijkstraStrategy.h',['../DijkstraStrategy_8h.html',1,'']]],
-  ['disjointset_2',['DisjointSet',['../structDisjointSet.html',1,'']]]
+  ['car_0',['Car',['../classCar.html',1,'']]],
+  ['clearedge_1',['clearEdge',['../classTrafficEvents.html#ac2eee9c1aa831009f76cb10499b2938c',1,'TrafficEvents']]],
+  ['computeroute_2',['computeroute',['../classAStarStrategy.html#aeef46683056de9f0137bf2865b6b7198',1,'AStarStrategy::computeRoute()'],['../classDijkstraStrategy.html#acc608cd9c08d8e530b0d1c38cc37ca5c',1,'DijkstraStrategy::computeRoute()'],['../classRouteStrategy.html#a5606c0e22ec90877bdc3fdcb129cc048',1,'RouteStrategy::computeRoute()']]],
+  ['computevmaxupperbound_3',['computeVmaxUpperBound',['../RoutingCommon_8h.html#ae04cc113c795b8ae022ff5bab52835fd',1,'RoutingCommon.h']]],
+  ['congestionmodel_4',['CongestionModel',['../classCongestionModel.html',1,'']]],
+  ['crosses_5',['Crosses',['../classGraph.html#ad4551558ed2438d068f9a2efd09508c3a4bebc367b168a1cb16cf18978551c6d9',1,'Graph']]],
+  ['currentnodeid_6',['currentNodeId',['../classVehicle.html#a39364919651d38f3cea91aacbbd2ea30',1,'Vehicle']]]
 ];

@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classVehicle.html" title="Base vehicle with simple longitudinal dynamics and routing policy." alt="" coords="5,31,75,56"/>
+<area shape="rect" id="Node000001" href="$classCar.html" title="Passenger car — nimble, higher acceleration." alt="" coords="129,5,173,31"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="88,30,128,20,129,25,89,35"/>
+<area shape="rect" id="Node000002" href="$classTruck.html" title="Heavy truck — lower acceleration and braking." alt="" coords="123,55,179,80"/>
+<area shape="poly" id="edge7_Node000000_Node000002" title=" " alt="" coords="89,51,123,59,122,64,87,56"/>
+</map>
