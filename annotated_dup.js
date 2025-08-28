@@ -5,8 +5,8 @@ var annotated_dup =
     [ "CongestionModel", "classCongestionModel.html", "classCongestionModel" ],
     [ "DijkstraStrategy", "classDijkstraStrategy.html", "classDijkstraStrategy" ],
     [ "DisjointSet", "structDisjointSet.html", null ],
-    [ "EdgeKey", "structEdgeKey.html", null ],
     [ "EdgeKeyHash", "structEdgeKeyHash.html", null ],
+    [ "EdgeState", "structEdgeState.html", null ],
     [ "Graph", "classGraph.html", "classGraph" ],
     [ "GraphVisualizer", "classGraphVisualizer.html", null ],
     [ "HighwayGenerator", "classHighwayGenerator.html", "classHighwayGenerator" ],
@@ -17,7 +17,6 @@ var annotated_dup =
     [ "RouteStrategy", "classRouteStrategy.html", "classRouteStrategy" ],
     [ "Simulation", "classSimulation.html", "classSimulation" ],
     [ "StreetGenerator", "classStreetGenerator.html", "classStreetGenerator" ],
-    [ "StrictTimeContext", "structStrictTimeContext.html", null ],
     [ "TrafficEvents", "classTrafficEvents.html", "classTrafficEvents" ],
     [ "Truck", "classTruck.html", null ],
     [ "Vehicle", "classVehicle.html", "classVehicle" ]

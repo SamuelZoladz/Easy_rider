@@ -1,5 +1,6 @@
 var classVehicle =
 [
+    [ "RenderState", "structVehicle_1_1RenderState.html", null ],
     [ "Vehicle", "classVehicle.html#aa49d2dedc9852333dd05e56e09f79939", null ],
     [ "currentNodeId", "classVehicle.html#a39364919651d38f3cea91aacbbd2ea30", null ],
     [ "goalId", "classVehicle.html#ab405ed9a26e0f802af0ebfb543b8a293", null ],

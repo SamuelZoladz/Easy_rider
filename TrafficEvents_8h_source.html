@@ -110,13 +110,13 @@ $(document).ready(function(){initNavTree('TrafficEvents_8h_source.html',''); ini
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classTrafficEvents.html#a81b50e71f5de28eb727a0024c2bfeccf">   15</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classTrafficEvents.html#a81b50e71f5de28eb727a0024c2bfeccf">blockEdge</a>(<span class="keywordtype">int</span> fromId, <span class="keywordtype">int</span> toId) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    model_.setEdgeSpeedLimit(<a class="code hl_struct" href="structEdgeKey.html">EdgeKey</a>{fromId, toId}, 0.01);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    model_.setEdgeSpeedLimit(EdgeKey{fromId, toId}, 0.01);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  }</div>
 </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classTrafficEvents.html#ac2eee9c1aa831009f76cb10499b2938c">   20</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classTrafficEvents.html#ac2eee9c1aa831009f76cb10499b2938c">clearEdge</a>(<span class="keywordtype">int</span> fromId, <span class="keywordtype">int</span> toId) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    model_.clearEdgeSpeedLimit(<a class="code hl_struct" href="structEdgeKey.html">EdgeKey</a>{fromId, toId});</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    model_.clearEdgeSpeedLimit(EdgeKey{fromId, toId});</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  }</div>
 </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
@@ -126,11 +126,10 @@ $(document).ready(function(){initNavTree('TrafficEvents_8h_source.html',''); ini
 </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">// TRAFFIC_EVENTS_H</span></div>
-<div class="ttc" id="aclassCongestionModel_html"><div class="ttname"><a href="classCongestionModel.html">CongestionModel</a></div><div class="ttdoc">Tracks per-edge load and provides effective speeds/time for routing.</div><div class="ttdef"><b>Definition</b> CongestionModel.h:40</div></div>
+<div class="ttc" id="aclassCongestionModel_html"><div class="ttname"><a href="classCongestionModel.html">CongestionModel</a></div><div class="ttdoc">Tracks per-edge load and provides effective speeds/time for routing.</div><div class="ttdef"><b>Definition</b> CongestionModel.h:38</div></div>
 <div class="ttc" id="aclassTrafficEvents_html"><div class="ttname"><a href="classTrafficEvents.html">TrafficEvents</a></div><div class="ttdoc">High-level helpers to inject incidents/blocks into the model.</div><div class="ttdef"><b>Definition</b> TrafficEvents.h:10</div></div>
 <div class="ttc" id="aclassTrafficEvents_html_a81b50e71f5de28eb727a0024c2bfeccf"><div class="ttname"><a href="classTrafficEvents.html#a81b50e71f5de28eb727a0024c2bfeccf">TrafficEvents::blockEdge</a></div><div class="ttdeci">void blockEdge(int fromId, int toId)</div><div class="ttdoc">Block an edge by capping its speed to near-zero.</div><div class="ttdef"><b>Definition</b> TrafficEvents.h:15</div></div>
 <div class="ttc" id="aclassTrafficEvents_html_ac2eee9c1aa831009f76cb10499b2938c"><div class="ttname"><a href="classTrafficEvents.html#ac2eee9c1aa831009f76cb10499b2938c">TrafficEvents::clearEdge</a></div><div class="ttdeci">void clearEdge(int fromId, int toId)</div><div class="ttdoc">Clear a block/incident for an edge.</div><div class="ttdef"><b>Definition</b> TrafficEvents.h:20</div></div>
-<div class="ttc" id="astructEdgeKey_html"><div class="ttname"><a href="structEdgeKey.html">EdgeKey</a></div><div class="ttdoc">Key of a directed edge: fromId -&gt; toId.</div><div class="ttdef"><b>Definition</b> CongestionModel.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

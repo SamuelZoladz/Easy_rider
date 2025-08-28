@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['edgekey_0',['EdgeKey',['../structEdgeKey.html',1,'']]],
-  ['edgekeyhash_1',['EdgeKeyHash',['../structEdgeKeyHash.html',1,'']]]
+  ['edgekeyhash_0',['EdgeKeyHash',['../structEdgeKeyHash.html',1,'']]],
+  ['edgestate_1',['EdgeState',['../structEdgeState.html',1,'']]]
 ];

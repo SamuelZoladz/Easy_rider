@@ -110,18 +110,15 @@ $(document).ready(function(){initNavTree('classCongestionModel.html',''); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0c102578e387082d4a779efe2598796a" id="r_a0c102578e387082d4a779efe2598796a"><td class="memItemLeft" align="right" valign="top"><a id="a0c102578e387082d4a779efe2598796a" name="a0c102578e387082d4a779efe2598796a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCongested</b> (const <a class="el" href="classRoad.html">Road</a> &amp;e) const</td></tr>
-<tr class="memdesc:a0c102578e387082d4a779efe2598796a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the edge is currently congested (load &gt;= threshold). <br /></td></tr>
-<tr class="separator:a0c102578e387082d4a779efe2598796a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13be92c1f99b38066f09b6ae71674c3" id="r_af13be92c1f99b38066f09b6ae71674c3"><td class="memItemLeft" align="right" valign="top"><a id="af13be92c1f99b38066f09b6ae71674c3" name="af13be92c1f99b38066f09b6ae71674c3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>vehiclesOnEdge</b> (const EdgeKey &amp;k) const</td></tr>
+<tr class="separator:af13be92c1f99b38066f09b6ae71674c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0d3f614ce9c7539c4c1e3db419596af" id="r_ad0d3f614ce9c7539c4c1e3db419596af"><td class="memItemLeft" align="right" valign="top"><a id="ad0d3f614ce9c7539c4c1e3db419596af" name="ad0d3f614ce9c7539c4c1e3db419596af"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>effectiveSpeed</b> (const <a class="el" href="classRoad.html">Road</a> &amp;e) const</td></tr>
-<tr class="memdesc:ad0d3f614ce9c7539c4c1e3db419596af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute effective speed for a road (always &gt; 0). <br /></td></tr>
 <tr class="separator:ad0d3f614ce9c7539c4c1e3db419596af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb8328e81909d5e30aecec9c63159215" id="r_adb8328e81909d5e30aecec9c63159215"><td class="memItemLeft" align="right" valign="top"><a id="adb8328e81909d5e30aecec9c63159215" name="adb8328e81909d5e30aecec9c63159215"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>edgeTime</b> (const <a class="el" href="classRoad.html">Road</a> &amp;e) const</td></tr>
-<tr class="memdesc:adb8328e81909d5e30aecec9c63159215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute travel time for a road (length / v_eff). <br /></td></tr>
-<tr class="separator:adb8328e81909d5e30aecec9c63159215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431ebf3083bbbf082d67ef44a8b2a21f" id="r_a431ebf3083bbbf082d67ef44a8b2a21f"><td class="memItemLeft" align="right" valign="top"><a id="a431ebf3083bbbf082d67ef44a8b2a21f" name="a431ebf3083bbbf082d67ef44a8b2a21f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>edgeTime</b> (const <a class="el" href="classRoad.html">Road</a> &amp;e, int vehicleMaxSpeed) const</td></tr>
+<tr class="separator:a431ebf3083bbbf082d67ef44a8b2a21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c514ea2e5b8c02062c9c79d23c33664" id="r_a3c514ea2e5b8c02062c9c79d23c33664"><td class="memItemLeft" align="right" valign="top"><a id="a3c514ea2e5b8c02062c9c79d23c33664" name="a3c514ea2e5b8c02062c9c79d23c33664"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setCongestionThreshold</b> (int thr)</td></tr>
 <tr class="memdesc:a3c514ea2e5b8c02062c9c79d23c33664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure thresholds. <br /></td></tr>
@@ -133,27 +130,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>onEnterEdge</b> (cons
 <tr class="memitem:a683c51aec69f73bf2f6e1f03d948dc4c" id="r_a683c51aec69f73bf2f6e1f03d948dc4c"><td class="memItemLeft" align="right" valign="top"><a id="a683c51aec69f73bf2f6e1f03d948dc4c" name="a683c51aec69f73bf2f6e1f03d948dc4c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onExitEdge</b> (const std::pair&lt; int, int &gt; &amp;edge)</td></tr>
 <tr class="separator:a683c51aec69f73bf2f6e1f03d948dc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af13be92c1f99b38066f09b6ae71674c3" id="r_af13be92c1f99b38066f09b6ae71674c3"><td class="memItemLeft" align="right" valign="top"><a id="af13be92c1f99b38066f09b6ae71674c3" name="af13be92c1f99b38066f09b6ae71674c3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>vehiclesOnEdge</b> (const <a class="el" href="structEdgeKey.html">EdgeKey</a> &amp;k) const</td></tr>
-<tr class="separator:af13be92c1f99b38066f09b6ae71674c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Event / incident API (optional)</div></td></tr>
 <tr class="memitem:a805e547a6162321629e160b5dd91166a" id="r_a805e547a6162321629e160b5dd91166a"><td class="memItemLeft" align="right" valign="top"><a id="a805e547a6162321629e160b5dd91166a" name="a805e547a6162321629e160b5dd91166a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setEdgeSpeedLimit</b> (const <a class="el" href="structEdgeKey.html">EdgeKey</a> &amp;k, double limit)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setEdgeSpeedLimit</b> (const EdgeKey &amp;k, double limit)</td></tr>
 <tr class="separator:a805e547a6162321629e160b5dd91166a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a908743fd40d63b78f4733d05b77fb750" id="r_a908743fd40d63b78f4733d05b77fb750"><td class="memItemLeft" align="right" valign="top"><a id="a908743fd40d63b78f4733d05b77fb750" name="a908743fd40d63b78f4733d05b77fb750"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clearEdgeSpeedLimit</b> (const <a class="el" href="structEdgeKey.html">EdgeKey</a> &amp;k)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearEdgeSpeedLimit</b> (const EdgeKey &amp;k)</td></tr>
 <tr class="separator:a908743fd40d63b78f4733d05b77fb750"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a5164feaebf49d34993777ec69cd2f586" id="r_a5164feaebf49d34993777ec69cd2f586"><td class="memItemLeft" align="right" valign="top"><a id="a5164feaebf49d34993777ec69cd2f586" name="a5164feaebf49d34993777ec69cd2f586"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>StaticEdgeTime</b> (const <a class="el" href="classRoad.html">Road</a> &amp;e)</td></tr>
-<tr class="memdesc:a5164feaebf49d34993777ec69cd2f586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global function pointer adapter for routing strategies. <br /></td></tr>
-<tr class="separator:a5164feaebf49d34993777ec69cd2f586"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae38097f40aa3840a57381428c268c765" id="r_ae38097f40aa3840a57381428c268c765"><td class="memItemLeft" align="right" valign="top"><a id="ae38097f40aa3840a57381428c268c765" name="ae38097f40aa3840a57381428c268c765"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (<a class="el" href="classCongestionModel.html">CongestionModel</a> *m)</td></tr>
-<tr class="memdesc:ae38097f40aa3840a57381428c268c765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Install this model as the active provider for StaticEdgeTime. <br /></td></tr>
-<tr class="separator:ae38097f40aa3840a57381428c268c765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a484e68791288528f065e8a769a9c4d00" id="r_a484e68791288528f065e8a769a9c4d00"><td class="memItemLeft" align="right" valign="top"><a id="a484e68791288528f065e8a769a9c4d00" name="a484e68791288528f065e8a769a9c4d00"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (<a class="el" href="classCongestionModel.html">CongestionModel</a> *)</td></tr>
+<tr class="separator:a484e68791288528f065e8a769a9c4d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tracks per-edge load and provides effective speeds/time for routing. </p>

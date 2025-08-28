@@ -4,6 +4,5 @@ var searchData=
   ['indexofid_1',['indexOfId',['../classGraph.html#ad0c2a0c504bb43a4e967282b68109175',1,'Graph']]],
   ['intersection_2',['intersection',['../classIntersection.html',1,'Intersection'],['../classIntersection.html#a67497e3efe2793b23909052eeb82c4f3',1,'Intersection::Intersection()'],['../classIntersection.html#ae6087c977674f8338ef3b6a0fede4714',1,'Intersection::Intersection(int x, int y)']]],
   ['intersection_2ecpp_3',['Intersection.cpp',['../Intersection_8cpp.html',1,'']]],
-  ['intersection_2eh_4',['Intersection.h',['../Intersection_8h.html',1,'']]],
-  ['iscongested_5',['isCongested',['../classCongestionModel.html#a0c102578e387082d4a779efe2598796a',1,'CongestionModel']]]
+  ['intersection_2eh_4',['Intersection.h',['../Intersection_8h.html',1,'']]]
 ];

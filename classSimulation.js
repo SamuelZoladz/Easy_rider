@@ -1,5 +1,6 @@
 var classSimulation =
 [
+    [ "SimSnapshotItem", "structSimulation_1_1SimSnapshotItem.html", null ],
     [ "Stats", "structSimulation_1_1Stats.html", null ],
     [ "setStrategyForAll", "classSimulation.html#a569af24e75f361b9465624ea47d49912", null ],
     [ "spawnVehicleCar", "classSimulation.html#aea051bf6021ffcc490f0576406fed896", null ],

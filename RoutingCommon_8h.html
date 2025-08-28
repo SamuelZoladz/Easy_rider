@@ -109,41 +109,43 @@ $(document).ready(function(){initNavTree('RoutingCommon_8h.html',''); initResiza
 <code>#include &quot;<a class="el" href="Road_8h_source.html">Road.h</a>&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for RoutingCommon.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="RoutingCommon_8h__incl.png" border="0" usemap="#ainclude_2Easy__rider_2RoutingCommon_8h" alt=""/></div>
 <map name="ainclude_2Easy__rider_2RoutingCommon_8h" id="ainclude_2Easy__rider_2RoutingCommon_8h">
-<area shape="rect" title="Shared types and helpers for shortest&#45;time routing strategies." alt="" coords="668,5,815,45"/>
-<area shape="rect" href="Graph_8h.html" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="386,93,459,119"/>
-<area shape="poly" title=" " alt="" coords="668,47,473,95,472,90,667,42"/>
-<area shape="rect" title=" " alt="" coords="625,167,687,192"/>
-<area shape="poly" title=" " alt="" coords="733,47,671,156,667,153,728,45"/>
-<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="711,167,822,192"/>
-<area shape="poly" title=" " alt="" coords="738,46,732,80,735,118,752,154,747,157,729,119,727,80,733,45"/>
-<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="744,93,811,119"/>
-<area shape="poly" title=" " alt="" coords="752,44,769,79,764,82,748,47"/>
-<area shape="rect" title=" " alt="" coords="835,93,904,119"/>
-<area shape="poly" title=" " alt="" coords="774,43,840,84,838,88,771,48"/>
-<area shape="rect" title=" " alt="" coords="929,93,991,119"/>
-<area shape="poly" title=" " alt="" coords="795,43,916,86,915,91,793,48"/>
-<area shape="rect" title=" " alt="" coords="5,167,91,192"/>
-<area shape="poly" title=" " alt="" coords="386,117,105,169,104,164,385,111"/>
-<area shape="rect" title=" " alt="" coords="115,167,195,192"/>
-<area shape="poly" title=" " alt="" coords="387,120,209,167,207,161,385,114"/>
-<area shape="rect" title=" " alt="" coords="219,167,290,192"/>
-<area shape="poly" title=" " alt="" coords="397,121,296,164,294,159,395,116"/>
-<area shape="rect" title=" " alt="" coords="314,167,401,192"/>
-<area shape="poly" title=" " alt="" coords="414,121,379,158,375,155,410,117"/>
-<area shape="rect" title=" " alt="" coords="425,167,549,192"/>
-<area shape="poly" title=" " alt="" coords="435,117,469,155,465,158,431,121"/>
-<area shape="rect" title=" " alt="" coords="737,240,797,265"/>
-<area shape="poly" title=" " alt="" coords="451,116,561,164,613,190,724,233,723,238,611,194,559,169,449,121"/>
-<area shape="poly" title=" " alt="" coords="460,116,612,162,611,167,459,121"/>
-<area shape="poly" title=" " alt="" coords="769,192,769,226,764,226,764,192"/>
-<area shape="poly" title=" " alt="" coords="796,117,813,131,828,149,838,170,836,193,820,216,800,234,796,230,816,213,831,191,833,171,824,152,809,135,792,121"/>
-<area shape="poly" title=" " alt="" coords="778,119,773,154,768,153,773,119"/>
+<area shape="rect" title="Shared types and helpers for shortest&#45;time routing strategies." alt="" coords="627,5,774,45"/>
+<area shape="rect" href="Graph_8h.html" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="359,93,432,119"/>
+<area shape="poly" title=" " alt="" coords="628,48,446,94,445,89,627,43"/>
+<area shape="rect" title=" " alt="" coords="513,167,600,192"/>
+<area shape="poly" title=" " alt="" coords="684,48,579,158,575,155,680,44"/>
+<area shape="rect" title=" " alt="" coords="624,167,687,192"/>
+<area shape="poly" title=" " alt="" coords="697,47,665,154,660,153,692,45"/>
+<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="711,167,821,192"/>
+<area shape="poly" title=" " alt="" coords="707,45,715,79,728,118,751,154,746,157,724,120,710,81,701,46"/>
+<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="738,93,805,119"/>
+<area shape="poly" title=" " alt="" coords="720,44,754,81,750,85,716,47"/>
+<area shape="rect" title=" " alt="" coords="829,93,898,119"/>
+<area shape="poly" title=" " alt="" coords="741,43,828,85,826,90,738,48"/>
+<area shape="rect" title=" " alt="" coords="923,93,985,119"/>
+<area shape="poly" title=" " alt="" coords="762,43,910,88,908,93,761,48"/>
+<area shape="rect" title=" " alt="" coords="299,167,385,192"/>
+<area shape="poly" title=" " alt="" coords="389,121,361,157,357,154,384,117"/>
+<area shape="rect" title=" " alt="" coords="409,167,489,192"/>
+<area shape="poly" title=" " alt="" coords="406,117,434,154,430,157,402,121"/>
+<area shape="rect" title=" " alt="" coords="5,167,76,192"/>
+<area shape="poly" title=" " alt="" coords="359,117,90,169,89,164,358,111"/>
+<area shape="poly" title=" " alt="" coords="422,116,519,159,517,163,420,121"/>
+<area shape="rect" title=" " alt="" coords="100,167,224,192"/>
+<area shape="poly" title=" " alt="" coords="359,121,213,165,212,160,358,116"/>
+<area shape="rect" title=" " alt="" coords="736,240,796,265"/>
+<area shape="poly" title=" " alt="" coords="360,121,328,135,299,152,289,161,284,170,284,180,289,190,311,201,352,211,474,228,723,247,722,252,473,233,351,216,309,206,285,194,278,181,279,169,285,158,296,147,326,130,358,116"/>
+<area shape="poly" title=" " alt="" coords="433,115,611,163,610,168,431,120"/>
+<area shape="poly" title=" " alt="" coords="769,192,769,226,763,226,763,192"/>
+<area shape="poly" title=" " alt="" coords="792,117,811,131,828,149,839,170,837,193,820,216,800,234,796,230,816,213,831,191,833,171,824,152,807,135,789,121"/>
+<area shape="poly" title=" " alt="" coords="773,119,771,153,765,153,768,119"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -163,30 +165,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ae7a19ae996988ba7d10f0be7bf9a12af" id="r_ae7a19ae996988ba7d10f0be7bf9a12af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RoutingCommon_8h.html#ae7a19ae996988ba7d10f0be7bf9a12af">EdgeTimeFn</a> = double(*)(const <a class="el" href="classRoad.html">Road</a> &amp;)</td></tr>
-<tr class="memdesc:ae7a19ae996988ba7d10f0be7bf9a12af"><td class="mdescLeft">&#160;</td><td class="mdescRight">External provider of travel time for a directed edge (<a class="el" href="classRoad.html" title="Represents a direcred road connecting two intersections (by ids), with a computed length and a maximu...">Road</a>).  <br /></td></tr>
-<tr class="separator:ae7a19ae996988ba7d10f0be7bf9a12af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a9752d88056f71c4293c9ff1b75723" id="r_a58a9752d88056f71c4293c9ff1b75723"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RoutingCommon_8h.html#a58a9752d88056f71c4293c9ff1b75723">EdgeTimeFn</a> = std::function&lt; double(const <a class="el" href="classRoad.html">Road</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:a58a9752d88056f71c4293c9ff1b75723"><td class="mdescLeft">&#160;</td><td class="mdescRight">External provider of travel time for a directed edge (<a class="el" href="classRoad.html" title="Represents a direcred road connecting two intersections (by ids), with a computed length and a maximu...">Road</a>).  <br /></td></tr>
+<tr class="separator:a58a9752d88056f71c4293c9ff1b75723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a80a43c82a8ecfdf2bbeb6bec6789eefe" id="r_a80a43c82a8ecfdf2bbeb6bec6789eefe"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RoutingCommon_8h.html#a80a43c82a8ecfdf2bbeb6bec6789eefe">rebuildPathIdsFromParents</a> (int startIdx, int goalIdx, const std::vector&lt; int &gt; &amp;parent, const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph)</td></tr>
 <tr class="memdesc:a80a43c82a8ecfdf2bbeb6bec6789eefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild a path of node ids from parent indices.  <br /></td></tr>
 <tr class="separator:a80a43c82a8ecfdf2bbeb6bec6789eefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae04cc113c795b8ae022ff5bab52835fd" id="r_ae04cc113c795b8ae022ff5bab52835fd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RoutingCommon_8h.html#ae04cc113c795b8ae022ff5bab52835fd">computeVmaxUpperBound</a> (const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph, <a class="el" href="RoutingCommon_8h.html#ae7a19ae996988ba7d10f0be7bf9a12af">EdgeTimeFn</a> timeFn)</td></tr>
+<tr class="memitem:ae04cc113c795b8ae022ff5bab52835fd" id="r_ae04cc113c795b8ae022ff5bab52835fd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RoutingCommon_8h.html#ae04cc113c795b8ae022ff5bab52835fd">computeVmaxUpperBound</a> (const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph, <a class="el" href="RoutingCommon_8h.html#a58a9752d88056f71c4293c9ff1b75723">EdgeTimeFn</a> timeFn)</td></tr>
 <tr class="memdesc:ae04cc113c795b8ae022ff5bab52835fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute an optimistic upper bound on effective speed for A* heuristic.  <br /></td></tr>
 <tr class="separator:ae04cc113c795b8ae022ff5bab52835fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Shared types and helpers for shortest-time routing strategies. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="ae7a19ae996988ba7d10f0be7bf9a12af" name="ae7a19ae996988ba7d10f0be7bf9a12af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7a19ae996988ba7d10f0be7bf9a12af">&#9670;&#160;</a></span>EdgeTimeFn</h2>
+<a id="a58a9752d88056f71c4293c9ff1b75723" name="a58a9752d88056f71c4293c9ff1b75723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a9752d88056f71c4293c9ff1b75723">&#9670;&#160;</a></span>EdgeTimeFn</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="RoutingCommon_8h.html#ae7a19ae996988ba7d10f0be7bf9a12af">EdgeTimeFn</a> =  double (*)(const <a class="el" href="classRoad.html">Road</a> &amp;)</td>
+          <td class="memname">using <a class="el" href="RoutingCommon_8h.html#a58a9752d88056f71c4293c9ff1b75723">EdgeTimeFn</a> =  std::function&lt;double(const <a class="el" href="classRoad.html">Road</a> &amp;)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -215,7 +217,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="RoutingCommon_8h.html#ae7a19ae996988ba7d10f0be7bf9a12af">EdgeTimeFn</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="RoutingCommon_8h.html#a58a9752d88056f71c4293c9ff1b75723">EdgeTimeFn</a>&#160;</td>
           <td class="paramname"><em>timeFn</em>&#160;</td>
         </tr>
         <tr>
