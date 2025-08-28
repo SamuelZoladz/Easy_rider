@@ -12,7 +12,7 @@ public:
   Truck(const Graph<Intersection, Road> &graph, CongestionModel *congestion,
         std::shared_ptr<RouteStrategy> strategy)
       : Vehicle(graph, congestion, std::move(strategy),
-                /*maxSpeed*/ 20.0, /*acc*/ 1.5, /*brake*/ 2.0) {}
+                /*maxSpeed*/ 25.0, /*acc*/ 15, /*brake*/ 20) {}
 };
 
 #endif // TRUCK_H

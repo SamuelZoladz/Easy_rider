@@ -2,6 +2,7 @@
 #include "Easy_rider/CongestionModel.h"
 #include <algorithm>
 #include <cassert>
+#include <iostream>
 
 namespace {
 static int s_nextVehicleId = 1;
@@ -29,8 +30,8 @@ void Vehicle::setRoute(const std::vector<int> &routeIds) {
 std::optional<int> Vehicle::currentNodeId() const {
   // Exactly at a node if not on an edge or progress == 0 at edge start
   if (currentEdge_.first < 0)
-    return route_.empty() ? std::optional<int>{}
-                          : std::optional<int>{route_[0]};
+    return route_.empty() ? std::nullopt : std::optional<int>{route_[0]};
+
   const Road *e = findEdge(currentEdge_.first, currentEdge_.second);
   if (!e)
     return std::nullopt;
@@ -77,36 +78,36 @@ void Vehicle::leaveEdge() {
 void Vehicle::onCongestion() { pendingReroute_ = true; }
 
 void Vehicle::recomputeRouteIfNeeded() {
-  if (!strategy_)
-    return;
-  if (sinceRecompute_ < recomputeCooldown_)
+  if (!strategy_ || sinceRecompute_ < recomputeCooldown_)
     return;
   auto goal = goalId();
   if (!goal)
     return;
-  int startId;
-  if (auto node = currentNodeId())
-    startId = *node;
-  else
-    startId = currentEdge_.second;
 
+  int startId = currentNodeId().value_or(currentEdge_.second);
   auto newRoute = strategy_->computeRoute(startId, *goal, *graph_);
-  if (newRoute.size() >= 2) {
-    if (auto node = currentNodeId()) {
-      setRoute(newRoute);
-      pendingReroute_ = false;
-      sinceRecompute_ = 0.0;
-    } else {
-      route_.assign(newRoute.begin(), newRoute.end());
-      routeIndex_ = 0;
-      pendingReroute_ = false;
-      sinceRecompute_ = 0.0;
-    }
+  if (newRoute.size() < 2)
+    return;
+
+  if (currentNodeId()) {
+    if (currentEdge_.first >= 0)
+      leaveEdge();
+
+    double vKeep = currentSpeed_;
+    setRoute(newRoute);
+    currentSpeed_ = vKeep;
+  } else {
+    route_.assign(newRoute.begin(), newRoute.end());
+    routeIndex_ = 0;
   }
+
+  pendingReroute_ = false;
+  sinceRecompute_ = 0.0;
 }
 
 void Vehicle::update(double dt) {
   sinceRecompute_ += dt;
+
   if (route_.size() < 2 || routeIndex_ >= route_.size() - 1)
     return;
 
@@ -118,10 +119,11 @@ void Vehicle::update(double dt) {
                                   : static_cast<double>(edge->getMaxSpeed());
   const double vTarget = std::min(maxSpeed_, vEff);
 
-  if (currentSpeed_ < vTarget)
+  if (currentSpeed_ < vTarget) {
     currentSpeed_ = std::min(vTarget, currentSpeed_ + acceleration_ * dt);
-  else if (currentSpeed_ > vTarget)
+  } else if (currentSpeed_ > vTarget) {
     currentSpeed_ = std::max(vTarget, currentSpeed_ - braking_ * dt);
+  }
 
   const double dist = currentSpeed_ * dt;
   edgeProgress_ += dist;
@@ -137,7 +139,8 @@ void Vehicle::update(double dt) {
 
     // Congestion check at edge entry.
     const Road *newEdge = findEdge(currentEdge_.first, currentEdge_.second);
-    if (newEdge && congestion_ && congestion_->isCongested(*newEdge))
+    if (newEdge && congestion_ &&
+        congestion_->effectiveSpeed(*newEdge) < newEdge->getMaxSpeed())
       onCongestion();
 
     if (pendingReroute_)

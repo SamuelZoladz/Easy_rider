@@ -1,10 +1,8 @@
 #ifndef CONGESTION_MODEL_H
 #define CONGESTION_MODEL_H
 
-#include "Graph.h"
-#include "Intersection.h"
 #include "Road.h"
-#include <functional>
+#include <cstdint>
 #include <optional>
 #include <unordered_map>
 #include <utility>
@@ -12,19 +10,19 @@
 /**
  * @brief Key of a directed edge: fromId -> toId.
  */
-struct EdgeKey {
-  int fromId{};
-  int toId{};
-  bool operator==(const EdgeKey &o) const {
-    return fromId == o.fromId && toId == o.toId;
-  }
-};
+using EdgeKey = std::pair<int, int>;
 
 struct EdgeKeyHash {
   std::size_t operator()(const EdgeKey &k) const noexcept {
-    return (static_cast<std::size_t>(k.fromId) << 32) ^
-           static_cast<std::size_t>(k.toId);
+    return (static_cast<std::uint64_t>(static_cast<std::uint32_t>(k.first))
+            << 32) ^
+           static_cast<std::uint32_t>(k.second);
   }
+};
+
+struct EdgeState {
+  int vehicles{0};
+  std::optional<double> speedLimitOverride{}; // np. zdarzenia, blokady
 };
 
 /**
@@ -45,24 +43,9 @@ public:
   ///@{
   void onEnterEdge(const std::pair<int, int> &edge);
   void onExitEdge(const std::pair<int, int> &edge);
-  int vehiclesOnEdge(const EdgeKey &k) const;
   ///@}
 
-  /// @brief Returns true if the edge is currently congested (load >=
-  /// threshold).
-  bool isCongested(const Road &e) const;
-
-  /// @brief Compute effective speed for a road (always > 0).
-  double effectiveSpeed(const Road &e) const;
-
-  /// @brief Compute travel time for a road (length / v_eff).
-  double edgeTime(const Road &e) const;
-
-  /// @brief Global function pointer adapter for routing strategies.
-  static double StaticEdgeTime(const Road &e);
-
-  /// @brief Install this model as the active provider for StaticEdgeTime.
-  static void setActive(CongestionModel *m) { s_active_ = m; }
+  int vehiclesOnEdge(const EdgeKey &k) const;
 
   /// @name Event / incident API (optional)
   ///@{
@@ -70,14 +53,16 @@ public:
   void clearEdgeSpeedLimit(const EdgeKey &k);
   ///@}
 
+  double effectiveSpeed(const Road &e) const; // [jedn. prędkości]
+  double edgeTime(const Road &e, int vehicleMaxSpeed) const; // [czas]
+
   /// @brief Configure thresholds.
   void setCongestionThreshold(int thr) { threshold_ = thr; }
 
-private:
-  static CongestionModel *s_active_;
+  static void setActive(CongestionModel *) {}
 
-  std::unordered_map<EdgeKey, int, EdgeKeyHash> load_;
-  std::unordered_map<EdgeKey, double, EdgeKeyHash> manualSpeedLimit_;
+private:
+  std::unordered_map<EdgeKey, EdgeState, EdgeKeyHash> state_;
   int threshold_{5};
 };
 

@@ -1,8 +1,15 @@
 #include "Easy_rider/GraphVisualizer.h"
 #include <cmath>
 #include <cstdint>
+#include <iomanip>
 #include <iostream>
+#include <sstream>
 #include <unordered_set>
+
+static std::uint64_t makeKey(int a, int b) {
+  return (static_cast<std::uint64_t>(static_cast<std::uint32_t>(a)) << 32) |
+         static_cast<std::uint32_t>(b);
+}
 
 GraphVisualizer::GraphVisualizer(unsigned int width, unsigned int height,
                                  const std::string &title)
@@ -10,12 +17,16 @@ GraphVisualizer::GraphVisualizer(unsigned int width, unsigned int height,
   if (!font_.loadFromFile("assets/fonts/arial.ttf")) {
     std::cerr << "Warning: could not load font arial.ttf\n";
   }
+  window_.setFramerateLimit(60);
 }
 
 void GraphVisualizer::processEvents() {
   sf::Event event;
   while (window_.pollEvent(event)) {
     if (event.type == sf::Event::Closed)
+      window_.close();
+    if (event.type == sf::Event::KeyPressed &&
+        event.key.code == sf::Keyboard::Escape)
       window_.close();
   }
 }
@@ -27,6 +38,87 @@ void GraphVisualizer::run(const Graph<Intersection, Road> &graph,
     processEvents();
     window_.clear(sf::Color::White);
     draw(graph, pathIds1, pathIds2);
+    window_.display();
+  }
+}
+
+void GraphVisualizer::runWithSimulation(Simulation &sim,
+                                        const std::vector<int> &carPath,
+                                        const std::vector<int> &truckPath,
+                                        int carId, int truckId) {
+  auto &graph = sim.graph();
+  sf::Clock clock;
+
+  while (window_.isOpen()) {
+    processEvents();
+    float dt = clock.restart().asSeconds();
+    sim.update(dt);
+
+    window_.clear(sf::Color::White);
+    draw(graph, carPath, truckPath);
+
+    auto snapshot = sim.snapshot();
+
+    double carSpeed = std::numeric_limits<double>::quiet_NaN();
+    double truckSpeed = std::numeric_limits<double>::quiet_NaN();
+
+    for (const auto &v : snapshot) {
+      auto [x1, y1] = graph.positionOf(v.fromId);
+      auto [x2, y2] = graph.positionOf(v.toId);
+
+      sf::Vector2f p1(static_cast<float>(x1), static_cast<float>(y1));
+      sf::Vector2f p2(static_cast<float>(x2), static_cast<float>(y2));
+      sf::Vector2f d = p2 - p1;
+      const double edgeLen = std::hypot(d.x, d.y);
+      float t = 0.f;
+      if (edgeLen > 1e-6)
+        t = static_cast<float>(std::clamp(v.sOnEdge / edgeLen, 0.0, 1.0));
+      sf::Vector2f pos = p1 + d * t;
+
+      if (v.id == carId)
+        carSpeed = v.currentSpeed;
+      if (v.id == truckId)
+        truckSpeed = v.currentSpeed;
+
+      const bool isCar = (v.id == carId);
+      const bool isTruck = (v.id == truckId);
+
+      sf::CircleShape dot(isTruck ? 8.f : 6.f);
+      dot.setOrigin(isTruck ? 8.f : 6.f, isTruck ? 8.f : 6.f);
+      if (isCar)
+        dot.setFillColor(sf::Color(90, 160, 255));
+      else if (isTruck)
+        dot.setFillColor(sf::Color(230, 80, 80));
+      else
+        dot.setFillColor(sf::Color(60, 60, 60));
+      dot.setPosition(pos);
+      window_.draw(dot);
+    }
+
+    auto drawSpeedText = [&](const std::string &label, double value, float x,
+                             float y) {
+      std::ostringstream oss;
+      oss.setf(std::ios::fixed);
+      oss << label << ": ";
+      if (std::isnan(value)) {
+        oss << "—";
+      } else {
+        oss << std::setprecision(1) << value;
+      }
+      sf::Text t;
+      t.setFont(font_);
+      t.setCharacterSize(16);
+      t.setFillColor(sf::Color::Black);
+      t.setOutlineColor(sf::Color::White);
+      t.setOutlineThickness(2.f);
+      t.setString(oss.str());
+      t.setPosition(x, y);
+      window_.draw(t);
+    };
+
+    drawSpeedText("Car speed", carSpeed, 10.f, 10.f);
+    drawSpeedText("Truck speed", truckSpeed, 10.f, 30.f);
+
     window_.display();
   }
 }
@@ -45,11 +137,6 @@ void GraphVisualizer::draw(const Graph<Intersection, Road> &graph,
 
   const float t_min = 1.f;
   const float t_max = 6.f;
-
-  auto makeKey = [](int a, int b) -> std::uint64_t {
-    return (static_cast<std::uint64_t>(static_cast<std::uint32_t>(a)) << 32) |
-           static_cast<std::uint32_t>(b);
-  };
 
   std::unordered_set<std::uint64_t> pathEdgeSet1;
   for (size_t i = 0; i + 1 < pathIds1.size(); ++i) {
@@ -99,6 +186,7 @@ void GraphVisualizer::draw(const Graph<Intersection, Road> &graph,
 
     window_.draw(line);
   }
+
   sf::Text label;
   label.setFont(font_);
   label.setCharacterSize(14);

@@ -1,5 +1,10 @@
+#include <algorithm>
+#include <iostream>
+#include <memory>
+#include <random>
+#include <vector>
+
 #include "Easy_rider/Graph.h"
-#include "Easy_rider/GraphVisualizer.h"
 #include "Easy_rider/Intersection.h"
 #include "Easy_rider/Road.h"
 
@@ -8,56 +13,12 @@
 #include "Easy_rider/StreetGenerator.h"
 
 #include "Easy_rider/AStarStrategy.h"
+#include "Easy_rider/CongestionModel.h"
 #include "Easy_rider/DijkstraStrategy.h"
+#include "Easy_rider/RoutingCommon.h"
+#include "Easy_rider/Simulation.h"
 
-#include <algorithm>
-#include <cassert>
-#include <iostream>
-#include <random>
-#include <unordered_map>
-
-inline long long packEdgeKey(int u, int v) {
-  return (static_cast<long long>(static_cast<unsigned int>(u)) << 32) |
-         static_cast<unsigned int>(v);
-}
-
-std::unordered_map<long long, double> slowdownFactor;
-
-struct StrictTimeContext {
-  int vehicleVmax;
-  const std::unordered_map<long long, double> *slowdown;
-};
-
-static StrictTimeContext g_strictTimeCtx{170, &slowdownFactor};
-
-static double StrictTimeFnAdapter(const Road &e) {
-  assert(g_strictTimeCtx.vehicleVmax > 0 && "vehicle v_max must be > 0");
-  const double len = e.getLength();
-  const int roadV = e.getMaxSpeed();
-  assert(roadV >= 0 && "road v_max must be >= 0");
-
-  const double baseV = std::min<double>(g_strictTimeCtx.vehicleVmax, roadV);
-
-  double factor = 1.0;
-  if (g_strictTimeCtx.slowdown) {
-    const auto it =
-        g_strictTimeCtx.slowdown->find(packEdgeKey(e.getFromId(), e.getToId()));
-    if (it != g_strictTimeCtx.slowdown->end()) {
-      factor = it->second;
-      assert(factor >= 0.0 && "slowdown factor must be > = 0.0");
-    }
-  }
-
-  const double effV = baseV * factor;
-
-  if (len > 0.0) {
-    assert(effV > 0.0 && "For len > 0 effective speed must be > 0");
-    return len / effV;
-  }
-  return 0.0;
-}
-
-bool RUN_DIJKSTRA = true;
+#include "Easy_rider/GraphVisualizer.h"
 
 int main() {
   Graph<Intersection, Road> graph;
@@ -73,15 +34,12 @@ int main() {
 
   for (int i = 0; i < kTargetCount; ++i) {
     bool placed = false;
-    for (int tries = 0; tries < kMaxTriesPerNode && !placed; ++tries) {
-      int x = distX(rng);
-      int y = distY(rng);
-
+    for (int t = 0; t < kMaxTriesPerNode && !placed; ++t) {
+      int x = distX(rng), y = distY(rng);
       bool ok = true;
-      for (const auto &node : graph.getNodes()) {
-        auto [nx, ny] = node.getPosition();
-        int dx = x - nx;
-        int dy = y - ny;
+      for (auto const &n : graph.getNodes()) {
+        auto [nx, ny] = n.getPosition();
+        int dx = x - nx, dy = y - ny;
         if (dx * dx + dy * dy < kMinDist2) {
           ok = false;
           break;
@@ -92,58 +50,40 @@ int main() {
         placed = true;
       }
     }
-    if (!placed) {
-      std::cerr << "Can't place node " << i << " after " << kMaxTriesPerNode
-                << " attempts.\n";
-    }
   }
 
-  // Roads
-  MotorwayGenerator farGen{0.05, 140};
-  farGen.generate(graph);
-  HighwayGenerator mstGen{90};
-  mstGen.generate(graph);
-  StreetGenerator knnGen{5, 50};
-  knnGen.generate(graph);
+  MotorwayGenerator motorway(0.07, 39);
+  HighwayGenerator highway(25);
+  StreetGenerator streets(3, 14);
+  motorway.generate(graph);
+  highway.generate(graph);
+  streets.generate(graph);
 
-  const auto &nodes = graph.getNodes();
+  const int startId = graph.getNodes().front().getId();
+  const int goalId = graph.getNodes().back().getId();
 
-  std::uniform_int_distribution<size_t> pick{0, nodes.size() - 1};
-  size_t i = pick(rng), j = pick(rng);
-  while (j == i)
-    j = pick(rng);
+  Simulation sim(std::move(graph));
+  auto &G = sim.graph();
 
-  const int startId = nodes[i].getId();
-  const int goalId = nodes[j].getId();
+  EdgeTimeFn carTimeFn = [&sim](const Road &e) {
+    return sim.congestion().edgeTime(e, /*car vmax*/ 50);
+  };
+  EdgeTimeFn truckTimeFn = [&sim](const Road &e) {
+    return sim.congestion().edgeTime(e, /*truck vmax*/ 25);
+  };
 
-  AStarStrategy aStar{&StrictTimeFnAdapter};
-  DijkstraStrategy dijkstra{&StrictTimeFnAdapter};
+  auto aStar = std::make_shared<AStarStrategy>(truckTimeFn);
+  auto dijkstra = std::make_shared<DijkstraStrategy>(carTimeFn);
 
-  auto path1 = RUN_DIJKSTRA ? dijkstra.computeRoute(startId, goalId, graph)
-                            : aStar.computeRoute(startId, goalId, graph);
+  auto carPath = aStar->computeRoute(startId, goalId, G);
+  auto truckPath = dijkstra->computeRoute(startId, goalId, G);
 
-  std::cout << g_strictTimeCtx.vehicleVmax << " v_max path: ";
-  for (auto id : path1)
-    std::cout << id << ", ";
+  int carId = sim.spawnVehicleCar(startId, goalId, dijkstra);
+  int truckId = sim.spawnVehicleTruck(startId, goalId, aStar);
+  sim.start();
 
-  g_strictTimeCtx.vehicleVmax = 50;
-
-  auto path2 = RUN_DIJKSTRA ? dijkstra.computeRoute(startId, goalId, graph)
-                            : aStar.computeRoute(startId, goalId, graph);
-
-  std::cout << std::endl << g_strictTimeCtx.vehicleVmax << " v_max path: ";
-  for (auto id : path2)
-    std::cout << id << ", ";
-  std::cout << std::endl;
-
-  for (auto road : graph.getEdges()) {
-    std::cout << "Road from " << road.getFromId() << " to " << road.getToId()
-              << " with length " << road.getLength() << " and max speed "
-              << road.getMaxSpeed() << std::endl;
-  }
-
-  GraphVisualizer viz{800, 600, "Random Graph SFML"};
-  viz.run(graph, path1, path2);
-
+  GraphVisualizer viz{800, 600,
+                      "Random Road Network — Car & Truck (Simulation)"};
+  viz.runWithSimulation(sim, carPath, truckPath, carId, truckId);
   return 0;
 }

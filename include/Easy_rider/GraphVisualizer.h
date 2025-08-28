@@ -1,10 +1,13 @@
 #ifndef GRAPH_VISUALIZER_H
 #define GRAPH_VISUALIZER_H
+#include <SFML/Graphics.hpp>
+#include <string>
+#include <vector>
 
 #include "Graph.h"
 #include "Intersection.h"
 #include "Road.h"
-#include <SFML/Graphics.hpp>
+#include "Simulation.h"
 
 /**
  * @brief Temporary test-only class to visualize
@@ -17,6 +20,10 @@ public:
 
   void run(const Graph<Intersection, Road> &graph,
            const std::vector<int> &pathIds1, const std::vector<int> &pathIds2);
+
+  void runWithSimulation(Simulation &sim, const std::vector<int> &carPath,
+                         const std::vector<int> &truckPath, int carId,
+                         int truckId);
 
 private:
   void processEvents();

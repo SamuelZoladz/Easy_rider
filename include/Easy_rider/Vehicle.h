@@ -71,12 +71,25 @@ public:
   /// @brief @return goal node id if any.
   std::optional<int> goalId() const;
 
+  struct RenderState {
+    int fromId{};
+    int toId{};
+    double sOnEdge{};
+    double currentSpeed{};
+  };
+
+  std::optional<RenderState> renderState() const {
+    if (route_.empty() || routeIndex_ + 1 >= route_.size())
+      return std::nullopt;
+    return RenderState{route_[routeIndex_], route_[routeIndex_ + 1],
+                       edgeProgress_, currentSpeed_};
+  }
+
 protected:
   const Road *findEdge(int fromId, int toId) const;
   void enterEdge(int fromId, int toId);
   void leaveEdge();
 
-protected:
   int id_;
   double acceleration_;
   double braking_;

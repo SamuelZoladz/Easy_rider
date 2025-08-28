@@ -12,7 +12,7 @@ public:
   Car(const Graph<Intersection, Road> &graph, CongestionModel *congestion,
       std::shared_ptr<RouteStrategy> strategy)
       : Vehicle(graph, congestion, std::move(strategy),
-                /*maxSpeed*/ 28.0, /*acc*/ 3.5, /*brake*/ 4.0) {}
+                /*maxSpeed*/ 50.0, /*acc*/ 35, /*brake*/ 40) {}
 };
 
 #endif // CAR_H

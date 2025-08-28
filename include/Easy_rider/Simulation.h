@@ -6,11 +6,10 @@
 #include "Intersection.h"
 #include "Road.h"
 #include "RouteStrategy.h"
+#include "Vehicle.h"
 #include <memory>
-#include <string>
 #include <vector>
 
-class Vehicle; // fwd
 class Car;
 class Truck;
 
@@ -25,9 +24,9 @@ public:
   };
 
   explicit Simulation(Graph<Intersection, Road> graph)
-      : graph_(std::move(graph)) {
-    CongestionModel::setActive(&congestion_);
-  }
+      : graph_(std::move(graph)) {}
+
+  ~Simulation();
 
   void start() {
     running_ = true;
@@ -52,8 +51,20 @@ public:
 
   Stats stats() const { return Stats{vehicles_.size()}; }
 
+  struct SimSnapshotItem {
+    int id{};
+    int fromId{};
+    int toId{};
+    double sOnEdge{};
+    double currentSpeed{};
+  };
+  std::vector<SimSnapshotItem> snapshot() const; // <— DODANE
+
   const Graph<Intersection, Road> &graph() const { return graph_; }
   Graph<Intersection, Road> &graph() { return graph_; }
+
+  const CongestionModel &congestion() const { return congestion_; }
+  CongestionModel &congestion() { return congestion_; }
 
 private:
   void ensureInitialRoutes(int vehIdx, int startId, int goalId,

@@ -10,6 +10,7 @@
 #include "Road.h"
 #include <cassert>
 #include <cmath>
+#include <functional>
 #include <vector>
 
 /**
@@ -17,7 +18,7 @@
  * @details
  * MUST return a finite, non-negative time in the same units across the graph.
  */
-using EdgeTimeFn = double (*)(const Road &);
+using EdgeTimeFn = std::function<double(const Road &)>;
 
 /**
  * @brief Rebuild a path of node ids from parent indices.
