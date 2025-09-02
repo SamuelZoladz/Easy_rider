@@ -1,11 +1,18 @@
 <map id="include/Easy_rider/CongestionModel.h" name="include/Easy_rider/CongestionModel.h">
-<area shape="rect" id="Node000001" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="166,5,317,45"/>
-<area shape="rect" id="Node000002" href="$Simulation_8h_source.html" title=" " alt="" coords="5,93,147,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,54,113,96,111,91,192,49"/>
-<area shape="rect" id="Node000004" href="$TrafficEvents_8h_source.html" title=" " alt="" coords="171,93,312,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="244,59,244,93,239,93,239,59"/>
-<area shape="rect" id="Node000005" href="$CongestionModel_8cpp.html" title="Implementation of tiered (halving) congestion model." alt="" coords="337,101,522,126"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="296,49,405,98,403,103,294,53"/>
+<area shape="rect" id="Node000001" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="346,5,497,45"/>
+<area shape="rect" id="Node000002" href="$Simulation_8h_source.html" title=" " alt="" coords="185,93,327,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="374,54,293,96,291,91,372,49"/>
+<area shape="rect" id="Node000007" href="$TrafficEvents_8h_source.html" title=" " alt="" coords="351,93,492,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="424,59,424,93,419,93,419,59"/>
+<area shape="rect" id="Node000008" href="$CongestionModel_8cpp.html" title="Implementation of tiered (halving) congestion model." alt="" coords="517,101,702,126"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="476,49,585,98,583,103,474,53"/>
 <area shape="rect" id="Node000003" href="$GraphVisualizer_8h_source.html" title=" " alt="" coords="5,181,147,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,147,79,181,73,181,73,147"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,142,117,184,114,179,203,137"/>
+<area shape="rect" id="Node000004" href="$SimulationVisualizer_8h.html" title="Abstract base for simulation visualizers (text or graphics)." alt="" coords="171,181,341,221"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="259,147,259,181,253,181,253,147"/>
+<area shape="rect" id="Node000006" href="$VisualizerUtils_8h.html" title="Backend&#45;agnostic helpers for turning the graph/sim into drawable data." alt="" coords="365,181,507,221"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="309,137,398,179,395,184,306,142"/>
+<area shape="rect" id="Node000005" href="$SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that draws the graph and moving vehicles." alt="" coords="245,269,446,309"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="288,229,327,267,324,271,284,233"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="408,233,367,271,364,267,404,229"/>
 </map>

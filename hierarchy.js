@@ -6,6 +6,7 @@ var hierarchy =
     [ "EdgeState", "structEdgeState.html", null ],
     [ "Graph< T, U >", "classGraph.html", null ],
     [ "Graph< Intersection, Road >", "classGraph.html", null ],
+    [ "viz::GraphDrawData", "structviz_1_1GraphDrawData.html", null ],
     [ "GraphVisualizer", "classGraphVisualizer.html", null ],
     [ "IDMParams", "structIDMParams.html", null ],
     [ "Intersection", "classIntersection.html", null ],
@@ -23,10 +24,15 @@ var hierarchy =
     ] ],
     [ "Simulation::SimSnapshotItem", "structSimulation_1_1SimSnapshotItem.html", null ],
     [ "Simulation", "classSimulation.html", null ],
+    [ "SimulationVisualizer", "classSimulationVisualizer.html", [
+      [ "SfmlSimulationVisualizer", "classSfmlSimulationVisualizer.html", null ]
+    ] ],
     [ "Simulation::Stats", "structSimulation_1_1Stats.html", null ],
     [ "TrafficEvents", "classTrafficEvents.html", null ],
+    [ "viz::Vec2", "structviz_1_1Vec2.html", null ],
     [ "Vehicle", "classVehicle.html", [
       [ "Car", "classCar.html", null ],
       [ "Truck", "classTruck.html", null ]
-    ] ]
+    ] ],
+    [ "VisualizerView", "structVisualizerView.html", null ]
 ];

@@ -1,5 +1,9 @@
 var annotated_dup =
 [
+    [ "viz", null, [
+      [ "GraphDrawData", "structviz_1_1GraphDrawData.html", null ],
+      [ "Vec2", "structviz_1_1Vec2.html", null ]
+    ] ],
     [ "AStarStrategy", "classAStarStrategy.html", "classAStarStrategy" ],
     [ "Car", "classCar.html", null ],
     [ "CongestionModel", "classCongestionModel.html", "classCongestionModel" ],
@@ -17,9 +21,12 @@ var annotated_dup =
     [ "Road", "classRoad.html", "classRoad" ],
     [ "RoadGenerator", "classRoadGenerator.html", "classRoadGenerator" ],
     [ "RouteStrategy", "classRouteStrategy.html", "classRouteStrategy" ],
+    [ "SfmlSimulationVisualizer", "classSfmlSimulationVisualizer.html", "classSfmlSimulationVisualizer" ],
     [ "Simulation", "classSimulation.html", "classSimulation" ],
+    [ "SimulationVisualizer", "classSimulationVisualizer.html", "classSimulationVisualizer" ],
     [ "StreetGenerator", "classStreetGenerator.html", "classStreetGenerator" ],
     [ "TrafficEvents", "classTrafficEvents.html", "classTrafficEvents" ],
     [ "Truck", "classTruck.html", null ],
-    [ "Vehicle", "classVehicle.html", "classVehicle" ]
+    [ "Vehicle", "classVehicle.html", "classVehicle" ],
+    [ "VisualizerView", "structVisualizerView.html", null ]
 ];

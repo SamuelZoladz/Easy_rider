@@ -14,9 +14,12 @@ var dir_9acb70b30e5df378bc93c5dba7ca284a =
     [ "RoadGenerator.h", "RoadGenerator_8h_source.html", null ],
     [ "RouteStrategy.h", "RouteStrategy_8h.html", "RouteStrategy_8h" ],
     [ "RoutingCommon.h", "RoutingCommon_8h.html", "RoutingCommon_8h" ],
+    [ "SfmlSimulationVisualizer.h", "SfmlSimulationVisualizer_8h.html", "SfmlSimulationVisualizer_8h" ],
     [ "Simulation.h", "Simulation_8h_source.html", null ],
+    [ "SimulationVisualizer.h", "SimulationVisualizer_8h.html", "SimulationVisualizer_8h" ],
     [ "StreetGenerator.h", "StreetGenerator_8h_source.html", null ],
     [ "TrafficEvents.h", "TrafficEvents_8h_source.html", null ],
     [ "Truck.h", "Truck_8h_source.html", null ],
-    [ "Vehicle.h", "Vehicle_8h_source.html", null ]
+    [ "Vehicle.h", "Vehicle_8h_source.html", null ],
+    [ "VisualizerUtils.h", "VisualizerUtils_8h.html", "VisualizerUtils_8h" ]
 ];

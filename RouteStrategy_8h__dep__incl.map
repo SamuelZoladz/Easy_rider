@@ -6,13 +6,20 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="280,58,257,95,253,92,276,56"/>
 <area shape="rect" id="Node000004" href="$Simulation_8h_source.html" title=" " alt="" coords="267,181,408,221"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="315,57,328,93,336,140,339,181,334,181,331,141,323,94,310,59"/>
-<area shape="rect" id="Node000006" href="$Vehicle_8h_source.html" title=" " alt="" coords="417,93,559,133"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="353,49,447,91,445,96,351,53"/>
-<area shape="rect" id="Node000005" href="$GraphVisualizer_8h_source.html" title=" " alt="" coords="267,269,408,309"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="340,235,340,269,335,269,335,235"/>
-<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="445,142,372,184,369,179,442,138"/>
-<area shape="rect" id="Node000007" href="$Car_8h_source.html" title=" " alt="" coords="432,181,573,221"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="496,146,502,181,497,182,491,147"/>
-<area shape="rect" id="Node000008" href="$Truck_8h_source.html" title=" " alt="" coords="597,181,739,221"/>
-<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="541,137,630,179,627,184,538,142"/>
+<area shape="rect" id="Node000009" href="$Vehicle_8h_source.html" title=" " alt="" coords="417,93,559,133"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="353,49,447,91,445,96,351,53"/>
+<area shape="rect" id="Node000005" href="$GraphVisualizer_8h_source.html" title=" " alt="" coords="87,269,228,309"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="287,230,198,272,196,267,285,225"/>
+<area shape="rect" id="Node000006" href="$SimulationVisualizer_8h.html" title="Abstract base for simulation visualizers (text or graphics)." alt="" coords="252,269,423,309"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="340,235,340,269,335,269,335,235"/>
+<area shape="rect" id="Node000008" href="$VisualizerUtils_8h.html" title="Backend&#45;agnostic helpers for turning the graph/sim into drawable data." alt="" coords="447,269,588,309"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="390,225,479,267,477,272,388,230"/>
+<area shape="rect" id="Node000007" href="$SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that draws the graph and moving vehicles." alt="" coords="326,357,527,397"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="369,317,409,355,405,359,365,321"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="489,321,449,359,445,355,486,317"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="445,142,372,184,369,179,442,138"/>
+<area shape="rect" id="Node000010" href="$Car_8h_source.html" title=" " alt="" coords="432,181,573,221"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="496,146,502,181,497,182,491,147"/>
+<area shape="rect" id="Node000011" href="$Truck_8h_source.html" title=" " alt="" coords="597,181,739,221"/>
+<area shape="poly" id="edge12_Node000009_Node000011" title=" " alt="" coords="541,137,630,179,627,184,538,142"/>
 </map>

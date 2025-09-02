@@ -1,0 +1,5 @@
+<map id="include/Easy_rider/VisualizerUtils.h" name="include/Easy_rider/VisualizerUtils.h">
+<area shape="rect" id="Node000001" title="Backend&#45;agnostic helpers for turning the graph/sim into drawable data." alt="" coords="35,5,177,45"/>
+<area shape="rect" id="Node000002" href="$SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that draws the graph and moving vehicles." alt="" coords="5,93,207,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,59,109,93,103,93,103,59"/>
+</map>
