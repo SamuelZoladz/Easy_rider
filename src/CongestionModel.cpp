@@ -1,5 +1,10 @@
+/**
+ * @file CongestionModel.cpp
+ * @brief Implementation of tiered (halving) congestion model.
+ */
 #include "Easy_rider/CongestionModel.h"
 #include <cassert>
+#include <cmath>
 
 void CongestionModel::onEnterEdge(const std::pair<int, int> &edge) {
   state_[EdgeKey{edge.first, edge.second}].vehicles++;
@@ -10,64 +15,48 @@ void CongestionModel::onExitEdge(const std::pair<int, int> &edge) {
   auto it = state_.find(k);
   if (it == state_.end())
     return;
-
   it->second.vehicles = std::max(0, it->second.vehicles - 1);
-
-  if (it->second.vehicles == 0 && !it->second.speedLimitOverride) {
-    state_.erase(it);
-  }
 }
 
-int CongestionModel::vehiclesOnEdge(const EdgeKey &k) const {
-  auto it = state_.find(k);
-  if (it == state_.end())
-    return 0;
-  return it->second.vehicles;
-}
-
-void CongestionModel::setEdgeSpeedLimit(const EdgeKey &k, double limit) {
-  state_[k].speedLimitOverride = std::max(0.0, limit);
-}
-
-void CongestionModel::clearEdgeSpeedLimit(const EdgeKey &k) {
-  auto it = state_.find(k);
-  if (it == state_.end())
-    return;
-  it->second.speedLimitOverride.reset();
-
-  if (it->second.vehicles == 0) {
-    state_.erase(it);
-  }
+int CongestionModel::capacityFor(const Road &e) const {
+  int cap = 0;
+  cap = e.getCapacityVehicles();
+  if (cap <= 0)
+    cap = defaultCapacityVehicles_;
+  return std::max(1, cap);
 }
 
 double CongestionModel::effectiveSpeed(const Road &e) const {
-  const double base = static_cast<double>(e.getMaxSpeed());
   const EdgeKey k{e.getFromId(), e.getToId()};
-  const int load = vehiclesOnEdge(k);
-
-  double limit = base;
+  double v_free = std::max(1, e.getMaxSpeed());
   if (auto it = state_.find(k); it != state_.end()) {
     if (it->second.speedLimitOverride) {
-      limit = std::min(limit, *it->second.speedLimitOverride);
+      v_free = std::min(v_free, *it->second.speedLimitOverride);
     }
   }
 
-  double factor = 1.0;
-  if (load <= 1) {
-    factor = 1.0;
-  } else if (load < threshold_) {
-    factor = 0.75;
-  } else if (load <= 2 * threshold_) {
-    factor = 0.5;
-  } else {
-    factor = 0.25;
+  // Current load N and capacity x from Road.
+  const int N = [this, &k]() {
+    if (auto it = state_.find(k); it != state_.end())
+      return it->second.vehicles;
+    return 0;
+  }();
+  const int x = capacityFor(e);
+
+  if (N <= 0) {
+    return v_free;
   }
 
-  return std::max(0.001, limit * factor);
+  // Tier index m = ceil(N / x). Ratio = 2^-(m - 1).
+  const int m = (N + x - 1) / x;                   // ceil division, m >= 1
+  const int exponent = std::max(0, m - 1);         // 0 for first tier
+  const double ratio = std::ldexp(1.0, -exponent); // 2^(-exponent) without pow
+  const double v_eff = std::max(1e-6, v_free * ratio);
+  return v_eff;
 }
 
 double CongestionModel::edgeTime(const Road &e, int vehicleMaxSpeed) const {
-  const double len = static_cast<double>(e.getLength());
+  const double len = std::max(1e-9, e.getLength());
   const double v_eff = effectiveSpeed(e);
   const double v_vehicle = static_cast<double>(std::max(1, vehicleMaxSpeed));
   const double v = std::min(v_vehicle, v_eff);

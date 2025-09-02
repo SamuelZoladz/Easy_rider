@@ -19,8 +19,9 @@ public:
    * @param thresholdRatio  Fraction of AB's length used as max perpendicular
    *                        distance for including nodes (e.g. 0.1 = 10%).
    * @param defaultSpeed    Speed to assign to each motorway segment.
+   * @param capacity Capacity (vehicles) for every new Road.
    */
-  MotorwayGenerator(double thresholdRatio, int defaultSpeed);
+  MotorwayGenerator(double thresholdRatio, int defaultSpeed, int capacity);
 
   /**
    * @brief Append new bidirectional motorways into the graph (no duplicates).
@@ -30,6 +31,7 @@ public:
 private:
   double thresholdRatio_;
   int defaultSpeed_;
+  int capacity_;
 };
 
 #endif // MOTORWAY_GENERATOR_H

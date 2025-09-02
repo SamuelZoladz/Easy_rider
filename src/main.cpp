@@ -52,9 +52,9 @@ int main() {
     }
   }
 
-  MotorwayGenerator motorway(0.07, 39);
-  HighwayGenerator highway(25);
-  StreetGenerator streets(3, 14);
+  MotorwayGenerator motorway(0.07, 39, 4);
+  HighwayGenerator highway(25, 2);
+  StreetGenerator streets(3, 14, 1);
   motorway.generate(graph);
   highway.generate(graph);
   streets.generate(graph);
@@ -79,6 +79,9 @@ int main() {
   auto truckPath = dijkstra->computeRoute(startId, goalId, G);
 
   int carId = sim.spawnVehicleCar(startId, goalId, dijkstra);
+  sim.spawnVehicleCar(startId, goalId, dijkstra);
+  sim.spawnVehicleCar(startId, goalId, dijkstra);
+  sim.spawnVehicleCar(startId, goalId, dijkstra);
   int truckId = sim.spawnVehicleTruck(startId, goalId, aStar);
   sim.start();
 

@@ -4,8 +4,8 @@
 #include <cmath>
 #include <vector>
 
-StreetGenerator::StreetGenerator(size_t k, int defaultSpeed)
-    : k_(k), defaultSpeed_(defaultSpeed) {}
+StreetGenerator::StreetGenerator(size_t k, int defaultSpeed, int capacity)
+    : k_(k), defaultSpeed_(defaultSpeed), capacity_(capacity) {}
 
 void StreetGenerator::generate(Graph<Intersection, Road> &graph) {
   auto nodes = graph.getNodes();
@@ -27,8 +27,8 @@ void StreetGenerator::generate(Graph<Intersection, Road> &graph) {
     for (size_t t = 0; t < m; ++t) {
       const auto &A = nodes[i];
       const auto &B = nodes[dists[t].second];
-      graph.addEdgeIfNotExists(Road(A, B, defaultSpeed_));
-      graph.addEdgeIfNotExists(Road(B, A, defaultSpeed_));
+      graph.addEdgeIfNotExists(Road(A, B, defaultSpeed_, capacity_));
+      graph.addEdgeIfNotExists(Road(B, A, defaultSpeed_, capacity_));
     }
   }
 }

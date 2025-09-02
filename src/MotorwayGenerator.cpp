@@ -84,8 +84,10 @@ static void simplifyRDP(const std::vector<Intersection> &pts, double eps,
 // generate()
 //--------------------------------------------------------------------------------
 
-MotorwayGenerator::MotorwayGenerator(double thresholdRatio, int defaultSpeed)
-    : thresholdRatio_(thresholdRatio), defaultSpeed_(defaultSpeed) {}
+MotorwayGenerator::MotorwayGenerator(double thresholdRatio, int defaultSpeed,
+                                     int capacity)
+    : thresholdRatio_(thresholdRatio), defaultSpeed_(defaultSpeed),
+      capacity_(capacity) {}
 
 void MotorwayGenerator::generate(Graph<Intersection, Road> &graph) {
   auto nodes = graph.getNodes();
@@ -141,7 +143,7 @@ void MotorwayGenerator::generate(Graph<Intersection, Road> &graph) {
   for (size_t i = 0; i + 1 < smooth.size(); ++i) {
     const auto &P = smooth[i];
     const auto &Q = smooth[i + 1];
-    graph.addEdgeIfNotExists(Road(P, Q, defaultSpeed_));
-    graph.addEdgeIfNotExists(Road(Q, P, defaultSpeed_));
+    graph.addEdgeIfNotExists(Road(P, Q, defaultSpeed_, capacity_));
+    graph.addEdgeIfNotExists(Road(Q, P, defaultSpeed_, capacity_));
   }
 }

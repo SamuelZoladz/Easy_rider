@@ -31,8 +31,8 @@ struct DisjointSet {
   }
 };
 
-HighwayGenerator::HighwayGenerator(int defaultSpeed)
-    : defaultSpeed_(defaultSpeed) {}
+HighwayGenerator::HighwayGenerator(int defaultSpeed, int capacity)
+    : defaultSpeed_(defaultSpeed), capacity_(capacity) {}
 
 void HighwayGenerator::generate(Graph<Intersection, Road> &graph) {
   auto nodes = graph.getNodes();
@@ -63,8 +63,8 @@ void HighwayGenerator::generate(Graph<Intersection, Road> &graph) {
       const auto &A = nodes[ei.u];
       const auto &B = nodes[ei.v];
 
-      auto r1 = graph.addEdgeIfNotExists(Road(A, B, defaultSpeed_));
-      auto r2 = graph.addEdgeIfNotExists(Road(B, A, defaultSpeed_));
+      auto r1 = graph.addEdgeIfNotExists(Road(A, B, defaultSpeed_, capacity_));
+      auto r2 = graph.addEdgeIfNotExists(Road(B, A, defaultSpeed_, capacity_));
 
       // only unite if both inserted
       if ((r1 == Result::Success || r1 == Result::AlreadyExists) &&

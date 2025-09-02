@@ -12,14 +12,16 @@ public:
   /**
    * @param k            Number of neighbors.
    * @param defaultSpeed Speed for every new Road.
+   * @param capacity Capacity (vehicles) for every new Road.
    */
-  StreetGenerator(size_t k, int defaultSpeed);
+  StreetGenerator(size_t k, int defaultSpeed, int capacity);
 
   void generate(Graph<Intersection, Road> &graph) override;
 
 private:
   size_t k_;
   int defaultSpeed_;
+  int capacity_;
 };
 
 #endif // STREET_GENERATOR_H

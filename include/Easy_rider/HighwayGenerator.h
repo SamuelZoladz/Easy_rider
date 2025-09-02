@@ -16,9 +16,10 @@
 class HighwayGenerator : public RoadGenerator {
 public:
   /**
-   * @param defaultSpeed Speed for every new Road.
+   * @param defaultSpeed    Speed for every new Road.
+   * @param capacity Capacity (vehicles) for every new Road.
    */
-  explicit HighwayGenerator(int defaultSpeed);
+  explicit HighwayGenerator(int defaultSpeed, int capacity);
 
   /**
    * @brief Append new bidirectional highways into the graph (no duplicates).
@@ -27,6 +28,7 @@ public:
 
 private:
   int defaultSpeed_;
+  int capacity_;
 };
 
 #endif // HIGHWAY_GENERATOR_H
