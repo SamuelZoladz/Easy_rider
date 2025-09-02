@@ -101,16 +101,52 @@ $(document).ready(function(){initNavTree('structEdgeState.html',''); initResizab
   <div class="headertitle"><div class="title">EdgeState Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Runtime state of a single directed edge.  
+ <a href="structEdgeState.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="CongestionModel_8h_source.html">CongestionModel.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a66626ab47a39c8f8dbf3718d3f8ab6c3" id="r_a66626ab47a39c8f8dbf3718d3f8ab6c3"><td class="memItemLeft" align="right" valign="top"><a id="a66626ab47a39c8f8dbf3718d3f8ab6c3" name="a66626ab47a39c8f8dbf3718d3f8ab6c3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>vehicles</b> {0}</td></tr>
+<tr class="memitem:a66626ab47a39c8f8dbf3718d3f8ab6c3" id="r_a66626ab47a39c8f8dbf3718d3f8ab6c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEdgeState.html#a66626ab47a39c8f8dbf3718d3f8ab6c3">vehicles</a> {0}</td></tr>
 <tr class="separator:a66626ab47a39c8f8dbf3718d3f8ab6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5866db077df67867dffce6ecddfbb07c" id="r_a5866db077df67867dffce6ecddfbb07c"><td class="memItemLeft" align="right" valign="top"><a id="a5866db077df67867dffce6ecddfbb07c" name="a5866db077df67867dffce6ecddfbb07c"></a>
-std::optional&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>speedLimitOverride</b> {}</td></tr>
+<tr class="memitem:a5866db077df67867dffce6ecddfbb07c" id="r_a5866db077df67867dffce6ecddfbb07c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEdgeState.html#a5866db077df67867dffce6ecddfbb07c">speedLimitOverride</a> {}</td></tr>
 <tr class="separator:a5866db077df67867dffce6ecddfbb07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Runtime state of a single directed edge. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a5866db077df67867dffce6ecddfbb07c" name="a5866db077df67867dffce6ecddfbb07c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5866db077df67867dffce6ecddfbb07c">&#9670;&#160;</a></span>speedLimitOverride</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;double&gt; EdgeState::speedLimitOverride {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Temporary limit (e.g., incident). </p>
+
+</div>
+</div>
+<a id="a66626ab47a39c8f8dbf3718d3f8ab6c3" name="a66626ab47a39c8f8dbf3718d3f8ab6c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66626ab47a39c8f8dbf3718d3f8ab6c3">&#9670;&#160;</a></span>vehicles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EdgeState::vehicles {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Vehicles currently on the edge. </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/Easy_rider/<a class="el" href="CongestionModel_8h_source.html">CongestionModel.h</a></li>
 </ul>

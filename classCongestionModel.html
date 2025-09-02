@@ -97,60 +97,136 @@ $(document).ready(function(){initNavTree('classCongestionModel.html',''); initRe
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classCongestionModel-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CongestionModel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Tracks per-edge load and provides effective speeds/time for routing.  
+<p>Discrete tier-based halving model using capacity from <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a>.  
  <a href="classCongestionModel.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="CongestionModel_8h_source.html">CongestionModel.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af13be92c1f99b38066f09b6ae71674c3" id="r_af13be92c1f99b38066f09b6ae71674c3"><td class="memItemLeft" align="right" valign="top"><a id="af13be92c1f99b38066f09b6ae71674c3" name="af13be92c1f99b38066f09b6ae71674c3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>vehiclesOnEdge</b> (const EdgeKey &amp;k) const</td></tr>
-<tr class="separator:af13be92c1f99b38066f09b6ae71674c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0d3f614ce9c7539c4c1e3db419596af" id="r_ad0d3f614ce9c7539c4c1e3db419596af"><td class="memItemLeft" align="right" valign="top"><a id="ad0d3f614ce9c7539c4c1e3db419596af" name="ad0d3f614ce9c7539c4c1e3db419596af"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>effectiveSpeed</b> (const <a class="el" href="classRoad.html">Road</a> &amp;e) const</td></tr>
-<tr class="separator:ad0d3f614ce9c7539c4c1e3db419596af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a431ebf3083bbbf082d67ef44a8b2a21f" id="r_a431ebf3083bbbf082d67ef44a8b2a21f"><td class="memItemLeft" align="right" valign="top"><a id="a431ebf3083bbbf082d67ef44a8b2a21f" name="a431ebf3083bbbf082d67ef44a8b2a21f"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>edgeTime</b> (const <a class="el" href="classRoad.html">Road</a> &amp;e, int vehicleMaxSpeed) const</td></tr>
-<tr class="separator:a431ebf3083bbbf082d67ef44a8b2a21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c514ea2e5b8c02062c9c79d23c33664" id="r_a3c514ea2e5b8c02062c9c79d23c33664"><td class="memItemLeft" align="right" valign="top"><a id="a3c514ea2e5b8c02062c9c79d23c33664" name="a3c514ea2e5b8c02062c9c79d23c33664"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCongestionThreshold</b> (int thr)</td></tr>
-<tr class="memdesc:a3c514ea2e5b8c02062c9c79d23c33664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure thresholds. <br /></td></tr>
-<tr class="separator:a3c514ea2e5b8c02062c9c79d23c33664"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Load accounting</div></td></tr>
 <tr class="memitem:a5bb6e633be2d9b47605a79f2aedd505c" id="r_a5bb6e633be2d9b47605a79f2aedd505c"><td class="memItemLeft" align="right" valign="top"><a id="a5bb6e633be2d9b47605a79f2aedd505c" name="a5bb6e633be2d9b47605a79f2aedd505c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onEnterEdge</b> (const std::pair&lt; int, int &gt; &amp;edge)</td></tr>
+<tr class="memdesc:a5bb6e633be2d9b47605a79f2aedd505c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call when a vehicle enters a directed edge (fromId, toId). <br /></td></tr>
 <tr class="separator:a5bb6e633be2d9b47605a79f2aedd505c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a683c51aec69f73bf2f6e1f03d948dc4c" id="r_a683c51aec69f73bf2f6e1f03d948dc4c"><td class="memItemLeft" align="right" valign="top"><a id="a683c51aec69f73bf2f6e1f03d948dc4c" name="a683c51aec69f73bf2f6e1f03d948dc4c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onExitEdge</b> (const std::pair&lt; int, int &gt; &amp;edge)</td></tr>
+<tr class="memdesc:a683c51aec69f73bf2f6e1f03d948dc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call when a vehicle exits a directed edge (fromId, toId). <br /></td></tr>
 <tr class="separator:a683c51aec69f73bf2f6e1f03d948dc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Event / incident API (optional)</div></td></tr>
-<tr class="memitem:a805e547a6162321629e160b5dd91166a" id="r_a805e547a6162321629e160b5dd91166a"><td class="memItemLeft" align="right" valign="top"><a id="a805e547a6162321629e160b5dd91166a" name="a805e547a6162321629e160b5dd91166a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setEdgeSpeedLimit</b> (const EdgeKey &amp;k, double limit)</td></tr>
-<tr class="separator:a805e547a6162321629e160b5dd91166a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a908743fd40d63b78f4733d05b77fb750" id="r_a908743fd40d63b78f4733d05b77fb750"><td class="memItemLeft" align="right" valign="top"><a id="a908743fd40d63b78f4733d05b77fb750" name="a908743fd40d63b78f4733d05b77fb750"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clearEdgeSpeedLimit</b> (const EdgeKey &amp;k)</td></tr>
-<tr class="separator:a908743fd40d63b78f4733d05b77fb750"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a484e68791288528f065e8a769a9c4d00" id="r_a484e68791288528f065e8a769a9c4d00"><td class="memItemLeft" align="right" valign="top"><a id="a484e68791288528f065e8a769a9c4d00" name="a484e68791288528f065e8a769a9c4d00"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (<a class="el" href="classCongestionModel.html">CongestionModel</a> *)</td></tr>
-<tr class="separator:a484e68791288528f065e8a769a9c4d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cff59a4892a55facf3ad5087385fae9" id="r_a3cff59a4892a55facf3ad5087385fae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCongestionModel.html#a3cff59a4892a55facf3ad5087385fae9">setDefaultCapacityVehicles</a> (int cap)</td></tr>
+<tr class="memdesc:a3cff59a4892a55facf3ad5087385fae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set default capacity if <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> reports non-positive capacity.  <br /></td></tr>
+<tr class="separator:a3cff59a4892a55facf3ad5087385fae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0d3f614ce9c7539c4c1e3db419596af" id="r_ad0d3f614ce9c7539c4c1e3db419596af"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCongestionModel.html#ad0d3f614ce9c7539c4c1e3db419596af">effectiveSpeed</a> (const <a class="el" href="classRoad.html">Road</a> &amp;e) const</td></tr>
+<tr class="memdesc:ad0d3f614ce9c7539c4c1e3db419596af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get effective speed on edge e according to tiered halving rule.  <br /></td></tr>
+<tr class="separator:ad0d3f614ce9c7539c4c1e3db419596af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431ebf3083bbbf082d67ef44a8b2a21f" id="r_a431ebf3083bbbf082d67ef44a8b2a21f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCongestionModel.html#a431ebf3083bbbf082d67ef44a8b2a21f">edgeTime</a> (const <a class="el" href="classRoad.html">Road</a> &amp;e, int vehicleMaxSpeed) const</td></tr>
+<tr class="memdesc:a431ebf3083bbbf082d67ef44a8b2a21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get travel time over e for a vehicle with max speed limit.  <br /></td></tr>
+<tr class="separator:a431ebf3083bbbf082d67ef44a8b2a21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Tracks per-edge load and provides effective speeds/time for routing. </p>
-<p>Effective speed model: v_eff = min(road.maxSpeed, speedLimit(edge)) * f(load) where f(load) is a piecewise factor in (0, 1].</p>
-<p>Additionally, a very low speedLimit can emulate incidents or blocks. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Discrete tier-based halving model using capacity from <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a>. </p>
+<p>Required <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> API: int <a class="el" href="classRoad.html#a49aacbea46eabbafb2fe8ccf0ef8853b">Road::getCapacityVehicles() const</a>; // returns x int <a class="el" href="classRoad.html#a15cbdbe06e0d626ff2ddc04ddfeba01b">Road::getFromId() const</a>; int <a class="el" href="classRoad.html#a67a4ce1bddd2df17d85ea8e4db038e01">Road::getToId() const</a>; int <a class="el" href="classRoad.html#a897584fd663475c4ab3bb5f27f8e0442">Road::getMaxSpeed() const</a>; // v_free in model units double <a class="el" href="classRoad.html#af09249f48e29b8daae4e86b33c032a9d">Road::getLength() const</a>; // used only for time computation </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a431ebf3083bbbf082d67ef44a8b2a21f" name="a431ebf3083bbbf082d67ef44a8b2a21f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431ebf3083bbbf082d67ef44a8b2a21f">&#9670;&#160;</a></span>edgeTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CongestionModel::edgeTime </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRoad.html">Road</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vehicleMaxSpeed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get travel time over e for a vehicle with max speed limit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td><a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> edge. </td></tr>
+    <tr><td class="paramname">vehicleMaxSpeed</td><td><a class="el" href="classVehicle.html" title="Base vehicle with longitudinal dynamics (IDM) and routing policy.">Vehicle</a>'s own max speed (cap). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Time = length / min(vehicleMaxSpeed, effectiveSpeed(e)) </dd></dl>
+
+</div>
+</div>
+<a id="ad0d3f614ce9c7539c4c1e3db419596af" name="ad0d3f614ce9c7539c4c1e3db419596af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0d3f614ce9c7539c4c1e3db419596af">&#9670;&#160;</a></span>effectiveSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CongestionModel::effectiveSpeed </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRoad.html">Road</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get effective speed on edge e according to tiered halving rule. </p>
+<dl class="section return"><dt>Returns</dt><dd>Effective speed in the same units as <a class="el" href="classRoad.html#a897584fd663475c4ab3bb5f27f8e0442">Road::getMaxSpeed()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a3cff59a4892a55facf3ad5087385fae9" name="a3cff59a4892a55facf3ad5087385fae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cff59a4892a55facf3ad5087385fae9">&#9670;&#160;</a></span>setDefaultCapacityVehicles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CongestionModel::setDefaultCapacityVehicles </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set default capacity if <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> reports non-positive capacity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cap</td><td>Default "x" (vehicles). Must be &gt;= 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/Easy_rider/<a class="el" href="CongestionModel_8h_source.html">CongestionModel.h</a></li>
-<li>src/<b>CongestionModel.cpp</b></li>
+<li>src/<a class="el" href="CongestionModel_8cpp.html">CongestionModel.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

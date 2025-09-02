@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['motorwaygenerator_0',['motorwaygenerator',['../classMotorwayGenerator.html',1,'MotorwayGenerator'],['../classMotorwayGenerator.html#abf98a7b3e91291139160e15fdfc18f71',1,'MotorwayGenerator::MotorwayGenerator()']]]
+  ['leaderinfo_0',['LeaderInfo',['../structLeaderInfo.html',1,'']]],
+  ['leaderspeed_1',['leaderSpeed',['../structLeaderInfo.html#a37d86714ce4f0c974571e48a383252b9',1,'LeaderInfo']]]
 ];

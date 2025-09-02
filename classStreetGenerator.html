@@ -129,8 +129,8 @@ Collaboration diagram for StreetGenerator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac85ac6699f1701160a752dd8c708a858" id="r_ac85ac6699f1701160a752dd8c708a858"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreetGenerator.html#ac85ac6699f1701160a752dd8c708a858">StreetGenerator</a> (size_t k, int defaultSpeed)</td></tr>
-<tr class="separator:ac85ac6699f1701160a752dd8c708a858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f7105c6426369be2126411d69ce472" id="r_a45f7105c6426369be2126411d69ce472"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreetGenerator.html#a45f7105c6426369be2126411d69ce472">StreetGenerator</a> (size_t k, int defaultSpeed, int capacity)</td></tr>
+<tr class="separator:a45f7105c6426369be2126411d69ce472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3b4519d1e335e64152bd546ad7cb71f" id="r_ac3b4519d1e335e64152bd546ad7cb71f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreetGenerator.html#ac3b4519d1e335e64152bd546ad7cb71f">generate</a> (<a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph) override</td></tr>
 <tr class="memdesc:ac3b4519d1e335e64152bd546ad7cb71f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append new bidirectional roads into the graph (no duplicates).  <br /></td></tr>
 <tr class="separator:ac3b4519d1e335e64152bd546ad7cb71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,8 +145,8 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>For each intersection, connects it to its k nearest neighbors - Street generator. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac85ac6699f1701160a752dd8c708a858" name="ac85ac6699f1701160a752dd8c708a858"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac85ac6699f1701160a752dd8c708a858">&#9670;&#160;</a></span>StreetGenerator()</h2>
+<a id="a45f7105c6426369be2126411d69ce472" name="a45f7105c6426369be2126411d69ce472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f7105c6426369be2126411d69ce472">&#9670;&#160;</a></span>StreetGenerator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +161,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>defaultSpeed</em>&#160;</td>
+          <td class="paramname"><em>defaultSpeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>capacity</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -173,7 +179,8 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">k</td><td>Number of neighbors. </td></tr>
-    <tr><td class="paramname">defaultSpeed</td><td>Speed for every new <a class="el" href="classRoad.html" title="Represents a direcred road connecting two intersections (by ids), with a computed length and a maximu...">Road</a>. </td></tr>
+    <tr><td class="paramname">defaultSpeed</td><td>Speed for every new <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a>. </td></tr>
+    <tr><td class="paramname">capacity</td><td>Capacity (vehicles) for every new <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a>. </td></tr>
   </table>
   </dd>
 </dl>

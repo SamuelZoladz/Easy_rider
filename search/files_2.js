@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['graph_2eh_0',['Graph.h',['../Graph_8h.html',1,'']]]
+  ['dijkstrastrategy_2eh_0',['DijkstraStrategy.h',['../DijkstraStrategy_8h.html',1,'']]]
 ];

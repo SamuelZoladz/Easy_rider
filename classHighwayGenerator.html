@@ -129,8 +129,8 @@ Collaboration diagram for HighwayGenerator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab15d46fd3130ef93a03fa84f4817055a" id="r_ab15d46fd3130ef93a03fa84f4817055a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHighwayGenerator.html#ab15d46fd3130ef93a03fa84f4817055a">HighwayGenerator</a> (int defaultSpeed)</td></tr>
-<tr class="separator:ab15d46fd3130ef93a03fa84f4817055a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624b4fdfa96d7c0e435d358247a5f688" id="r_a624b4fdfa96d7c0e435d358247a5f688"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHighwayGenerator.html#a624b4fdfa96d7c0e435d358247a5f688">HighwayGenerator</a> (int defaultSpeed, int capacity)</td></tr>
+<tr class="separator:a624b4fdfa96d7c0e435d358247a5f688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b874716d0cdb9ee335c78fa98977b50" id="r_a3b874716d0cdb9ee335c78fa98977b50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHighwayGenerator.html#a3b874716d0cdb9ee335c78fa98977b50">generate</a> (<a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph) override</td></tr>
 <tr class="memdesc:a3b874716d0cdb9ee335c78fa98977b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append new bidirectional highways into the graph (no duplicates).  <br /></td></tr>
 <tr class="separator:a3b874716d0cdb9ee335c78fa98977b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,8 +146,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Builds a minimum spanning tree (Kruskal) over all intersections — Highway generator. </p>
 <dl class="section note"><dt>Note</dt><dd>This implementation deviates from the standard Kruskal algorithm by enforcing a planar constraint: edges are only added when <em>both</em> directed variants (A-&gt;B and B-&gt;A) can be inserted without crossing existing roads. As a result, it does <em>not</em> always produce the exact minimum spanning tree as returned by a pure Kruskal run. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab15d46fd3130ef93a03fa84f4817055a" name="ab15d46fd3130ef93a03fa84f4817055a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab15d46fd3130ef93a03fa84f4817055a">&#9670;&#160;</a></span>HighwayGenerator()</h2>
+<a id="a624b4fdfa96d7c0e435d358247a5f688" name="a624b4fdfa96d7c0e435d358247a5f688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a624b4fdfa96d7c0e435d358247a5f688">&#9670;&#160;</a></span>HighwayGenerator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,8 +159,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">HighwayGenerator::HighwayGenerator </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>defaultSpeed</em></td><td>)</td>
+          <td class="paramname"><em>defaultSpeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>capacity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -171,7 +181,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">defaultSpeed</td><td>Speed for every new <a class="el" href="classRoad.html" title="Represents a direcred road connecting two intersections (by ids), with a computed length and a maximu...">Road</a>. </td></tr>
+    <tr><td class="paramname">defaultSpeed</td><td>Speed for every new <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a>. </td></tr>
+    <tr><td class="paramname">capacity</td><td>Capacity (vehicles) for every new <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a>. </td></tr>
   </table>
   </dd>
 </dl>

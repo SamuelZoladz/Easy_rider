@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('classVehicle.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 
-<p>Base vehicle with simple longitudinal dynamics and routing policy.  
+<p>Base vehicle with longitudinal dynamics (IDM) and routing policy.  
  <a href="classVehicle.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Vehicle_8h_source.html">Vehicle.h</a>&gt;</code></p>
@@ -114,10 +114,10 @@ Inheritance diagram for Vehicle:</div>
 <div class="dyncontent">
 <div class="center"><img src="classVehicle__inherit__graph.png" border="0" usemap="#aVehicle_inherit__map" alt="Inheritance graph"/></div>
 <map name="aVehicle_inherit__map" id="aVehicle_inherit__map">
-<area shape="rect" title="Base vehicle with simple longitudinal dynamics and routing policy." alt="" coords="30,5,99,31"/>
-<area shape="rect" href="classCar.html" title="Passenger car — nimble, higher acceleration." alt="" coords="5,79,49,104"/>
+<area shape="rect" title="Base vehicle with longitudinal dynamics (IDM) and routing policy." alt="" coords="30,5,99,31"/>
+<area shape="rect" href="classCar.html" title="Passenger car &#45; nimble, higher acceleration." alt="" coords="5,79,49,104"/>
 <area shape="poly" title=" " alt="" coords="55,44,36,80,31,77,50,42"/>
-<area shape="rect" href="classTruck.html" title="Heavy truck — lower acceleration and braking." alt="" coords="74,79,130,104"/>
+<area shape="rect" href="classTruck.html" title="Heavy truck &#45; lower acceleration and braking." alt="" coords="74,79,130,104"/>
 <area shape="poly" title=" " alt="" coords="79,42,98,77,94,80,75,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -126,11 +126,13 @@ Collaboration diagram for Vehicle:</div>
 <div class="dyncontent">
 <div class="center"><img src="classVehicle__coll__graph.png" border="0" usemap="#aVehicle_coll__map" alt="Collaboration graph"/></div>
 <map name="aVehicle_coll__map" id="aVehicle_coll__map">
-<area shape="rect" title="Base vehicle with simple longitudinal dynamics and routing policy." alt="" coords="135,108,204,133"/>
+<area shape="rect" title="Base vehicle with longitudinal dynamics (IDM) and routing policy." alt="" coords="220,108,289,133"/>
 <area shape="rect" href="classGraph.html" title=" " alt="" coords="5,5,163,45"/>
-<area shape="poly" title=" " alt="" coords="112,53,161,106,157,109,108,57"/>
-<area shape="rect" href="classCongestionModel.html" title="Tracks per&#45;edge load and provides effective speeds/time for routing." alt="" coords="187,13,322,38"/>
-<area shape="poly" title=" " alt="" coords="237,50,182,110,178,106,233,46"/>
+<area shape="poly" title=" " alt="" coords="132,50,235,106,232,110,129,54"/>
+<area shape="rect" href="classCongestionModel.html" title="Discrete tier&#45;based halving model using capacity from Road." alt="" coords="187,13,322,38"/>
+<area shape="poly" title=" " alt="" coords="257,52,257,108,252,108,252,52"/>
+<area shape="rect" href="structIDMParams.html" title="Tunable parameters for IDM." alt="" coords="347,13,443,38"/>
+<area shape="poly" title=" " alt="" coords="380,51,364,69,344,86,318,101,290,112,288,107,315,96,341,82,360,65,376,47"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -141,9 +143,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa49d2dedc9852333dd05e56e09f79939" id="r_aa49d2dedc9852333dd05e56e09f79939"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVehicle.html#aa49d2dedc9852333dd05e56e09f79939">Vehicle</a> (const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph, <a class="el" href="classCongestionModel.html">CongestionModel</a> *congestion, std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt; strategy, double maxSpeed, double acceleration, double braking)</td></tr>
-<tr class="memdesc:aa49d2dedc9852333dd05e56e09f79939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classVehicle.html" title="Base vehicle with simple longitudinal dynamics and routing policy.">Vehicle</a>.  <br /></td></tr>
-<tr class="separator:aa49d2dedc9852333dd05e56e09f79939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b02aafedba55024525540dc7e738a51" id="r_a4b02aafedba55024525540dc7e738a51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVehicle.html#a4b02aafedba55024525540dc7e738a51">Vehicle</a> (const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph, <a class="el" href="classCongestionModel.html">CongestionModel</a> *congestion, std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt; strategy, const <a class="el" href="structIDMParams.html">IDMParams</a> &amp;params)</td></tr>
+<tr class="memdesc:a4b02aafedba55024525540dc7e738a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classVehicle.html" title="Base vehicle with longitudinal dynamics (IDM) and routing policy.">Vehicle</a> with IDM configuration.  <br /></td></tr>
+<tr class="separator:a4b02aafedba55024525540dc7e738a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74829d3d2c320cad6530de1bb8bee8bf" id="r_a74829d3d2c320cad6530de1bb8bee8bf"><td class="memItemLeft" align="right" valign="top"><a id="a74829d3d2c320cad6530de1bb8bee8bf" name="a74829d3d2c320cad6530de1bb8bee8bf"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>id</b> () const</td></tr>
 <tr class="memdesc:a74829d3d2c320cad6530de1bb8bee8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique vehicle id. <br /></td></tr>
@@ -158,11 +160,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (double dt
 <tr class="separator:ad8097284cced262207fac2b09a2cd3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b850545f3c928440dfc376c1475b587" id="r_a9b850545f3c928440dfc376c1475b587"><td class="memItemLeft" align="right" valign="top"><a id="a9b850545f3c928440dfc376c1475b587" name="a9b850545f3c928440dfc376c1475b587"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onCongestion</b> ()</td></tr>
-<tr class="memdesc:a9b850545f3c928440dfc376c1475b587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notification that the current edge is congested. <br /></td></tr>
+<tr class="memdesc:a9b850545f3c928440dfc376c1475b587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notification hook: current edge is congested (may trigger reroute). <br /></td></tr>
 <tr class="separator:a9b850545f3c928440dfc376c1475b587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2137b5b0e4d8855de2264d9a14a5c11" id="r_ad2137b5b0e4d8855de2264d9a14a5c11"><td class="memItemLeft" align="right" valign="top"><a id="ad2137b5b0e4d8855de2264d9a14a5c11" name="ad2137b5b0e4d8855de2264d9a14a5c11"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>recomputeRouteIfNeeded</b> ()</td></tr>
-<tr class="memdesc:ad2137b5b0e4d8855de2264d9a14a5c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to recompute route. <br /></td></tr>
+<tr class="memdesc:ad2137b5b0e4d8855de2264d9a14a5c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to recompute route if cooldown has elapsed. <br /></td></tr>
 <tr class="separator:ad2137b5b0e4d8855de2264d9a14a5c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a572f626793e56a4bd235097a96b6f4aa" id="r_a572f626793e56a4bd235097a96b6f4aa"><td class="memItemLeft" align="right" valign="top"><a id="a572f626793e56a4bd235097a96b6f4aa" name="a572f626793e56a4bd235097a96b6f4aa"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setStrategy</b> (std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt; s)</td></tr>
@@ -174,7 +176,39 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setStrategy</b> (std:
 <tr class="separator:ab405ed9a26e0f802af0ebfb543b8a293"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac44f092b5cdd1fdb8994cd4e7099cb07" id="r_ac44f092b5cdd1fdb8994cd4e7099cb07"><td class="memItemLeft" align="right" valign="top"><a id="ac44f092b5cdd1fdb8994cd4e7099cb07" name="ac44f092b5cdd1fdb8994cd4e7099cb07"></a>
 std::optional&lt; <a class="el" href="structVehicle_1_1RenderState.html">RenderState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>renderState</b> () const</td></tr>
+<tr class="memdesc:ac44f092b5cdd1fdb8994cd4e7099cb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lightweight snapshot for rendering. <br /></td></tr>
 <tr class="separator:ac44f092b5cdd1fdb8994cd4e7099cb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e833dab5ef25356a4a8555555874514" id="r_a1e833dab5ef25356a4a8555555874514"><td class="memItemLeft" align="right" valign="top"><a id="a1e833dab5ef25356a4a8555555874514" name="a1e833dab5ef25356a4a8555555874514"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setIDMParams</b> (const <a class="el" href="structIDMParams.html">IDMParams</a> &amp;p)</td></tr>
+<tr class="memdesc:a1e833dab5ef25356a4a8555555874514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override IDM parameters. <br /></td></tr>
+<tr class="separator:a1e833dab5ef25356a4a8555555874514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d3f4bcbb9b4c769bcf83197bd9cadd" id="r_aa1d3f4bcbb9b4c769bcf83197bd9cadd"><td class="memItemLeft" align="right" valign="top"><a id="aa1d3f4bcbb9b4c769bcf83197bd9cadd" name="aa1d3f4bcbb9b4c769bcf83197bd9cadd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setLeaderInfo</b> (const <a class="el" href="structLeaderInfo.html">LeaderInfo</a> &amp;info)</td></tr>
+<tr class="memdesc:aa1d3f4bcbb9b4c769bcf83197bd9cadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide leader estimate for this simulation step (edge-aligned). Use gap (distance to leader bumper) and leader speed; call once per tick before <a class="el" href="classVehicle.html#ad8097284cced262207fac2b09a2cd3f3" title="Advance simulation by dt seconds.">update()</a>. <br /></td></tr>
+<tr class="separator:aa1d3f4bcbb9b4c769bcf83197bd9cadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3712285fd623bbcc4df3ec38aacbbf83" id="r_a3712285fd623bbcc4df3ec38aacbbf83"><td class="memItemLeft" align="right" valign="top"><a id="a3712285fd623bbcc4df3ec38aacbbf83" name="a3712285fd623bbcc4df3ec38aacbbf83"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearLeaderInfo</b> ()</td></tr>
+<tr class="memdesc:a3712285fd623bbcc4df3ec38aacbbf83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear leader information (e.g., when switching edges). <br /></td></tr>
+<tr class="separator:a3712285fd623bbcc4df3ec38aacbbf83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88805ab920e80940026f2b63f7d969b8" id="r_a88805ab920e80940026f2b63f7d969b8"><td class="memItemLeft" align="right" valign="top"><a id="a88805ab920e80940026f2b63f7d969b8" name="a88805ab920e80940026f2b63f7d969b8"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>currentSpeed</b> () const</td></tr>
+<tr class="separator:a88805ab920e80940026f2b63f7d969b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1994b94845896873f54a13b0ce467053" id="r_a1994b94845896873f54a13b0ce467053"><td class="memItemLeft" align="right" valign="top"><a id="a1994b94845896873f54a13b0ce467053" name="a1994b94845896873f54a13b0ce467053"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>edgeProgress</b> () const</td></tr>
+<tr class="separator:a1994b94845896873f54a13b0ce467053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad8edfed540cb1557ae1dd2c4d48f4a" id="r_a9ad8edfed540cb1557ae1dd2c4d48f4a"><td class="memItemLeft" align="right" valign="top"><a id="a9ad8edfed540cb1557ae1dd2c4d48f4a" name="a9ad8edfed540cb1557ae1dd2c4d48f4a"></a>
+std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>currentEdge</b> () const</td></tr>
+<tr class="separator:a9ad8edfed540cb1557ae1dd2c4d48f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8740ce2741fa15054a0b1bed2db2b38d" id="r_a8740ce2741fa15054a0b1bed2db2b38d"><td class="memItemLeft" align="right" valign="top"><a id="a8740ce2741fa15054a0b1bed2db2b38d" name="a8740ce2741fa15054a0b1bed2db2b38d"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>maxSpeed</b> () const</td></tr>
+<tr class="memdesc:a8740ce2741fa15054a0b1bed2db2b38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience accessors mapped to IDM parameters. <br /></td></tr>
+<tr class="separator:a8740ce2741fa15054a0b1bed2db2b38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ec2a47cfd8c6e355770d936ecb1807" id="r_a32ec2a47cfd8c6e355770d936ecb1807"><td class="memItemLeft" align="right" valign="top"><a id="a32ec2a47cfd8c6e355770d936ecb1807" name="a32ec2a47cfd8c6e355770d936ecb1807"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>accelLimit</b> () const</td></tr>
+<tr class="separator:a32ec2a47cfd8c6e355770d936ecb1807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3303d30e4a545376af4a699afda7b8f4" id="r_a3303d30e4a545376af4a699afda7b8f4"><td class="memItemLeft" align="right" valign="top"><a id="a3303d30e4a545376af4a699afda7b8f4" name="a3303d30e4a545376af4a699afda7b8f4"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>brakeLimit</b> () const</td></tr>
+<tr class="separator:a3303d30e4a545376af4a699afda7b8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -191,22 +225,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>leaveEdge</b> ()</td>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aad4efa6475abeb4ec18b4e39df8de422" id="r_aad4efa6475abeb4ec18b4e39df8de422"><td class="memItemLeft" align="right" valign="top"><a id="aad4efa6475abeb4ec18b4e39df8de422" name="aad4efa6475abeb4ec18b4e39df8de422"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>id_</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>id_</b> {}</td></tr>
 <tr class="separator:aad4efa6475abeb4ec18b4e39df8de422"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab70da549268ed0f5dadffcfb436b249b" id="r_ab70da549268ed0f5dadffcfb436b249b"><td class="memItemLeft" align="right" valign="top"><a id="ab70da549268ed0f5dadffcfb436b249b" name="ab70da549268ed0f5dadffcfb436b249b"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>acceleration_</b></td></tr>
-<tr class="separator:ab70da549268ed0f5dadffcfb436b249b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f0685f6f64d7dc767826f39d3376197" id="r_a0f0685f6f64d7dc767826f39d3376197"><td class="memItemLeft" align="right" valign="top"><a id="a0f0685f6f64d7dc767826f39d3376197" name="a0f0685f6f64d7dc767826f39d3376197"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>braking_</b></td></tr>
-<tr class="separator:a0f0685f6f64d7dc767826f39d3376197"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0088e264471b66965ea03bd39c7e24c1" id="r_a0088e264471b66965ea03bd39c7e24c1"><td class="memItemLeft" align="right" valign="top"><a id="a0088e264471b66965ea03bd39c7e24c1" name="a0088e264471b66965ea03bd39c7e24c1"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>maxSpeed_</b></td></tr>
-<tr class="separator:a0088e264471b66965ea03bd39c7e24c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63dbcd66f08d74b102788124df7b49e4" id="r_a63dbcd66f08d74b102788124df7b49e4"><td class="memItemLeft" align="right" valign="top"><a id="a63dbcd66f08d74b102788124df7b49e4" name="a63dbcd66f08d74b102788124df7b49e4"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>currentSpeed_</b> {}</td></tr>
+<tr class="memdesc:a63dbcd66f08d74b102788124df7b49e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">current speed along edge <br /></td></tr>
 <tr class="separator:a63dbcd66f08d74b102788124df7b49e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22d34b64bf7ad47bac454b8f3b406f09" id="r_a22d34b64bf7ad47bac454b8f3b406f09"><td class="memItemLeft" align="right" valign="top"><a id="a22d34b64bf7ad47bac454b8f3b406f09" name="a22d34b64bf7ad47bac454b8f3b406f09"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>edgeProgress_</b> {}</td></tr>
+<tr class="memdesc:a22d34b64bf7ad47bac454b8f3b406f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">curvilinear position along current edge <br /></td></tr>
 <tr class="separator:a22d34b64bf7ad47bac454b8f3b406f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf21f627dff475d83cf019458c1bd839" id="r_acf21f627dff475d83cf019458c1bd839"><td class="memItemLeft" align="right" valign="top"><a id="acf21f627dff475d83cf019458c1bd839" name="acf21f627dff475d83cf019458c1bd839"></a>
 std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>currentEdge_</b> {-1, -1}</td></tr>
@@ -221,10 +248,10 @@ std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>routeIndex_</b
 std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>strategy_</b></td></tr>
 <tr class="separator:aa94eed4d893bc86a6f5ae9ef5a9597db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b86086b166f149c0adb586833cad5b6" id="r_a6b86086b166f149c0adb586833cad5b6"><td class="memItemLeft" align="right" valign="top"><a id="a6b86086b166f149c0adb586833cad5b6" name="a6b86086b166f149c0adb586833cad5b6"></a>
-const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>graph_</b></td></tr>
+const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>graph_</b> {}</td></tr>
 <tr class="separator:a6b86086b166f149c0adb586833cad5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f47e4009d6b5560da24dc5c5edc80be" id="r_a6f47e4009d6b5560da24dc5c5edc80be"><td class="memItemLeft" align="right" valign="top"><a id="a6f47e4009d6b5560da24dc5c5edc80be" name="a6f47e4009d6b5560da24dc5c5edc80be"></a>
-<a class="el" href="classCongestionModel.html">CongestionModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>congestion_</b></td></tr>
+<a class="el" href="classCongestionModel.html">CongestionModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>congestion_</b> {}</td></tr>
 <tr class="separator:a6f47e4009d6b5560da24dc5c5edc80be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa1deba5ce7186863430f09aad424ff9" id="r_afa1deba5ce7186863430f09aad424ff9"><td class="memItemLeft" align="right" valign="top"><a id="afa1deba5ce7186863430f09aad424ff9" name="afa1deba5ce7186863430f09aad424ff9"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>recomputeCooldown_</b> {3.0}</td></tr>
@@ -235,20 +262,27 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>sinceRecompute_</b>
 <tr class="memitem:ad16f77ab7554ba6e85f36b41cec8beaa" id="r_ad16f77ab7554ba6e85f36b41cec8beaa"><td class="memItemLeft" align="right" valign="top"><a id="ad16f77ab7554ba6e85f36b41cec8beaa" name="ad16f77ab7554ba6e85f36b41cec8beaa"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>pendingReroute_</b> {false}</td></tr>
 <tr class="separator:ad16f77ab7554ba6e85f36b41cec8beaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be209910b1c09195f5fe49dee430e6f" id="r_a8be209910b1c09195f5fe49dee430e6f"><td class="memItemLeft" align="right" valign="top"><a id="a8be209910b1c09195f5fe49dee430e6f" name="a8be209910b1c09195f5fe49dee430e6f"></a>
+<a class="el" href="structIDMParams.html">IDMParams</a>&#160;</td><td class="memItemRight" valign="bottom"><b>idmParams_</b> {}</td></tr>
+<tr class="separator:a8be209910b1c09195f5fe49dee430e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40998dbd57af9838a3e43f1c25f0375b" id="r_a40998dbd57af9838a3e43f1c25f0375b"><td class="memItemLeft" align="right" valign="top"><a id="a40998dbd57af9838a3e43f1c25f0375b" name="a40998dbd57af9838a3e43f1c25f0375b"></a>
+std::optional&lt; <a class="el" href="structLeaderInfo.html">LeaderInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>leader_</b></td></tr>
+<tr class="separator:a40998dbd57af9838a3e43f1c25f0375b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base vehicle with simple longitudinal dynamics and routing policy. </p>
+<div class="textblock"><p>Base vehicle with longitudinal dynamics (IDM) and routing policy. </p>
 <p>Movement model:</p><ul>
-<li>position is tracked along the current edge as a scalar [0 -&gt; length].</li>
-<li>speed integrates with acceleration/braking toward a target speed limited by both the vehicle's maxSpeed and the edge's effective speed reported by <a class="el" href="classCongestionModel.html" title="Tracks per-edge load and provides effective speeds/time for routing.">CongestionModel</a>.</li>
+<li>Position is tracked along the current edge as a scalar [0 -&gt; length].</li>
+<li>Speed is integrated using IDM; the free-flow target speed is <a class="el" href="structIDMParams.html#adfce2742430c58ed8a3b0baab4c3929a">IDMParams::v0</a>.</li>
+<li>Effective speed on an edge is limited by the congestion model.</li>
 <li>On reaching the end of an edge, the next edge from route_ is taken.</li>
 </ul>
 <p>Rerouting:</p><ul>
-<li>When congestion threshold is detected (e.g., on edge entry), the vehicle may recompute its route using the configured strategy. </li>
+<li>When congestion is detected (e.g., on edge entry), the vehicle may recompute its route using the configured strategy after a cooldown. </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa49d2dedc9852333dd05e56e09f79939" name="aa49d2dedc9852333dd05e56e09f79939"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa49d2dedc9852333dd05e56e09f79939">&#9670;&#160;</a></span>Vehicle()</h2>
+<a id="a4b02aafedba55024525540dc7e738a51" name="a4b02aafedba55024525540dc7e738a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b02aafedba55024525540dc7e738a51">&#9670;&#160;</a></span>Vehicle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,20 +308,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>pendingReroute_</b> {
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxSpeed</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>acceleration</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>braking</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structIDMParams.html">IDMParams</a> &amp;&#160;</td>
+          <td class="paramname"><em>params</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -297,15 +319,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>pendingReroute_</b> {
       </table>
 </div><div class="memdoc">
 
-<p>Construct a <a class="el" href="classVehicle.html" title="Base vehicle with simple longitudinal dynamics and routing policy.">Vehicle</a>. </p>
+<p>Construct a <a class="el" href="classVehicle.html" title="Base vehicle with longitudinal dynamics (IDM) and routing policy.">Vehicle</a> with IDM configuration. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph</td><td>World graph reference. </td></tr>
-    <tr><td class="paramname">congestion</td><td>Congestion model pointer. </td></tr>
+    <tr><td class="paramname">congestion</td><td>Congestion model pointer (can be null). </td></tr>
     <tr><td class="paramname">strategy</td><td>Initial routing strategy. </td></tr>
-    <tr><td class="paramname">maxSpeed</td><td><a class="el" href="classVehicle.html" title="Base vehicle with simple longitudinal dynamics and routing policy.">Vehicle</a> maximum speed [units/s]. </td></tr>
-    <tr><td class="paramname">acceleration</td><td>Acceleration capability [units/s^2]. </td></tr>
-    <tr><td class="paramname">braking</td><td>Braking (deceleration) capability [units/s^2]. </td></tr>
+    <tr><td class="paramname">params</td><td>Intelligent Driver Model parameters. </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nodeindexbyid_0',['nodeIndexById',['../classGraph.html#a9606e11cd2a70b01c9aa2df5b60fd34a',1,'Graph']]]
+  ['maxspeed_0',['maxSpeed',['../classVehicle.html#a8740ce2741fa15054a0b1bed2db2b38d',1,'Vehicle']]],
+  ['motorwaygenerator_1',['MotorwayGenerator',['../classMotorwayGenerator.html#a3f7b506f575cf429cc7178060d941605',1,'MotorwayGenerator']]]
 ];

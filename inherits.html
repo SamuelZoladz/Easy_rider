@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </div><table border="0" cellspacing="10" cellpadding="0">
 <tr><td><img src="inherit_graph_0.png" border="0" usemap="#aCongestionModel" alt=""/>
 <map name="aCongestionModel" id="aCongestionModel">
-<area shape="rect" href="classCongestionModel.html" title="Tracks per&#45;edge load and provides effective speeds/time for routing." alt="" coords="5,5,140,31"/>
+<area shape="rect" href="classCongestionModel.html" title="Discrete tier&#45;based halving model using capacity from Road." alt="" coords="5,5,140,31"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_1.png" border="0" usemap="#aDisjointSet" alt=""/>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </td></tr>
 <tr><td><img src="inherit_graph_3.png" border="0" usemap="#aEdgeState" alt=""/>
 <map name="aEdgeState" id="aEdgeState">
-<area shape="rect" href="structEdgeState.html" title=" " alt="" coords="5,5,93,31"/>
+<area shape="rect" href="structEdgeState.html" title="Runtime state of a single directed edge." alt="" coords="5,5,93,31"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_4.png" border="0" usemap="#aGraph_3_01Intersection_00_01Road_01_4" alt=""/>
@@ -136,17 +136,27 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <area shape="rect" href="classGraphVisualizer.html" title="Temporary test&#45;only class to visualize a Graph&lt;Intersection,Road&gt; using SFML." alt="" coords="5,5,131,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_7.png" border="0" usemap="#aIntersection" alt=""/>
+<tr><td><img src="inherit_graph_7.png" border="0" usemap="#aIDMParams" alt=""/>
+<map name="aIDMParams" id="aIDMParams">
+<area shape="rect" href="structIDMParams.html" title="Tunable parameters for IDM." alt="" coords="5,5,101,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_8.png" border="0" usemap="#aIntersection" alt=""/>
 <map name="aIntersection" id="aIntersection">
 <area shape="rect" href="classIntersection.html" title="Represents a point (intersection) in a 2D coordinate system. IDs are auto&#45;assigned from a static coun..." alt="" coords="5,5,104,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_8.png" border="0" usemap="#aRoad" alt=""/>
-<map name="aRoad" id="aRoad">
-<area shape="rect" href="classRoad.html" title="Represents a direcred road connecting two intersections (by ids), with a computed length and a maximu..." alt="" coords="5,5,60,31"/>
+<tr><td><img src="inherit_graph_9.png" border="0" usemap="#aLeaderInfo" alt=""/>
+<map name="aLeaderInfo" id="aLeaderInfo">
+<area shape="rect" href="structLeaderInfo.html" title="Information about the nearest leader (vehicle ahead) on the same edge." alt="" coords="5,5,96,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_9.png" border="0" usemap="#aRoadGenerator" alt=""/>
+<tr><td><img src="inherit_graph_10.png" border="0" usemap="#aRoad" alt=""/>
+<map name="aRoad" id="aRoad">
+<area shape="rect" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,..." alt="" coords="5,5,60,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_11.png" border="0" usemap="#aRoadGenerator" alt=""/>
 <map name="aRoadGenerator" id="aRoadGenerator">
 <area shape="rect" href="classRoadGenerator.html" title="Abstract base class for generating roads on a Graph&lt;Intersection,Road&gt;." alt="" coords="5,55,125,80"/>
 <area shape="rect" href="classHighwayGenerator.html" title="Builds a minimum spanning tree (Kruskal) over all intersections — Highway generator." alt="" coords="177,5,321,31"/>
@@ -157,7 +167,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <area shape="poly" title=" " alt="" coords="127,81,202,101,200,106,126,86"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_10.png" border="0" usemap="#aRouteStrategy" alt=""/>
+<tr><td><img src="inherit_graph_12.png" border="0" usemap="#aRouteStrategy" alt=""/>
 <map name="aRouteStrategy" id="aRouteStrategy">
 <area shape="rect" href="classRouteStrategy.html" title=" " alt="" coords="5,31,120,56"/>
 <area shape="rect" href="classAStarStrategy.html" title="A* using:" alt="" coords="176,5,288,31"/>
@@ -166,36 +176,36 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <area shape="poly" title=" " alt="" coords="134,51,168,56,168,61,134,56"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_11.png" border="0" usemap="#aSimulation" alt=""/>
+<tr><td><img src="inherit_graph_13.png" border="0" usemap="#aSimulation" alt=""/>
 <map name="aSimulation" id="aSimulation">
 <area shape="rect" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop." alt="" coords="5,5,97,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_12.png" border="0" usemap="#aSimulation_1_1SimSnapshotItem" alt=""/>
+<tr><td><img src="inherit_graph_14.png" border="0" usemap="#aSimulation_1_1SimSnapshotItem" alt=""/>
 <map name="aSimulation_1_1SimSnapshotItem" id="aSimulation_1_1SimSnapshotItem">
 <area shape="rect" href="structSimulation_1_1SimSnapshotItem.html" title=" " alt="" coords="5,5,220,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_13.png" border="0" usemap="#aSimulation_1_1Stats" alt=""/>
+<tr><td><img src="inherit_graph_15.png" border="0" usemap="#aSimulation_1_1Stats" alt=""/>
 <map name="aSimulation_1_1Stats" id="aSimulation_1_1Stats">
 <area shape="rect" href="structSimulation_1_1Stats.html" title=" " alt="" coords="5,5,139,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_14.png" border="0" usemap="#aTrafficEvents" alt=""/>
+<tr><td><img src="inherit_graph_16.png" border="0" usemap="#aTrafficEvents" alt=""/>
 <map name="aTrafficEvents" id="aTrafficEvents">
 <area shape="rect" href="classTrafficEvents.html" title="High&#45;level helpers to inject incidents/blocks into the model." alt="" coords="5,5,111,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_15.png" border="0" usemap="#aVehicle" alt=""/>
+<tr><td><img src="inherit_graph_17.png" border="0" usemap="#aVehicle" alt=""/>
 <map name="aVehicle" id="aVehicle">
-<area shape="rect" href="classVehicle.html" title="Base vehicle with simple longitudinal dynamics and routing policy." alt="" coords="5,31,75,56"/>
-<area shape="rect" href="classCar.html" title="Passenger car — nimble, higher acceleration." alt="" coords="129,5,173,31"/>
+<area shape="rect" href="classVehicle.html" title="Base vehicle with longitudinal dynamics (IDM) and routing policy." alt="" coords="5,31,75,56"/>
+<area shape="rect" href="classCar.html" title="Passenger car &#45; nimble, higher acceleration." alt="" coords="129,5,173,31"/>
 <area shape="poly" title=" " alt="" coords="88,30,128,20,129,25,89,35"/>
-<area shape="rect" href="classTruck.html" title="Heavy truck — lower acceleration and braking." alt="" coords="123,55,179,80"/>
+<area shape="rect" href="classTruck.html" title="Heavy truck &#45; lower acceleration and braking." alt="" coords="123,55,179,80"/>
 <area shape="poly" title=" " alt="" coords="89,51,123,59,122,64,87,56"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_16.png" border="0" usemap="#aVehicle_1_1RenderState" alt=""/>
+<tr><td><img src="inherit_graph_18.png" border="0" usemap="#aVehicle_1_1RenderState" alt=""/>
 <map name="aVehicle_1_1RenderState" id="aVehicle_1_1RenderState">
 <area shape="rect" href="structVehicle_1_1RenderState.html" title=" " alt="" coords="5,5,163,31"/>
 </map>

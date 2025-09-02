@@ -129,8 +129,8 @@ Collaboration diagram for MotorwayGenerator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abf98a7b3e91291139160e15fdfc18f71" id="r_abf98a7b3e91291139160e15fdfc18f71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotorwayGenerator.html#abf98a7b3e91291139160e15fdfc18f71">MotorwayGenerator</a> (double thresholdRatio, int defaultSpeed)</td></tr>
-<tr class="separator:abf98a7b3e91291139160e15fdfc18f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7b506f575cf429cc7178060d941605" id="r_a3f7b506f575cf429cc7178060d941605"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotorwayGenerator.html#a3f7b506f575cf429cc7178060d941605">MotorwayGenerator</a> (double thresholdRatio, int defaultSpeed, int capacity)</td></tr>
+<tr class="separator:a3f7b506f575cf429cc7178060d941605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a2f800d08711a75c1c4c0999cc2cc15" id="r_a1a2f800d08711a75c1c4c0999cc2cc15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotorwayGenerator.html#a1a2f800d08711a75c1c4c0999cc2cc15">generate</a> (<a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph) override</td></tr>
 <tr class="memdesc:a1a2f800d08711a75c1c4c0999cc2cc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append new bidirectional motorways into the graph (no duplicates).  <br /></td></tr>
 <tr class="separator:a1a2f800d08711a75c1c4c0999cc2cc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,8 +152,8 @@ Additional Inherited Members</h2></td></tr>
 <li>Connecting them in sequence (A-&gt;…-&gt;B) with bidirectional edges. </li>
 </ol>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abf98a7b3e91291139160e15fdfc18f71" name="abf98a7b3e91291139160e15fdfc18f71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf98a7b3e91291139160e15fdfc18f71">&#9670;&#160;</a></span>MotorwayGenerator()</h2>
+<a id="a3f7b506f575cf429cc7178060d941605" name="a3f7b506f575cf429cc7178060d941605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7b506f575cf429cc7178060d941605">&#9670;&#160;</a></span>MotorwayGenerator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +168,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>defaultSpeed</em>&#160;</td>
+          <td class="paramname"><em>defaultSpeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>capacity</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -181,6 +187,7 @@ Additional Inherited Members</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">thresholdRatio</td><td>Fraction of AB's length used as max perpendicular distance for including nodes (e.g. 0.1 = 10%). </td></tr>
     <tr><td class="paramname">defaultSpeed</td><td>Speed to assign to each motorway segment. </td></tr>
+    <tr><td class="paramname">capacity</td><td>Capacity (vehicles) for every new <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a>. </td></tr>
   </table>
   </dd>
 </dl>

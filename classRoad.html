@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('classRoad.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a direcred road connecting two intersections (by ids), with a computed length and a maximum speed.  
+<p>Represents a directed road connecting two intersections (by ids), with a computed length, a maximum speed, and a capacity (vehicles concurrently on edge).  
  <a href="classRoad.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Road_8h_source.html">Road.h</a>&gt;</code></p>
@@ -116,6 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7376fdb5c35c7563c9f85365dd483494" id="r_a7376fdb5c35c7563c9f85365dd483494"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a7376fdb5c35c7563c9f85365dd483494">Road</a> (const <a class="el" href="classIntersection.html">Intersection</a> &amp;from, const <a class="el" href="classIntersection.html">Intersection</a> &amp;to, int maxSpeed)</td></tr>
 <tr class="memdesc:a7376fdb5c35c7563c9f85365dd483494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a road from two intersections and computes its length.  <br /></td></tr>
 <tr class="separator:a7376fdb5c35c7563c9f85365dd483494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529906a97f6ef03c496ed63b95a1fdeb" id="r_a529906a97f6ef03c496ed63b95a1fdeb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a529906a97f6ef03c496ed63b95a1fdeb">Road</a> (const <a class="el" href="classIntersection.html">Intersection</a> &amp;from, const <a class="el" href="classIntersection.html">Intersection</a> &amp;to, int maxSpeed, int capacityVehicles)</td></tr>
+<tr class="memdesc:a529906a97f6ef03c496ed63b95a1fdeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a road with explicit capacity (vehicles).  <br /></td></tr>
+<tr class="separator:a529906a97f6ef03c496ed63b95a1fdeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15cbdbe06e0d626ff2ddc04ddfeba01b" id="r_a15cbdbe06e0d626ff2ddc04ddfeba01b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a15cbdbe06e0d626ff2ddc04ddfeba01b">getFromId</a> () const</td></tr>
 <tr class="separator:a15cbdbe06e0d626ff2ddc04ddfeba01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67a4ce1bddd2df17d85ea8e4db038e01" id="r_a67a4ce1bddd2df17d85ea8e4db038e01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a67a4ce1bddd2df17d85ea8e4db038e01">getToId</a> () const</td></tr>
@@ -124,12 +127,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af09249f48e29b8daae4e86b33c032a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a897584fd663475c4ab3bb5f27f8e0442" id="r_a897584fd663475c4ab3bb5f27f8e0442"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a897584fd663475c4ab3bb5f27f8e0442">getMaxSpeed</a> () const</td></tr>
 <tr class="separator:a897584fd663475c4ab3bb5f27f8e0442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49aacbea46eabbafb2fe8ccf0ef8853b" id="r_a49aacbea46eabbafb2fe8ccf0ef8853b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoad.html#a49aacbea46eabbafb2fe8ccf0ef8853b">getCapacityVehicles</a> () const</td></tr>
+<tr class="separator:a49aacbea46eabbafb2fe8ccf0ef8853b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a direcred road connecting two intersections (by ids), with a computed length and a maximum speed. </p>
+<div class="textblock"><p>Represents a directed road connecting two intersections (by ids), with a computed length, a maximum speed, and a capacity (vehicles concurrently on edge). </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7376fdb5c35c7563c9f85365dd483494" name="a7376fdb5c35c7563c9f85365dd483494"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7376fdb5c35c7563c9f85365dd483494">&#9670;&#160;</a></span>Road()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7376fdb5c35c7563c9f85365dd483494">&#9670;&#160;</a></span>Road() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,10 +174,80 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Capacity defaults to a constant (10 vehicles). </dd></dl>
+
+</div>
+</div>
+<a id="a529906a97f6ef03c496ed63b95a1fdeb" name="a529906a97f6ef03c496ed63b95a1fdeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529906a97f6ef03c496ed63b95a1fdeb">&#9670;&#160;</a></span>Road() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Road::Road </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIntersection.html">Intersection</a> &amp;&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classIntersection.html">Intersection</a> &amp;&#160;</td>
+          <td class="paramname"><em>to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxSpeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>capacityVehicles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a road with explicit capacity (vehicles). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>Source intersection. </td></tr>
+    <tr><td class="paramname">to</td><td>Target intersection. </td></tr>
+    <tr><td class="paramname">maxSpeed</td><td>Maximum allowed speed on this road. </td></tr>
+    <tr><td class="paramname">capacityVehicles</td><td>Capacity "x" (current vehicles allowed before halving tiers). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a49aacbea46eabbafb2fe8ccf0ef8853b" name="a49aacbea46eabbafb2fe8ccf0ef8853b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49aacbea46eabbafb2fe8ccf0ef8853b">&#9670;&#160;</a></span>getCapacityVehicles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Road::getCapacityVehicles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Capacity (vehicles) reported by this road. </dd></dl>
+
+</div>
+</div>
 <a id="a15cbdbe06e0d626ff2ddc04ddfeba01b" name="a15cbdbe06e0d626ff2ddc04ddfeba01b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a15cbdbe06e0d626ff2ddc04ddfeba01b">&#9670;&#160;</a></span>getFromId()</h2>
 

@@ -1,9 +1,11 @@
 <map id="Truck" name="Truck">
-<area shape="rect" id="Node000001" title="Heavy truck — lower acceleration and braking." alt="" coords="141,183,197,208"/>
-<area shape="rect" id="Node000002" href="$classVehicle.html" title="Base vehicle with simple longitudinal dynamics and routing policy." alt="" coords="135,108,204,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,148,172,182,167,182,167,148"/>
+<area shape="rect" id="Node000001" title="Heavy truck &#45; lower acceleration and braking." alt="" coords="227,183,283,208"/>
+<area shape="rect" id="Node000002" href="$classVehicle.html" title="Base vehicle with longitudinal dynamics (IDM) and routing policy." alt="" coords="220,108,289,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="257,148,257,182,252,182,252,148"/>
 <area shape="rect" id="Node000003" href="$classGraph.html" title=" " alt="" coords="5,5,163,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="112,53,161,106,157,109,108,57"/>
-<area shape="rect" id="Node000004" href="$classCongestionModel.html" title="Tracks per&#45;edge load and provides effective speeds/time for routing." alt="" coords="187,13,322,38"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="237,50,182,110,178,106,233,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="132,50,235,106,232,110,129,54"/>
+<area shape="rect" id="Node000004" href="$classCongestionModel.html" title="Discrete tier&#45;based halving model using capacity from Road." alt="" coords="187,13,322,38"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="257,52,257,108,252,108,252,52"/>
+<area shape="rect" id="Node000005" href="$structIDMParams.html" title="Tunable parameters for IDM." alt="" coords="347,13,443,38"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="380,51,364,69,344,86,318,101,290,112,288,107,315,96,341,82,360,65,376,47"/>
 </map>

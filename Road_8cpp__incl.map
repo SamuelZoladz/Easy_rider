@@ -1,13 +1,15 @@
 <map id="src/Road.cpp" name="src/Road.cpp">
-<area shape="rect" id="Node000001" title="Definitions for the Road class methods." alt="" coords="188,5,293,31"/>
+<area shape="rect" id="Node000001" title="Definitions for the Road class methods." alt="" coords="232,5,337,31"/>
 <area shape="rect" id="Node000002" href="$Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="29,79,167,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,33,135,75,132,70,217,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,33,142,76,140,71,254,28"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="124,225,184,251"/>
-<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="238,32,166,213,161,211,234,30"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="242,79,311,104"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="249,30,267,65,262,68,244,32"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="336,79,399,104"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="262,28,336,69,333,74,260,33"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="274,33,253,54,232,80,192,151,165,214,161,211,188,149,228,77,249,50,270,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="242,79,327,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="287,31,287,65,282,65,282,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="351,79,421,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="302,28,360,68,357,73,299,33"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="445,79,508,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="316,28,433,71,431,76,315,33"/>
 <area shape="rect" id="Node000003" href="$Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="5,152,116,177"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,106,75,141,71,139,89,103"/>
 <area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="107,103,130,151,150,211,145,213,125,153,102,105"/>

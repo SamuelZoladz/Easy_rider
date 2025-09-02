@@ -1,0 +1,26 @@
+<map id="src/CongestionModel.cpp" name="src/CongestionModel.cpp">
+<area shape="rect" id="Node000001" title="Implementation of tiered (halving) congestion model." alt="" coords="556,5,741,31"/>
+<area shape="rect" id="Node000002" href="$CongestionModel_8h.html" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="322,79,541,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="615,33,480,77,479,72,613,28"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="689,152,752,177"/>
+<area shape="poly" id="edge13_Node000001_Node000007" title=" " alt="" coords="653,30,661,64,676,103,703,140,698,143,672,105,656,65,648,31"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="686,79,755,104"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="662,29,701,67,697,71,659,33"/>
+<area shape="rect" id="Node000003" href="$Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="101,152,167,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,107,181,155,180,150,383,101"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="124,299,184,324"/>
+<area shape="poly" id="edge11_Node000002_Node000005" title=" " alt="" coords="337,107,281,124,255,137,232,154,205,184,185,220,171,255,162,286,157,284,166,254,180,217,201,181,228,150,253,133,279,119,335,101"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="242,152,327,177"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="409,106,322,148,320,144,407,102"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="481,101,677,149,675,154,479,107"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="351,152,418,177"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="426,106,402,142,398,139,421,103"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="442,152,517,177"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="441,103,466,139,462,142,437,106"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="541,152,665,177"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="460,102,564,144,562,149,458,106"/>
+<area shape="rect" id="Node000004" href="$Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="5,225,116,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="124,180,84,218,81,214,120,176"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="138,177,153,285,148,285,133,178"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="77,249,130,288,126,292,74,253"/>
+</map>
