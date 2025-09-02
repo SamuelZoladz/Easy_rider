@@ -18,7 +18,8 @@
 #include "Easy_rider/RoutingCommon.h"
 #include "Easy_rider/Simulation.h"
 
-#include "Easy_rider/GraphVisualizer.h"
+#include "Easy_rider/SfmlSimulationVisualizer.h"
+#include "Easy_rider/VisualizerUtils.h"
 
 int main() {
   Graph<Intersection, Road> graph;
@@ -75,18 +76,45 @@ int main() {
   auto aStar = std::make_shared<AStarStrategy>(truckTimeFn);
   auto dijkstra = std::make_shared<DijkstraStrategy>(carTimeFn);
 
-  auto carPath = aStar->computeRoute(startId, goalId, G);
-  auto truckPath = dijkstra->computeRoute(startId, goalId, G);
+  sim.spawnVehicleCar(startId, goalId, aStar);
+  sim.spawnVehicleCar(startId, goalId, aStar);
+  sim.spawnVehicleCar(startId, goalId, aStar);
+  sim.spawnVehicleCar(startId, goalId, aStar);
+  sim.spawnVehicleTruck(startId, goalId, dijkstra);
 
-  int carId = sim.spawnVehicleCar(startId, goalId, dijkstra);
-  sim.spawnVehicleCar(startId, goalId, dijkstra);
-  sim.spawnVehicleCar(startId, goalId, dijkstra);
-  sim.spawnVehicleCar(startId, goalId, dijkstra);
-  int truckId = sim.spawnVehicleTruck(startId, goalId, aStar);
-  sim.start();
+  const uint32_t kWinW = 800, kWinH = 600;
 
-  GraphVisualizer viz{800, 600,
-                      "Random Road Network — Car & Truck (Simulation)"};
-  viz.runWithSimulation(sim, carPath, truckPath, carId, truckId);
+  SfmlSimulationVisualizer sfviz;
+  sfviz.attachSimulation(&sim);
+
+  sfviz.setGraphProvider([&G]() { return viz::makeGraphDrawData(G); });
+  sfviz.setVehicleProvider(
+      [&sim]() { return viz::extractVehiclePositions(sim); });
+
+  const auto drawData = viz::makeGraphDrawData(G);
+  auto [minX, minY, maxX, maxY] = viz::bounds(drawData.nodePositions);
+  const float worldW = std::max(1.0f, maxX - minX);
+  const float worldH = std::max(1.0f, maxY - minY);
+  const float padPx = 20.0f;
+  const float scaleX = (kWinW - 2.0f * padPx) / worldW;
+  const float scaleY = (kWinH - 2.0f * padPx) / worldH;
+  const float scale = std::min(scaleX, scaleY);
+
+  viz::Vec2 originWorld{minX - padPx / scale, minY - padPx / scale};
+
+  VisualizerView view;
+  view.originX = originWorld.x;
+  view.originY = originWorld.y;
+  view.scale = scale;
+  sfviz.setView(view);
+
+  sfviz.setNodeRadius(4.0f);
+  sfviz.setVehicleRadius(3.0f);
+  sfviz.setEdgeThickness(1.5f);
+
+  sfviz.openWindow(kWinW, kWinH, "Random Road Network — Simulation");
+  sfviz.setTimeScale(1.0);
+  sfviz.run(60.0);
+
   return 0;
 }
