@@ -48,12 +48,6 @@ public:
    * @brief Render a single frame.
    */
   virtual void renderFrame() = 0;
-
-  /**
-   * @brief Resize output surface if applicable.
-   */
-  virtual void resize(std::uint32_t /*width*/, std::uint32_t /*height*/) {}
-
   /**
    * @brief Mark paused state.
    */
