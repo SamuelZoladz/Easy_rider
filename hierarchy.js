@@ -7,7 +7,6 @@ var hierarchy =
     [ "Graph< T, U >", "classGraph.html", null ],
     [ "Graph< Intersection, Road >", "classGraph.html", null ],
     [ "viz::GraphDrawData", "structviz_1_1GraphDrawData.html", null ],
-    [ "GraphVisualizer", "classGraphVisualizer.html", null ],
     [ "IDMParams", "structIDMParams.html", null ],
     [ "Intersection", "classIntersection.html", null ],
     [ "LeaderInfo", "structLeaderInfo.html", null ],

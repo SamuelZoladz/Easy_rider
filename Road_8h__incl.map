@@ -1,8 +1,8 @@
-<map id="include/Easy_rider/Road.h" name="include/Easy_rider/Road.h">
-<area shape="rect" id="Node000001" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="37,5,178,45"/>
-<area shape="rect" id="Node000002" href="$Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="5,93,116,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,47,77,83,72,80,94,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="77,167,137,192"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="119,45,130,79,132,99,131,119,121,155,116,153,126,118,127,99,124,80,114,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="71,118,94,154,90,157,66,120"/>
+<map id="include/Easy_rider/TrafficInfrastructure/Road.h" name="include/Easy_rider/TrafficInfrastructure/Road.h">
+<area shape="rect" id="Node000001" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="31,5,184,60"/>
+<area shape="rect" id="Node000002" href="$Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="5,108,116,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,61,76,97,71,95,91,59"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="77,181,137,207"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="121,59,131,94,131,134,121,169,116,168,126,133,125,95,116,61"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="71,132,94,168,90,171,66,135"/>
 </map>

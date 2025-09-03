@@ -1,32 +1,32 @@
-<map id="include/Easy_rider/RoutingCommon.h" name="include/Easy_rider/RoutingCommon.h">
-<area shape="rect" id="Node000001" title="Shared types and helpers for shortest&#45;time routing strategies." alt="" coords="627,5,774,45"/>
-<area shape="rect" id="Node000002" href="$Graph_8h.html" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="359,93,432,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="628,48,446,94,445,89,627,43"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="513,167,600,192"/>
-<area shape="poly" id="edge16_Node000001_Node000006" title=" " alt="" coords="684,48,579,158,575,155,680,44"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="624,167,687,192"/>
-<area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="697,47,665,154,660,153,692,45"/>
-<area shape="rect" id="Node000010" href="$Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="711,167,821,192"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="707,45,715,79,728,118,751,154,746,157,724,120,710,81,701,46"/>
-<area shape="rect" id="Node000011" href="$Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="738,93,805,119"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="720,44,754,81,750,85,716,47"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="829,93,898,119"/>
-<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="741,43,828,85,826,90,738,48"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="923,93,985,119"/>
-<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="762,43,910,88,908,93,761,48"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="299,167,385,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,121,361,157,357,154,384,117"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="409,167,489,192"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="406,117,434,154,430,157,402,121"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="5,167,76,192"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="359,117,90,169,89,164,358,111"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="422,116,519,159,517,163,420,121"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="100,167,224,192"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="359,121,213,165,212,160,358,116"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="736,240,796,265"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="360,121,328,135,299,152,289,161,284,170,284,180,289,190,311,201,352,211,474,228,723,247,722,252,473,233,351,216,309,206,285,194,278,181,279,169,285,158,296,147,326,130,358,116"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="433,115,611,163,610,168,431,120"/>
-<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="769,192,769,226,763,226,763,192"/>
-<area shape="poly" id="edge13_Node000011_Node000008" title=" " alt="" coords="792,117,811,131,828,149,839,170,837,193,820,216,800,234,796,230,816,213,831,191,833,171,824,152,807,135,789,121"/>
-<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="773,119,771,153,765,153,768,119"/>
+<map id="include/Easy_rider/RoutingStrategies/RoutingCommon.h" name="include/Easy_rider/RoutingStrategies/RoutingCommon.h">
+<area shape="rect" id="Node000001" title="Shared types and helpers for shortest&#45;time routing strategies." alt="" coords="592,5,788,60"/>
+<area shape="rect" id="Node000002" href="$Graph_8h.html" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="281,108,502,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="607,63,465,107,464,101,605,58"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="513,203,600,229"/>
+<area shape="poly" id="edge16_Node000001_Node000006" title=" " alt="" coords="673,62,575,194,571,191,668,59"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="624,203,687,229"/>
+<area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="685,61,674,109,661,189,656,189,669,107,680,60"/>
+<area shape="rect" id="Node000010" href="$Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="711,196,933,236"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="693,60,699,103,706,126,717,146,739,169,765,187,762,191,735,173,713,150,701,128,694,104,688,61"/>
+<area shape="rect" id="Node000011" href="$Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="727,108,949,148"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="733,58,798,98,795,103,730,62"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="973,115,1042,141"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="789,56,961,105,968,108,967,113,960,111,788,61"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1067,115,1129,141"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="789,46,916,70,1055,105,1062,108,1060,113,1053,111,915,75,788,51"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="299,203,385,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,150,358,192,353,190,378,147"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="409,203,489,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="406,147,435,190,431,193,402,150"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,203,76,229"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="286,151,189,171,88,199,81,201,79,196,87,193,188,166,285,145"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="429,146,524,195,522,200,426,150"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="100,203,224,229"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="342,151,206,201,204,196,340,146"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="792,284,852,309"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="352,150,321,168,295,190,287,201,282,212,283,223,289,234,314,246,361,257,500,274,655,285,778,291,778,296,655,290,499,279,360,262,312,251,286,238,278,225,277,211,282,198,291,186,318,164,349,146"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="461,146,612,193,618,196,616,201,610,199,459,151"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="825,236,825,270,819,270,819,236"/>
+<area shape="poly" id="edge13_Node000011_Node000008" title=" " alt="" coords="890,146,922,166,947,195,954,216,947,237,931,256,910,271,866,289,864,284,908,266,927,252,942,235,949,216,942,197,918,170,887,150"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="837,149,831,183,825,182,832,148"/>
 </map>

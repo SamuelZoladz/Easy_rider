@@ -1,25 +1,10 @@
 var dir_9acb70b30e5df378bc93c5dba7ca284a =
 [
-    [ "AStarStrategy.h", "AStarStrategy_8h.html", "AStarStrategy_8h" ],
-    [ "Car.h", "Car_8h_source.html", null ],
-    [ "CongestionModel.h", "CongestionModel_8h.html", "CongestionModel_8h" ],
-    [ "DijkstraStrategy.h", "DijkstraStrategy_8h.html", "DijkstraStrategy_8h" ],
-    [ "Graph.h", "Graph_8h.html", "Graph_8h" ],
-    [ "GraphVisualizer.h", "GraphVisualizer_8h_source.html", null ],
-    [ "HighwayGenerator.h", "HighwayGenerator_8h_source.html", null ],
-    [ "IDM.h", "IDM_8h.html", "IDM_8h" ],
-    [ "Intersection.h", "Intersection_8h.html", "Intersection_8h" ],
-    [ "MotorwayGenerator.h", "MotorwayGenerator_8h_source.html", null ],
-    [ "Road.h", "Road_8h.html", "Road_8h" ],
-    [ "RoadGenerator.h", "RoadGenerator_8h_source.html", null ],
-    [ "RouteStrategy.h", "RouteStrategy_8h.html", "RouteStrategy_8h" ],
-    [ "RoutingCommon.h", "RoutingCommon_8h.html", "RoutingCommon_8h" ],
-    [ "SfmlSimulationVisualizer.h", "SfmlSimulationVisualizer_8h.html", "SfmlSimulationVisualizer_8h" ],
-    [ "Simulation.h", "Simulation_8h_source.html", null ],
-    [ "SimulationVisualizer.h", "SimulationVisualizer_8h.html", "SimulationVisualizer_8h" ],
-    [ "StreetGenerator.h", "StreetGenerator_8h_source.html", null ],
-    [ "TrafficEvents.h", "TrafficEvents_8h_source.html", null ],
-    [ "Truck.h", "Truck_8h_source.html", null ],
-    [ "Vehicle.h", "Vehicle_8h_source.html", null ],
-    [ "VisualizerUtils.h", "VisualizerUtils_8h.html", "VisualizerUtils_8h" ]
+    [ "Congestion", "dir_8ac483c7bc429cb274cced361286142c.html", "dir_8ac483c7bc429cb274cced361286142c" ],
+    [ "RoadGenerators", "dir_e4b7e39083d88c5ab81950460c4b3685.html", "dir_e4b7e39083d88c5ab81950460c4b3685" ],
+    [ "RoutingStrategies", "dir_c8aa6621e688b5512172b8242b2c1bd8.html", "dir_c8aa6621e688b5512172b8242b2c1bd8" ],
+    [ "Simulation", "dir_393c78448a5caa0c49e38ca733d51f00.html", "dir_393c78448a5caa0c49e38ca733d51f00" ],
+    [ "TrafficInfrastructure", "dir_cc14b58b4de1dc005bfa9df5746ba630.html", "dir_cc14b58b4de1dc005bfa9df5746ba630" ],
+    [ "Vehicles", "dir_2b52fe39eb0d2cbd0c9fba8454f6726c.html", "dir_2b52fe39eb0d2cbd0c9fba8454f6726c" ],
+    [ "Visualizers", "dir_870bbc05adf0ebebbdcadf3099ecf386.html", "dir_870bbc05adf0ebebbdcadf3099ecf386" ]
 ];

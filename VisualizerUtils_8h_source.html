@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Easy_rider: include/Easy_rider/VisualizerUtils.h Source File</title>
+<title>Easy_rider: include/Easy_rider/Visualizers/VisualizerUtils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,72 +101,73 @@ $(document).ready(function(){initNavTree('VisualizerUtils_8h_source.html',''); i
 <a href="VisualizerUtils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef VISUALIZER_UTILS_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define VISUALIZER_UTILS_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Graph_8h.html">Graph.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Intersection_8h.html">Intersection.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="Road_8h.html">Road.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;Simulation.h&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span>viz {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structviz_1_1Vec2.html">   25</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structviz_1_1Vec2.html">Vec2</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">float</span> x{0.0f};</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">float</span> y{0.0f};</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Easy_rider/Simulation/Simulation.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Graph_8h.html">Easy_rider/TrafficInfrastructure/Graph.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="Intersection_8h.html">Easy_rider/TrafficInfrastructure/Intersection.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="Road_8h.html">Easy_rider/TrafficInfrastructure/Road.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span>viz {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structviz_1_1Vec2.html">   26</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structviz_1_1Vec2.html">Vec2</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">float</span> x{0.0f};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">float</span> y{0.0f};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structviz_1_1GraphDrawData.html">   36</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structviz_1_1GraphDrawData.html">GraphDrawData</a> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  std::vector&lt;Vec2&gt; nodePositions;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::vector&lt;std::pair&lt;std::size_t, std::size_t&gt;&gt; edges;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structviz_1_1GraphDrawData.html">   37</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structviz_1_1GraphDrawData.html">GraphDrawData</a> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::vector&lt;Vec2&gt; nodePositions;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  std::vector&lt;std::pair&lt;std::size_t, std::size_t&gt;&gt; edges;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">inline</span> std::tuple&lt;float, float, float, float&gt;</div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="VisualizerUtils_8h.html#a4f6132200bdb0a1ee47521b88c78a070">   46</a></span><a class="code hl_function" href="VisualizerUtils_8h.html#a4f6132200bdb0a1ee47521b88c78a070">bounds</a>(<span class="keyword">const</span> std::vector&lt;Vec2&gt; &amp;pts) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">if</span> (pts.empty())</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> {0, 0, 0, 0};</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">float</span> minX = pts[0].x, maxX = pts[0].x;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">float</span> minY = pts[0].y, maxY = pts[0].y;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;p : pts) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (p.x &lt; minX)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      minX = p.x;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (p.x &gt; maxX)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      maxX = p.x;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">if</span> (p.y &lt; minY)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      minY = p.y;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> (p.y &gt; maxY)</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      maxY = p.y;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordflow">return</span> {minX, minY, maxX, maxY};</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">inline</span> std::tuple&lt;float, float, float, float&gt;</div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="VisualizerUtils_8h.html#a4f6132200bdb0a1ee47521b88c78a070">   47</a></span><a class="code hl_function" href="VisualizerUtils_8h.html#a4f6132200bdb0a1ee47521b88c78a070">bounds</a>(<span class="keyword">const</span> std::vector&lt;Vec2&gt; &amp;pts) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordflow">if</span> (pts.empty())</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> {0, 0, 0, 0};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">float</span> minX = pts[0].x, maxX = pts[0].x;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">float</span> minY = pts[0].y, maxY = pts[0].y;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;p : pts) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (p.x &lt; minX)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      minX = p.x;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (p.x &gt; maxX)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      maxX = p.x;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (p.y &lt; minY)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      minY = p.y;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (p.y &gt; maxY)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      maxY = p.y;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordflow">return</span> {minX, minY, maxX, maxY};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>GraphDrawData makeGraphDrawData(<span class="keyword">const</span> <a class="code hl_class" href="classGraph.html">Graph&lt;Intersection, Road&gt;</a> &amp;g);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>std::vector&lt;Vec2&gt; extractVehiclePositions(<span class="keyword">const</span> <a class="code hl_class" href="classSimulation.html">Simulation</a> &amp;sim);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>} <span class="comment">// namespace viz</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif </span><span class="comment">// VISUALIZER_UTILS_H</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>GraphDrawData makeGraphDrawData(<span class="keyword">const</span> <a class="code hl_class" href="classGraph.html">Graph&lt;Intersection, Road&gt;</a> &amp;g);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>std::vector&lt;Vec2&gt; extractVehiclePositions(<span class="keyword">const</span> <a class="code hl_class" href="classSimulation.html">Simulation</a> &amp;sim);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>} <span class="comment">// namespace viz</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// VISUALIZER_UTILS_H</span></div>
 <div class="ttc" id="aGraph_8h_html"><div class="ttname"><a href="Graph_8h.html">Graph.h</a></div><div class="ttdoc">Directed, id-addressable graph template with node/edge concepts, id-&gt;index lookup,...</div></div>
 <div class="ttc" id="aIntersection_8h_html"><div class="ttname"><a href="Intersection_8h.html">Intersection.h</a></div><div class="ttdoc">Declaration of the Intersection class representing a point in 2D space with auto-assigned ids.</div></div>
 <div class="ttc" id="aRoad_8h_html"><div class="ttname"><a href="Road_8h.html">Road.h</a></div><div class="ttdoc">Declaration of the Road class representing a connection between two nodes (intersections) by identifi...</div></div>
-<div class="ttc" id="aVisualizerUtils_8h_html_a4f6132200bdb0a1ee47521b88c78a070"><div class="ttname"><a href="VisualizerUtils_8h.html#a4f6132200bdb0a1ee47521b88c78a070">viz::bounds</a></div><div class="ttdeci">std::tuple&lt; float, float, float, float &gt; bounds(const std::vector&lt; Vec2 &gt; &amp;pts)</div><div class="ttdoc">Compute axis-aligned world bounds of a set of points.</div><div class="ttdef"><b>Definition</b> VisualizerUtils.h:46</div></div>
+<div class="ttc" id="aVisualizerUtils_8h_html_a4f6132200bdb0a1ee47521b88c78a070"><div class="ttname"><a href="VisualizerUtils_8h.html#a4f6132200bdb0a1ee47521b88c78a070">viz::bounds</a></div><div class="ttdeci">std::tuple&lt; float, float, float, float &gt; bounds(const std::vector&lt; Vec2 &gt; &amp;pts)</div><div class="ttdoc">Compute axis-aligned world bounds of a set of points.</div><div class="ttdef"><b>Definition</b> VisualizerUtils.h:47</div></div>
 <div class="ttc" id="aclassGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdoc">A templated graph storing nodes of type T and edges of type U.</div><div class="ttdef"><b>Definition</b> Graph.h:78</div></div>
-<div class="ttc" id="aclassSimulation_html"><div class="ttname"><a href="classSimulation.html">Simulation</a></div><div class="ttdoc">Owns the world (graph), vehicles, and time integration loop.</div><div class="ttdef"><b>Definition</b> Simulation.h:20</div></div>
-<div class="ttc" id="astructviz_1_1GraphDrawData_html"><div class="ttname"><a href="structviz_1_1GraphDrawData.html">viz::GraphDrawData</a></div><div class="ttdoc">Pre-baked graph geometry ready to be drawn.</div><div class="ttdef"><b>Definition</b> VisualizerUtils.h:36</div></div>
-<div class="ttc" id="astructviz_1_1Vec2_html"><div class="ttname"><a href="structviz_1_1Vec2.html">viz::Vec2</a></div><div class="ttdoc">Lightweight 2D vector detached from any graphics library.</div><div class="ttdef"><b>Definition</b> VisualizerUtils.h:25</div></div>
+<div class="ttc" id="aclassSimulation_html"><div class="ttname"><a href="classSimulation.html">Simulation</a></div><div class="ttdoc">Owns the world (graph), vehicles, and time integration loop.</div><div class="ttdef"><b>Definition</b> Simulation.h:18</div></div>
+<div class="ttc" id="astructviz_1_1GraphDrawData_html"><div class="ttname"><a href="structviz_1_1GraphDrawData.html">viz::GraphDrawData</a></div><div class="ttdoc">Pre-baked graph geometry ready to be drawn.</div><div class="ttdef"><b>Definition</b> VisualizerUtils.h:37</div></div>
+<div class="ttc" id="astructviz_1_1Vec2_html"><div class="ttname"><a href="structviz_1_1Vec2.html">viz::Vec2</a></div><div class="ttdoc">Lightweight 2D vector detached from any graphics library.</div><div class="ttdef"><b>Definition</b> VisualizerUtils.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9acb70b30e5df378bc93c5dba7ca284a.html">Easy_rider</a></li><li class="navelem"><a class="el" href="VisualizerUtils_8h.html">VisualizerUtils.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9acb70b30e5df378bc93c5dba7ca284a.html">Easy_rider</a></li><li class="navelem"><a class="el" href="dir_870bbc05adf0ebebbdcadf3099ecf386.html">Visualizers</a></li><li class="navelem"><a class="el" href="VisualizerUtils_8h.html">VisualizerUtils.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

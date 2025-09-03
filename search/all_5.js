@@ -17,6 +17,5 @@ var searchData=
   ['graph_14',['graph',['../classGraph.html',1,'Graph&lt; T, U &gt;'],['../classGraph.html#a80d842e68660c358d9d004745fe39f20',1,'Graph::Graph()']]],
   ['graph_2eh_15',['Graph.h',['../Graph_8h.html',1,'']]],
   ['graph_3c_20intersection_2c_20road_20_3e_16',['Graph&lt; Intersection, Road &gt;',['../classGraph.html',1,'']]],
-  ['graphdrawdata_17',['GraphDrawData',['../structviz_1_1GraphDrawData.html',1,'viz']]],
-  ['graphvisualizer_18',['GraphVisualizer',['../classGraphVisualizer.html',1,'']]]
+  ['graphdrawdata_17',['GraphDrawData',['../structviz_1_1GraphDrawData.html',1,'viz']]]
 ];

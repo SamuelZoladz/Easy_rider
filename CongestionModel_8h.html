@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Easy_rider: include/Easy_rider/CongestionModel.h File Reference</title>
+<title>Easy_rider: include/Easy_rider/Congestion/CongestionModel.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('CongestionModel_8h.html',''); initResi
 
 <p>Tiered (halving) congestion model driven by <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> capacity.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="Road_8h_source.html">Road.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Road_8h_source.html">Easy_rider/TrafficInfrastructure/Road.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
@@ -114,50 +114,55 @@ $(document).ready(function(){initNavTree('CongestionModel_8h.html',''); initResi
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CongestionModel.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="CongestionModel_8h__incl.png" border="0" usemap="#ainclude_2Easy__rider_2CongestionModel_8h" alt=""/></div>
-<map name="ainclude_2Easy__rider_2CongestionModel_8h" id="ainclude_2Easy__rider_2CongestionModel_8h">
-<area shape="rect" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="308,5,459,45"/>
-<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="101,93,167,119"/>
-<area shape="poly" title=" " alt="" coords="324,48,181,93,180,88,323,43"/>
-<area shape="rect" title=" " alt="" coords="124,240,184,265"/>
-<area shape="poly" title=" " alt="" coords="314,48,271,67,232,95,206,127,186,162,163,227,158,226,182,160,202,124,228,91,268,63,312,43"/>
-<area shape="rect" title=" " alt="" coords="242,93,327,119"/>
-<area shape="poly" title=" " alt="" coords="361,48,312,87,309,82,358,43"/>
-<area shape="rect" title=" " alt="" coords="352,93,415,119"/>
-<area shape="poly" title=" " alt="" coords="386,46,386,79,381,79,381,46"/>
-<area shape="rect" title=" " alt="" coords="439,93,506,119"/>
-<area shape="poly" title=" " alt="" coords="407,44,451,82,447,86,403,48"/>
-<area shape="rect" title=" " alt="" coords="530,93,605,119"/>
-<area shape="poly" title=" " alt="" coords="428,43,529,85,527,90,426,48"/>
-<area shape="rect" title=" " alt="" coords="629,93,753,119"/>
-<area shape="poly" title=" " alt="" coords="458,43,634,87,632,92,456,48"/>
-<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="5,167,116,192"/>
-<area shape="poly" title=" " alt="" coords="124,121,84,159,81,155,120,117"/>
-<area shape="poly" title=" " alt="" coords="138,119,153,226,148,227,133,119"/>
-<area shape="poly" title=" " alt="" coords="77,190,130,229,126,234,74,194"/>
+<div class="center"><img src="CongestionModel_8h__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Congestion_2CongestionModel_8h" alt=""/></div>
+<map name="ainclude_2Easy__rider_2Congestion_2CongestionModel_8h" id="ainclude_2Easy__rider_2Congestion_2CongestionModel_8h">
+<area shape="rect" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="329,5,557,45"/>
+<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="5,93,227,133"/>
+<area shape="poly" title=" " alt="" coords="372,48,201,92,200,87,370,43"/>
+<area shape="rect" title=" " alt="" coords="179,255,239,280"/>
+<area shape="poly" title=" " alt="" coords="373,48,330,67,291,95,263,130,242,170,217,242,212,240,237,168,259,127,287,91,327,63,371,43"/>
+<area shape="rect" title=" " alt="" coords="301,101,387,126"/>
+<area shape="poly" title=" " alt="" coords="423,48,370,93,366,89,419,44"/>
+<area shape="rect" title=" " alt="" coords="411,101,474,126"/>
+<area shape="poly" title=" " alt="" coords="445,46,445,87,440,87,440,46"/>
+<area shape="rect" title=" " alt="" coords="499,101,565,126"/>
+<area shape="poly" title=" " alt="" coords="464,44,512,89,508,93,461,48"/>
+<area shape="rect" title=" " alt="" coords="589,101,664,126"/>
+<area shape="poly" title=" " alt="" coords="484,43,591,92,589,97,482,48"/>
+<area shape="rect" title=" " alt="" coords="689,101,813,126"/>
+<area shape="poly" title=" " alt="" coords="511,43,697,94,696,100,510,48"/>
+<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="61,181,171,207"/>
+<area shape="poly" title=" " alt="" coords="119,134,119,167,113,167,113,134"/>
+<area shape="poly" title=" " alt="" coords="142,132,164,153,185,180,199,211,207,240,202,242,194,213,180,183,160,157,138,135"/>
+<area shape="poly" title=" " alt="" coords="133,205,185,244,182,248,129,209"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="CongestionModel_8h__dep__incl.png" border="0" usemap="#ainclude_2Easy__rider_2CongestionModel_8hdep" alt=""/></div>
-<map name="ainclude_2Easy__rider_2CongestionModel_8hdep" id="ainclude_2Easy__rider_2CongestionModel_8hdep">
-<area shape="rect" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="346,5,497,45"/>
-<area shape="rect" href="Simulation_8h_source.html" title=" " alt="" coords="185,93,327,133"/>
-<area shape="poly" title=" " alt="" coords="374,54,293,96,291,91,372,49"/>
-<area shape="rect" href="TrafficEvents_8h_source.html" title=" " alt="" coords="351,93,492,133"/>
-<area shape="poly" title=" " alt="" coords="424,59,424,93,419,93,419,59"/>
-<area shape="rect" href="CongestionModel_8cpp.html" title="Implementation of tiered (halving) congestion model." alt="" coords="517,101,702,126"/>
-<area shape="poly" title=" " alt="" coords="476,49,585,98,583,103,474,53"/>
-<area shape="rect" href="GraphVisualizer_8h_source.html" title=" " alt="" coords="5,181,147,221"/>
-<area shape="poly" title=" " alt="" coords="206,142,117,184,114,179,203,137"/>
-<area shape="rect" href="SimulationVisualizer_8h.html" title="Abstract base for simulation visualizers (text or graphics)." alt="" coords="171,181,341,221"/>
-<area shape="poly" title=" " alt="" coords="259,147,259,181,253,181,253,147"/>
-<area shape="rect" href="VisualizerUtils_8h.html" title="Backend&#45;agnostic helpers for turning the graph/sim into drawable data." alt="" coords="365,181,507,221"/>
-<area shape="poly" title=" " alt="" coords="309,137,398,179,395,184,306,142"/>
-<area shape="rect" href="SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that draws the graph and moving vehicles." alt="" coords="245,269,446,309"/>
-<area shape="poly" title=" " alt="" coords="288,229,327,267,324,271,284,233"/>
-<area shape="poly" title=" " alt="" coords="408,233,367,271,364,267,404,229"/>
+<div class="center"><img src="CongestionModel_8h__dep__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Congestion_2CongestionModel_8hdep" alt=""/></div>
+<map name="ainclude_2Easy__rider_2Congestion_2CongestionModel_8hdep" id="ainclude_2Easy__rider_2Congestion_2CongestionModel_8hdep">
+<area shape="rect" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="233,5,461,45"/>
+<area shape="rect" href="TrafficEvents_8h_source.html" title=" " alt="" coords="57,93,256,133"/>
+<area shape="poly" title=" " alt="" coords="294,53,200,96,197,91,292,49"/>
+<area shape="rect" href="Simulation_8h_source.html" title=" " alt="" coords="163,181,345,221"/>
+<area shape="poly" title=" " alt="" coords="333,59,267,182,262,180,328,56"/>
+<area shape="rect" href="Vehicle_8h_source.html" title=" " alt="" coords="331,93,473,133"/>
+<area shape="poly" title=" " alt="" coords="369,56,392,92,388,95,365,58"/>
+<area shape="rect" href="CongestionModel_8cpp.html" title="Implementation of tiered (halving) congestion model." alt="" coords="498,93,693,133"/>
+<area shape="poly" title=" " alt="" coords="416,47,542,91,540,96,414,52"/>
+<area shape="rect" href="SimulationVisualizer_8h.html" title="Abstract base for simulation visualizers (text or graphics)." alt="" coords="5,269,252,309"/>
+<area shape="poly" title=" " alt="" coords="216,232,158,271,155,267,213,227"/>
+<area shape="rect" href="VisualizerUtils_8h.html" title="Backend&#45;agnostic helpers for turning the graph/sim into drawable data." alt="" coords="276,269,483,309"/>
+<area shape="poly" title=" " alt="" coords="295,227,353,267,350,271,292,232"/>
+<area shape="rect" href="SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that draws the graph and moving vehicles." alt="" coords="153,357,355,412"/>
+<area shape="poly" title=" " alt="" coords="167,315,220,355,217,359,164,320"/>
+<area shape="poly" title=" " alt="" coords="344,320,291,359,288,355,341,315"/>
+<area shape="poly" title=" " alt="" coords="359,143,288,184,285,179,356,138"/>
+<area shape="rect" href="Car_8h_source.html" title=" " alt="" coords="370,181,511,221"/>
+<area shape="poly" title=" " alt="" coords="419,145,435,180,430,182,414,147"/>
+<area shape="rect" href="Truck_8h_source.html" title=" " alt="" coords="535,181,677,221"/>
+<area shape="poly" title=" " alt="" coords="460,136,562,179,560,184,458,141"/>
 </map>
 </div>
 </div>
@@ -196,7 +201,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>EdgeKey</b> = std::p
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9acb70b30e5df378bc93c5dba7ca284a.html">Easy_rider</a></li><li class="navelem"><a class="el" href="CongestionModel_8h.html">CongestionModel.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9acb70b30e5df378bc93c5dba7ca284a.html">Easy_rider</a></li><li class="navelem"><a class="el" href="dir_8ac483c7bc429cb274cced361286142c.html">Congestion</a></li><li class="navelem"><a class="el" href="CongestionModel_8h.html">CongestionModel.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

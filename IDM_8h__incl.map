@@ -1,9 +1,7 @@
-<map id="include/Easy_rider/IDM.h" name="include/Easy_rider/IDM.h">
-<area shape="rect" id="Node000001" title="Intelligent Driver Model (IDM) utilities." alt="" coords="76,5,217,45"/>
+<map id="include/Easy_rider/Vehicles/IDM.h" name="include/Easy_rider/Vehicles/IDM.h">
+<area shape="rect" id="Node000001" title="Intelligent Driver Model (IDM) utilities." alt="" coords="27,5,168,45"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,93,91,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,48,75,87,72,82,121,43"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,47,65,83,60,80,83,44"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="115,93,178,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,46,149,79,144,79,144,46"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="203,93,277,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="171,44,217,82,214,86,168,48"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,44,134,80,130,83,107,47"/>
 </map>

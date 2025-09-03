@@ -1,7 +1,7 @@
-<map id="include/Easy_rider/RoutingCommon.h" name="include/Easy_rider/RoutingCommon.h">
-<area shape="rect" id="Node000001" title="Shared types and helpers for shortest&#45;time routing strategies." alt="" coords="85,5,232,45"/>
-<area shape="rect" id="Node000002" href="$AStarStrategy_8h.html" title="A* shortest&#45;time strategy with injected time function and heuristic." alt="" coords="5,93,147,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,57,96,95,92,91,129,54"/>
-<area shape="rect" id="Node000003" href="$DijkstraStrategy_8h.html" title="Dijkstra shortest&#45;time strategy with injected time function." alt="" coords="171,93,314,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,53,226,91,222,95,185,57"/>
+<map id="include/Easy_rider/RoutingStrategies/RoutingCommon.h" name="include/Easy_rider/RoutingStrategies/RoutingCommon.h">
+<area shape="rect" id="Node000001" title="Shared types and helpers for shortest&#45;time routing strategies." alt="" coords="153,5,349,60"/>
+<area shape="rect" id="Node000002" href="$AStarStrategy_8h.html" title="A* shortest&#45;time strategy with injected time function and heuristic." alt="" coords="5,115,252,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,71,153,117,150,113,207,67"/>
+<area shape="rect" id="Node000003" href="$DijkstraStrategy_8h.html" title="Dijkstra shortest&#45;time strategy with injected time function." alt="" coords="277,108,474,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="296,67,345,106,341,110,293,71"/>
 </map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Easy_rider: src/CongestionModel.cpp File Reference</title>
+<title>Easy_rider: src/Congestion/CongestionModel.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,38 +101,38 @@ $(document).ready(function(){initNavTree('CongestionModel_8cpp.html',''); initRe
 
 <p>Implementation of tiered (halving) congestion model.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="CongestionModel_8h_source.html">Easy_rider/CongestionModel.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="CongestionModel_8h_source.html">Easy_rider/Congestion/CongestionModel.h</a>&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CongestionModel.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="CongestionModel_8cpp__incl.png" border="0" usemap="#asrc_2CongestionModel_8cpp" alt=""/></div>
-<map name="asrc_2CongestionModel_8cpp" id="asrc_2CongestionModel_8cpp">
-<area shape="rect" title="Implementation of tiered (halving) congestion model." alt="" coords="556,5,741,31"/>
-<area shape="rect" href="CongestionModel_8h.html" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="322,79,541,104"/>
-<area shape="poly" title=" " alt="" coords="615,33,480,77,479,72,613,28"/>
-<area shape="rect" title=" " alt="" coords="689,152,752,177"/>
-<area shape="poly" title=" " alt="" coords="653,30,661,64,676,103,703,140,698,143,672,105,656,65,648,31"/>
-<area shape="rect" title=" " alt="" coords="686,79,755,104"/>
-<area shape="poly" title=" " alt="" coords="662,29,701,67,697,71,659,33"/>
-<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="101,152,167,177"/>
-<area shape="poly" title=" " alt="" coords="384,107,181,155,180,150,383,101"/>
-<area shape="rect" title=" " alt="" coords="124,299,184,324"/>
-<area shape="poly" title=" " alt="" coords="337,107,281,124,255,137,232,154,205,184,185,220,171,255,162,286,157,284,166,254,180,217,201,181,228,150,253,133,279,119,335,101"/>
-<area shape="rect" title=" " alt="" coords="242,152,327,177"/>
-<area shape="poly" title=" " alt="" coords="409,106,322,148,320,144,407,102"/>
-<area shape="poly" title=" " alt="" coords="481,101,677,149,675,154,479,107"/>
-<area shape="rect" title=" " alt="" coords="351,152,418,177"/>
-<area shape="poly" title=" " alt="" coords="426,106,402,142,398,139,421,103"/>
-<area shape="rect" title=" " alt="" coords="442,152,517,177"/>
-<area shape="poly" title=" " alt="" coords="441,103,466,139,462,142,437,106"/>
-<area shape="rect" title=" " alt="" coords="541,152,665,177"/>
-<area shape="poly" title=" " alt="" coords="460,102,564,144,562,149,458,106"/>
-<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="5,225,116,251"/>
-<area shape="poly" title=" " alt="" coords="124,180,84,218,81,214,120,176"/>
-<area shape="poly" title=" " alt="" coords="138,177,153,285,148,285,133,178"/>
-<area shape="poly" title=" " alt="" coords="77,249,130,288,126,292,74,253"/>
+<div class="center"><img src="CongestionModel_8cpp__incl.png" border="0" usemap="#asrc_2Congestion_2CongestionModel_8cpp" alt=""/></div>
+<map name="asrc_2Congestion_2CongestionModel_8cpp" id="asrc_2Congestion_2CongestionModel_8cpp">
+<area shape="rect" title="Implementation of tiered (halving) congestion model." alt="" coords="599,5,793,45"/>
+<area shape="rect" href="CongestionModel_8h.html" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="407,93,574,133"/>
+<area shape="poly" title=" " alt="" coords="652,48,549,91,547,86,650,43"/>
+<area shape="rect" title=" " alt="" coords="749,189,811,214"/>
+<area shape="poly" title=" " alt="" coords="700,45,708,86,724,132,740,157,759,178,755,181,736,160,719,135,702,88,695,46"/>
+<area shape="rect" title=" " alt="" coords="733,101,803,126"/>
+<area shape="poly" title=" " alt="" coords="714,44,751,88,747,91,710,47"/>
+<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="5,181,227,221"/>
+<area shape="poly" title=" " alt="" coords="409,136,212,181,211,176,408,131"/>
+<area shape="rect" title=" " alt="" coords="179,343,239,368"/>
+<area shape="poly" title=" " alt="" coords="408,129,347,149,317,164,291,183,262,218,241,257,226,297,217,330,212,328,221,295,236,255,258,215,288,179,314,160,345,144,406,124"/>
+<area shape="rect" title=" " alt="" coords="301,189,387,214"/>
+<area shape="poly" title=" " alt="" coords="460,136,377,184,374,179,457,131"/>
+<area shape="poly" title=" " alt="" coords="573,131,653,152,738,179,744,181,742,186,736,184,652,157,571,136"/>
+<area shape="rect" title=" " alt="" coords="411,189,477,214"/>
+<area shape="poly" title=" " alt="" coords="483,135,459,178,455,175,478,132"/>
+<area shape="rect" title=" " alt="" coords="501,189,576,214"/>
+<area shape="poly" title=" " alt="" coords="504,132,528,175,523,178,499,135"/>
+<area shape="rect" title=" " alt="" coords="601,189,725,214"/>
+<area shape="poly" title=" " alt="" coords="530,131,629,180,626,185,527,136"/>
+<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="61,269,171,295"/>
+<area shape="poly" title=" " alt="" coords="119,222,119,255,113,255,113,222"/>
+<area shape="poly" title=" " alt="" coords="142,220,164,241,185,268,199,299,207,328,202,330,194,301,180,271,160,245,138,223"/>
+<area shape="poly" title=" " alt="" coords="133,293,185,332,182,336,129,297"/>
 </map>
 </div>
 </div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -142,7 +142,7 @@ Include dependency graph for CongestionModel.cpp:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="CongestionModel_8cpp.html">CongestionModel.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4b2d75274a3569f476bfd3e7abc9f78e.html">Congestion</a></li><li class="navelem"><a class="el" href="CongestionModel_8cpp.html">CongestionModel.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

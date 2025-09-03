@@ -12,7 +12,6 @@ var annotated_dup =
     [ "EdgeKeyHash", "structEdgeKeyHash.html", null ],
     [ "EdgeState", "structEdgeState.html", "structEdgeState" ],
     [ "Graph", "classGraph.html", "classGraph" ],
-    [ "GraphVisualizer", "classGraphVisualizer.html", null ],
     [ "HighwayGenerator", "classHighwayGenerator.html", "classHighwayGenerator" ],
     [ "IDMParams", "structIDMParams.html", "structIDMParams" ],
     [ "Intersection", "classIntersection.html", "classIntersection" ],
