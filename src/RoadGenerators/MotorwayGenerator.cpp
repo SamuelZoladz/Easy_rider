@@ -1,4 +1,5 @@
-#include "Easy_rider/MotorwayGenerator.h"
+#include "Easy_rider/RoadGenerators/MotorwayGenerator.h"
+
 #include <algorithm>
 #include <cmath>
 #include <vector>

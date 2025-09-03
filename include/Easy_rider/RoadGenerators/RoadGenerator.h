@@ -1,9 +1,9 @@
 #ifndef ROAD_GENERATOR_H
 #define ROAD_GENERATOR_H
 
-#include "Graph.h"
-#include "Intersection.h"
-#include "Road.h"
+#include "Easy_rider/TrafficInfrastructure/Graph.h"
+#include "Easy_rider/TrafficInfrastructure/Intersection.h"
+#include "Easy_rider/TrafficInfrastructure/Road.h"
 /**
  * @brief Abstract base class for generating roads on a
  * Graph<Intersection,Road>.

@@ -1,6 +1,8 @@
-#include "Easy_rider/Vehicle.h"
-#include "Easy_rider/CongestionModel.h"
-#include "Easy_rider/IDM.h"
+#include "Easy_rider/Vehicles/Vehicle.h"
+
+#include "Easy_rider/Congestion/CongestionModel.h"
+#include "Easy_rider/Vehicles/IDM.h"
+
 #include <algorithm>
 #include <cassert>
 #include <cmath>

@@ -1,25 +1,21 @@
+#include "Easy_rider/Congestion/CongestionModel.h"
+#include "Easy_rider/RoadGenerators/HighwayGenerator.h"
+#include "Easy_rider/RoadGenerators/MotorwayGenerator.h"
+#include "Easy_rider/RoadGenerators/StreetGenerator.h"
+#include "Easy_rider/RoutingStrategies/AStarStrategy.h"
+#include "Easy_rider/RoutingStrategies/DijkstraStrategy.h"
+#include "Easy_rider/RoutingStrategies/RoutingCommon.h"
+#include "Easy_rider/Simulation/Simulation.h"
+#include "Easy_rider/TrafficInfrastructure/Graph.h"
+#include "Easy_rider/TrafficInfrastructure/Intersection.h"
+#include "Easy_rider/TrafficInfrastructure/Road.h"
+#include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
+#include "Easy_rider/Visualizers/VisualizerUtils.h"
+
 #include <algorithm>
-#include <iostream>
 #include <memory>
 #include <random>
 #include <vector>
-
-#include "Easy_rider/Graph.h"
-#include "Easy_rider/Intersection.h"
-#include "Easy_rider/Road.h"
-
-#include "Easy_rider/HighwayGenerator.h"
-#include "Easy_rider/MotorwayGenerator.h"
-#include "Easy_rider/StreetGenerator.h"
-
-#include "Easy_rider/AStarStrategy.h"
-#include "Easy_rider/CongestionModel.h"
-#include "Easy_rider/DijkstraStrategy.h"
-#include "Easy_rider/RoutingCommon.h"
-#include "Easy_rider/Simulation.h"
-
-#include "Easy_rider/SfmlSimulationVisualizer.h"
-#include "Easy_rider/VisualizerUtils.h"
 
 int main() {
   Graph<Intersection, Road> graph;

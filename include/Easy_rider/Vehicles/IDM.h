@@ -3,7 +3,6 @@
 
 #include <algorithm>
 #include <cmath>
-#include <optional>
 
 /**
  * @file IDM.h

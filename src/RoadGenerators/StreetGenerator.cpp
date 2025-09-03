@@ -1,4 +1,4 @@
-#include "Easy_rider/StreetGenerator.h"
+#include "Easy_rider/RoadGenerators/StreetGenerator.h"
 
 #include <algorithm>
 #include <cmath>

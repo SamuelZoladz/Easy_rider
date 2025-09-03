@@ -1,7 +1,8 @@
-#include "Easy_rider/HighwayGenerator.h"
-#include "Easy_rider/Graph.h"
-#include "Easy_rider/Intersection.h"
-#include "Easy_rider/Road.h"
+#include "Easy_rider/RoadGenerators/HighwayGenerator.h"
+
+#include "Easy_rider/TrafficInfrastructure/Graph.h"
+#include "Easy_rider/TrafficInfrastructure/Intersection.h"
+#include "Easy_rider/TrafficInfrastructure/Road.h"
 
 #include <algorithm>
 #include <numeric>

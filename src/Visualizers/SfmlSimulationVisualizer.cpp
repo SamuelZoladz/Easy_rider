@@ -1,7 +1,6 @@
-#include "Easy_rider/SfmlSimulationVisualizer.h"
+#include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
 
 #include <SFML/Graphics.hpp>
-#include <cmath>
 
 namespace {
 static sf::Vector2f toScreen(const viz::Vec2 &w, const VisualizerView &v) {

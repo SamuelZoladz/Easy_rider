@@ -1,4 +1,5 @@
-#include "Easy_rider/DijkstraStrategy.h"
+#include "Easy_rider/RoutingStrategies/DijkstraStrategy.h"
+
 #include <cassert>
 #include <functional>
 #include <limits>

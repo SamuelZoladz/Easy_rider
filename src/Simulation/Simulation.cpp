@@ -1,10 +1,10 @@
-#include "Easy_rider/Simulation.h"
-#include "Easy_rider/Car.h"
-#include "Easy_rider/CongestionModel.h"
-#include "Easy_rider/IDM.h"
-#include "Easy_rider/RouteStrategy.h"
-#include "Easy_rider/Truck.h"
-#include "Easy_rider/Vehicle.h"
+#include "Easy_rider/Simulation/Simulation.h"
+#include "Easy_rider/Congestion/CongestionModel.h"
+#include "Easy_rider/RoutingStrategies/RouteStrategy.h"
+#include "Easy_rider/Vehicles/Car.h"
+#include "Easy_rider/Vehicles/IDM.h"
+#include "Easy_rider/Vehicles/Truck.h"
+#include "Easy_rider/Vehicles/Vehicle.h"
 
 #include <algorithm>
 #include <cassert>

@@ -2,7 +2,8 @@
  * @file CongestionModel.cpp
  * @brief Implementation of tiered (halving) congestion model.
  */
-#include "Easy_rider/CongestionModel.h"
+#include "Easy_rider/Congestion/CongestionModel.h"
+
 #include <cassert>
 #include <cmath>
 

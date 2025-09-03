@@ -5,9 +5,11 @@
 #ifndef SFML_SIMULATION_VISUALIZER_H
 #define SFML_SIMULATION_VISUALIZER_H
 
-#include "Easy_rider/SimulationVisualizer.h"
-#include "Easy_rider/VisualizerUtils.h"
+#include "SimulationVisualizer.h"
+#include "VisualizerUtils.h"
+
 #include <SFML/Graphics.hpp>
+
 #include <functional>
 #include <memory>
 #include <string>

@@ -5,9 +5,10 @@
 #ifndef ROUTING_COMMON_H
 #define ROUTING_COMMON_H
 
-#include "Graph.h"
-#include "Intersection.h"
-#include "Road.h"
+#include "Easy_rider/TrafficInfrastructure/Graph.h"
+#include "Easy_rider/TrafficInfrastructure/Intersection.h"
+#include "Easy_rider/TrafficInfrastructure/Road.h"
+
 #include <cassert>
 #include <cmath>
 #include <functional>

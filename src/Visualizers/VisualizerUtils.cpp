@@ -1,14 +1,13 @@
-#include "Easy_rider/VisualizerUtils.h"
+#include "Easy_rider/Visualizers/VisualizerUtils.h"
+
+#include "Easy_rider/Simulation/Simulation.h"
+#include "Easy_rider/TrafficInfrastructure/Graph.h"
+#include "Easy_rider/TrafficInfrastructure/Intersection.h"
+#include "Easy_rider/TrafficInfrastructure/Road.h"
 
 #include <algorithm>
 #include <cmath>
-#include <stdexcept>
 #include <vector>
-
-#include "Easy_rider/Graph.h"
-#include "Easy_rider/Intersection.h"
-#include "Easy_rider/Road.h"
-#include "Easy_rider/Simulation.h"
 
 namespace viz {
 

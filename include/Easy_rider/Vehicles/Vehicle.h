@@ -1,17 +1,17 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
-#include "Graph.h"
+#include "Easy_rider/Congestion/CongestionModel.h"
+#include "Easy_rider/RoutingStrategies/RouteStrategy.h"
+#include "Easy_rider/TrafficInfrastructure/Graph.h"
+#include "Easy_rider/TrafficInfrastructure/Intersection.h"
+#include "Easy_rider/TrafficInfrastructure/Road.h"
 #include "IDM.h"
-#include "Intersection.h"
-#include "Road.h"
-#include "RouteStrategy.h"
+
 #include <memory>
 #include <optional>
 #include <utility>
 #include <vector>
-
-class CongestionModel; // fwd
 
 /**
  * @class Vehicle

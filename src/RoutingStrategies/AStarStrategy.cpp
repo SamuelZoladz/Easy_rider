@@ -1,4 +1,5 @@
-#include "Easy_rider/AStarStrategy.h"
+#include "Easy_rider/RoutingStrategies/AStarStrategy.h"
+
 #include <cassert>
 #include <cmath>
 #include <limits>

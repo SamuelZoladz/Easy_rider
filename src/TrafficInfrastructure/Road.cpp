@@ -2,7 +2,7 @@
  * @file Road.cpp
  * @brief Definitions for the Road class methods.
  */
-#include "Easy_rider/Road.h"
+#include "Easy_rider/TrafficInfrastructure/Road.h"
 
 #include <algorithm>
 #include <cassert>

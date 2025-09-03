@@ -1,4 +1,5 @@
-#include "Easy_rider/RoadGenerator.h"
+#include "Easy_rider/RoadGenerators/RoadGenerator.h"
+
 #include <cmath>
 
 double RoadGenerator::euclid(const Intersection &a, const Intersection &b) {

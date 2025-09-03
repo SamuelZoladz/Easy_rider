@@ -4,7 +4,7 @@
  * id).
  */
 
-#include "Easy_rider/Intersection.h"
+#include "Easy_rider/TrafficInfrastructure/Intersection.h"
 
 int Intersection::s_nextId_ = 0;
 

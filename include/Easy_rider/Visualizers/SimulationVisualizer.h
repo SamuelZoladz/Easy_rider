@@ -11,11 +11,11 @@
 #ifndef SIMULATION_VISUALIZER_H
 #define SIMULATION_VISUALIZER_H
 
-#include "Easy_rider/Simulation.h"
+#include "Easy_rider/Simulation/Simulation.h"
+
 #include <chrono>
 #include <cstdint>
 #include <iostream>
-#include <string>
 #include <thread>
 
 /**
