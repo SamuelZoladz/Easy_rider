@@ -20,6 +20,7 @@ var searchData=
   ['spawnvehiclecar_17',['spawnVehicleCar',['../classSimulation.html#aea051bf6021ffcc490f0576406fed896',1,'Simulation']]],
   ['speedlimitoverride_18',['speedLimitOverride',['../structEdgeState.html#a5866db077df67867dffce6ecddfbb07c',1,'EdgeState']]],
   ['stats_19',['Stats',['../structSimulation_1_1Stats.html',1,'Simulation']]],
-  ['streetgenerator_20',['streetgenerator',['../classStreetGenerator.html',1,'StreetGenerator'],['../classStreetGenerator.html#a45f7105c6426369be2126411d69ce472',1,'StreetGenerator::StreetGenerator()']]],
-  ['success_21',['Success',['../classGraph.html#ad4551558ed2438d068f9a2efd09508c3a505a83f220c02df2f85c3810cd9ceb38',1,'Graph']]]
+  ['stop_20',['stop',['../classSfmlSimulationVisualizer.html#a9f3645f8d3d6a6cd55afba77a862729e',1,'SfmlSimulationVisualizer']]],
+  ['streetgenerator_21',['streetgenerator',['../classStreetGenerator.html',1,'StreetGenerator'],['../classStreetGenerator.html#a45f7105c6426369be2126411d69ce472',1,'StreetGenerator::StreetGenerator()']]],
+  ['success_22',['Success',['../classGraph.html#ad4551558ed2438d068f9a2efd09508c3a505a83f220c02df2f85c3810cd9ceb38',1,'Graph']]]
 ];

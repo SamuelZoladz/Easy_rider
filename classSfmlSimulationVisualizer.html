@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('classSfmlSimulationVisualizer.html',''
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classSfmlSimulationVisualizer-members.html">List of all members</a>  </div>
@@ -130,11 +131,8 @@ Collaboration diagram for SfmlSimulationVisualizer:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a77b860499496114c7a16a83f87805ad6" id="r_a77b860499496114c7a16a83f87805ad6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSfmlSimulationVisualizer.html#a77b860499496114c7a16a83f87805ad6">renderFrame</a> () override</td></tr>
-<tr class="memdesc:a77b860499496114c7a16a83f87805ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render a single frame.  <br /></td></tr>
+<tr class="memdesc:a77b860499496114c7a16a83f87805ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render single frame: process events, draw scene UI, display.  <br /></td></tr>
 <tr class="separator:a77b860499496114c7a16a83f87805ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9369ec777f51f2639deed482980fb759" id="r_a9369ec777f51f2639deed482980fb759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSfmlSimulationVisualizer.html#a9369ec777f51f2639deed482980fb759">resize</a> (std::uint32_t width, std::uint32_t height) override</td></tr>
-<tr class="memdesc:a9369ec777f51f2639deed482980fb759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize output surface if applicable.  <br /></td></tr>
-<tr class="separator:a9369ec777f51f2639deed482980fb759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac39536ebb9916ad97f8c378885e5c025" id="r_ac39536ebb9916ad97f8c378885e5c025"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSfmlSimulationVisualizer.html#ac39536ebb9916ad97f8c378885e5c025">setView</a> (const <a class="el" href="structVisualizerView.html">VisualizerView</a> &amp;view) override</td></tr>
 <tr class="memdesc:ac39536ebb9916ad97f8c378885e5c025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure world -&gt; screen mapping used during rendering.  <br /></td></tr>
 <tr class="separator:ac39536ebb9916ad97f8c378885e5c025"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,8 +151,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>openWindow</b> (std::
 <tr class="memitem:a18d12c2855180852ccce48efa387c75b" id="r_a18d12c2855180852ccce48efa387c75b"><td class="memItemLeft" align="right" valign="top"><a id="a18d12c2855180852ccce48efa387c75b" name="a18d12c2855180852ccce48efa387c75b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>closeWindow</b> ()</td></tr>
 <tr class="separator:a18d12c2855180852ccce48efa387c75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45370578c782c8ab622db4a2668acbfe" id="r_a45370578c782c8ab622db4a2668acbfe"><td class="memItemLeft" align="right" valign="top"><a id="a45370578c782c8ab622db4a2668acbfe" name="a45370578c782c8ab622db4a2668acbfe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>processEvents</b> ()</td></tr>
+<tr class="memitem:a45370578c782c8ab622db4a2668acbfe" id="r_a45370578c782c8ab622db4a2668acbfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSfmlSimulationVisualizer.html#a45370578c782c8ab622db4a2668acbfe">processEvents</a> ()</td></tr>
+<tr class="memdesc:a45370578c782c8ab622db4a2668acbfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle window events (close, mouse clicks, keyboard).  <br /></td></tr>
 <tr class="separator:a45370578c782c8ab622db4a2668acbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3b2c99968bb54f4138e82c3046d546d" id="r_ae3b2c99968bb54f4138e82c3046d546d"><td class="memItemLeft" align="right" valign="top"><a id="ae3b2c99968bb54f4138e82c3046d546d" name="ae3b2c99968bb54f4138e82c3046d546d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>renderTo</b> (sf::RenderTarget &amp;target)</td></tr>
@@ -174,6 +172,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setVehicleRadius</b> 
 <tr class="memitem:ab8fd23a1263fe4f96f4cb4b3efe1ade7" id="r_ab8fd23a1263fe4f96f4cb4b3efe1ade7"><td class="memItemLeft" align="right" valign="top"><a id="ab8fd23a1263fe4f96f4cb4b3efe1ade7" name="ab8fd23a1263fe4f96f4cb4b3efe1ade7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setEdgeThickness</b> (float t)</td></tr>
 <tr class="separator:ab8fd23a1263fe4f96f4cb4b3efe1ade7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e6a1ddc22550e4ff49e12ab590e266" id="r_ac5e6a1ddc22550e4ff49e12ab590e266"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSfmlSimulationVisualizer.html#ac5e6a1ddc22550e4ff49e12ab590e266">pause</a> ()</td></tr>
+<tr class="memdesc:ac5e6a1ddc22550e4ff49e12ab590e266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces paused state (timeScale_ -&gt; 0.0).  <br /></td></tr>
+<tr class="separator:ac5e6a1ddc22550e4ff49e12ab590e266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a828de7f54b711677bd5bb239e0ac3c0b" id="r_a828de7f54b711677bd5bb239e0ac3c0b"><td class="memItemLeft" align="right" valign="top"><a id="a828de7f54b711677bd5bb239e0ac3c0b" name="a828de7f54b711677bd5bb239e0ac3c0b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>resume</b> ()</td></tr>
+<tr class="memdesc:a828de7f54b711677bd5bb239e0ac3c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes simulation restoring previous time scale (or 1.0). <br /></td></tr>
+<tr class="separator:a828de7f54b711677bd5bb239e0ac3c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac29dc4ef06b2b7b39dc3e8c02edcee50" id="r_ac29dc4ef06b2b7b39dc3e8c02edcee50"><td class="memItemLeft" align="right" valign="top"><a id="ac29dc4ef06b2b7b39dc3e8c02edcee50" name="ac29dc4ef06b2b7b39dc3e8c02edcee50"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>restart</b> ()</td></tr>
+<tr class="memdesc:ac29dc4ef06b2b7b39dc3e8c02edcee50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts visualization: ensures window exists and resumes if paused. <br /></td></tr>
+<tr class="separator:ac29dc4ef06b2b7b39dc3e8c02edcee50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f3645f8d3d6a6cd55afba77a862729e" id="r_a9f3645f8d3d6a6cd55afba77a862729e"><td class="memItemLeft" align="right" valign="top"><a id="a9f3645f8d3d6a6cd55afba77a862729e" name="a9f3645f8d3d6a6cd55afba77a862729e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
+<tr class="memdesc:a9f3645f8d3d6a6cd55afba77a862729e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops visualization by closing the window. <br /></td></tr>
+<tr class="separator:a9f3645f8d3d6a6cd55afba77a862729e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classSimulationVisualizer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSimulationVisualizer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classSimulationVisualizer.html">SimulationVisualizer</a></td></tr>
 <tr class="memitem:af2059e4c342e10e9028658d77c2639f5 inherit pub_methods_classSimulationVisualizer" id="r_af2059e4c342e10e9028658d77c2639f5"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>attachSimulation</b> (<a class="el" href="classSimulation.html">Simulation</a> *sim)</td></tr>
@@ -270,6 +283,51 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
 
 </div>
 </div>
+<a id="ac5e6a1ddc22550e4ff49e12ab590e266" name="ac5e6a1ddc22550e4ff49e12ab590e266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5e6a1ddc22550e4ff49e12ab590e266">&#9670;&#160;</a></span>pause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SfmlSimulationVisualizer::pause </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Forces paused state (timeScale_ -&gt; 0.0). </p>
+<p>Forces paused state (timeScale_ -&gt; 0.0). Stores previous time scale. </p>
+
+</div>
+</div>
+<a id="a45370578c782c8ab622db4a2668acbfe" name="a45370578c782c8ab622db4a2668acbfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45370578c782c8ab622db4a2668acbfe">&#9670;&#160;</a></span>processEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SfmlSimulationVisualizer::processEvents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle window events (close, mouse clicks, keyboard). </p>
+<p>Handle window events (close, resize, mouse clicks, keyboard).</p>
+<ul>
+<li>Left mouse click inside a button rect -&gt; triggers button action.</li>
+<li>Space toggles Pause/Resume.</li>
+<li>Escape triggers Stop. </li>
+</ul>
+
+</div>
+</div>
 <a id="a77b860499496114c7a16a83f87805ad6" name="a77b860499496114c7a16a83f87805ad6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a77b860499496114c7a16a83f87805ad6">&#9670;&#160;</a></span>renderFrame()</h2>
 
@@ -293,49 +351,10 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
 </table>
 </div><div class="memdoc">
 
-<p>Render a single frame. </p>
+<p>Render single frame: process events, draw scene UI, display. </p>
+<p>Render single frame: process events, draw scene, draw UI, display. </p>
 
 <p>Implements <a class="el" href="classSimulationVisualizer.html#a4e5c1a7afc3bb121dab655849fdb0603">SimulationVisualizer</a>.</p>
-
-</div>
-</div>
-<a id="a9369ec777f51f2639deed482980fb759" name="a9369ec777f51f2639deed482980fb759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9369ec777f51f2639deed482980fb759">&#9670;&#160;</a></span>resize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SfmlSimulationVisualizer::resize </td>
-          <td>(</td>
-          <td class="paramtype">std::uint32_t&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::uint32_t&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resize output surface if applicable. </p>
-
-<p>Reimplemented from <a class="el" href="classSimulationVisualizer.html#aa5378efe30bb719c7ecd307d328b9ee2">SimulationVisualizer</a>.</p>
 
 </div>
 </div>

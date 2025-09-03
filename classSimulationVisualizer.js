@@ -4,7 +4,6 @@ var classSimulationVisualizer =
     [ "isOpen", "classSimulationVisualizer.html#a5e26c3d6a109bc95589b2e65539cee50", null ],
     [ "onSimulationAttached", "classSimulationVisualizer.html#a6b436f87585b2dcde598d8f5945c0bfa", null ],
     [ "renderFrame", "classSimulationVisualizer.html#a4e5c1a7afc3bb121dab655849fdb0603", null ],
-    [ "resize", "classSimulationVisualizer.html#aa5378efe30bb719c7ecd307d328b9ee2", null ],
     [ "run", "classSimulationVisualizer.html#a18aaff98ff840a1d81a3a72c5657abd9", null ],
     [ "setPaused", "classSimulationVisualizer.html#abefaf060f2aa68016cb2bd264e6dda69", null ],
     [ "setTimeScale", "classSimulationVisualizer.html#a4be262ba02d69d63263337a925d21ac5", null ],

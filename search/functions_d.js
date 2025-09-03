@@ -12,5 +12,6 @@ var searchData=
   ['setview_9',['setview',['../classSfmlSimulationVisualizer.html#ac39536ebb9916ad97f8c378885e5c025',1,'SfmlSimulationVisualizer::setView()'],['../classSimulationVisualizer.html#af3a42608c763f7a298000c57f6c0528e',1,'SimulationVisualizer::setView(const VisualizerView &amp;view)']]],
   ['simulation_10',['simulation',['../classSimulationVisualizer.html#a3a4b5c5f510ee6f703faea9f384b1781',1,'SimulationVisualizer']]],
   ['spawnvehiclecar_11',['spawnVehicleCar',['../classSimulation.html#aea051bf6021ffcc490f0576406fed896',1,'Simulation']]],
-  ['streetgenerator_12',['StreetGenerator',['../classStreetGenerator.html#a45f7105c6426369be2126411d69ce472',1,'StreetGenerator']]]
+  ['stop_12',['stop',['../classSfmlSimulationVisualizer.html#a9f3645f8d3d6a6cd55afba77a862729e',1,'SfmlSimulationVisualizer']]],
+  ['streetgenerator_13',['StreetGenerator',['../classStreetGenerator.html#a45f7105c6426369be2126411d69ce472',1,'StreetGenerator']]]
 ];
