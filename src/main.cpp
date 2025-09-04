@@ -101,7 +101,7 @@ int main() {
   VisualizerView view;
   view.originX = originWorld.x;
   view.originY = originWorld.y;
-  view.scale = scale;
+  view.scale = scale / 2;
   sfviz.setView(view);
 
   sfviz.setNodeRadius(4.0f);

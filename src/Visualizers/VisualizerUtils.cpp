@@ -11,7 +11,7 @@
 
 namespace viz {
 
-static inline Vec2 nodePosAdapter(const Intersection &n) {
+static Vec2 nodePosAdapter(const Intersection &n) {
   auto [x, y] = n.getPosition();
   return Vec2{static_cast<float>(x), static_cast<float>(y)};
 }

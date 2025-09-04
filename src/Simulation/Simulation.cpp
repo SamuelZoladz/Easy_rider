@@ -16,7 +16,7 @@
 
 // ===== Debug switches =====
 #ifndef SIM_DBG
-#define SIM_DBG 1
+#define SIM_DBG 0
 #endif
 
 #if SIM_DBG
