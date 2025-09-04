@@ -93,7 +93,8 @@ int main() {
   const float worldH = std::max(1.0f, maxY - minY);
   const float padPx = 20.0f;
   const float scaleX = (kWinW - 2.0f * padPx) / worldW;
-  const float scaleY = (kWinH - 2.0f * padPx) / worldH;
+  // TODO To nie powinno być tak na pałe odejmowane - trzeba poprawić
+  const float scaleY = (kWinH - 2.0f * padPx - 100) / worldH;
   const float scale = std::min(scaleX, scaleY);
 
   viz::Vec2 originWorld{minX - padPx / scale, minY - padPx / scale};
@@ -101,7 +102,7 @@ int main() {
   VisualizerView view;
   view.originX = originWorld.x;
   view.originY = originWorld.y;
-  view.scale = scale / 2;
+  view.scale = scale;
   sfviz.setView(view);
 
   sfviz.setNodeRadius(4.0f);

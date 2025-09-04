@@ -35,15 +35,17 @@ void SfmlSimulationVisualizer::layoutUi() {
   const float margin = 14.f;
   const float btnW = 180.f, btnH = 48.f, gap = 10.f;
 
-  const float totalW = 3.f * btnW + 2.f * gap;
+  const float totalW = 4.f * btnW + 3.f * gap;
   const float startX = std::max(margin, (w - totalW) * 0.5f);
-  const float y = (panelH - btnH) * 0.5f; // UWAGA: już w układzie UI!
+  const float y = (panelH - btnH) * 0.5f;
 
   uiButtons_.clear();
   uiButtons_.push_back(
       {{startX + 0.f * (btnW + gap), y, btnW, btnH}, "Restart"});
   uiButtons_.push_back({{startX + 1.f * (btnW + gap), y, btnW, btnH}, "Pause"});
   uiButtons_.push_back({{startX + 2.f * (btnW + gap), y, btnW, btnH}, "Stop"});
+  uiButtons_.push_back(
+      {{startX + 3.f * (btnW + gap), y, btnW, btnH}, "Settings"});
 }
 
 void SfmlSimulationVisualizer::drawUi(sf::RenderTarget &rt) {
@@ -112,8 +114,11 @@ void SfmlSimulationVisualizer::handleUiClick(float mx, float my) {
         restart();
       else if (i == 1) {
         paused_ ? resume() : pause();
-      } else if (i == 2)
+      } else if (i == 2) {
         stop();
+      } else if (i == 3) {
+        openSettings();
+      }
       break;
     }
   }

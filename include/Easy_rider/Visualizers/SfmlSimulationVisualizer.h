@@ -5,6 +5,7 @@
 #ifndef SFML_SIMULATION_VISUALIZER_H
 #define SFML_SIMULATION_VISUALIZER_H
 
+#include "SfmlSettingsWindow.h"
 #include "SimulationVisualizer.h"
 #include "VisualizerUtils.h"
 
@@ -57,6 +58,8 @@ public:
   /// \brief Stops visualization by closing the window.
   void stop();
 
+  void openSettings();
+
 protected:
   void onSimulationAttached() override;
 
@@ -67,6 +70,8 @@ private:
   void rebuildGraphCache();
   void drawGraph(sf::RenderTarget &target);
   void drawVehicles(sf::RenderTarget &target);
+
+  std::unique_ptr<SfmlSettingsWindow> settingsWindow_;
 
   /**
    * @brief Simple clickable rectangle button in the right-side panel.

@@ -1,3 +1,4 @@
+#include "Easy_rider/Visualizers/SfmlSettingsWindow.h"
 #include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
@@ -15,6 +16,8 @@ void SfmlSimulationVisualizer::processEvents() {
   sf::Event ev{};
   while (window_->pollEvent(ev)) {
     if (ev.type == sf::Event::Closed) {
+      if (settingsWindow_ && settingsWindow_->isOpen())
+        settingsWindow_->close();
       window_->close();
     } else if (ev.type == sf::Event::Resized) {
       updateSceneViewport();
@@ -49,8 +52,6 @@ void SfmlSimulationVisualizer::onSimulationAttached() {
 void SfmlSimulationVisualizer::run(double targetFps) {
   SimulationVisualizer::run(targetFps);
 }
-
-// ===== wstaw do SfmlSimulationView.cpp =====
 
 void SfmlSimulationVisualizer::setGraphProvider(
     std::function<viz::GraphDrawData()> provider) {
@@ -128,8 +129,19 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
 
   uiView_ = window_->getDefaultView();
   sceneView_ = uiView_;
+  settingsWindow_ = std::make_unique<SfmlSettingsWindow>(
+      uiFont_, SfmlSettingsWindow::Callbacks{
+                   [this] { pause(); }, // pauza przy otwarciu
+                   [this] { resume(); } // wznowienie przy zamknięciu
+               });
   updateSceneViewport();
   layoutUi();
+}
+
+void SfmlSimulationVisualizer::openSettings() { // podmień YourClassName na
+                                                // faktyczną nazwę klasy
+  if (settingsWindow_)
+    settingsWindow_->open();
 }
 
 void SfmlSimulationVisualizer::closeWindow() {
@@ -153,4 +165,6 @@ void SfmlSimulationVisualizer::renderFrame() {
   drawUi(*window_);
 
   window_->display();
+  if (settingsWindow_)
+    settingsWindow_->tick();
 }
