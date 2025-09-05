@@ -134,6 +134,9 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
                    [this] { pause(); }, // pauza przy otwarciu
                    [this] { resume(); } // wznowienie przy zamknięciu
                });
+  statsPanel_.setFont(&uiFont_);
+  statsPanel_.setWidth(100.f);
+  statsPanel_.setTopBarHeight(uiTopBarHeight_);
   updateSceneViewport();
   layoutUi();
 }
@@ -160,6 +163,7 @@ void SfmlSimulationVisualizer::renderFrame() {
 
   window_->setView(sceneView_);
   renderTo(*window_);
+  drawStats(*window_);
 
   window_->setView(uiView_);
   drawUi(*window_);

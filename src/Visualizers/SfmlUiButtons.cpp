@@ -96,14 +96,6 @@ void SfmlSimulationVisualizer::drawUi(sf::RenderTarget &rt) {
   }
 }
 
-// void SfmlSimulationVisualizer::handleMousePressed(const
-// sf::Event::MouseButtonEvent& e) {
-//   // z pikseli okna do współrzędnych widoku UI
-//   sf::Vector2i pixel(e.x, e.y);
-//   sf::Vector2f uiCoords = window_->mapPixelToCoords(pixel, uiView_);
-//   handleUiClick(uiCoords.x, uiCoords.y);
-// }
-
 void SfmlSimulationVisualizer::handleUiClick(float mx, float my) {
   if (!window_)
     return;

@@ -5,6 +5,7 @@
 #ifndef SFML_SIMULATION_VISUALIZER_H
 #define SFML_SIMULATION_VISUALIZER_H
 
+#include "Easy_rider/Visualizers/SfmlStatsPanel.h"
 #include "SfmlSettingsWindow.h"
 #include "SimulationVisualizer.h"
 #include "VisualizerUtils.h"
@@ -59,6 +60,7 @@ public:
   void stop();
 
   void openSettings();
+  void drawStats(sf::RenderTarget &target);
 
 protected:
   void onSimulationAttached() override;
@@ -133,6 +135,9 @@ private:
 
   bool paused_{false};
   bool graphCacheDirty_{true};
+
+  SfmlStatsPanel statsPanel_;
+  float uiTopBarHeight_ = 0.f;
 };
 
 #endif // SFML_SIMULATION_VISUALIZER_H
