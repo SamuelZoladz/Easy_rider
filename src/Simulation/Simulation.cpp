@@ -14,6 +14,8 @@
 #include <unordered_map>
 #include <utility>
 
+#include "Easy_rider/Parameters/Parameters.h"
+
 // ===== Debug switches =====
 #ifndef SIM_DBG
 #define SIM_DBG 0
@@ -44,7 +46,7 @@ void Simulation::update(double dt) {
   if (!running_ || paused_)
     return;
 
-  const double step = dt * timeScale_;
+  const double step = dt * Parameters::simulationSpeed();
   simTime_ += step;
   SLOG("tick dt=" << dt << " timeScale=" << timeScale_ << " step=" << step
                   << " vehicles=" << vehicles_.size());

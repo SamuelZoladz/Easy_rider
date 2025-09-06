@@ -20,9 +20,6 @@ public:
 
   void tick();
 
-  void setSpeed(float v); // [0.1, 10]
-  float speed() const;
-
 private:
   void processEvents_();
   void render_();
@@ -31,7 +28,6 @@ private:
   const sf::Font &font_;
   Callbacks cbs_;
 
-  float speed_ = 1.f;     // bieżąca wartość (0.1..10)
   bool dragging_ = false; // czy aktualnie przeciągamy gałkę
   const float speedMin_ = 0.1f;
   const float speedMax_ = 10.f;

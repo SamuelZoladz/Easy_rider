@@ -5,6 +5,8 @@
 #include <iomanip>
 #include <sstream>
 
+#include "Easy_rider/Parameters/Parameters.h"
+
 // Stała geometria suwaka (okno 520x380)
 namespace {
 constexpr float kPaddingX = 20.f;
@@ -81,12 +83,6 @@ void SfmlSettingsWindow::tick() {
   render_();
 }
 
-// --- publiczne API suwaka ---
-void SfmlSettingsWindow::setSpeed(float v) {
-  speed_ = clampf(v, speedMin_, speedMax_);
-}
-float SfmlSettingsWindow::speed() const { return speed_; }
-
 // --- prywatne ---
 void SfmlSettingsWindow::processEvents_() {
   sf::Event ev{};
@@ -103,7 +99,8 @@ void SfmlSettingsWindow::processEvents_() {
           win_->mapPixelToCoords({ev.mouseButton.x, ev.mouseButton.y});
 
       // oblicz aktualne centrum gałki wg skali log
-      const float tNow = toSliderT(speed_, speedMin_, speedMax_);
+      const float tNow =
+          toSliderT(Parameters::simulationSpeed(), speedMin_, speedMax_);
       const float knobCx = kTrackX + tNow * kTrackW;
       const float knobCy = kTrackY + kTrackH * 0.5f;
 
@@ -116,7 +113,7 @@ void SfmlSettingsWindow::processEvents_() {
         dragging_ = true;
         const float clampedX = clampf(mp.x, kTrackX, kTrackX + kTrackW);
         const float t = (clampedX - kTrackX) / kTrackW;
-        speed_ = fromSliderT(t, speedMin_, speedMax_);
+        Parameters::set_simulationSpeed(fromSliderT(t, speedMin_, speedMax_));
       }
     }
     if (ev.type == sf::Event::MouseButtonReleased &&
@@ -129,7 +126,7 @@ void SfmlSettingsWindow::processEvents_() {
           win_->mapPixelToCoords({ev.mouseMove.x, ev.mouseMove.y});
       const float clampedX = clampf(mp.x, kTrackX, kTrackX + kTrackW);
       const float t = (clampedX - kTrackX) / kTrackW;
-      speed_ = fromSliderT(t, speedMin_, speedMax_);
+      Parameters::set_simulationSpeed(fromSliderT(t, speedMin_, speedMax_));
     }
   }
 }
@@ -159,7 +156,7 @@ void SfmlSettingsWindow::render_() {
     win_->draw(label);
 
     std::ostringstream oss;
-    oss << std::fixed << std::setprecision(2) << speed_;
+    oss << std::fixed << std::setprecision(2) << Parameters::simulationSpeed();
     sf::Text valueTxt;
     valueTxt.setFont(font_);
     valueTxt.setCharacterSize(18);
@@ -171,7 +168,8 @@ void SfmlSettingsWindow::render_() {
 
   // Suwak
   {
-    const float t = toSliderT(speed_, speedMin_, speedMax_);
+    const float t =
+        toSliderT(Parameters::simulationSpeed(), speedMin_, speedMax_);
 
     // tor
     sf::RectangleShape track({kTrackW, kTrackH});
