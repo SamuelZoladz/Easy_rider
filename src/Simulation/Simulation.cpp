@@ -45,6 +45,7 @@ void Simulation::update(double dt) {
     return;
 
   const double step = dt * timeScale_;
+  simTime_ += step;
   SLOG("tick dt=" << dt << " timeScale=" << timeScale_ << " step=" << step
                   << " vehicles=" << vehicles_.size());
 
@@ -179,3 +180,5 @@ std::vector<Simulation::SimSnapshotItem> Simulation::snapshot() const {
   }
   return out;
 }
+
+double Simulation::getSimTime() const noexcept { return simTime_; }

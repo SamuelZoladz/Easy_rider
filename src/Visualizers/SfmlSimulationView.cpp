@@ -27,15 +27,6 @@ void SfmlSimulationVisualizer::processEvents() {
       sf::Vector2i pixel(ev.mouseButton.x, ev.mouseButton.y);
       sf::Vector2f ui = window_->mapPixelToCoords(pixel, uiView_);
       handleUiClick(ui.x, ui.y);
-    } else if (ev.type == sf::Event::KeyPressed) {
-      if (ev.key.code == sf::Keyboard::Space) {
-        if (paused_)
-          resume();
-        else
-          pause();
-      } else if (ev.key.code == sf::Keyboard::Escape) {
-        stop();
-      }
     }
   }
 }
@@ -131,9 +122,16 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
   sceneView_ = uiView_;
   settingsWindow_ = std::make_unique<SfmlSettingsWindow>(
       uiFont_, SfmlSettingsWindow::Callbacks{
-                   [this] { pause(); }, // pauza przy otwarciu
-                   [this] { resume(); } // wznowienie przy zamknięciu
-               });
+                   [this]() noexcept(noexcept(this->pause())) {
+                     pausedBeforeSettings_ = paused_;
+                     if (!paused_)
+                       pause();
+                   },
+                   [this]() noexcept(noexcept(this->resume())) {
+                     if (!pausedBeforeSettings_ && paused_) {
+                       resume();
+                     }
+                   }});
   statsPanel_.setFont(&uiFont_);
   statsPanel_.setWidth(100.f);
   statsPanel_.setTopBarHeight(uiTopBarHeight_);
@@ -141,8 +139,7 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
   layoutUi();
 }
 
-void SfmlSimulationVisualizer::openSettings() { // podmień YourClassName na
-                                                // faktyczną nazwę klasy
+void SfmlSimulationVisualizer::openSettings() {
   if (settingsWindow_)
     settingsWindow_->open();
 }

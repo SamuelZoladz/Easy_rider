@@ -92,9 +92,9 @@ int main() {
   const float worldW = std::max(1.0f, maxX - minX);
   const float worldH = std::max(1.0f, maxY - minY);
   const float padPx = 20.0f;
-  const float scaleX = (kWinW - 2.0f * padPx) / worldW;
   // TODO To nie powinno być tak na pałe odejmowane - trzeba poprawić
-  const float scaleY = (kWinH - 2.0f * padPx - 100) / worldH;
+  const float scaleX = (kWinW - 100.f - 2.0f * padPx) / worldW;
+  const float scaleY = (kWinH - 100.f - 2.0f * padPx) / worldH;
   const float scale = std::min(scaleX, scaleY);
 
   viz::Vec2 originWorld{minX - padPx / scale, minY - padPx / scale};

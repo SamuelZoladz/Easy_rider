@@ -138,6 +138,7 @@ private:
 
   SfmlStatsPanel statsPanel_;
   float uiTopBarHeight_ = 0.f;
+  bool pausedBeforeSettings_ = false;
 };
 
 #endif // SFML_SIMULATION_VISUALIZER_H

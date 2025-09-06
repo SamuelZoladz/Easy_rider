@@ -64,6 +64,8 @@ public:
   const CongestionModel &congestion() const { return congestion_; }
   CongestionModel &congestion() { return congestion_; }
 
+  double getSimTime() const noexcept;
+
 private:
   void ensureInitialRoutes(int vehIdx, int startId, int goalId,
                            const std::shared_ptr<RouteStrategy> &strategy);
@@ -74,6 +76,7 @@ private:
   bool running_{false};
   bool paused_{false};
   double timeScale_{1.0};
+  double simTime_{0.0};
 };
 
 #endif // SIMULATION_H

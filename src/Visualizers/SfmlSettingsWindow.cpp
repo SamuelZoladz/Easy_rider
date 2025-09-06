@@ -48,11 +48,6 @@ void SfmlSettingsWindow::processEvents_() {
       close();
       return;
     }
-    if (ev.type == sf::Event::KeyPressed &&
-        ev.key.code == sf::Keyboard::Escape) {
-      close();
-      return;
-    }
   }
 }
 
@@ -66,8 +61,6 @@ void SfmlSettingsWindow::render_() {
   title.setFillColor(sf::Color::White);
   title.setPosition(20.f, 20.f);
   win_->draw(title);
-
-  // ... (dorysuj kontrolki ustawień wg potrzeb)
 
   win_->display();
 }
