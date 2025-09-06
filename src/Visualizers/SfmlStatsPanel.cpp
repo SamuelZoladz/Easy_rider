@@ -1,34 +1,12 @@
 #include "Easy_rider/Visualizers/SfmlStatsPanel.h"
-#include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
 
-SfmlStatsPanel::SfmlStatsPanel() { std::random_device rd; }
-
-void SfmlSimulationVisualizer::drawStats(sf::RenderTarget &rt) {
-  if (!window_)
-    return;
-
-  StatsSnapshot snap;
-  snap.simTimeSec = simulation_->getSimTime();
-  snap.avgSpeed = simulation_->averageSpeed();
-
-  const sf::Vector2u sz = window_->getSize();
-  const float h = static_cast<float>(sz.y);
-  const float panelH = h - 100.f;
-
-  uiTopBarHeight_ = panelH;
-  statsPanel_.setTopBarHeight(panelH);
-  statsPanel_.setWidth(100.f);
-
-  statsPanel_.draw(rt, sz, snap);
-}
-
 void SfmlStatsPanel::setWidth(float w) { width_ = std::max(1.f, w); }
 void SfmlStatsPanel::setFont(const sf::Font *font) { font_ = font; }
-void SfmlStatsPanel::setTopBarHeight(float h) { topBarH_ = std::max(0.f, h); }
+void SfmlStatsPanel::setHeight(float h) { topBarH_ = std::max(0.f, h); }
 
 void SfmlStatsPanel::draw(sf::RenderTarget &rt, const sf::Vector2u &windowSize,
                           const StatsSnapshot &stats) {

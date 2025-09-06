@@ -11,16 +11,13 @@
 #ifndef SIMULATION_VISUALIZER_H
 #define SIMULATION_VISUALIZER_H
 
-#include "Easy_rider/Simulation/Simulation.h"
-
+#include <Easy_rider/Simulation/Simulation.h>
 #include <chrono>
-#include <cstdint>
-#include <iostream>
-#include <thread>
 
 /**
  * @brief View definition used by visualizers to transform world -> screen.
  */
+
 struct VisualizerView {
   float originX{0.0f};
   float originY{0.0f};
@@ -67,30 +64,19 @@ public:
    *
    * @param targetFps Desired frames per second (min clamped to 1.0).
    */
-  virtual void run(double targetFps = 60.0) {
+  virtual void run() {
     using clock = std::chrono::steady_clock;
-    if (targetFps < 1.0)
-      targetFps = 1.0;
-    const double frameTarget = 1.0 / targetFps;
 
     auto last = clock::now();
     simulation_->start();
     while (isOpen()) {
       const auto t0 = clock::now();
       double wall = std::chrono::duration<double>(t0 - last).count();
-      if (wall > 0.25)
-        wall = 0.25;
       last = t0;
       if (simulation_) {
         simulation_->update(wall * timeScale_);
       }
       renderFrame();
-      const auto t1 = clock::now();
-      const double spent = std::chrono::duration<double>(t1 - t0).count();
-      const double sleepSec = frameTarget - spent;
-      if (sleepSec > 0.0) {
-        std::this_thread::sleep_for(std::chrono::duration<double>(sleepSec));
-      }
     }
   }
 

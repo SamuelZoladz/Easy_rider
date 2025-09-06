@@ -83,12 +83,11 @@ int main() {
   SfmlSimulationVisualizer sfviz;
   sfviz.attachSimulation(&sim);
 
-  sfviz.setGraphProvider([&G]() { return viz::makeGraphDrawData(G); });
-  sfviz.setVehicleProvider(
-      [&sim]() { return viz::extractVehiclePositions(sim); });
+  sfviz.setGraphProvider([&G]() { return makeGraphDrawData(G); });
+  sfviz.setVehicleProvider([&sim]() { return extractVehiclePositions(sim); });
 
-  const auto drawData = viz::makeGraphDrawData(G);
-  auto [minX, minY, maxX, maxY] = viz::bounds(drawData.nodePositions);
+  const auto drawData = makeGraphDrawData(G);
+  auto [minX, minY, maxX, maxY] = bounds(drawData.nodePositions);
   const float worldW = std::max(1.0f, maxX - minX);
   const float worldH = std::max(1.0f, maxY - minY);
   const float padPx = 20.0f;
@@ -97,7 +96,7 @@ int main() {
   const float scaleY = (kWinH - 100.f - 2.0f * padPx) / worldH;
   const float scale = std::min(scaleX, scaleY);
 
-  viz::Vec2 originWorld{minX - padPx / scale, minY - padPx / scale};
+  Vec2 originWorld{minX - padPx / scale, minY - padPx / scale};
 
   VisualizerView view;
   view.originX = originWorld.x;
@@ -105,13 +104,13 @@ int main() {
   view.scale = scale;
   sfviz.setView(view);
 
-  sfviz.setNodeRadius(4.0f);
-  sfviz.setVehicleRadius(3.0f);
-  sfviz.setEdgeThickness(1.5f);
+  sfviz.setNodeRadius(7.0f);
+  sfviz.setVehicleRadius(5.0f);
+  sfviz.setEdgeThickness(4.f);
 
   sfviz.openWindow(kWinW, kWinH, "Random Road Network — Simulation");
   sfviz.setTimeScale(1.0);
-  sfviz.run(60.0);
+  sfviz.run();
 
   return 0;
 }

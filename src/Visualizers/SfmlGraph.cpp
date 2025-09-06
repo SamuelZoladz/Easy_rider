@@ -10,15 +10,41 @@ void SfmlSimulationVisualizer::rebuildGraphCache() {
 
   const auto data = graphProvider_();
 
-  edgesVA_ = std::make_unique<sf::VertexArray>(sf::Lines);
-  edgesVA_->clear();
+  edgesVA_ = std::make_unique<sf::VertexArray>(sf::Triangles);
+  const float halfT = std::max(0.f, edgeThickness_) * 0.5f;
+
   for (const auto &e : data.edges) {
-    const viz::Vec2 &a = data.nodePositions.at(e.first);
-    const viz::Vec2 &b = data.nodePositions.at(e.second);
-    edgesVA_->append(sf::Vertex(toScreen(a, view_)));
-    edgesVA_->append(sf::Vertex(toScreen(b, view_)));
+    const sf::Vector2f a = toScreen(data.nodePositions.at(e.first), view_);
+    const sf::Vector2f b = toScreen(data.nodePositions.at(e.second), view_);
+
+    // wektor kierunkowy
+    sf::Vector2f d(b.x - a.x, b.y - a.y);
+    const float len = std::sqrt(d.x * d.x + d.y * d.y);
+    if (len < 1e-4f) {
+      // zbyt krótka krawędź — pomiń
+      continue;
+    }
+
+    // wektor prostopadły znormalizowany (ekranowe piksele)
+    sf::Vector2f n(-d.y / len * halfT, d.x / len * halfT);
+
+    // cztery wierzchołki prostokąta
+    const sf::Vector2f v0 = sf::Vector2f(a.x + n.x, a.y + n.y);
+    const sf::Vector2f v1 = sf::Vector2f(b.x + n.x, b.y + n.y);
+    const sf::Vector2f v2 = sf::Vector2f(b.x - n.x, b.y - n.y);
+    const sf::Vector2f v3 = sf::Vector2f(a.x - n.x, a.y - n.y);
+
+    // dwa trójkąty tworzące „grubą” linię
+    edgesVA_->append(sf::Vertex(v0));
+    edgesVA_->append(sf::Vertex(v1));
+    edgesVA_->append(sf::Vertex(v2));
+
+    edgesVA_->append(sf::Vertex(v2));
+    edgesVA_->append(sf::Vertex(v3));
+    edgesVA_->append(sf::Vertex(v0));
   }
 
+  // === WĘZŁY: bez zmian ===
   nodesVA_ = std::make_unique<sf::VertexArray>(sf::Points);
   nodesVA_->clear();
   for (const auto &p : data.nodePositions) {
@@ -27,7 +53,6 @@ void SfmlSimulationVisualizer::rebuildGraphCache() {
 
   graphCacheDirty_ = false;
 }
-
 void SfmlSimulationVisualizer::drawGraph(sf::RenderTarget &target) {
   if (graphCacheDirty_)
     rebuildGraphCache();

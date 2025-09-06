@@ -1,9 +1,6 @@
 #ifndef SFMLSTATSPANEL_H
 #define SFMLSTATSPANEL_H
 #include <SFML/Graphics.hpp>
-#include <random>
-
-#include "Easy_rider/Simulation/Simulation.h"
 
 struct StatsSnapshot {
   double simTimeSec = 0.0;
@@ -12,11 +9,9 @@ struct StatsSnapshot {
 
 class SfmlStatsPanel {
 public:
-  SfmlStatsPanel();
-
   void setWidth(float w);
   void setFont(const sf::Font *font);
-  void setTopBarHeight(float h);
+  void setHeight(float h);
 
   void draw(sf::RenderTarget &rt, const sf::Vector2u &windowSize,
             const StatsSnapshot &stats);

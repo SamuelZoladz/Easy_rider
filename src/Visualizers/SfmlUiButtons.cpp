@@ -26,7 +26,7 @@ void SfmlSimulationVisualizer::initUiIfNeeded() {
 void SfmlSimulationVisualizer::layoutUi() {
   if (!window_)
     return;
-
+  uiButtons_.clear();
   const auto sz = window_->getSize();
   const float w = static_cast<float>(sz.x);
   const float h = static_cast<float>(sz.y);

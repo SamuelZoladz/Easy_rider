@@ -1,8 +1,7 @@
-#include "Easy_rider/Visualizers/SfmlSettingsWindow.h"
 #include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
+#include "Easy_rider/Visualizers/SfmlSettingsWindow.h"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
-#include <stdexcept>
 #include <string>
 
 SfmlSimulationVisualizer::SfmlSimulationVisualizer() = default;
@@ -40,18 +39,16 @@ void SfmlSimulationVisualizer::onSimulationAttached() {
   graphCacheDirty_ = true;
 }
 
-void SfmlSimulationVisualizer::run(double targetFps) {
-  SimulationVisualizer::run(targetFps);
-}
+void SfmlSimulationVisualizer::run() { SimulationVisualizer::run(); }
 
 void SfmlSimulationVisualizer::setGraphProvider(
-    std::function<viz::GraphDrawData()> provider) {
+    std::function<GraphDrawData()> provider) {
   graphProvider_ = std::move(provider);
   graphCacheDirty_ = true;
 }
 
 void SfmlSimulationVisualizer::setVehicleProvider(
-    std::function<std::vector<viz::Vec2>()> provider) {
+    std::function<std::vector<Vec2>()> provider) {
   vehicleProvider_ = std::move(provider);
 }
 
@@ -115,7 +112,6 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
   window_ = std::make_unique<sf::RenderWindow>(
       sf::VideoMode(width, height), title,
       sf::Style::Titlebar | sf::Style::Close);
-  window_->setVerticalSyncEnabled(true);
   window_->setFramerateLimit(60);
 
   uiView_ = window_->getDefaultView();
@@ -134,7 +130,7 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
                    }});
   statsPanel_.setFont(&uiFont_);
   statsPanel_.setWidth(100.f);
-  statsPanel_.setTopBarHeight(uiTopBarHeight_);
+  statsPanel_.setHeight(uiTopBarHeight_);
   updateSceneViewport();
   layoutUi();
 }
@@ -168,4 +164,20 @@ void SfmlSimulationVisualizer::renderFrame() {
   window_->display();
   if (settingsWindow_)
     settingsWindow_->tick();
+}
+
+void SfmlSimulationVisualizer::drawStats(sf::RenderTarget &rt) {
+  StatsSnapshot snap;
+  snap.simTimeSec = simulation_->getSimTime();
+  snap.avgSpeed = simulation_->averageSpeed();
+
+  const sf::Vector2u sz = window_->getSize();
+  const float h = static_cast<float>(sz.y);
+  const float panelH = h - 100.f;
+
+  uiTopBarHeight_ = panelH;
+  statsPanel_.setHeight(panelH);
+  statsPanel_.setWidth(100.f);
+
+  statsPanel_.draw(rt, sz, snap);
 }

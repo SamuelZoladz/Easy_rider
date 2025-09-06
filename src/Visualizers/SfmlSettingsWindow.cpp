@@ -178,7 +178,7 @@ void SfmlSettingsWindow::render_() {
     win_->draw(track);
 
     // wypełnienie do aktualnej wartości
-    sf::RectangleShape fill({std::max(0.f, t) * kTrackW, kTrackH});
+    sf::RectangleShape fill({t * kTrackW, kTrackH});
     fill.setPosition(kTrackX, kTrackY);
     fill.setFillColor(sf::Color(110, 160, 255));
     win_->draw(fill);

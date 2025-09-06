@@ -9,8 +9,6 @@
 #include <cmath>
 #include <vector>
 
-namespace viz {
-
 static Vec2 nodePosAdapter(const Intersection &n) {
   auto [x, y] = n.getPosition();
   return Vec2{static_cast<float>(x), static_cast<float>(y)};
@@ -70,5 +68,3 @@ std::vector<Vec2> extractVehiclePositions(const Simulation &sim) {
   }
   return pts;
 }
-
-} // namespace viz
