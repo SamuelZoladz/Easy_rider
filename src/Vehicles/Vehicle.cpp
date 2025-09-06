@@ -16,7 +16,7 @@ static int s_nextVehicleId = 1;
 
 // ===== Debug switches =====
 #ifndef VEH_DBG
-#define VEH_DBG 1
+#define VEH_DBG 0
 #endif
 
 #if VEH_DBG

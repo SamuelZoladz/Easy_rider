@@ -1,12 +1,11 @@
 #ifndef VISUALIZER_UTILS_H
 #define VISUALIZER_UTILS_H
 
-#include "Easy_rider/Simulation/Simulation.h"
 #include "Easy_rider/TrafficInfrastructure/Graph.h"
 #include "Easy_rider/TrafficInfrastructure/Intersection.h"
 #include "Easy_rider/TrafficInfrastructure/Road.h"
-
 #include <cstddef>
+#include <tuple>
 #include <utility>
 #include <vector>
 
@@ -17,9 +16,7 @@
  * Keep any non-trivial extraction or formatting logic here, so rendering
  * classes remain focused purely on drawing.
  */
-
-namespace viz {
-
+class Simulation;
 /**
  * @brief Lightweight 2D vector detached from any graphics library.
  */
@@ -71,7 +68,5 @@ GraphDrawData makeGraphDrawData(const Graph<Intersection, Road> &g);
  * @brief Extract current vehicle world positions from Simulation.
  */
 std::vector<Vec2> extractVehiclePositions(const Simulation &sim);
-
-} // namespace viz
 
 #endif // VISUALIZER_UTILS_H
