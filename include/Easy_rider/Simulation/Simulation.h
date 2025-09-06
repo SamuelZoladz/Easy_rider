@@ -63,6 +63,7 @@ public:
   CongestionModel &congestion() { return congestion_; }
 
   double getSimTime() const noexcept;
+  double averageSpeed() const noexcept;
 
 private:
   void ensureInitialRoutes(int vehIdx, int startId, int goalId,

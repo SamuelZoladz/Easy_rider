@@ -3,8 +3,11 @@
 #include <SFML/Graphics.hpp>
 #include <random>
 
+#include "Easy_rider/Simulation/Simulation.h"
+
 struct StatsSnapshot {
   double simTimeSec = 0.0;
+  double avgSpeed = 0.0;
 };
 
 class SfmlStatsPanel {

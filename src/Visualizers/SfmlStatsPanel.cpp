@@ -13,6 +13,7 @@ void SfmlSimulationVisualizer::drawStats(sf::RenderTarget &rt) {
 
   StatsSnapshot snap;
   snap.simTimeSec = simulation_->getSimTime();
+  snap.avgSpeed = simulation_->averageSpeed();
 
   const sf::Vector2u sz = window_->getSize();
   const float h = static_cast<float>(sz.y);
@@ -97,7 +98,7 @@ void SfmlStatsPanel::drawTexts_(sf::RenderTarget &rt, const sf::Vector2u &sz,
 
   std::ostringstream oss;
   oss.setf(std::ios::fixed);
-  oss << std::setprecision(1) << 1;
+  oss << std::setprecision(1) << stats.avgSpeed;
 
   val.setString(oss.str());
   val.setPosition(x, y + 18.f + gap);

@@ -184,3 +184,25 @@ std::vector<Simulation::SimSnapshotItem> Simulation::snapshot() const {
 }
 
 double Simulation::getSimTime() const noexcept { return simTime_; }
+
+double Simulation::averageSpeed() const noexcept {
+  double sum = 0.0;
+  std::size_t count = 0;
+
+  for (const auto &up : vehicles_) {
+    if (up->renderState()) {
+      sum += up->currentSpeed();
+      ++count;
+    }
+  }
+
+  if (count == 0)
+    return 0.0;
+
+#if SIM_DBG
+  SLOG("averageSpeed count=" << count
+                             << " avg=" << (sum / static_cast<double>(count)));
+#endif
+
+  return sum / static_cast<double>(count);
+}
