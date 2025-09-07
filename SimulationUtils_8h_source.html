@@ -148,40 +148,36 @@ $(document).ready(function(){initNavTree('SimulationUtils_8h_source.html',''); i
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classSimulationUtils_1_1FleetManager.html">   45</a></span><span class="keyword">class </span><a class="code hl_class" href="classSimulationUtils_1_1FleetManager.html">FleetManager</a> {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_class" href="classSimulationUtils_1_1FleetManager.html">FleetManager</a>(<a class="code hl_class" href="classSimulation.html">Simulation</a> &amp;sim, <span class="keyword">const</span> std::vector&lt;int&gt; &amp;nodeIds, <span class="keywordtype">int</span> targetCars,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>               <span class="keywordtype">int</span> targetTrucks,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>               StrategyAlgoritm carAlg = StrategyAlgoritm::AStar,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>               StrategyAlgoritm truckAlg = StrategyAlgoritm::Dijkstra,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>               uint32_t seed = std::random_device{}());</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>               <span class="keywordtype">int</span> targetTrucks, uint32_t seed = std::random_device{}());</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">void</span> seedInitial();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> topUpIfNeeded();</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">void</span> seedInitial();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">void</span> topUpIfNeeded();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_class" href="classSimulation.html">Simulation</a> &amp;sim_;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  std::vector&lt;int&gt; nodeIds_;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">int</span> targetCars_;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordtype">int</span> targetTrucks_;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  StrategyAlgoritm carAlg_;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  StrategyAlgoritm truckAlg_;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  std::mt19937 rng_;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">int</span> randomNode();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  std::pair&lt;int, int&gt; randomDistinctPair();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> spawnOneCar();</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">void</span> spawnOneTruck();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_class" href="classSimulation.html">Simulation</a> &amp;sim_;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  std::vector&lt;int&gt; nodeIds_;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">int</span> targetCars_;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">int</span> targetTrucks_;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  StrategyAlgoritm alg_;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  std::mt19937 rng_;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">int</span> randomNode();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  std::pair&lt;int, int&gt; randomDistinctPair();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">void</span> spawnOneCar();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">void</span> spawnOneTruck();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>} <span class="comment">// namespace SimulationUtils</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">// SIMULATIONUTILS_H</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>} <span class="comment">// namespace SimulationUtils</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">// SIMULATIONUTILS_H</span></div>
 <div class="ttc" id="aGraph_8h_html"><div class="ttname"><a href="Graph_8h.html">Graph.h</a></div><div class="ttdoc">Directed, id-addressable graph template with node/edge concepts, id-&gt;index lookup,...</div></div>
 <div class="ttc" id="aIntersection_8h_html"><div class="ttname"><a href="Intersection_8h.html">Intersection.h</a></div><div class="ttdoc">Declaration of the Intersection class representing a point in 2D space with auto-assigned ids.</div></div>
 <div class="ttc" id="aRoad_8h_html"><div class="ttname"><a href="Road_8h.html">Road.h</a></div><div class="ttdoc">Declaration of the Road class representing a connection between two nodes (intersections) by identifi...</div></div>
 <div class="ttc" id="aclassGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdoc">A templated graph storing nodes of type T and edges of type U.</div><div class="ttdef"><b>Definition</b> Graph.h:78</div></div>
 <div class="ttc" id="aclassSimulationUtils_1_1FleetManager_html"><div class="ttname"><a href="classSimulationUtils_1_1FleetManager.html">SimulationUtils::FleetManager</a></div><div class="ttdef"><b>Definition</b> SimulationUtils.h:45</div></div>
-<div class="ttc" id="aclassSimulation_html"><div class="ttname"><a href="classSimulation.html">Simulation</a></div><div class="ttdoc">Owns the world (graph), vehicles, and time integration loop.</div><div class="ttdef"><b>Definition</b> Simulation.h:18</div></div>
+<div class="ttc" id="aclassSimulation_html"><div class="ttname"><a href="classSimulation.html">Simulation</a></div><div class="ttdoc">Owns the world (graph), vehicles, and time integration loop.</div><div class="ttdef"><b>Definition</b> Simulation.h:19</div></div>
 <div class="ttc" id="astructRandomNetworkParams_html"><div class="ttname"><a href="structRandomNetworkParams.html">RandomNetworkParams</a></div><div class="ttdef"><b>Definition</b> SimulationUtils.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
