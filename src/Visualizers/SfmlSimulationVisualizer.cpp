@@ -41,17 +41,6 @@ void SfmlSimulationVisualizer::onSimulationAttached() {
 
 void SfmlSimulationVisualizer::run() { SimulationVisualizer::run(); }
 
-void SfmlSimulationVisualizer::setGraphProvider(
-    std::function<GraphDrawData()> provider) {
-  graphProvider_ = std::move(provider);
-  graphCacheDirty_ = true;
-}
-
-void SfmlSimulationVisualizer::setVehicleProvider(
-    std::function<std::vector<Vec2>()> provider) {
-  vehicleProvider_ = std::move(provider);
-}
-
 bool SfmlSimulationVisualizer::isOpen() const {
   return window_ && window_->isOpen();
 }

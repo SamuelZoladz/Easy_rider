@@ -83,9 +83,6 @@ int main() {
   SfmlSimulationVisualizer sfviz;
   sfviz.attachSimulation(&sim);
 
-  sfviz.setGraphProvider([&G]() { return makeGraphDrawData(G); });
-  sfviz.setVehicleProvider([&sim]() { return extractVehiclePositions(sim); });
-
   sfviz.setNodeRadius(7.0f);
   sfviz.setVehicleRadius(5.0f);
   sfviz.setEdgeThickness(4.f);

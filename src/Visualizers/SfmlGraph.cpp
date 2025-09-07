@@ -5,10 +5,7 @@
 #include <string>
 
 void SfmlSimulationVisualizer::rebuildGraphCache() {
-  if (!graphProvider_)
-    return;
-
-  const auto data = graphProvider_();
+  const auto data = makeGraphDrawData(simulation_->graph());
   graphPositioning(data.nodePositions);
 
   edgesVA_ = std::make_unique<sf::VertexArray>(sf::Triangles);
@@ -155,9 +152,7 @@ void SfmlSimulationVisualizer::drawGraph(sf::RenderTarget &target) {
 }
 
 void SfmlSimulationVisualizer::drawVehicles(sf::RenderTarget &target) {
-  if (!vehicleProvider_)
-    return;
-  const auto vehicles = vehicleProvider_();
+  const auto vehicles = extractVehiclePositions(*simulation_);
   sf::CircleShape dot(vehicleRadius_);
   dot.setOrigin(vehicleRadius_, vehicleRadius_);
   for (const auto &wpos : vehicles) {
