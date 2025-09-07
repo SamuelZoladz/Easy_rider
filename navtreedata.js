@@ -51,7 +51,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"AStarStrategy_8h.html"
+"AStarStrategy_8h.html",
+"structStatsSnapshot.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

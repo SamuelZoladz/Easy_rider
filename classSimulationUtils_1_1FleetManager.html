@@ -101,19 +101,96 @@ $(document).ready(function(){initNavTree('classSimulationUtils_1_1FleetManager.h
   <div class="headertitle"><div class="title">SimulationUtils::FleetManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Maintains a target number of cars/trucks in the simulation.  
+ <a href="classSimulationUtils_1_1FleetManager.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="SimulationUtils_8h_source.html">SimulationUtils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac6bf79d83fc86e32958a09cc887134d6" id="r_ac6bf79d83fc86e32958a09cc887134d6"><td class="memItemLeft" align="right" valign="top"><a id="ac6bf79d83fc86e32958a09cc887134d6" name="ac6bf79d83fc86e32958a09cc887134d6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FleetManager</b> (<a class="el" href="classSimulation.html">Simulation</a> &amp;sim, const std::vector&lt; int &gt; &amp;nodeIds, int targetCars, int targetTrucks, uint32_t seed=std::random_device{}())</td></tr>
+<tr class="memitem:ac6bf79d83fc86e32958a09cc887134d6" id="r_ac6bf79d83fc86e32958a09cc887134d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationUtils_1_1FleetManager.html#ac6bf79d83fc86e32958a09cc887134d6">FleetManager</a> (<a class="el" href="classSimulation.html">Simulation</a> &amp;sim, const std::vector&lt; int &gt; &amp;nodeIds, int targetCars, int targetTrucks, uint32_t seed=std::random_device{}())</td></tr>
 <tr class="separator:ac6bf79d83fc86e32958a09cc887134d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fc0f226dde85e40d4eade91afac0775" id="r_a0fc0f226dde85e40d4eade91afac0775"><td class="memItemLeft" align="right" valign="top"><a id="a0fc0f226dde85e40d4eade91afac0775" name="a0fc0f226dde85e40d4eade91afac0775"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>seedInitial</b> ()</td></tr>
+<tr class="memdesc:a0fc0f226dde85e40d4eade91afac0775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawn up to target levels once. <br /></td></tr>
 <tr class="separator:a0fc0f226dde85e40d4eade91afac0775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a006148ee2c50a3ab048dec7fff391fa4" id="r_a006148ee2c50a3ab048dec7fff391fa4"><td class="memItemLeft" align="right" valign="top"><a id="a006148ee2c50a3ab048dec7fff391fa4" name="a006148ee2c50a3ab048dec7fff391fa4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>topUpIfNeeded</b> ()</td></tr>
+<tr class="memdesc:a006148ee2c50a3ab048dec7fff391fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure current counts stay at or near targets (top-up only). <br /></td></tr>
 <tr class="separator:a006148ee2c50a3ab048dec7fff391fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Maintains a target number of cars/trucks in the simulation. </p>
+<p>Typical usage:</p><ul>
+<li>Call <a class="el" href="classSimulationUtils_1_1FleetManager.html#a0fc0f226dde85e40d4eade91afac0775" title="Spawn up to target levels once.">seedInitial()</a> once after creating the <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, congestion model, and the main loop.">Simulation</a>.</li>
+<li>Call <a class="el" href="classSimulationUtils_1_1FleetManager.html#a006148ee2c50a3ab048dec7fff391fa4" title="Ensure current counts stay at or near targets (top-up only).">topUpIfNeeded()</a> periodically to keep the fleet at target levels. </li>
+</ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac6bf79d83fc86e32958a09cc887134d6" name="ac6bf79d83fc86e32958a09cc887134d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6bf79d83fc86e32958a09cc887134d6">&#9670;&#160;</a></span>FleetManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SimulationUtils::FleetManager::FleetManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSimulation.html">Simulation</a> &amp;&#160;</td>
+          <td class="paramname"><em>sim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>nodeIds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>targetCars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>targetTrucks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>seed</em> = <code>std::random_device{}()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sim</td><td><a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, congestion model, and the main loop.">Simulation</a> to spawn vehicles into (non-owning). </td></tr>
+    <tr><td class="paramname">nodeIds</td><td>Candidate node ids to use as (start, goal) endpoints. </td></tr>
+    <tr><td class="paramname">targetCars</td><td>Desired number of cars present. </td></tr>
+    <tr><td class="paramname">targetTrucks</td><td>Desired number of trucks present. </td></tr>
+    <tr><td class="paramname">seed</td><td>RNG seed (defaults to random_device()). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/Easy_rider/Simulation/<a class="el" href="SimulationUtils_8h_source.html">SimulationUtils.h</a></li>
 <li>src/Simulation/<b>SimulationUtils.cpp</b></li>

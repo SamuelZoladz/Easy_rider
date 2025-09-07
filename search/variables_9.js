@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['present_0',['present',['../structLeaderInfo.html#a50d4f2d5cf1f4d08d9eb0ed392185862',1,'LeaderInfo']]]
+  ['nodepositions_0',['nodePositions',['../structGraphDrawData.html#a95844bbb5640369fd9d86499d73bf222',1,'GraphDrawData']]]
 ];

@@ -1,7 +1,7 @@
 var annotated_dup =
 [
     [ "SimulationUtils", null, [
-      [ "FleetManager", "classSimulationUtils_1_1FleetManager.html", null ]
+      [ "FleetManager", "classSimulationUtils_1_1FleetManager.html", "classSimulationUtils_1_1FleetManager" ]
     ] ],
     [ "AStarStrategy", "classAStarStrategy.html", "classAStarStrategy" ],
     [ "Car", "classCar.html", null ],
@@ -9,7 +9,7 @@ var annotated_dup =
     [ "DijkstraStrategy", "classDijkstraStrategy.html", "classDijkstraStrategy" ],
     [ "DisjointSet", "structDisjointSet.html", null ],
     [ "EdgeKeyHash", "structEdgeKeyHash.html", null ],
-    [ "EdgeState", "structEdgeState.html", "structEdgeState" ],
+    [ "EdgeState", "structEdgeState.html", null ],
     [ "Graph", "classGraph.html", "classGraph" ],
     [ "GraphDrawData", "structGraphDrawData.html", "structGraphDrawData" ],
     [ "HighwayGenerator", "classHighwayGenerator.html", "classHighwayGenerator" ],

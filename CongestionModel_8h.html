@@ -102,10 +102,9 @@ $(document).ready(function(){initNavTree('CongestionModel_8h.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>Tiered (halving) congestion model driven by <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> capacity.  
+<p>Tiered (halving) congestion model driven by per-edge <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> capacity.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="Road_8h_source.html">Easy_rider/TrafficInfrastructure/Road.h</a>&quot;</code><br />
-<code>#include &lt;algorithm&gt;</code><br />
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
@@ -116,25 +115,19 @@ Include dependency graph for CongestionModel.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="CongestionModel_8h__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Congestion_2CongestionModel_8h" alt=""/></div>
 <map name="ainclude_2Easy__rider_2Congestion_2CongestionModel_8h" id="ainclude_2Easy__rider_2Congestion_2CongestionModel_8h">
-<area shape="rect" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="329,5,557,45"/>
-<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="5,93,227,133"/>
-<area shape="poly" title=" " alt="" coords="372,48,201,92,200,87,370,43"/>
-<area shape="rect" title=" " alt="" coords="179,255,239,280"/>
-<area shape="poly" title=" " alt="" coords="373,48,330,67,291,95,263,130,242,170,217,242,212,240,237,168,259,127,287,91,327,63,371,43"/>
-<area shape="rect" title=" " alt="" coords="301,101,387,126"/>
-<area shape="poly" title=" " alt="" coords="423,48,370,93,366,89,419,44"/>
-<area shape="rect" title=" " alt="" coords="411,101,474,126"/>
-<area shape="poly" title=" " alt="" coords="445,46,445,87,440,87,440,46"/>
-<area shape="rect" title=" " alt="" coords="499,101,565,126"/>
-<area shape="poly" title=" " alt="" coords="464,44,512,89,508,93,461,48"/>
-<area shape="rect" title=" " alt="" coords="589,101,664,126"/>
-<area shape="poly" title=" " alt="" coords="484,43,591,92,589,97,482,48"/>
-<area shape="rect" title=" " alt="" coords="689,101,813,126"/>
-<area shape="poly" title=" " alt="" coords="511,43,697,94,696,100,510,48"/>
-<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="61,181,171,207"/>
-<area shape="poly" title=" " alt="" coords="119,134,119,167,113,167,113,134"/>
-<area shape="poly" title=" " alt="" coords="142,132,164,153,185,180,199,211,207,240,202,242,194,213,180,183,160,157,138,135"/>
-<area shape="poly" title=" " alt="" coords="133,205,185,244,182,248,129,209"/>
+<area shape="rect" title="Tiered (halving) congestion model driven by per&#45;edge Road capacity." alt="" coords="169,5,397,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,91,119"/>
+<area shape="poly" title=" " alt="" coords="227,48,96,92,94,87,226,43"/>
+<area shape="rect" title=" " alt="" coords="115,93,178,119"/>
+<area shape="poly" title=" " alt="" coords="251,48,180,89,177,84,249,43"/>
+<area shape="rect" title=" " alt="" coords="203,93,269,119"/>
+<area shape="poly" title=" " alt="" coords="274,47,252,83,248,80,269,44"/>
+<area shape="rect" title=" " alt="" coords="293,93,368,119"/>
+<area shape="poly" title=" " alt="" coords="297,44,319,80,314,83,292,47"/>
+<area shape="rect" title=" " alt="" coords="393,93,517,119"/>
+<area shape="poly" title=" " alt="" coords="325,43,418,85,416,90,323,48"/>
+<area shape="rect" title=" " alt="" coords="541,93,601,119"/>
+<area shape="poly" title=" " alt="" coords="353,43,528,90,526,95,352,48"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -142,7 +135,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="CongestionModel_8h__dep__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Congestion_2CongestionModel_8hdep" alt=""/></div>
 <map name="ainclude_2Easy__rider_2Congestion_2CongestionModel_8hdep" id="ainclude_2Easy__rider_2Congestion_2CongestionModel_8hdep">
-<area shape="rect" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="291,5,519,45"/>
+<area shape="rect" title="Tiered (halving) congestion model driven by per&#45;edge Road capacity." alt="" coords="291,5,519,45"/>
 <area shape="rect" href="Simulation_8h_source.html" title=" " alt="" coords="147,181,329,221"/>
 <area shape="poly" title=" " alt="" coords="369,56,324,95,284,141,253,183,249,180,280,138,320,91,366,52"/>
 <area shape="rect" href="Vehicle_8h_source.html" title=" " alt="" coords="333,93,476,133"/>
@@ -168,6 +161,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEdgeKeyHash.html">EdgeKeyHash</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash for EdgeKey (pair&lt;int,int&gt;).  <a href="structEdgeKeyHash.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEdgeState.html">EdgeState</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime state of a single directed edge.  <a href="structEdgeState.html#details">More...</a><br /></td></tr>
@@ -184,14 +178,14 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>EdgeKey</b> = std::p
 <tr class="separator:a6e71afd9528bf2746afcf70f2e1e5b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Tiered (halving) congestion model driven by <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> capacity. </p>
-<p>Rules (per edge):</p><ul>
+<div class="textblock"><p>Tiered (halving) congestion model driven by per-edge <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> capacity. </p>
+<p>Rules (per directed edge):</p><ul>
 <li>Let x = <a class="el" href="classRoad.html" title="Represents a directed road connecting two intersections (by ids), with a computed length,...">Road</a> capacity (max vehicles "comfortably" on edge).</li>
 <li>If N &lt;= x -&gt; v_eff = v_free.</li>
 <li>If x &lt; N &lt;= 2x -&gt; v_eff = v_free / 2.</li>
 <li>If 2x &lt; N &lt;= 3x -&gt; v_eff = v_free / 4.</li>
 <li>If 3x &lt; N &lt;= 4x -&gt; v_eff = v_free / 8.</li>
-<li>And so on: v_eff = v_free / 2^(ceil(N/x) - 1). </li>
+<li>In general: v_eff = v_free / 2^(ceil(N/x) - 1). </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

@@ -12,5 +12,6 @@ var searchData=
   ['congestionmodel_2eh_9',['CongestionModel.h',['../CongestionModel_8h.html',1,'']]],
   ['crosses_10',['Crosses',['../classGraph.html#ad4551558ed2438d068f9a2efd09508c3a4bebc367b168a1cb16cf18978551c6d9',1,'Graph']]],
   ['currentnodeid_11',['currentNodeId',['../classVehicle.html#a39364919651d38f3cea91aacbbd2ea30',1,'Vehicle']]],
-  ['currentspeed_5f_12',['currentSpeed_',['../classVehicle.html#a63dbcd66f08d74b102788124df7b49e4',1,'Vehicle']]]
+  ['currentspeed_12',['currentSpeed',['../structSimulation_1_1SimSnapshotItem.html#a98e7c1544d1a924d138db057192ef9a9',1,'Simulation::SimSnapshotItem']]],
+  ['currentspeed_5f_13',['currentSpeed_',['../classVehicle.html#a63dbcd66f08d74b102788124df7b49e4',1,'Vehicle']]]
 ];

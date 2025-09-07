@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['t_0',['T',['../structIDMParams.html#af691ae641d2420ae3bc2116359ad0043',1,'IDMParams']]],
-  ['timescale_5f_1',['timeScale_',['../classSimulationVisualizer.html#a2dd3108bc6d454971dcbf17f8b588072',1,'SimulationVisualizer']]]
+  ['reroutecounts_0',['rerouteCounts',['../structStatsSnapshot.html#a076213b38290667d4e561a6c42b2f18f',1,'StatsSnapshot']]],
+  ['reroutesavedtime_1',['rerouteSavedTime',['../structStatsSnapshot.html#ae7d6c10d21e18bfd01a29e1c8c7910bf',1,'StatsSnapshot']]]
 ];

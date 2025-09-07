@@ -126,7 +126,7 @@ Collaboration diagram for SfmlSimulationVisualizer:</div>
 <area shape="rect" title="Concrete implementation of SimulationVisualizer backed by SFML." alt="" coords="22,168,209,193"/>
 <area shape="rect" href="classSimulationVisualizer.html" title="Abstract facade that connects a Simulation with a rendering backend." alt="" coords="37,93,193,119"/>
 <area shape="poly" title=" " alt="" coords="118,133,118,168,113,168,113,133"/>
-<area shape="rect" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop." alt="" coords="5,5,97,31"/>
+<area shape="rect" href="classSimulation.html" title="Owns the world (graph), vehicles, congestion model, and the main loop." alt="" coords="5,5,97,31"/>
 <area shape="poly" title=" " alt="" coords="60,43,72,68,98,91,94,95,68,71,55,45"/>
 <area shape="rect" href="structVisualizerView.html" title="View parameters used to transform world coordinates to screen space." alt="" coords="121,5,240,31"/>
 <area shape="poly" title=" " alt="" coords="171,45,153,71,130,95,127,91,149,68,166,42"/>
@@ -197,7 +197,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>openSettings</b> () c
 <tr class="inherit_header pub_methods_classSimulationVisualizer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSimulationVisualizer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classSimulationVisualizer.html">SimulationVisualizer</a></td></tr>
 <tr class="memitem:af2059e4c342e10e9028658d77c2639f5 inherit pub_methods_classSimulationVisualizer" id="r_af2059e4c342e10e9028658d77c2639f5"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>attachSimulation</b> (<a class="el" href="classSimulation.html">Simulation</a> *sim)</td></tr>
-<tr class="memdesc:af2059e4c342e10e9028658d77c2639f5 inherit pub_methods_classSimulationVisualizer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach a <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a> instance to visualize (non-owning). Triggers <a class="el" href="classSimulationVisualizer.html#a6b436f87585b2dcde598d8f5945c0bfa" title="Called after attachSimulation(); override to rebuild caches, etc.">onSimulationAttached()</a> for cache rebuilds in derived classes. <br /></td></tr>
+<tr class="memdesc:af2059e4c342e10e9028658d77c2639f5 inherit pub_methods_classSimulationVisualizer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach a <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, congestion model, and the main loop.">Simulation</a> instance to visualize (non-owning). Triggers <a class="el" href="classSimulationVisualizer.html#a6b436f87585b2dcde598d8f5945c0bfa" title="Called after attachSimulation(); override to rebuild caches, etc.">onSimulationAttached()</a> for cache rebuilds in derived classes. <br /></td></tr>
 <tr class="separator:af2059e4c342e10e9028658d77c2639f5 inherit pub_methods_classSimulationVisualizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4be262ba02d69d63263337a925d21ac5 inherit pub_methods_classSimulationVisualizer" id="r_a4be262ba02d69d63263337a925d21ac5"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimeScale</b> (double s)</td></tr>

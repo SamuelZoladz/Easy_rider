@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('classSimulation.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
-<p>Owns the world (graph), vehicles, and time integration loop.  
+<p>Owns the world (graph), vehicles, congestion model, and the main loop.  
  <a href="classSimulation.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Simulation_8h_source.html">Simulation.h</a>&gt;</code></p>
@@ -111,6 +111,7 @@ $(document).ready(function(){initNavTree('classSimulation.html',''); initResizab
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSimulation_1_1SimSnapshotItem.html">SimSnapshotItem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lightweight snapshot of in-flight vehicles for UI/telemetry.  <a href="structSimulation_1_1SimSnapshotItem.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSimulation_1_1Stats.html">Stats</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,36 +120,40 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aef39342ea7bce33ffd79093a33a0925e" id="r_aef39342ea7bce33ffd79093a33a0925e"><td class="memItemLeft" align="right" valign="top"><a id="aef39342ea7bce33ffd79093a33a0925e" name="aef39342ea7bce33ffd79093a33a0925e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Simulation</b> (<a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; graph)</td></tr>
+<tr class="memdesc:aef39342ea7bce33ffd79093a33a0925e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a simulation with an existing graph snapshot. <br /></td></tr>
 <tr class="separator:aef39342ea7bce33ffd79093a33a0925e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf598e815ded8ca12cad5db975ac8849" id="r_acf598e815ded8ca12cad5db975ac8849"><td class="memItemLeft" align="right" valign="top"><a id="acf598e815ded8ca12cad5db975ac8849" name="acf598e815ded8ca12cad5db975ac8849"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr>
+<tr class="memdesc:acf598e815ded8ca12cad5db975ac8849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start advancing time in <a class="el" href="classSimulation.html#a81ec581dfa49e501fc617afa63900bcd" title="Advance the simulation by dt seconds (scaled internally if needed).">update()</a>. <br /></td></tr>
 <tr class="separator:acf598e815ded8ca12cad5db975ac8849"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52694eecce98e8e43a41ef2e1f38265f" id="r_a52694eecce98e8e43a41ef2e1f38265f"><td class="memItemLeft" align="right" valign="top"><a id="a52694eecce98e8e43a41ef2e1f38265f" name="a52694eecce98e8e43a41ef2e1f38265f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>pause</b> ()</td></tr>
+<tr class="memdesc:a52694eecce98e8e43a41ef2e1f38265f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause advancing time (state preserved). <br /></td></tr>
 <tr class="separator:a52694eecce98e8e43a41ef2e1f38265f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6d3f404c8c791cd05c6e5b6246dcbc2" id="r_af6d3f404c8c791cd05c6e5b6246dcbc2"><td class="memItemLeft" align="right" valign="top"><a id="af6d3f404c8c791cd05c6e5b6246dcbc2" name="af6d3f404c8c791cd05c6e5b6246dcbc2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
+<tr class="memdesc:af6d3f404c8c791cd05c6e5b6246dcbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop advancing time (state preserved; call <a class="el" href="classSimulation.html#acf598e815ded8ca12cad5db975ac8849" title="Start advancing time in update().">start()</a> to resume). <br /></td></tr>
 <tr class="separator:af6d3f404c8c791cd05c6e5b6246dcbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81ec581dfa49e501fc617afa63900bcd" id="r_a81ec581dfa49e501fc617afa63900bcd"><td class="memItemLeft" align="right" valign="top"><a id="a81ec581dfa49e501fc617afa63900bcd" name="a81ec581dfa49e501fc617afa63900bcd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (double dt)</td></tr>
-<tr class="memdesc:a81ec581dfa49e501fc617afa63900bcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance simulation by dt seconds (scaled by timeScale). <br /></td></tr>
+<tr class="memdesc:a81ec581dfa49e501fc617afa63900bcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the simulation by dt seconds (scaled internally if needed). <br /></td></tr>
 <tr class="separator:a81ec581dfa49e501fc617afa63900bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a398bfdb1babf3f0aae09f620682f0bb6" id="r_a398bfdb1babf3f0aae09f620682f0bb6"><td class="memItemLeft" align="right" valign="top"><a id="a398bfdb1babf3f0aae09f620682f0bb6" name="a398bfdb1babf3f0aae09f620682f0bb6"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>spawnVehicleCar</b> (int startId, int goalId, StrategyAlgoritm algo)</td></tr>
-<tr class="memdesc:a398bfdb1babf3f0aae09f620682f0bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and add a new vehicle; returns its id. <br /></td></tr>
+<tr class="memdesc:a398bfdb1babf3f0aae09f620682f0bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and add a new car; returns its vehicle id. <br /></td></tr>
 <tr class="separator:a398bfdb1babf3f0aae09f620682f0bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aed5edb4a60b1bc6ea9471cb47e1de8" id="r_a3aed5edb4a60b1bc6ea9471cb47e1de8"><td class="memItemLeft" align="right" valign="top"><a id="a3aed5edb4a60b1bc6ea9471cb47e1de8" name="a3aed5edb4a60b1bc6ea9471cb47e1de8"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>spawnVehicleTruck</b> (int startId, int goalId, StrategyAlgoritm algo)</td></tr>
+<tr class="memdesc:a3aed5edb4a60b1bc6ea9471cb47e1de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and add a new truck; returns its vehicle id. <br /></td></tr>
 <tr class="separator:a3aed5edb4a60b1bc6ea9471cb47e1de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad12d3bc3ecc6fede9fe11774f557a6a4" id="r_ad12d3bc3ecc6fede9fe11774f557a6a4"><td class="memItemLeft" align="right" valign="top"><a id="ad12d3bc3ecc6fede9fe11774f557a6a4" name="ad12d3bc3ecc6fede9fe11774f557a6a4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setStrategyForAll</b> (StrategyAlgoritm algo)</td></tr>
-<tr class="memdesc:ad12d3bc3ecc6fede9fe11774f557a6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace routing strategy for all vehicles. <br /></td></tr>
+<tr class="memdesc:ad12d3bc3ecc6fede9fe11774f557a6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace routing strategy for all vehicles (future (re)routes). <br /></td></tr>
 <tr class="separator:ad12d3bc3ecc6fede9fe11774f557a6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a653819b043bfc4ce5897401674ba8498" id="r_a653819b043bfc4ce5897401674ba8498"><td class="memItemLeft" align="right" valign="top"><a id="a653819b043bfc4ce5897401674ba8498" name="a653819b043bfc4ce5897401674ba8498"></a>
 <a class="el" href="structSimulation_1_1Stats.html">Stats</a>&#160;</td><td class="memItemRight" valign="bottom"><b>stats</b> () const</td></tr>
 <tr class="separator:a653819b043bfc4ce5897401674ba8498"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37aed448cb8c193349c12b8cf9074243" id="r_a37aed448cb8c193349c12b8cf9074243"><td class="memItemLeft" align="right" valign="top"><a id="a37aed448cb8c193349c12b8cf9074243" name="a37aed448cb8c193349c12b8cf9074243"></a>
-std::vector&lt; <a class="el" href="structSimulation_1_1SimSnapshotItem.html">SimSnapshotItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>snapshot</b> () const</td></tr>
+<tr class="memitem:a37aed448cb8c193349c12b8cf9074243" id="r_a37aed448cb8c193349c12b8cf9074243"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structSimulation_1_1SimSnapshotItem.html">SimSnapshotItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulation.html#a37aed448cb8c193349c12b8cf9074243">snapshot</a> () const</td></tr>
 <tr class="separator:a37aed448cb8c193349c12b8cf9074243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a92f85112a9a92a5c67a6bb22312814" id="r_a5a92f85112a9a92a5c67a6bb22312814"><td class="memItemLeft" align="right" valign="top"><a id="a5a92f85112a9a92a5c67a6bb22312814" name="a5a92f85112a9a92a5c67a6bb22312814"></a>
 const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>graph</b> () const</td></tr>
@@ -173,17 +178,87 @@ const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classVehicle.html"
 <tr class="separator:af579bb3c0412afd40d32f48b906ee9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d784cf7372c19809f3eb6e11c848035" id="r_a0d784cf7372c19809f3eb6e11c848035"><td class="memItemLeft" align="right" valign="top"><a id="a0d784cf7372c19809f3eb6e11c848035" name="a0d784cf7372c19809f3eb6e11c848035"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setOnPostUpdate</b> (std::function&lt; void(double)&gt; cb)</td></tr>
+<tr class="memdesc:a0d784cf7372c19809f3eb6e11c848035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a callback invoked after each successful update(dt). <br /></td></tr>
 <tr class="separator:a0d784cf7372c19809f3eb6e11c848035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af50ff3ca999e53bb35a044f0674d9196" id="r_af50ff3ca999e53bb35a044f0674d9196"><td class="memItemLeft" align="right" valign="top"><a id="af50ff3ca999e53bb35a044f0674d9196" name="af50ff3ca999e53bb35a044f0674d9196"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>rerouteCount</b> () const noexcept</td></tr>
+<tr class="memitem:af50ff3ca999e53bb35a044f0674d9196" id="r_af50ff3ca999e53bb35a044f0674d9196"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulation.html#af50ff3ca999e53bb35a044f0674d9196">rerouteCount</a> () const noexcept</td></tr>
 <tr class="separator:af50ff3ca999e53bb35a044f0674d9196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcd40cb311b4a722aa5f9e75812205d6" id="r_abcd40cb311b4a722aa5f9e75812205d6"><td class="memItemLeft" align="right" valign="top"><a id="abcd40cb311b4a722aa5f9e75812205d6" name="abcd40cb311b4a722aa5f9e75812205d6"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>rerouteSavedTime</b> () const noexcept</td></tr>
+<tr class="memitem:abcd40cb311b4a722aa5f9e75812205d6" id="r_abcd40cb311b4a722aa5f9e75812205d6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulation.html#abcd40cb311b4a722aa5f9e75812205d6">rerouteSavedTime</a> () const noexcept</td></tr>
 <tr class="separator:abcd40cb311b4a722aa5f9e75812205d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Owns the world (graph), vehicles, and time integration loop. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Owns the world (graph), vehicles, congestion model, and the main loop. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af50ff3ca999e53bb35a044f0674d9196" name="af50ff3ca999e53bb35a044f0674d9196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af50ff3ca999e53bb35a044f0674d9196">&#9670;&#160;</a></span>rerouteCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t Simulation::rerouteCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Number of re-routes performed so far. </dd></dl>
+
+</div>
+</div>
+<a id="abcd40cb311b4a722aa5f9e75812205d6" name="abcd40cb311b4a722aa5f9e75812205d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd40cb311b4a722aa5f9e75812205d6">&#9670;&#160;</a></span>rerouteSavedTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Simulation::rerouteSavedTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Cumulative time saved due to re-routing (in seconds). </dd></dl>
+
+</div>
+</div>
+<a id="a37aed448cb8c193349c12b8cf9074243" name="a37aed448cb8c193349c12b8cf9074243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37aed448cb8c193349c12b8cf9074243">&#9670;&#160;</a></span>snapshot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structSimulation_1_1SimSnapshotItem.html">Simulation::SimSnapshotItem</a> &gt; Simulation::snapshot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Vector of per-vehicle snapshot items. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/Easy_rider/Simulation/<a class="el" href="Simulation_8h_source.html">Simulation.h</a></li>
 <li>src/Simulation/<b>Simulation.cpp</b></li>
 </ul>

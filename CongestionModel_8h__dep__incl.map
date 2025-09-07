@@ -1,5 +1,5 @@
 <map id="include/Easy_rider/Congestion/CongestionModel.h" name="include/Easy_rider/Congestion/CongestionModel.h">
-<area shape="rect" id="Node000001" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="291,5,519,45"/>
+<area shape="rect" id="Node000001" title="Tiered (halving) congestion model driven by per&#45;edge Road capacity." alt="" coords="291,5,519,45"/>
 <area shape="rect" id="Node000002" href="$Simulation_8h_source.html" title=" " alt="" coords="147,181,329,221"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="369,56,324,95,284,141,253,183,249,180,280,138,320,91,366,52"/>
 <area shape="rect" id="Node000006" href="$Vehicle_8h_source.html" title=" " alt="" coords="333,93,476,133"/>

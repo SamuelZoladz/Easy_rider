@@ -179,7 +179,7 @@ const std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStra
 <tr class="separator:ab405ed9a26e0f802af0ebfb543b8a293"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac44f092b5cdd1fdb8994cd4e7099cb07" id="r_ac44f092b5cdd1fdb8994cd4e7099cb07"><td class="memItemLeft" align="right" valign="top"><a id="ac44f092b5cdd1fdb8994cd4e7099cb07" name="ac44f092b5cdd1fdb8994cd4e7099cb07"></a>
 std::optional&lt; <a class="el" href="structVehicle_1_1RenderState.html">RenderState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>renderState</b> () const</td></tr>
-<tr class="memdesc:ac44f092b5cdd1fdb8994cd4e7099cb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lightweight snapshot for rendering. <br /></td></tr>
+<tr class="memdesc:ac44f092b5cdd1fdb8994cd4e7099cb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lightweight snapshot for rendering/telemetry. <br /></td></tr>
 <tr class="separator:ac44f092b5cdd1fdb8994cd4e7099cb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e833dab5ef25356a4a8555555874514" id="r_a1e833dab5ef25356a4a8555555874514"><td class="memItemLeft" align="right" valign="top"><a id="a1e833dab5ef25356a4a8555555874514" name="a1e833dab5ef25356a4a8555555874514"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setIDMParams</b> (const <a class="el" href="structIDMParams.html">IDMParams</a> &amp;p)</td></tr>
@@ -187,7 +187,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setIDMParams</b> (con
 <tr class="separator:a1e833dab5ef25356a4a8555555874514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1d3f4bcbb9b4c769bcf83197bd9cadd" id="r_aa1d3f4bcbb9b4c769bcf83197bd9cadd"><td class="memItemLeft" align="right" valign="top"><a id="aa1d3f4bcbb9b4c769bcf83197bd9cadd" name="aa1d3f4bcbb9b4c769bcf83197bd9cadd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setLeaderInfo</b> (const <a class="el" href="structLeaderInfo.html">LeaderInfo</a> &amp;info)</td></tr>
-<tr class="memdesc:aa1d3f4bcbb9b4c769bcf83197bd9cadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide leader estimate for this simulation step (edge-aligned). Use gap (distance to leader bumper) and leader speed; call once per tick before <a class="el" href="classVehicle.html#ad8097284cced262207fac2b09a2cd3f3" title="Advance simulation by dt seconds.">update()</a>. <br /></td></tr>
+<tr class="memdesc:aa1d3f4bcbb9b4c769bcf83197bd9cadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide leader estimate for this simulation step (edge-aligned). Call once per tick before <a class="el" href="classVehicle.html#ad8097284cced262207fac2b09a2cd3f3" title="Advance simulation by dt seconds.">update()</a>. <br /></td></tr>
 <tr class="separator:aa1d3f4bcbb9b4c769bcf83197bd9cadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3712285fd623bbcc4df3ec38aacbbf83" id="r_a3712285fd623bbcc4df3ec38aacbbf83"><td class="memItemLeft" align="right" valign="top"><a id="a3712285fd623bbcc4df3ec38aacbbf83" name="a3712285fd623bbcc4df3ec38aacbbf83"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clearLeaderInfo</b> ()</td></tr>
@@ -204,7 +204,6 @@ std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 <tr class="separator:a9ad8edfed540cb1557ae1dd2c4d48f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8740ce2741fa15054a0b1bed2db2b38d" id="r_a8740ce2741fa15054a0b1bed2db2b38d"><td class="memItemLeft" align="right" valign="top"><a id="a8740ce2741fa15054a0b1bed2db2b38d" name="a8740ce2741fa15054a0b1bed2db2b38d"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>maxSpeed</b> () const</td></tr>
-<tr class="memdesc:a8740ce2741fa15054a0b1bed2db2b38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience accessors mapped to IDM parameters. <br /></td></tr>
 <tr class="separator:a8740ce2741fa15054a0b1bed2db2b38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32ec2a47cfd8c6e355770d936ecb1807" id="r_a32ec2a47cfd8c6e355770d936ecb1807"><td class="memItemLeft" align="right" valign="top"><a id="a32ec2a47cfd8c6e355770d936ecb1807" name="a32ec2a47cfd8c6e355770d936ecb1807"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>accelLimit</b> () const</td></tr>
@@ -217,18 +216,22 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasArrived</b> () con
 <tr class="separator:a2b84530b56ca2b6435d84676b55ff682"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e2dd35f2358efcbb318d5bc999681de" id="r_a8e2dd35f2358efcbb318d5bc999681de"><td class="memItemLeft" align="right" valign="top"><a id="a8e2dd35f2358efcbb318d5bc999681de" name="a8e2dd35f2358efcbb318d5bc999681de"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setOnRerouteApplied</b> (std::function&lt; void(int, double, double)&gt; cb)</td></tr>
+<tr class="memdesc:a8e2dd35f2358efcbb318d5bc999681de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback invoked after a re-route is applied: (vehId, oldETA, newETA). <br /></td></tr>
 <tr class="separator:a8e2dd35f2358efcbb318d5bc999681de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0d357a0b7ba75a0d05c258ddc01bda4e" id="r_a0d357a0b7ba75a0d05c258ddc01bda4e"><td class="memItemLeft" align="right" valign="top"><a id="a0d357a0b7ba75a0d05c258ddc01bda4e" name="a0d357a0b7ba75a0d05c258ddc01bda4e"></a>
 const <a class="el" href="classRoad.html">Road</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>findEdge</b> (int fromId, int toId) const</td></tr>
+<tr class="memdesc:a0d357a0b7ba75a0d05c258ddc01bda4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a road by (fromId -&gt; toId). Returns nullptr if missing. <br /></td></tr>
 <tr class="separator:a0d357a0b7ba75a0d05c258ddc01bda4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97d888d34786b3fd03ad96ed62237847" id="r_a97d888d34786b3fd03ad96ed62237847"><td class="memItemLeft" align="right" valign="top"><a id="a97d888d34786b3fd03ad96ed62237847" name="a97d888d34786b3fd03ad96ed62237847"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>enterEdge</b> (int fromId, int toId)</td></tr>
+<tr class="memdesc:a97d888d34786b3fd03ad96ed62237847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enter a new edge; resets progress and updates congestion counters. <br /></td></tr>
 <tr class="separator:a97d888d34786b3fd03ad96ed62237847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af19088b244262b6fed23a6bda5e8049c" id="r_af19088b244262b6fed23a6bda5e8049c"><td class="memItemLeft" align="right" valign="top"><a id="af19088b244262b6fed23a6bda5e8049c" name="af19088b244262b6fed23a6bda5e8049c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>leaveEdge</b> ()</td></tr>
+<tr class="memdesc:af19088b244262b6fed23a6bda5e8049c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leave the current edge; updates congestion counters. <br /></td></tr>
 <tr class="separator:af19088b244262b6fed23a6bda5e8049c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee4f8c8546c47dbbd7f96926e091204c" id="r_aee4f8c8546c47dbbd7f96926e091204c"><td class="memItemLeft" align="right" valign="top"><a id="aee4f8c8546c47dbbd7f96926e091204c" name="aee4f8c8546c47dbbd7f96926e091204c"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>estimateRemainingETA</b> (const std::vector&lt; int &gt; &amp;path, std::size_t routeIndex, double sOnEdge) const</td></tr>
@@ -241,11 +244,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>id_</b> {}</td></tr>
 <tr class="separator:aad4efa6475abeb4ec18b4e39df8de422"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63dbcd66f08d74b102788124df7b49e4" id="r_a63dbcd66f08d74b102788124df7b49e4"><td class="memItemLeft" align="right" valign="top"><a id="a63dbcd66f08d74b102788124df7b49e4" name="a63dbcd66f08d74b102788124df7b49e4"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>currentSpeed_</b> {}</td></tr>
-<tr class="memdesc:a63dbcd66f08d74b102788124df7b49e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">current speed along edge <br /></td></tr>
+<tr class="memdesc:a63dbcd66f08d74b102788124df7b49e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current speed along edge. <br /></td></tr>
 <tr class="separator:a63dbcd66f08d74b102788124df7b49e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22d34b64bf7ad47bac454b8f3b406f09" id="r_a22d34b64bf7ad47bac454b8f3b406f09"><td class="memItemLeft" align="right" valign="top"><a id="a22d34b64bf7ad47bac454b8f3b406f09" name="a22d34b64bf7ad47bac454b8f3b406f09"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>edgeProgress_</b> {}</td></tr>
-<tr class="memdesc:a22d34b64bf7ad47bac454b8f3b406f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">curvilinear position along current edge <br /></td></tr>
+<tr class="memdesc:a22d34b64bf7ad47bac454b8f3b406f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position along current edge. <br /></td></tr>
 <tr class="separator:a22d34b64bf7ad47bac454b8f3b406f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf21f627dff475d83cf019458c1bd839" id="r_acf21f627dff475d83cf019458c1bd839"><td class="memItemLeft" align="right" valign="top"><a id="acf21f627dff475d83cf019458c1bd839" name="acf21f627dff475d83cf019458c1bd839"></a>
 std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>currentEdge_</b> {-1, -1}</td></tr>
@@ -257,7 +260,7 @@ std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>r
 std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>routeIndex_</b> {0}</td></tr>
 <tr class="separator:a5d8a67cdc2f908a61d8c25652625fad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa94eed4d893bc86a6f5ae9ef5a9597db" id="r_aa94eed4d893bc86a6f5ae9ef5a9597db"><td class="memItemLeft" align="right" valign="top"><a id="aa94eed4d893bc86a6f5ae9ef5a9597db" name="aa94eed4d893bc86a6f5ae9ef5a9597db"></a>
-std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>strategy_</b></td></tr>
+std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>strategy_</b> {}</td></tr>
 <tr class="separator:aa94eed4d893bc86a6f5ae9ef5a9597db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b86086b166f149c0adb586833cad5b6" id="r_a6b86086b166f149c0adb586833cad5b6"><td class="memItemLeft" align="right" valign="top"><a id="a6b86086b166f149c0adb586833cad5b6" name="a6b86086b166f149c0adb586833cad5b6"></a>
 const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>graph_</b> {}</td></tr>
@@ -278,7 +281,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>pendingReroute_</b> {
 <a class="el" href="structIDMParams.html">IDMParams</a>&#160;</td><td class="memItemRight" valign="bottom"><b>idmParams_</b> {}</td></tr>
 <tr class="separator:a8be209910b1c09195f5fe49dee430e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40998dbd57af9838a3e43f1c25f0375b" id="r_a40998dbd57af9838a3e43f1c25f0375b"><td class="memItemLeft" align="right" valign="top"><a id="a40998dbd57af9838a3e43f1c25f0375b" name="a40998dbd57af9838a3e43f1c25f0375b"></a>
-std::optional&lt; <a class="el" href="structLeaderInfo.html">LeaderInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>leader_</b></td></tr>
+std::optional&lt; <a class="el" href="structLeaderInfo.html">LeaderInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>leader_</b> {}</td></tr>
 <tr class="separator:a40998dbd57af9838a3e43f1c25f0375b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ef43d52ed58ee321774457a73923625" id="r_a1ef43d52ed58ee321774457a73923625"><td class="memItemLeft" align="right" valign="top"><a id="a1ef43d52ed58ee321774457a73923625" name="a1ef43d52ed58ee321774457a73923625"></a>
 std::function&lt; void(int, double, double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>onRerouteApplied_</b> {}</td></tr>
@@ -287,13 +290,13 @@ std::function&lt; void(int, double, double)&gt;&#160;</td><td class="memItemRigh
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base vehicle with longitudinal dynamics (IDM) and routing policy. </p>
 <p>Movement model:</p><ul>
-<li>Position is tracked along the current edge as a scalar [0 -&gt; length].</li>
-<li>Speed is integrated using IDM; the free-flow target speed is <a class="el" href="structIDMParams.html#adfce2742430c58ed8a3b0baab4c3929a">IDMParams::v0</a>.</li>
-<li>Effective speed on an edge is limited by the congestion model.</li>
-<li>On reaching the end of an edge, the next edge from route_ is taken.</li>
+<li>Position is tracked along the current edge as a scalar in [0, length].</li>
+<li>Speed is integrated using IDM; free-flow target speed is <a class="el" href="structIDMParams.html#adfce2742430c58ed8a3b0baab4c3929a" title="Desired speed (fallback). Will be clamped per-edge.">IDMParams::v0</a>.</li>
+<li>Effective edge speed is limited by the congestion model.</li>
+<li>At an edge end, the next edge from route_ is taken.</li>
 </ul>
 <p>Rerouting:</p><ul>
-<li>When congestion is detected (e.g., on edge entry), the vehicle may recompute its route using the configured strategy after a cooldown. </li>
+<li>When congestion is detected (e.g., at edge entry), the vehicle may recompute its route using the configured strategy after a cooldown. </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a153932dbc0da54c7cdb5e9bc5295ec2f" name="a153932dbc0da54c7cdb5e9bc5295ec2f"></a>

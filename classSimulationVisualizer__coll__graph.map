@@ -1,6 +1,6 @@
 <map id="SimulationVisualizer" name="SimulationVisualizer">
 <area shape="rect" id="Node000001" title="Abstract facade that connects a Simulation with a rendering backend." alt="" coords="37,93,193,119"/>
-<area shape="rect" id="Node000002" href="$classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop." alt="" coords="5,5,97,31"/>
+<area shape="rect" id="Node000002" href="$classSimulation.html" title="Owns the world (graph), vehicles, congestion model, and the main loop." alt="" coords="5,5,97,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,43,72,68,98,91,94,95,68,71,55,45"/>
 <area shape="rect" id="Node000003" href="$structVisualizerView.html" title="View parameters used to transform world coordinates to screen space." alt="" coords="121,5,240,31"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,45,153,71,130,95,127,91,149,68,166,42"/>

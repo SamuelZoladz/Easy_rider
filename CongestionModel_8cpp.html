@@ -102,37 +102,37 @@ $(document).ready(function(){initNavTree('CongestionModel_8cpp.html',''); initRe
 <p>Implementation of tiered (halving) congestion model.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="CongestionModel_8h_source.html">Easy_rider/Congestion/CongestionModel.h</a>&quot;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
+<code>#include &quot;<a class="el" href="Road_8h_source.html">Easy_rider/TrafficInfrastructure/Road.h</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CongestionModel.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="CongestionModel_8cpp__incl.png" border="0" usemap="#asrc_2Congestion_2CongestionModel_8cpp" alt=""/></div>
 <map name="asrc_2Congestion_2CongestionModel_8cpp" id="asrc_2Congestion_2CongestionModel_8cpp">
-<area shape="rect" title="Implementation of tiered (halving) congestion model." alt="" coords="599,5,793,45"/>
-<area shape="rect" href="CongestionModel_8h.html" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="407,93,574,133"/>
-<area shape="poly" title=" " alt="" coords="652,48,549,91,547,86,650,43"/>
-<area shape="rect" title=" " alt="" coords="749,189,811,214"/>
-<area shape="poly" title=" " alt="" coords="700,45,708,86,724,132,740,157,759,178,755,181,736,160,719,135,702,88,695,46"/>
-<area shape="rect" title=" " alt="" coords="733,101,803,126"/>
-<area shape="poly" title=" " alt="" coords="714,44,751,88,747,91,710,47"/>
-<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="5,181,227,221"/>
-<area shape="poly" title=" " alt="" coords="409,136,212,181,211,176,408,131"/>
-<area shape="rect" title=" " alt="" coords="179,343,239,368"/>
-<area shape="poly" title=" " alt="" coords="408,129,347,149,317,164,291,183,262,218,241,257,226,297,217,330,212,328,221,295,236,255,258,215,288,179,314,160,345,144,406,124"/>
-<area shape="rect" title=" " alt="" coords="301,189,387,214"/>
-<area shape="poly" title=" " alt="" coords="460,136,377,184,374,179,457,131"/>
-<area shape="poly" title=" " alt="" coords="573,131,653,152,738,179,744,181,742,186,736,184,652,157,571,136"/>
-<area shape="rect" title=" " alt="" coords="411,189,477,214"/>
-<area shape="poly" title=" " alt="" coords="483,135,459,178,455,175,478,132"/>
-<area shape="rect" title=" " alt="" coords="501,189,576,214"/>
-<area shape="poly" title=" " alt="" coords="504,132,528,175,523,178,499,135"/>
-<area shape="rect" title=" " alt="" coords="601,189,725,214"/>
-<area shape="poly" title=" " alt="" coords="530,131,629,180,626,185,527,136"/>
-<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="61,269,171,295"/>
-<area shape="poly" title=" " alt="" coords="119,222,119,255,113,255,113,222"/>
-<area shape="poly" title=" " alt="" coords="142,220,164,241,185,268,199,299,207,328,202,330,194,301,180,271,160,245,138,223"/>
-<area shape="poly" title=" " alt="" coords="133,293,185,332,182,336,129,297"/>
+<area shape="rect" title="Implementation of tiered (halving) congestion model." alt="" coords="109,5,304,45"/>
+<area shape="rect" href="CongestionModel_8h.html" title="Tiered (halving) congestion model driven by per&#45;edge Road capacity." alt="" coords="185,93,351,133"/>
+<area shape="poly" title=" " alt="" coords="222,44,249,81,244,84,218,47"/>
+<area shape="rect" title=" " alt="" coords="5,181,91,207"/>
+<area shape="poly" title=" " alt="" coords="190,48,70,173,66,170,187,44"/>
+<area shape="rect" title=" " alt="" coords="115,181,178,207"/>
+<area shape="poly" title=" " alt="" coords="198,47,174,94,154,168,149,166,170,92,193,44"/>
+<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="537,93,759,133"/>
+<area shape="poly" title=" " alt="" coords="304,43,539,88,538,93,303,48"/>
+<area shape="poly" title=" " alt="" coords="216,136,94,179,92,174,214,131"/>
+<area shape="poly" title=" " alt="" coords="240,136,177,176,175,172,237,131"/>
+<area shape="rect" title=" " alt="" coords="203,181,269,207"/>
+<area shape="poly" title=" " alt="" coords="263,135,248,170,243,168,258,133"/>
+<area shape="rect" title=" " alt="" coords="293,181,368,207"/>
+<area shape="poly" title=" " alt="" coords="285,132,315,169,311,172,281,135"/>
+<area shape="rect" title=" " alt="" coords="393,181,517,207"/>
+<area shape="poly" title=" " alt="" coords="314,131,416,173,414,178,312,136"/>
+<area shape="rect" title=" " alt="" coords="618,255,678,280"/>
+<area shape="poly" title=" " alt="" coords="352,125,439,146,529,179,583,210,626,243,623,247,580,215,527,184,437,151,351,131"/>
+<area shape="poly" title=" " alt="" coords="678,131,701,153,719,180,721,201,713,219,699,236,682,249,679,245,695,232,708,216,715,200,713,182,696,156,674,135"/>
+<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="593,181,703,207"/>
+<area shape="poly" title=" " alt="" coords="651,134,651,167,645,167,645,134"/>
+<area shape="poly" title=" " alt="" coords="651,207,651,241,645,241,645,207"/>
 </map>
 </div>
 </div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nodeindexbyid_0',['nodeIndexById',['../classGraph.html#a9606e11cd2a70b01c9aa2df5b60fd34a',1,'Graph']]]
+  ['leaveedge_0',['leaveEdge',['../classVehicle.html#af19088b244262b6fed23a6bda5e8049c',1,'Vehicle']]]
 ];
