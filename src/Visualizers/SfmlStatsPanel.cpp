@@ -88,9 +88,8 @@ void SfmlStatsPanel::drawTexts_(sf::RenderTarget &rt, const sf::Vector2u &sz,
          blockSpace;
   };
 
-  // Simulation time (seconds, 2 decimals)
   drawBlock("Simulation time:", formatFixed(stats.simTimeSec, 2, "s"));
-
-  // Average speed (1 decimal)
   drawBlock("Avg speed:", formatFixed(stats.avgSpeed, 1));
+  drawBlock("Reroute saved:", formatFixed(stats.rerouteSavedTime, 1, "s"));
+  drawBlock("Reroute counts:", formatFixed(stats.rerouteCounts, 0));
 }

@@ -192,6 +192,8 @@ void SfmlSimulationVisualizer::drawStats(sf::RenderTarget &rt) {
   StatsSnapshot snap;
   snap.simTimeSec = simulation_->getSimTime();
   snap.avgSpeed = simulation_->averageSpeed();
+  snap.rerouteSavedTime = simulation_->rerouteSavedTime();
+  snap.rerouteCounts = simulation_->rerouteCount();
 
   const sf::Vector2u sz = window_->getSize();
   const float windowH = static_cast<float>(sz.y);

@@ -22,6 +22,12 @@ struct StatsSnapshot {
 
   /// Average vehicle speed in world units per second.
   double avgSpeed = 0.0;
+
+  /// Total time saved by rerouting in seconds.
+  double rerouteSavedTime = 0.0;
+
+  /// Total number of reroutes performed.
+  int rerouteCounts = 0;
 };
 
 /**

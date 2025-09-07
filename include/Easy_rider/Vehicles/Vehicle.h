@@ -105,6 +105,10 @@ public:
   double maxSpeed() const { return idmParams_.v0; }
   double accelLimit() const { return idmParams_.a; }
   double brakeLimit() const { return idmParams_.b; }
+  bool hasArrived() const noexcept;
+  void setOnRerouteApplied(std::function<void(int, double, double)> cb) {
+    onRerouteApplied_ = std::move(cb);
+  }
 
 protected:
   const Road *findEdge(int fromId, int toId) const;
@@ -129,6 +133,10 @@ protected:
   bool pendingReroute_{false};
   IDMParams idmParams_{};
   std::optional<LeaderInfo> leader_;
+  double estimateRemainingETA(const std::vector<int> &path,
+                              std::size_t routeIndex, double sOnEdge) const;
+
+  std::function<void(int, double, double)> onRerouteApplied_{};
 };
 
 #endif // VEHICLE_H

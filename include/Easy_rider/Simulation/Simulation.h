@@ -68,9 +68,12 @@ public:
   void setOnPostUpdate(std::function<void(double)> cb) {
     onPostUpdate_ = std::move(cb);
   }
+  std::size_t rerouteCount() const noexcept { return rerouteCount_; }
+  double rerouteSavedTime() const noexcept { return rerouteSavedTime_; }
 
 private:
   void ensureInitialRoutes(int vehIdx, int startId, int goalId);
+  void pruneArrivedVehicles();
 
   Graph<Intersection, Road> graph_;
   CongestionModel congestion_;
@@ -79,6 +82,8 @@ private:
   bool paused_{false};
   double simTime_{0.0};
   std::function<void(double)> onPostUpdate_{};
+  std::size_t rerouteCount_{0};
+  double rerouteSavedTime_{0.0};
 };
 
 #endif // SIMULATION_H

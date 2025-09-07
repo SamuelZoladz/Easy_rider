@@ -127,6 +127,11 @@ void Simulation::update(double dt) {
   for (auto &up : vehicles_) {
     up->update(step);
   }
+  vehicles_.erase(std::remove_if(vehicles_.begin(), vehicles_.end(),
+                                 [](const std::unique_ptr<Vehicle> &v) {
+                                   return v->hasArrived();
+                                 }),
+                  vehicles_.end());
   if (onPostUpdate_)
     onPostUpdate_(step);
 }
@@ -140,6 +145,12 @@ int Simulation::spawnVehicleCar(int startId, int goalId,
                               << " goal=" << goalId);
 
   vehicles_[static_cast<std::size_t>(id)]->setStrategy(algo);
+  vehicles_[static_cast<std::size_t>(id)]->setOnRerouteApplied(
+      [this](int /*vehId*/, double oldETA, double newETA) {
+        ++rerouteCount_;
+        if (oldETA > newETA)
+          rerouteSavedTime_ += (oldETA - newETA);
+      });
   ensureInitialRoutes(id, startId, goalId);
   return id;
 }
@@ -153,6 +164,12 @@ int Simulation::spawnVehicleTruck(int startId, int goalId,
                                 << " goal=" << goalId);
 
   vehicles_[static_cast<std::size_t>(id)]->setStrategy(algo);
+  vehicles_[static_cast<std::size_t>(id)]->setOnRerouteApplied(
+      [this](int /*vehId*/, double oldETA, double newETA) {
+        ++rerouteCount_;
+        if (oldETA > newETA)
+          rerouteSavedTime_ += (oldETA - newETA);
+      });
   ensureInitialRoutes(id, startId, goalId);
   return id;
 }
@@ -188,6 +205,14 @@ std::vector<Simulation::SimSnapshotItem> Simulation::snapshot() const {
 }
 
 double Simulation::getSimTime() const noexcept { return simTime_; }
+
+void Simulation::pruneArrivedVehicles() {
+  vehicles_.erase(std::remove_if(vehicles_.begin(), vehicles_.end(),
+                                 [](const std::unique_ptr<Vehicle> &v) {
+                                   return v->hasArrived();
+                                 }),
+                  vehicles_.end());
+}
 
 double Simulation::averageSpeed() const noexcept {
   double sum = 0.0;

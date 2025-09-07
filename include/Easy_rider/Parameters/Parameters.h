@@ -155,7 +155,7 @@ private:
   inline static int settingsWindowWidth_ = 520;
 
   inline static unsigned frameRateLimit_ = 60;
-  inline static unsigned mainWindowWidth_ = 1280;
+  inline static unsigned mainWindowWidth_ = 800;
   inline static unsigned mainWindowHeight_ =
       650; // Take into account the top bar size for closing the window.
 

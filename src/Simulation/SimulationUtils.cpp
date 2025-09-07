@@ -11,8 +11,8 @@ Graph<Intersection, Road> makeRandomRoadNetwork(const RandomNetworkParams &p,
                                                 std::mt19937 &rng) {
   Graph<Intersection, Road> graph;
 
-  std::uniform_int_distribution<int> distX{p.minX, p.maxX};
-  std::uniform_int_distribution<int> distY{p.minY, p.maxY};
+  std::uniform_int_distribution distX{p.minX, p.maxX};
+  std::uniform_int_distribution distY{p.minY, p.maxY};
 
   const int kMinDist2 = p.minDistPx * p.minDistPx;
   constexpr int kMaxTriesPerNode = 2000;

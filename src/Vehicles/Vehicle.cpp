@@ -167,6 +167,40 @@ void Vehicle::leaveEdge() {
   leader_.reset();
 }
 
+bool Vehicle::hasArrived() const noexcept {
+  auto g = goalId();
+  auto n = currentNodeId();
+  const bool atEndIdx =
+      (route_.size() >= 2 && routeIndex_ >= route_.size() - 1);
+  return g.has_value() && n.has_value() && atEndIdx && (*g == *n);
+}
+
+double Vehicle::estimateRemainingETA(const std::vector<int> &path,
+                                     std::size_t idx, double sOnEdge) const {
+  if (!graph_ || !congestion_ || path.size() < 2 || idx >= path.size() - 1) {
+    return 0.0;
+  }
+  double eta = 0.0;
+  {
+    const Road *e = findEdge(path[idx], path[idx + 1]);
+    if (e) {
+      const double len = std::max(0.0, e->getLength() - std::max(0.0, sOnEdge));
+      const double v = std::max(1e-6, congestion_->effectiveSpeed(*e));
+      eta += len / v;
+    }
+  }
+
+  for (std::size_t i = idx + 1; i + 1 < path.size(); ++i) {
+    const Road *e = findEdge(path[i], path[i + 1]);
+    if (e) {
+      const double len = std::max(0.0, e->getLength());
+      const double v = std::max(1e-6, congestion_->effectiveSpeed(*e));
+      eta += len / v;
+    }
+  }
+  return eta;
+}
+
 void Vehicle::onCongestion() {
   VLOG("onCongestion() flag pendingReroute_=true");
   pendingReroute_ = true;
@@ -194,6 +228,16 @@ void Vehicle::recomputeRouteIfNeeded() {
     VLOG("newRoute too short, abort recompute");
     return;
   }
+  if (newRoute == route_) {
+    VLOG("newRoute identical to current route, abort recompute");
+    pendingReroute_ = false;
+    return;
+  }
+  const std::vector<int> oldRoute = route_;
+  const std::size_t oldIdx = routeIndex_;
+  const double oldS = currentNodeId() ? 0.0 : std::max(0.0, edgeProgress_);
+  double oldETA = estimateRemainingETA(oldRoute, oldIdx, oldS);
+  double newETA = 0.0;
 
   if (currentNodeId()) {
     if (currentEdge_.first >= 0)
@@ -203,14 +247,21 @@ void Vehicle::recomputeRouteIfNeeded() {
     setRoute(newRoute);
     currentSpeed_ = vKeep;
     VLOG("recompute applied (at node), kept v=" << vKeep);
+    newETA = estimateRemainingETA(newRoute, /*idx=*/0, /*sOnEdge=*/0.0);
   } else {
     route_.assign(newRoute.begin(), newRoute.end());
     routeIndex_ = 0;
     VLOG("recompute applied (on edge), routeIndex reset to 0");
+    newETA = estimateRemainingETA(newRoute, /*idx=*/0,
+                                  /*sOnEdge=*/std::max(0.0, edgeProgress_));
   }
 
+  setRoute(newRoute);
   pendingReroute_ = false;
   sinceRecompute_ = 0.0;
+  if (onRerouteApplied_) {
+    onRerouteApplied_(id_, oldETA, newETA);
+  }
 }
 
 void Vehicle::update(double dt) {
