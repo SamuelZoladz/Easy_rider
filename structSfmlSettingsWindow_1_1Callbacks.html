@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Easy_rider: TrafficEvents Class Reference</title>
+<title>Easy_rider: SfmlSettingsWindow::Callbacks Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classTrafficEvents.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('structSfmlSettingsWindow_1_1Callbacks.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -96,42 +96,43 @@ $(document).ready(function(){initNavTree('classTrafficEvents.html',''); initResi
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classTrafficEvents-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">TrafficEvents Class Reference</div></div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="structSfmlSettingsWindow_1_1Callbacks-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">SfmlSettingsWindow::Callbacks Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>High-level helpers to inject incidents/blocks into the model.  
- <a href="classTrafficEvents.html#details">More...</a></p>
+<p>Optional hooks invoked when the settings window opens/closes.  
+ <a href="structSfmlSettingsWindow_1_1Callbacks.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="TrafficEvents_8h_source.html">TrafficEvents.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="SfmlSettingsWindow_8h_source.html">SfmlSettingsWindow.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a64acb19b5e556a8260bcd73adf682a44" id="r_a64acb19b5e556a8260bcd73adf682a44"><td class="memItemLeft" align="right" valign="top"><a id="a64acb19b5e556a8260bcd73adf682a44" name="a64acb19b5e556a8260bcd73adf682a44"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TrafficEvents</b> (<a class="el" href="classCongestionModel.html">CongestionModel</a> &amp;m)</td></tr>
-<tr class="separator:a64acb19b5e556a8260bcd73adf682a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81b50e71f5de28eb727a0024c2bfeccf" id="r_a81b50e71f5de28eb727a0024c2bfeccf"><td class="memItemLeft" align="right" valign="top"><a id="a81b50e71f5de28eb727a0024c2bfeccf" name="a81b50e71f5de28eb727a0024c2bfeccf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>blockEdge</b> (int fromId, int toId)</td></tr>
-<tr class="memdesc:a81b50e71f5de28eb727a0024c2bfeccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block an edge by capping its speed to near-zero. <br /></td></tr>
-<tr class="separator:a81b50e71f5de28eb727a0024c2bfeccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2eee9c1aa831009f76cb10499b2938c" id="r_ac2eee9c1aa831009f76cb10499b2938c"><td class="memItemLeft" align="right" valign="top"><a id="ac2eee9c1aa831009f76cb10499b2938c" name="ac2eee9c1aa831009f76cb10499b2938c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clearEdge</b> (int fromId, int toId)</td></tr>
-<tr class="memdesc:ac2eee9c1aa831009f76cb10499b2938c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear a block/incident for an edge. <br /></td></tr>
-<tr class="separator:ac2eee9c1aa831009f76cb10499b2938c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a39408664ff73389f36e2dcc9c2da687e" id="r_a39408664ff73389f36e2dcc9c2da687e"><td class="memItemLeft" align="right" valign="top"><a id="a39408664ff73389f36e2dcc9c2da687e" name="a39408664ff73389f36e2dcc9c2da687e"></a>
+std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>onOpen</b></td></tr>
+<tr class="memdesc:a39408664ff73389f36e2dcc9c2da687e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called right before the window is shown. <br /></td></tr>
+<tr class="separator:a39408664ff73389f36e2dcc9c2da687e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60e53c95401935841dada0483ff4507d" id="r_a60e53c95401935841dada0483ff4507d"><td class="memItemLeft" align="right" valign="top"><a id="a60e53c95401935841dada0483ff4507d" name="a60e53c95401935841dada0483ff4507d"></a>
+std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>onClose</b></td></tr>
+<tr class="memdesc:a60e53c95401935841dada0483ff4507d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the window has closed. <br /></td></tr>
+<tr class="separator:a60e53c95401935841dada0483ff4507d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>High-level helpers to inject incidents/blocks into the model. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/Easy_rider/Congestion/<a class="el" href="TrafficEvents_8h_source.html">TrafficEvents.h</a></li>
+<div class="textblock"><p>Optional hooks invoked when the settings window opens/closes. </p>
+<p>Typical usage:</p><ul>
+<li>onOpen → pause simulation.</li>
+<li>onClose → resume simulation. </li>
+</ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>include/Easy_rider/Visualizers/<a class="el" href="SfmlSettingsWindow_8h_source.html">SfmlSettingsWindow.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="classTrafficEvents.html">TrafficEvents</a></li>
+    <li class="navelem"><a class="el" href="classSfmlSettingsWindow.html">SfmlSettingsWindow</a></li><li class="navelem"><a class="el" href="structSfmlSettingsWindow_1_1Callbacks.html">Callbacks</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

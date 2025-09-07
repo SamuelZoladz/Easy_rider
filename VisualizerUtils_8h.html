@@ -102,12 +102,12 @@ $(document).ready(function(){initNavTree('VisualizerUtils_8h.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>Backend-agnostic helpers for turning the graph/sim into drawable data.  
+<p>Backend-agnostic helpers to turn simulation data into drawable forms.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;Easy_rider/Simulation/Simulation.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="Graph_8h_source.html">Easy_rider/TrafficInfrastructure/Graph.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Graph_8h_source.html">Easy_rider/TrafficInfrastructure/Graph.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Intersection_8h_source.html">Easy_rider/TrafficInfrastructure/Intersection.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Road_8h_source.html">Easy_rider/TrafficInfrastructure/Road.h</a>&quot;</code><br />
+<code>#include &lt;SFML/System/Vector2.hpp&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -116,74 +116,35 @@ Include dependency graph for VisualizerUtils.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="VisualizerUtils_8h__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Visualizers_2VisualizerUtils_8h" alt=""/></div>
 <map name="ainclude_2Easy__rider_2Visualizers_2VisualizerUtils_8h" id="ainclude_2Easy__rider_2Visualizers_2VisualizerUtils_8h">
-<area shape="rect" title="Backend&#45;agnostic helpers for turning the graph/sim into drawable data." alt="" coords="890,5,1097,45"/>
-<area shape="rect" href="Simulation_8h_source.html" title=" " alt="" coords="759,93,923,133"/>
-<area shape="poly" title=" " alt="" coords="961,48,888,89,885,84,959,43"/>
-<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="725,357,947,397"/>
-<area shape="poly" title=" " alt="" coords="987,47,853,346,848,344,982,44"/>
-<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="181,445,291,471"/>
-<area shape="poly" title=" " alt="" coords="890,28,669,33,540,42,411,56,293,78,242,92,197,108,160,127,133,149,115,173,109,200,109,291,112,314,119,336,144,376,177,410,208,435,205,439,173,414,140,380,114,338,107,315,104,291,104,200,110,171,129,145,157,123,195,104,240,87,292,73,410,51,539,36,669,28,890,23"/>
-<area shape="rect" title=" " alt="" coords="281,519,341,544"/>
-<area shape="poly" title=" " alt="" coords="890,30,711,35,497,46,294,65,212,79,150,96,96,113,51,130,33,141,20,155,11,174,8,200,8,379,10,399,15,417,36,448,67,473,105,492,147,506,191,515,267,525,266,531,190,521,146,511,103,497,64,477,32,451,11,419,5,400,3,379,3,200,6,173,15,152,30,137,48,125,95,108,149,91,211,74,293,60,496,40,710,30,890,25"/>
-<area shape="rect" href="Graph_8h.html" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="1173,357,1395,397"/>
-<area shape="poly" title=" " alt="" coords="1020,43,1066,81,1125,133,1187,197,1242,268,1263,306,1277,343,1272,345,1258,308,1238,271,1183,201,1121,137,1063,85,1017,48"/>
-<area shape="rect" title=" " alt="" coords="1447,445,1518,471"/>
-<area shape="poly" title=" " alt="" coords="1097,31,1217,51,1281,68,1342,91,1395,110,1440,127,1459,138,1473,153,1482,173,1485,200,1485,291,1485,432,1480,432,1480,291,1480,200,1477,175,1468,156,1455,142,1438,132,1393,115,1340,96,1279,73,1216,56,1096,37"/>
-<area shape="rect" title=" " alt="" coords="1094,445,1157,471"/>
-<area shape="poly" title=" " alt="" coords="1094,43,1202,68,1312,103,1360,124,1399,147,1425,172,1432,186,1435,200,1435,291,1435,350,1428,374,1408,399,1374,413,1311,428,1171,452,1170,447,1310,423,1372,408,1405,395,1423,372,1430,349,1429,291,1429,200,1427,188,1421,175,1396,151,1358,129,1310,108,1200,73,1093,48"/>
-<area shape="rect" href="CongestionModel_8h.html" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="350,269,517,309"/>
-<area shape="poly" title=" " alt="" coords="759,125,658,145,604,162,553,184,526,200,501,220,460,260,456,257,498,216,523,196,551,179,602,157,657,140,758,120"/>
-<area shape="poly" title=" " alt="" coords="844,134,839,344,834,344,838,133"/>
-<area shape="poly" title=" " alt="" coords="759,128,628,149,477,181,405,200,340,222,288,245,253,271,231,300,222,328,221,359,225,397,232,432,227,433,220,398,216,359,216,327,226,298,249,267,285,241,338,217,403,195,476,175,628,144,758,123"/>
-<area shape="rect" href="RouteStrategy_8h.html" title="Strategy interface for route computation on Graph&lt;Intersection, Road&gt;." alt="" coords="929,269,1140,309"/>
-<area shape="poly" title=" " alt="" coords="855,132,885,174,926,219,955,242,985,260,983,265,952,246,922,223,881,178,851,135"/>
-<area shape="poly" title=" " alt="" coords="914,131,979,152,1055,182,1132,220,1204,267,1241,304,1269,343,1264,347,1237,308,1201,271,1130,225,1052,186,977,157,912,136"/>
-<area shape="poly" title=" " alt="" coords="877,131,1046,219,1078,230,1106,235,1131,244,1154,268,1159,282,1161,300,1156,344,1135,433,1130,431,1151,343,1155,300,1154,283,1150,271,1129,249,1105,240,1077,235,1044,224,874,136"/>
-<area shape="rect" href="Vehicle_8h_source.html" title=" " alt="" coords="565,181,713,221"/>
-<area shape="poly" title=" " alt="" coords="798,136,696,179,694,174,796,131"/>
-<area shape="rect" title=" " alt="" coords="727,277,804,302"/>
-<area shape="poly" title=" " alt="" coords="835,135,778,265,774,263,831,132"/>
-<area shape="poly" title=" " alt="" coords="517,306,735,352,734,357,516,311"/>
-<area shape="poly" title=" " alt="" coords="419,311,385,359,347,439,321,507,316,505,342,437,380,356,415,308"/>
-<area shape="rect" title=" " alt="" coords="645,445,731,471"/>
-<area shape="poly" title=" " alt="" coords="448,308,483,351,506,375,532,395,582,422,633,440,631,445,580,427,529,400,503,379,479,355,444,311"/>
-<area shape="rect" title=" " alt="" coords="587,365,650,390"/>
-<area shape="poly" title=" " alt="" coords="475,307,583,356,580,361,473,312"/>
-<area shape="rect" title=" " alt="" coords="395,365,461,390"/>
-<area shape="poly" title=" " alt="" coords="435,310,432,351,427,351,429,309"/>
-<area shape="rect" title=" " alt="" coords="245,365,320,390"/>
-<area shape="poly" title=" " alt="" coords="402,312,316,360,313,356,399,307"/>
-<area shape="rect" title=" " alt="" coords="910,445,1034,471"/>
-<area shape="poly" title=" " alt="" coords="463,307,530,355,552,377,562,387,576,395,658,424,744,442,826,452,896,455,896,460,825,457,743,447,657,429,574,400,558,391,548,381,526,359,460,312"/>
-<area shape="poly" title=" " alt="" coords="726,396,305,450,304,445,725,390"/>
-<area shape="poly" title=" " alt="" coords="825,399,792,438,769,457,744,473,711,485,668,495,560,512,355,530,355,525,559,507,667,490,710,480,741,468,766,453,788,434,821,396"/>
-<area shape="poly" title=" " alt="" coords="250,469,290,507,287,511,246,473"/>
-<area shape="poly" title=" " alt="" coords="992,312,893,354,891,349,990,307"/>
-<area shape="poly" title=" " alt="" coords="1030,311,1004,357,984,381,960,400,922,411,857,421,675,438,305,457,305,452,674,433,857,416,921,406,957,395,981,377,1000,354,1025,308"/>
-<area shape="poly" title=" " alt="" coords="1090,307,1217,350,1215,355,1089,312"/>
-<area shape="poly" title=" " alt="" coords="1047,308,1115,432,1110,434,1043,311"/>
-<area shape="poly" title=" " alt="" coords="1269,399,1227,438,1199,458,1169,473,1097,493,999,507,885,518,763,525,525,532,355,533,355,528,525,527,762,520,885,513,999,502,1096,487,1167,468,1196,453,1223,434,1266,396"/>
-<area shape="poly" title=" " alt="" coords="1174,396,745,452,744,447,1173,391"/>
-<area shape="poly" title=" " alt="" coords="1210,400,1031,445,1030,439,1209,395"/>
-<area shape="rect" title=" " alt="" coords="1232,445,1312,471"/>
-<area shape="poly" title=" " alt="" coords="1284,398,1278,432,1273,431,1278,397"/>
-<area shape="poly" title=" " alt="" coords="1333,395,1442,438,1440,443,1331,400"/>
-<area shape="rect" title=" " alt="" coords="1337,445,1423,471"/>
-<area shape="poly" title=" " alt="" coords="1309,395,1357,434,1354,439,1306,400"/>
-<area shape="poly" title=" " alt="" coords="1247,400,1162,442,1160,437,1245,395"/>
-<area shape="poly" title=" " alt="" coords="595,224,492,267,490,262,593,219"/>
-<area shape="poly" title=" " alt="" coords="642,221,650,264,659,287,673,308,703,332,738,350,736,355,700,337,669,311,654,290,645,266,637,222"/>
-<area shape="poly" title=" " alt="" coords="565,206,505,210,437,222,368,241,304,272,278,289,260,307,247,329,236,358,230,396,233,432,228,432,225,396,231,357,243,326,256,304,275,285,301,267,366,236,436,216,504,205,564,200"/>
-<area shape="poly" title=" " alt="" coords="565,210,481,218,389,230,307,248,275,259,252,272,200,316,179,339,163,363,153,388,150,413,156,440,170,469,190,490,214,505,241,516,268,522,266,527,240,521,212,510,186,494,166,472,150,442,145,414,148,386,158,361,174,336,196,312,249,267,273,254,305,243,388,225,480,212,564,205"/>
-<area shape="poly" title=" " alt="" coords="565,214,436,237,378,253,339,272,322,289,308,310,291,352,286,350,303,308,317,286,336,267,376,248,434,232,564,209"/>
-<area shape="poly" title=" " alt="" coords="713,216,935,264,934,269,712,221"/>
-<area shape="poly" title=" " alt="" coords="713,205,950,226,1069,244,1117,255,1153,267,1184,283,1213,303,1259,345,1256,349,1210,308,1181,288,1151,272,1115,260,1068,250,949,232,713,210"/>
-<area shape="poly" title=" " alt="" coords="649,220,675,265,693,288,716,307,749,325,778,334,806,338,833,338,890,339,923,344,960,355,1000,373,1038,394,1101,435,1098,439,1036,399,997,378,958,360,922,349,890,344,833,344,805,343,777,339,747,329,713,312,690,292,670,268,644,223"/>
-<area shape="rect" href="IDM_8h.html" title="Intelligent Driver Model (IDM) utilities." alt="" coords="541,277,601,302"/>
-<area shape="poly" title=" " alt="" coords="626,223,590,267,586,264,621,220"/>
-<area shape="poly" title=" " alt="" coords="668,219,738,267,735,271,665,224"/>
-<area shape="poly" title=" " alt="" coords="596,300,631,323,664,356,681,394,689,431,683,432,676,396,659,359,628,327,593,304"/>
-<area shape="poly" title=" " alt="" coords="579,301,608,351,603,354,575,303"/>
+<area shape="rect" title="Backend&#45;agnostic helpers to turn simulation data into drawable forms." alt="" coords="623,5,829,45"/>
+<area shape="rect" href="Graph_8h.html" title="Directed, id&#45;addressable graph template with node/edge concepts, id&#45;&gt;index lookup,..." alt="" coords="313,93,534,133"/>
+<area shape="poly" title=" " alt="" coords="660,48,504,92,502,87,659,43"/>
+<area shape="rect" title=" " alt="" coords="5,189,76,214"/>
+<area shape="poly" title=" " alt="" coords="623,39,470,60,385,76,301,96,238,116,176,140,76,185,74,180,174,135,236,111,300,91,384,70,469,54,622,33"/>
+<area shape="rect" title=" " alt="" coords="769,269,829,295"/>
+<area shape="poly" title=" " alt="" coords="728,46,731,124,739,173,754,220,765,240,779,258,775,261,761,243,749,222,734,174,726,125,722,46"/>
+<area shape="rect" title=" " alt="" coords="625,189,688,214"/>
+<area shape="poly" title=" " alt="" coords="721,47,669,177,664,175,716,45"/>
+<area shape="rect" href="Intersection_8h.html" title="Declaration of the Intersection class representing a point in 2D space with auto&#45;assigned ids." alt="" coords="763,181,985,221"/>
+<area shape="poly" title=" " alt="" coords="740,44,768,85,804,132,843,170,839,174,800,135,764,89,736,47"/>
+<area shape="rect" href="Road_8h.html" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="814,93,1035,133"/>
+<area shape="poly" title=" " alt="" coords="771,43,870,85,868,90,769,48"/>
+<area shape="rect" title=" " alt="" coords="1060,101,1251,126"/>
+<area shape="poly" title=" " alt="" coords="821,43,1085,95,1084,101,820,48"/>
+<area shape="rect" title=" " alt="" coords="101,189,186,214"/>
+<area shape="poly" title=" " alt="" coords="358,136,199,184,190,187,188,182,197,179,357,131"/>
+<area shape="rect" title=" " alt="" coords="210,189,290,214"/>
+<area shape="poly" title=" " alt="" coords="386,136,286,185,284,180,384,131"/>
+<area shape="poly" title=" " alt="" coords="313,134,204,155,89,184,82,186,80,181,88,179,203,150,312,129"/>
+<area shape="rect" title=" " alt="" coords="315,189,401,214"/>
+<area shape="poly" title=" " alt="" coords="411,135,377,179,373,176,407,132"/>
+<area shape="rect" title=" " alt="" coords="425,189,549,214"/>
+<area shape="poly" title=" " alt="" coords="440,132,472,176,468,179,435,135"/>
+<area shape="poly" title=" " alt="" coords="469,131,515,153,562,179,588,200,614,219,688,249,756,269,755,274,686,254,611,224,585,204,559,184,512,157,467,136"/>
+<area shape="poly" title=" " alt="" coords="476,131,607,179,614,181,612,186,605,184,474,136"/>
+<area shape="poly" title=" " alt="" coords="858,223,822,261,818,257,854,220"/>
+<area shape="poly" title=" " alt="" coords="955,131,977,150,996,173,1006,198,1005,211,999,223,984,239,966,253,925,271,882,281,843,284,843,279,881,275,923,266,963,248,980,235,994,220,1000,209,1001,198,992,176,973,154,951,136"/>
+<area shape="poly" title=" " alt="" coords="916,135,894,171,890,168,911,132"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -191,8 +152,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="VisualizerUtils_8h__dep__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Visualizers_2VisualizerUtils_8hdep" alt=""/></div>
 <map name="ainclude_2Easy__rider_2Visualizers_2VisualizerUtils_8hdep" id="ainclude_2Easy__rider_2Visualizers_2VisualizerUtils_8hdep">
-<area shape="rect" title="Backend&#45;agnostic helpers for turning the graph/sim into drawable data." alt="" coords="5,5,212,45"/>
-<area shape="rect" href="SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that draws the graph and moving vehicles." alt="" coords="8,93,209,148"/>
+<area shape="rect" title="Backend&#45;agnostic helpers to turn simulation data into drawable forms." alt="" coords="5,5,212,45"/>
+<area shape="rect" href="SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that renders the traffic graph, vehicles and UI." alt="" coords="8,93,209,148"/>
 <area shape="poly" title=" " alt="" coords="111,59,111,93,106,93,106,59"/>
 </map>
 </div>
@@ -201,57 +162,64 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviz_1_1Vec2.html">viz::Vec2</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lightweight 2D vector detached from any graphics library.  <a href="structviz_1_1Vec2.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structviz_1_1GraphDrawData.html">viz::GraphDrawData</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-baked graph geometry ready to be drawn.  <a href="structviz_1_1GraphDrawData.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGraphDrawData.html">GraphDrawData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-baked graph geometry ready for drawing.  <a href="structGraphDrawData.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4f6132200bdb0a1ee47521b88c78a070" id="r_a4f6132200bdb0a1ee47521b88c78a070"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; float, float, float, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VisualizerUtils_8h.html#a4f6132200bdb0a1ee47521b88c78a070">viz::bounds</a> (const std::vector&lt; <a class="el" href="structviz_1_1Vec2.html">Vec2</a> &gt; &amp;pts)</td></tr>
-<tr class="memdesc:a4f6132200bdb0a1ee47521b88c78a070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute axis-aligned world bounds of a set of points.  <br /></td></tr>
-<tr class="separator:a4f6132200bdb0a1ee47521b88c78a070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c4356556f88840d9514ca464a5417fb" id="r_a2c4356556f88840d9514ca464a5417fb"><td class="memItemLeft" align="right" valign="top"><a id="a2c4356556f88840d9514ca464a5417fb" name="a2c4356556f88840d9514ca464a5417fb"></a>
-<a class="el" href="structviz_1_1GraphDrawData.html">GraphDrawData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>viz::makeGraphDrawData</b> (const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;g)</td></tr>
-<tr class="memdesc:a2c4356556f88840d9514ca464a5417fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract drawable graph data. <br /></td></tr>
-<tr class="separator:a2c4356556f88840d9514ca464a5417fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a779ffa3e472530bfc7a76cdc596f383c" id="r_a779ffa3e472530bfc7a76cdc596f383c"><td class="memItemLeft" align="right" valign="top"><a id="a779ffa3e472530bfc7a76cdc596f383c" name="a779ffa3e472530bfc7a76cdc596f383c"></a>
-std::vector&lt; <a class="el" href="structviz_1_1Vec2.html">Vec2</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>viz::extractVehiclePositions</b> (const <a class="el" href="classSimulation.html">Simulation</a> &amp;sim)</td></tr>
-<tr class="memdesc:a779ffa3e472530bfc7a76cdc596f383c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract current vehicle world positions from <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a>. <br /></td></tr>
-<tr class="separator:a779ffa3e472530bfc7a76cdc596f383c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2130817e39ab282ece85c46399fedc46" id="r_a2130817e39ab282ece85c46399fedc46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGraphDrawData.html">GraphDrawData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VisualizerUtils_8h.html#a2130817e39ab282ece85c46399fedc46">makeGraphDrawData</a> (const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;g)</td></tr>
+<tr class="memdesc:a2130817e39ab282ece85c46399fedc46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract drawable graph data from the traffic infrastructure graph.  <br /></td></tr>
+<tr class="separator:a2130817e39ab282ece85c46399fedc46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47235fd64910c139d0ac0f62c3f30ffa" id="r_a47235fd64910c139d0ac0f62c3f30ffa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; sf::Vector2f &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VisualizerUtils_8h.html#a47235fd64910c139d0ac0f62c3f30ffa">extractVehiclePositions</a> (const <a class="el" href="classSimulation.html">Simulation</a> &amp;sim)</td></tr>
+<tr class="memdesc:a47235fd64910c139d0ac0f62c3f30ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract current vehicle world positions from a <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a>.  <br /></td></tr>
+<tr class="separator:a47235fd64910c139d0ac0f62c3f30ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Backend-agnostic helpers for turning the graph/sim into drawable data. </p>
-<p>Keep any non-trivial extraction or formatting logic here, so rendering classes remain focused purely on drawing. </p>
+<div class="textblock"><p>Backend-agnostic helpers to turn simulation data into drawable forms. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a4f6132200bdb0a1ee47521b88c78a070" name="a4f6132200bdb0a1ee47521b88c78a070"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f6132200bdb0a1ee47521b88c78a070">&#9670;&#160;</a></span>bounds()</h2>
+<a id="a47235fd64910c139d0ac0f62c3f30ffa" name="a47235fd64910c139d0ac0f62c3f30ffa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47235fd64910c139d0ac0f62c3f30ffa">&#9670;&#160;</a></span>extractVehiclePositions()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; float, float, float, float &gt; viz::bounds </td>
+          <td class="memname">std::vector&lt; sf::Vector2f &gt; extractVehiclePositions </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structviz_1_1Vec2.html">Vec2</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>pts</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classSimulation.html">Simulation</a> &amp;&#160;</td>
+          <td class="paramname"><em>sim</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Compute axis-aligned world bounds of a set of points. </p>
-<dl class="section return"><dt>Returns</dt><dd>{minX, minY, maxX, maxY} </dd></dl>
+<p>Extract current vehicle world positions from a <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a>. </p>
+<p>The order of returned positions is unspecified and may change frame-to-frame. </p>
+
+</div>
+</div>
+<a id="a2130817e39ab282ece85c46399fedc46" name="a2130817e39ab282ece85c46399fedc46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2130817e39ab282ece85c46399fedc46">&#9670;&#160;</a></span>makeGraphDrawData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structGraphDrawData.html">GraphDrawData</a> makeGraphDrawData </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extract drawable graph data from the traffic infrastructure graph. </p>
+<p>The resulting <a class="el" href="structGraphDrawData.html" title="Pre-baked graph geometry ready for drawing.">GraphDrawData</a>:</p><ul>
+<li>enumerates intersections as nodePositions (using their world locations),</li>
+<li>lists roads as index pairs in edges (by their endpoint intersections). </li>
+</ul>
 
 </div>
 </div>

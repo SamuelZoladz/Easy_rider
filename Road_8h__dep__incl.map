@@ -1,50 +1,47 @@
 <map id="include/Easy_rider/TrafficInfrastructure/Road.h" name="include/Easy_rider/TrafficInfrastructure/Road.h">
-<area shape="rect" id="Node000001" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="875,5,1028,60"/>
-<area shape="rect" id="Node000002" href="$CongestionModel_8h.html" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="371,115,599,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="861,56,573,118,572,113,860,51"/>
-<area shape="rect" id="Node000004" href="$Simulation_8h_source.html" title=" " alt="" coords="393,313,576,353"/>
-<area shape="poly" id="edge25_Node000001_Node000004" title=" " alt="" coords="861,39,653,50,526,62,396,79,272,101,162,130,115,148,74,167,42,189,19,212,11,226,8,238,11,251,19,264,43,282,79,296,125,308,177,316,290,327,393,330,393,335,289,332,177,322,124,313,78,301,40,286,15,267,6,253,3,238,6,224,15,209,39,185,72,163,112,143,160,125,271,96,395,73,526,57,652,45,861,34"/>
-<area shape="rect" id="Node000007" href="$VisualizerUtils_8h.html" title="Backend&#45;agnostic helpers for turning the graph/sim into drawable data." alt="" coords="632,401,839,441"/>
-<area shape="poly" id="edge27_Node000001_Node000007" title=" " alt="" coords="1042,40,1080,49,1118,63,1154,81,1187,106,1220,144,1241,183,1244,203,1243,224,1236,245,1223,267,1198,290,1161,312,1115,332,1062,350,947,381,840,404,838,399,946,376,1060,345,1113,327,1159,307,1195,286,1219,264,1231,243,1238,223,1239,203,1235,185,1216,147,1183,110,1152,86,1116,68,1078,54,1041,46"/>
-<area shape="rect" id="Node000008" href="$Vehicle_8h_source.html" title=" " alt="" coords="523,218,665,258"/>
-<area shape="poly" id="edge26_Node000001_Node000008" title=" " alt="" coords="862,48,776,70,733,87,693,110,664,135,639,165,606,219,601,216,635,162,660,131,690,106,731,83,774,65,860,43"/>
-<area shape="rect" id="Node000012" href="$RoadGenerator_8h_source.html" title=" " alt="" coords="1296,115,1540,155"/>
-<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="1043,51,1331,113,1330,118,1042,56"/>
-<area shape="rect" id="Node000016" href="$RouteStrategy_8h.html" title="Strategy interface for route computation on Graph&lt;Intersection, Road&gt;." alt="" coords="704,115,953,155"/>
-<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="910,71,854,117,850,113,907,67"/>
-<area shape="rect" id="Node000019" href="$RoutingCommon_8h.html" title="Shared types and helpers for shortest&#45;time routing strategies." alt="" coords="977,108,1173,163"/>
-<area shape="poly" id="edge22_Node000001_Node000019" title=" " alt="" coords="996,67,1045,106,1041,110,993,71"/>
-<area shape="rect" id="Node000020" href="$Road_8cpp.html" title="Definitions for the Road class methods." alt="" coords="1564,115,1736,155"/>
-<area shape="poly" id="edge28_Node000001_Node000020" title=" " alt="" coords="1042,39,1275,63,1414,82,1553,105,1586,113,1584,118,1552,111,1413,87,1274,68,1042,44"/>
-<area shape="rect" id="Node000003" href="$TrafficEvents_8h_source.html" title=" " alt="" coords="29,218,228,258"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="406,162,196,220,195,215,404,156"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="487,169,487,313,482,313,482,169"/>
-<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="518,163,575,216,572,220,514,167"/>
-<area shape="rect" id="Node000011" href="$CongestionModel_8cpp.html" title="Implementation of tiered (halving) congestion model." alt="" coords="253,218,447,258"/>
-<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="450,166,377,220,374,216,447,161"/>
-<area shape="rect" id="Node000005" href="$SimulationVisualizer_8h.html" title="Abstract base for simulation visualizers (text or graphics)." alt="" coords="361,401,608,441"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="487,367,487,401,482,401,482,367"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="553,355,681,399,680,404,552,360"/>
-<area shape="rect" id="Node000006" href="$SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that draws the graph and moving vehicles." alt="" coords="509,489,711,544"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="523,447,576,487,573,491,520,452"/>
-<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="701,452,647,491,644,487,697,447"/>
-<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="563,269,509,315,505,311,560,265"/>
-<area shape="rect" id="Node000009" href="$Car_8h_source.html" title=" " alt="" coords="601,313,742,353"/>
-<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="621,267,658,312,654,315,617,270"/>
-<area shape="rect" id="Node000010" href="$Truck_8h_source.html" title=" " alt="" coords="766,313,907,353"/>
-<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="657,260,789,311,787,316,655,265"/>
-<area shape="rect" id="Node000013" href="$HighwayGenerator_8h_source.html" title=" " alt="" coords="1284,218,1552,258"/>
-<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="1421,169,1421,218,1415,218,1415,169"/>
-<area shape="rect" id="Node000014" href="$MotorwayGenerator_8h_source.html" title=" " alt="" coords="1576,218,1852,258"/>
-<area shape="poly" id="edge15_Node000012_Node000014" title=" " alt="" coords="1487,157,1659,215,1658,220,1485,162"/>
-<area shape="rect" id="Node000015" href="$StreetGenerator_8h_source.html" title=" " alt="" coords="1877,218,2127,258"/>
-<area shape="poly" id="edge16_Node000012_Node000015" title=" " alt="" coords="1526,155,1553,160,1709,184,1865,208,1906,215,1905,221,1864,213,1708,189,1552,165,1525,160"/>
-<area shape="poly" id="edge20_Node000016_Node000004" title=" " alt="" coords="791,166,731,213,706,241,695,254,678,268,623,296,566,316,564,311,621,291,675,263,691,250,702,238,727,209,788,161"/>
-<area shape="poly" id="edge21_Node000016_Node000008" title=" " alt="" coords="773,163,639,220,637,215,771,158"/>
-<area shape="rect" id="Node000017" href="$AStarStrategy_8h.html" title="A* shortest&#45;time strategy with injected time function and heuristic." alt="" coords="963,218,1209,258"/>
-<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="891,158,1039,215,1037,220,889,163"/>
-<area shape="rect" id="Node000018" href="$DijkstraStrategy_8h.html" title="Dijkstra shortest&#45;time strategy with injected time function." alt="" coords="741,211,938,265"/>
-<area shape="poly" id="edge19_Node000016_Node000018" title=" " alt="" coords="835,169,839,210,834,211,830,169"/>
-<area shape="poly" id="edge23_Node000019_Node000017" title=" " alt="" coords="1082,176,1087,217,1081,218,1077,177"/>
-<area shape="poly" id="edge24_Node000019_Node000018" title=" " alt="" coords="1003,170,902,213,900,208,1000,166"/>
+<area shape="rect" id="Node000001" title="Declaration of the Road class representing a connection between two nodes (intersections) by identifi..." alt="" coords="654,5,808,60"/>
+<area shape="rect" id="Node000002" href="$CongestionModel_8h.html" title="Tiered (halving) congestion model driven by Road capacity." alt="" coords="150,115,378,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="641,56,352,118,351,113,640,51"/>
+<area shape="rect" id="Node000003" href="$Simulation_8h_source.html" title=" " alt="" coords="168,313,350,353"/>
+<area shape="poly" id="edge22_Node000001_Node000003" title=" " alt="" coords="641,42,514,51,369,65,234,85,179,97,139,110,96,129,65,148,40,173,17,212,8,239,10,251,17,264,39,280,76,295,168,316,167,321,75,300,37,285,13,267,5,253,3,239,13,210,36,170,62,144,94,125,137,106,178,92,233,80,368,60,514,46,640,36"/>
+<area shape="rect" id="Node000006" href="$Vehicle_8h_source.html" title=" " alt="" coords="297,218,440,258"/>
+<area shape="poly" id="edge23_Node000001_Node000006" title=" " alt="" coords="642,48,556,70,513,88,473,110,442,135,416,165,380,219,376,216,412,162,439,131,469,106,510,83,554,65,640,43"/>
+<area shape="rect" id="Node000010" href="$RoadGenerator_8h_source.html" title=" " alt="" coords="1070,115,1314,155"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="822,51,1107,113,1105,118,821,56"/>
+<area shape="rect" id="Node000014" href="$RouteStrategy_8h.html" title="Strategy interface for route computation on Graph&lt;Intersection, Road&gt;." alt="" coords="484,115,733,155"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="690,71,633,117,630,113,686,67"/>
+<area shape="rect" id="Node000017" href="$RoutingCommon_8h.html" title="Shared types and helpers for shortest&#45;time routing strategies." alt="" coords="757,108,953,163"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="776,67,824,106,821,110,773,71"/>
+<area shape="rect" id="Node000018" href="$VisualizerUtils_8h.html" title="Backend&#45;agnostic helpers to turn simulation data into drawable forms." alt="" coords="789,401,996,441"/>
+<area shape="poly" id="edge24_Node000001_Node000018" title=" " alt="" coords="822,40,859,48,898,62,934,81,966,106,995,143,1009,180,1009,219,998,266,981,307,958,345,913,403,908,399,954,342,976,305,992,265,1003,219,1003,181,991,146,962,110,931,85,896,67,858,54,821,45"/>
+<area shape="rect" id="Node000019" href="$Road_8cpp.html" title="Definitions for the Road class methods." alt="" coords="1338,115,1510,155"/>
+<area shape="poly" id="edge26_Node000001_Node000019" title=" " alt="" coords="821,39,1052,63,1190,82,1328,105,1360,113,1359,118,1326,111,1189,87,1051,68,821,44"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="266,169,262,313,257,313,261,169"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="296,163,351,216,347,220,292,167"/>
+<area shape="rect" id="Node000009" href="$CongestionModel_8cpp.html" title="Implementation of tiered (halving) congestion model." alt="" coords="27,218,222,258"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="228,166,152,220,149,216,225,161"/>
+<area shape="rect" id="Node000004" href="$SimulationVisualizer_8h.html" title="Abstract base for simulation visualizers (text or graphics)." alt="" coords="390,401,637,441"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="329,355,459,399,457,404,327,360"/>
+<area shape="rect" id="Node000005" href="$SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that renders the traffic graph, vehicles and UI." alt="" coords="538,489,740,544"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="552,447,605,487,602,491,549,452"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="338,269,283,315,279,311,334,265"/>
+<area shape="rect" id="Node000007" href="$Car_8h_source.html" title=" " alt="" coords="375,313,516,353"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="395,267,432,312,428,315,391,270"/>
+<area shape="rect" id="Node000008" href="$Truck_8h_source.html" title=" " alt="" coords="540,313,682,353"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="431,260,563,311,561,316,429,265"/>
+<area shape="rect" id="Node000011" href="$HighwayGenerator_8h_source.html" title=" " alt="" coords="1058,218,1326,258"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1195,169,1195,218,1190,218,1190,169"/>
+<area shape="rect" id="Node000012" href="$MotorwayGenerator_8h_source.html" title=" " alt="" coords="1350,218,1626,258"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="1261,157,1434,215,1432,220,1260,162"/>
+<area shape="rect" id="Node000013" href="$StreetGenerator_8h_source.html" title=" " alt="" coords="1651,218,1902,258"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="1301,155,1327,160,1483,184,1639,208,1680,215,1680,221,1639,213,1483,189,1327,165,1300,160"/>
+<area shape="poly" id="edge17_Node000014_Node000003" title=" " alt="" coords="568,165,505,213,480,241,469,254,452,268,397,296,340,316,339,311,395,291,450,263,466,250,476,238,501,209,565,161"/>
+<area shape="poly" id="edge18_Node000014_Node000006" title=" " alt="" coords="552,163,414,220,412,215,550,158"/>
+<area shape="rect" id="Node000015" href="$AStarStrategy_8h.html" title="A* shortest&#45;time strategy with injected time function and heuristic." alt="" coords="737,218,984,258"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="669,158,814,215,812,220,667,163"/>
+<area shape="rect" id="Node000016" href="$DijkstraStrategy_8h.html" title="Dijkstra shortest&#45;time strategy with injected time function." alt="" coords="515,211,712,265"/>
+<area shape="poly" id="edge16_Node000014_Node000016" title=" " alt="" coords="613,169,615,210,610,211,607,169"/>
+<area shape="poly" id="edge20_Node000017_Node000015" title=" " alt="" coords="860,176,862,217,857,218,854,177"/>
+<area shape="poly" id="edge21_Node000017_Node000016" title=" " alt="" coords="781,170,678,213,676,208,779,165"/>
+<area shape="poly" id="edge25_Node000018_Node000005" title=" " alt="" coords="829,449,711,492,709,487,827,444"/>
 </map>

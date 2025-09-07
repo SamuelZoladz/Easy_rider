@@ -103,13 +103,18 @@ $(document).ready(function(){initNavTree('classSimulationVisualizer.html',''); i
   <div class="headertitle"><div class="title">SimulationVisualizer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract facade that connects a <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a> with a rendering backend.  
+ <a href="classSimulationVisualizer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="SimulationVisualizer_8h_source.html">SimulationVisualizer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SimulationVisualizer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSimulationVisualizer__inherit__graph.png" border="0" usemap="#aSimulationVisualizer_inherit__map" alt="Inheritance graph"/></div>
 <map name="aSimulationVisualizer_inherit__map" id="aSimulationVisualizer_inherit__map">
-<area shape="rect" title=" " alt="" coords="21,5,177,31"/>
-<area shape="rect" href="classSfmlSimulationVisualizer.html" title=" " alt="" coords="5,79,192,104"/>
+<area shape="rect" title="Abstract facade that connects a Simulation with a rendering backend." alt="" coords="21,5,177,31"/>
+<area shape="rect" href="classSfmlSimulationVisualizer.html" title="Concrete implementation of SimulationVisualizer backed by SFML." alt="" coords="5,79,192,104"/>
 <area shape="poly" title=" " alt="" coords="101,44,101,79,96,79,96,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -118,10 +123,10 @@ Collaboration diagram for SimulationVisualizer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSimulationVisualizer__coll__graph.png" border="0" usemap="#aSimulationVisualizer_coll__map" alt="Collaboration graph"/></div>
 <map name="aSimulationVisualizer_coll__map" id="aSimulationVisualizer_coll__map">
-<area shape="rect" title=" " alt="" coords="37,93,193,119"/>
+<area shape="rect" title="Abstract facade that connects a Simulation with a rendering backend." alt="" coords="37,93,193,119"/>
 <area shape="rect" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop." alt="" coords="5,5,97,31"/>
 <area shape="poly" title=" " alt="" coords="60,43,72,68,98,91,94,95,68,71,55,45"/>
-<area shape="rect" href="structVisualizerView.html" title="View definition used by visualizers to transform world &#45;&gt; screen." alt="" coords="121,5,240,31"/>
+<area shape="rect" href="structVisualizerView.html" title="View parameters used to transform world coordinates to screen space." alt="" coords="121,5,240,31"/>
 <area shape="poly" title=" " alt="" coords="171,45,153,71,130,95,127,91,149,68,166,42"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -130,26 +135,26 @@ Collaboration diagram for SimulationVisualizer:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af2059e4c342e10e9028658d77c2639f5" id="r_af2059e4c342e10e9028658d77c2639f5"><td class="memItemLeft" align="right" valign="top"><a id="af2059e4c342e10e9028658d77c2639f5" name="af2059e4c342e10e9028658d77c2639f5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>attachSimulation</b> (<a class="el" href="classSimulation.html">Simulation</a> *sim)</td></tr>
-<tr class="memdesc:af2059e4c342e10e9028658d77c2639f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach simulation to visualize. The visualizer does not own it. <br /></td></tr>
+<tr class="memdesc:af2059e4c342e10e9028658d77c2639f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach a <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a> instance to visualize (non-owning). Triggers <a class="el" href="classSimulationVisualizer.html#a6b436f87585b2dcde598d8f5945c0bfa" title="Called after attachSimulation(); override to rebuild caches, etc.">onSimulationAttached()</a> for cache rebuilds in derived classes. <br /></td></tr>
 <tr class="separator:af2059e4c342e10e9028658d77c2639f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3a42608c763f7a298000c57f6c0528e" id="r_af3a42608c763f7a298000c57f6c0528e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationVisualizer.html#af3a42608c763f7a298000c57f6c0528e">setView</a> (const <a class="el" href="structVisualizerView.html">VisualizerView</a> &amp;view)</td></tr>
-<tr class="memdesc:af3a42608c763f7a298000c57f6c0528e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure world -&gt; screen mapping used during rendering.  <br /></td></tr>
+<tr class="memdesc:af3a42608c763f7a298000c57f6c0528e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the world -&gt; screen mapping used during rendering.  <br /></td></tr>
 <tr class="separator:af3a42608c763f7a298000c57f6c0528e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e5c1a7afc3bb121dab655849fdb0603" id="r_a4e5c1a7afc3bb121dab655849fdb0603"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationVisualizer.html#a4e5c1a7afc3bb121dab655849fdb0603">renderFrame</a> ()=0</td></tr>
-<tr class="memdesc:a4e5c1a7afc3bb121dab655849fdb0603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render a single frame.  <br /></td></tr>
+<tr class="memdesc:a4e5c1a7afc3bb121dab655849fdb0603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render a single frame (pure virtual).  <br /></td></tr>
 <tr class="separator:a4e5c1a7afc3bb121dab655849fdb0603"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abefaf060f2aa68016cb2bd264e6dda69" id="r_abefaf060f2aa68016cb2bd264e6dda69"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationVisualizer.html#abefaf060f2aa68016cb2bd264e6dda69">setPaused</a> (bool paused)</td></tr>
-<tr class="memdesc:abefaf060f2aa68016cb2bd264e6dda69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark paused state.  <br /></td></tr>
-<tr class="separator:abefaf060f2aa68016cb2bd264e6dda69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26726092828dc02da408af14ad8563b5" id="r_a26726092828dc02da408af14ad8563b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationVisualizer.html#a26726092828dc02da408af14ad8563b5">setPaused</a> (bool)</td></tr>
+<tr class="memdesc:a26726092828dc02da408af14ad8563b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional pause flag hook.  <br /></td></tr>
+<tr class="separator:a26726092828dc02da408af14ad8563b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e26c3d6a109bc95589b2e65539cee50" id="r_a5e26c3d6a109bc95589b2e65539cee50"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationVisualizer.html#a5e26c3d6a109bc95589b2e65539cee50">isOpen</a> () const</td></tr>
-<tr class="memdesc:a5e26c3d6a109bc95589b2e65539cee50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backend open-state for the <a class="el" href="classSimulationVisualizer.html#a18aaff98ff840a1d81a3a72c5657abd9" title="Drive the Simulation and rendering at a target FPS.">run()</a> loop. Return true while active.  <br /></td></tr>
+<tr class="memdesc:a5e26c3d6a109bc95589b2e65539cee50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backend open-state for the <a class="el" href="classSimulationVisualizer.html#aa449306368d4a49d1cfd797bea245fc6" title="Drive the Simulation and rendering using wall-clock delta time.">run()</a> loop. Return true while active.  <br /></td></tr>
 <tr class="separator:a5e26c3d6a109bc95589b2e65539cee50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18aaff98ff840a1d81a3a72c5657abd9" id="r_a18aaff98ff840a1d81a3a72c5657abd9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationVisualizer.html#a18aaff98ff840a1d81a3a72c5657abd9">run</a> (double targetFps=60.0)</td></tr>
-<tr class="memdesc:a18aaff98ff840a1d81a3a72c5657abd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drive the <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a> and rendering at a target FPS.  <br /></td></tr>
-<tr class="separator:a18aaff98ff840a1d81a3a72c5657abd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa449306368d4a49d1cfd797bea245fc6" id="r_aa449306368d4a49d1cfd797bea245fc6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationVisualizer.html#aa449306368d4a49d1cfd797bea245fc6">run</a> ()</td></tr>
+<tr class="memdesc:aa449306368d4a49d1cfd797bea245fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drive the <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a> and rendering using wall-clock delta time.  <br /></td></tr>
+<tr class="separator:aa449306368d4a49d1cfd797bea245fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4be262ba02d69d63263337a925d21ac5" id="r_a4be262ba02d69d63263337a925d21ac5"><td class="memItemLeft" align="right" valign="top"><a id="a4be262ba02d69d63263337a925d21ac5" name="a4be262ba02d69d63263337a925d21ac5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimeScale</b> (double s)</td></tr>
-<tr class="memdesc:a4be262ba02d69d63263337a925d21ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set simulation time scaling factor (1.0 -&gt; real time). E.g. 2.0 -&gt; 2x faster, 0.5 -&gt; half speed. <br /></td></tr>
+<tr class="memdesc:a4be262ba02d69d63263337a925d21ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set simulation time scaling factor (1.0 → real time). Examples: 2.0 -&gt; 2× faster, 0.5 -&gt; half speed, 0.0 -&gt; paused. Negative values are clamped to 0.0. <br /></td></tr>
 <tr class="separator:a4be262ba02d69d63263337a925d21ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a819fa17bd4586f4d8462fda0e20a6fc4" id="r_a819fa17bd4586f4d8462fda0e20a6fc4"><td class="memItemLeft" align="right" valign="top"><a id="a819fa17bd4586f4d8462fda0e20a6fc4" name="a819fa17bd4586f4d8462fda0e20a6fc4"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale</b> () const</td></tr>
@@ -159,26 +164,37 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale</b> () co
 <a class="el" href="classSimulation.html">Simulation</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>simulation</b> ()</td></tr>
 <tr class="memdesc:a3a4b5c5f510ee6f703faea9f384b1781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the currently attached simulation (may be nullptr). <br /></td></tr>
 <tr class="separator:a3a4b5c5f510ee6f703faea9f384b1781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5f97a06f7506f7029e4816e1f4a1cd0" id="r_ae5f97a06f7506f7029e4816e1f4a1cd0"><td class="memItemLeft" align="right" valign="top"><a id="ae5f97a06f7506f7029e4816e1f4a1cd0" name="ae5f97a06f7506f7029e4816e1f4a1cd0"></a>
+const <a class="el" href="classSimulation.html">Simulation</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>simulation</b> () const</td></tr>
+<tr class="memdesc:ae5f97a06f7506f7029e4816e1f4a1cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const overload for the attached simulation (may be nullptr). <br /></td></tr>
+<tr class="separator:ae5f97a06f7506f7029e4816e1f4a1cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a6b436f87585b2dcde598d8f5945c0bfa" id="r_a6b436f87585b2dcde598d8f5945c0bfa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationVisualizer.html#a6b436f87585b2dcde598d8f5945c0bfa">onSimulationAttached</a> ()</td></tr>
-<tr class="memdesc:a6b436f87585b2dcde598d8f5945c0bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after <a class="el" href="classSimulationVisualizer.html#af2059e4c342e10e9028658d77c2639f5" title="Attach simulation to visualize. The visualizer does not own it.">attachSimulation()</a>; override to rebuild caches.  <br /></td></tr>
+<tr class="memdesc:a6b436f87585b2dcde598d8f5945c0bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after <a class="el" href="classSimulationVisualizer.html#af2059e4c342e10e9028658d77c2639f5" title="Attach a Simulation instance to visualize (non-owning). Triggers onSimulationAttached() for cache reb...">attachSimulation()</a>; override to rebuild caches, etc.  <br /></td></tr>
 <tr class="separator:a6b436f87585b2dcde598d8f5945c0bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a07acbb699b02b860d81075485a094207" id="r_a07acbb699b02b860d81075485a094207"><td class="memItemLeft" align="right" valign="top"><a id="a07acbb699b02b860d81075485a094207" name="a07acbb699b02b860d81075485a094207"></a>
 <a class="el" href="classSimulation.html">Simulation</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>simulation_</b> {nullptr}</td></tr>
+<tr class="memdesc:a07acbb699b02b860d81075485a094207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-owning pointer to the simulation. <br /></td></tr>
 <tr class="separator:a07acbb699b02b860d81075485a094207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4944429405f634a3e9e84531394ac749" id="r_a4944429405f634a3e9e84531394ac749"><td class="memItemLeft" align="right" valign="top"><a id="a4944429405f634a3e9e84531394ac749" name="a4944429405f634a3e9e84531394ac749"></a>
 <a class="el" href="structVisualizerView.html">VisualizerView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>view_</b> {}</td></tr>
+<tr class="memdesc:a4944429405f634a3e9e84531394ac749"><td class="mdescLeft">&#160;</td><td class="mdescRight">World-&gt;screen mapping in effect. <br /></td></tr>
 <tr class="separator:a4944429405f634a3e9e84531394ac749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd3108bc6d454971dcbf17f8b588072" id="r_a2dd3108bc6d454971dcbf17f8b588072"><td class="memItemLeft" align="right" valign="top"><a id="a2dd3108bc6d454971dcbf17f8b588072" name="a2dd3108bc6d454971dcbf17f8b588072"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0}</td></tr>
+<tr class="memdesc:a2dd3108bc6d454971dcbf17f8b588072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time scaling factor (&gt;= 0.0). <br /></td></tr>
 <tr class="separator:a2dd3108bc6d454971dcbf17f8b588072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract facade that connects a <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a> with a rendering backend. </p>
+<p>Typical usage: 1) Create a concrete visualizer (e.g., SFML-based). 2) attachSimulation(sim) — ownership stays with the caller. 3) setView(view) — optional, to control world-&gt;screen mapping. 4) <a class="el" href="classSimulationVisualizer.html#aa449306368d4a49d1cfd797bea245fc6" title="Drive the Simulation and rendering using wall-clock delta time.">run()</a> — enters the main loop while <a class="el" href="classSimulationVisualizer.html#a5e26c3d6a109bc95589b2e65539cee50" title="Backend open-state for the run() loop. Return true while active.">isOpen()</a> is true.</p>
+<p>Derivations must implement <a class="el" href="classSimulationVisualizer.html#a4e5c1a7afc3bb121dab655849fdb0603" title="Render a single frame (pure virtual).">renderFrame()</a>, and usually override <a class="el" href="classSimulationVisualizer.html#a5e26c3d6a109bc95589b2e65539cee50" title="Backend open-state for the run() loop. Return true while active.">isOpen()</a> and <a class="el" href="classSimulationVisualizer.html#aa449306368d4a49d1cfd797bea245fc6" title="Drive the Simulation and rendering using wall-clock delta time.">run()</a> (if a custom main loop is needed). </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5e26c3d6a109bc95589b2e65539cee50" name="a5e26c3d6a109bc95589b2e65539cee50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e26c3d6a109bc95589b2e65539cee50">&#9670;&#160;</a></span>isOpen()</h2>
 
@@ -202,7 +218,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
 </table>
 </div><div class="memdoc">
 
-<p>Backend open-state for the <a class="el" href="classSimulationVisualizer.html#a18aaff98ff840a1d81a3a72c5657abd9" title="Drive the Simulation and rendering at a target FPS.">run()</a> loop. Return true while active. </p>
+<p>Backend open-state for the <a class="el" href="classSimulationVisualizer.html#aa449306368d4a49d1cfd797bea245fc6" title="Drive the Simulation and rendering using wall-clock delta time.">run()</a> loop. Return true while active. </p>
 
 <p>Reimplemented in <a class="el" href="classSfmlSimulationVisualizer.html#a77dbcbe0be1dde9c2b0e596d137ae71d">SfmlSimulationVisualizer</a>.</p>
 
@@ -231,7 +247,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
 </table>
 </div><div class="memdoc">
 
-<p>Called after <a class="el" href="classSimulationVisualizer.html#af2059e4c342e10e9028658d77c2639f5" title="Attach simulation to visualize. The visualizer does not own it.">attachSimulation()</a>; override to rebuild caches. </p>
+<p>Called after <a class="el" href="classSimulationVisualizer.html#af2059e4c342e10e9028658d77c2639f5" title="Attach a Simulation instance to visualize (non-owning). Triggers onSimulationAttached() for cache reb...">attachSimulation()</a>; override to rebuild caches, etc. </p>
 
 <p>Reimplemented in <a class="el" href="classSfmlSimulationVisualizer.html#a4fedff0d3ffa9ea04b7e35605993d54f">SfmlSimulationVisualizer</a>.</p>
 
@@ -260,14 +276,19 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
 </table>
 </div><div class="memdoc">
 
-<p>Render a single frame. </p>
+<p>Render a single frame (pure virtual). </p>
+<p>Implementations typically:</p><ul>
+<li>process window/input events,</li>
+<li>draw the scene (graph, actors),</li>
+<li>draw overlays/UI, </li>
+</ul>
 
 <p>Implemented in <a class="el" href="classSfmlSimulationVisualizer.html#a77b860499496114c7a16a83f87805ad6">SfmlSimulationVisualizer</a>.</p>
 
 </div>
 </div>
-<a id="a18aaff98ff840a1d81a3a72c5657abd9" name="a18aaff98ff840a1d81a3a72c5657abd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18aaff98ff840a1d81a3a72c5657abd9">&#9670;&#160;</a></span>run()</h2>
+<a id="aa449306368d4a49d1cfd797bea245fc6" name="aa449306368d4a49d1cfd797bea245fc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa449306368d4a49d1cfd797bea245fc6">&#9670;&#160;</a></span>run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,8 +299,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
         <tr>
           <td class="memname">virtual void SimulationVisualizer::run </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>targetFps</em> = <code>60.0</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -290,21 +310,21 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
 </table>
 </div><div class="memdoc">
 
-<p>Drive the <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a> and rendering at a target FPS. </p>
-<p>Uses a variable-step integrator: dtSim = realDeltaSeconds * <a class="el" href="classSimulationVisualizer.html#a819fa17bd4586f4d8462fda0e20a6fc4" title="Current time scale factor.">timeScale()</a>. The loop sleeps to cap the frame rate to <code>targetFps</code> (default 60).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">targetFps</td><td>Desired frames per second (min clamped to 1.0). </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Drive the <a class="el" href="classSimulation.html" title="Owns the world (graph), vehicles, and time integration loop.">Simulation</a> and rendering using wall-clock delta time. </p>
+<p>Uses a variable-step integrator: dtSim = wallSecondsSinceLastFrame * <a class="el" href="classSimulationVisualizer.html#a819fa17bd4586f4d8462fda0e20a6fc4" title="Current time scale factor.">timeScale()</a>.</p>
+<p>The default implementation:</p><ul>
+<li>starts the simulation if attached,</li>
+<li>loops while <a class="el" href="classSimulationVisualizer.html#a5e26c3d6a109bc95589b2e65539cee50" title="Backend open-state for the run() loop. Return true while active.">isOpen()</a>,</li>
+<li>advances the simulation,</li>
+<li>calls <a class="el" href="classSimulationVisualizer.html#a4e5c1a7afc3bb121dab655849fdb0603" title="Render a single frame (pure virtual).">renderFrame()</a>. </li>
+</ul>
 
-<p>Reimplemented in <a class="el" href="classSfmlSimulationVisualizer.html#ac6fa4bc209297a7a144ec4ff9fe77c0a">SfmlSimulationVisualizer</a>.</p>
+<p>Reimplemented in <a class="el" href="classSfmlSimulationVisualizer.html#a96f30b586d406e86c5dd03225d6abf12">SfmlSimulationVisualizer</a>.</p>
 
 </div>
 </div>
-<a id="abefaf060f2aa68016cb2bd264e6dda69" name="abefaf060f2aa68016cb2bd264e6dda69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abefaf060f2aa68016cb2bd264e6dda69">&#9670;&#160;</a></span>setPaused()</h2>
+<a id="a26726092828dc02da408af14ad8563b5" name="a26726092828dc02da408af14ad8563b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26726092828dc02da408af14ad8563b5">&#9670;&#160;</a></span>setPaused()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -316,7 +336,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
           <td class="memname">virtual void SimulationVisualizer::setPaused </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>paused</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -327,7 +347,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
 </table>
 </div><div class="memdoc">
 
-<p>Mark paused state. </p>
+<p>Optional pause flag hook. </p>
 
 <p>Reimplemented in <a class="el" href="classSfmlSimulationVisualizer.html#a8caf4315939a76a21485e86a854d862b">SfmlSimulationVisualizer</a>.</p>
 
@@ -357,7 +377,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>timeScale_</b> {1.0
 </table>
 </div><div class="memdoc">
 
-<p>Configure world -&gt; screen mapping used during rendering. </p>
+<p>Configure the world -&gt; screen mapping used during rendering. </p>
 
 <p>Reimplemented in <a class="el" href="classSfmlSimulationVisualizer.html#ac39536ebb9916ad97f8c378885e5c025">SfmlSimulationVisualizer</a>.</p>
 

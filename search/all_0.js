@@ -8,5 +8,6 @@ var searchData=
   ['alreadyexists_5',['AlreadyExists',['../classGraph.html#ad4551558ed2438d068f9a2efd09508c3a89b69484680b18e9179e826c6e023805',1,'Graph']]],
   ['astarstrategy_6',['AStarStrategy',['../classAStarStrategy.html',1,'']]],
   ['astarstrategy_2eh_7',['AStarStrategy.h',['../AStarStrategy_8h.html',1,'']]],
-  ['attachsimulation_8',['attachSimulation',['../classSimulationVisualizer.html#af2059e4c342e10e9028658d77c2639f5',1,'SimulationVisualizer']]]
+  ['attachsimulation_8',['attachSimulation',['../classSimulationVisualizer.html#af2059e4c342e10e9028658d77c2639f5',1,'SimulationVisualizer']]],
+  ['avgspeed_9',['avgSpeed',['../structStatsSnapshot.html#a0b0cbd80e37b4b1a18878d352361ef52',1,'StatsSnapshot']]]
 ];

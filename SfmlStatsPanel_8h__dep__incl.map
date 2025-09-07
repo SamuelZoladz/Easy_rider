@@ -1,0 +1,5 @@
+<map id="include/Easy_rider/Visualizers/SfmlStatsPanel.h" name="include/Easy_rider/Visualizers/SfmlStatsPanel.h">
+<area shape="rect" id="Node000001" title="Lightweight SFML overlay panel that displays simulation statistics." alt="" coords="5,5,216,45"/>
+<area shape="rect" id="Node000002" href="$SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that renders the traffic graph, vehicles and UI." alt="" coords="10,93,211,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,59,113,93,108,93,108,59"/>
+</map>

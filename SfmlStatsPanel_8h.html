@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Easy_rider: Member List</title>
+<title>Easy_rider: include/Easy_rider/Visualizers/SfmlStatsPanel.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classTrafficEvents.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('SfmlStatsPanel_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,20 +95,60 @@ $(document).ready(function(){initNavTree('classTrafficEvents.html',''); initResi
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">TrafficEvents Member List</div></div>
+  <div class="summary">
+<a href="#nested-classes">Classes</a>  </div>
+  <div class="headertitle"><div class="title">SfmlStatsPanel.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classTrafficEvents.html">TrafficEvents</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classTrafficEvents.html#a81b50e71f5de28eb727a0024c2bfeccf">blockEdge</a>(int fromId, int toId)</td><td class="entry"><a class="el" href="classTrafficEvents.html">TrafficEvents</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classTrafficEvents.html#ac2eee9c1aa831009f76cb10499b2938c">clearEdge</a>(int fromId, int toId)</td><td class="entry"><a class="el" href="classTrafficEvents.html">TrafficEvents</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>TrafficEvents</b>(CongestionModel &amp;m) (defined in <a class="el" href="classTrafficEvents.html">TrafficEvents</a>)</td><td class="entry"><a class="el" href="classTrafficEvents.html">TrafficEvents</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
-</table></div><!-- contents -->
+<p>Lightweight SFML overlay panel that displays simulation statistics.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;SFML/Graphics.hpp&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for SfmlStatsPanel.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="SfmlStatsPanel_8h__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Visualizers_2SfmlStatsPanel_8h" alt=""/></div>
+<map name="ainclude_2Easy__rider_2Visualizers_2SfmlStatsPanel_8h" id="ainclude_2Easy__rider_2Visualizers_2SfmlStatsPanel_8h">
+<area shape="rect" title="Lightweight SFML overlay panel that displays simulation statistics." alt="" coords="5,5,216,45"/>
+<area shape="rect" title=" " alt="" coords="37,93,184,119"/>
+<area shape="poly" title=" " alt="" coords="113,46,113,79,108,79,108,46"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="SfmlStatsPanel_8h__dep__incl.png" border="0" usemap="#ainclude_2Easy__rider_2Visualizers_2SfmlStatsPanel_8hdep" alt=""/></div>
+<map name="ainclude_2Easy__rider_2Visualizers_2SfmlStatsPanel_8hdep" id="ainclude_2Easy__rider_2Visualizers_2SfmlStatsPanel_8hdep">
+<area shape="rect" title="Lightweight SFML overlay panel that displays simulation statistics." alt="" coords="5,5,216,45"/>
+<area shape="rect" href="SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that renders the traffic graph, vehicles and UI." alt="" coords="10,93,211,148"/>
+<area shape="poly" title=" " alt="" coords="113,59,113,93,108,93,108,59"/>
+</map>
+</div>
+</div>
+<p><a href="SfmlStatsPanel_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStatsSnapshot.html">StatsSnapshot</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snapshot of values presented in the stats panel.  <a href="structStatsSnapshot.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSfmlStatsPanel.html">SfmlStatsPanel</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a minimalistic statistics panel on top of the SFML target.  <a href="classSfmlStatsPanel.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Lightweight SFML overlay panel that displays simulation statistics. </p>
+<p>Responsibilities:</p><ul>
+<li>Reserve a right-side strip in the window and render a simple HUD.</li>
+<li>Draw basic metrics (e.g., simulation time, average speed).</li>
+</ul>
+<p>Coordinate system: all sizes are in pixels; text is drawn in window space. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9acb70b30e5df378bc93c5dba7ca284a.html">Easy_rider</a></li><li class="navelem"><a class="el" href="dir_870bbc05adf0ebebbdcadf3099ecf386.html">Visualizers</a></li><li class="navelem"><a class="el" href="SfmlStatsPanel_8h.html">SfmlStatsPanel.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

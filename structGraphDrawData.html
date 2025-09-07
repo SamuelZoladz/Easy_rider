@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Easy_rider: viz::Vec2 Struct Reference</title>
+<title>Easy_rider: GraphDrawData Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('structviz_1_1Vec2.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('structGraphDrawData.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -97,27 +97,34 @@ $(document).ready(function(){initNavTree('structviz_1_1Vec2.html',''); initResiz
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structviz_1_1Vec2-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">viz::Vec2 Struct Reference</div></div>
+<a href="structGraphDrawData-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">GraphDrawData Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Lightweight 2D vector detached from any graphics library.  
- <a href="structviz_1_1Vec2.html#details">More...</a></p>
+<p>Pre-baked graph geometry ready for drawing.  
+ <a href="structGraphDrawData.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="VisualizerUtils_8h_source.html">VisualizerUtils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac1eac0c186246f7383773a1e2e119be0" id="r_ac1eac0c186246f7383773a1e2e119be0"><td class="memItemLeft" align="right" valign="top"><a id="ac1eac0c186246f7383773a1e2e119be0" name="ac1eac0c186246f7383773a1e2e119be0"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>x</b> {0.0f}</td></tr>
-<tr class="separator:ac1eac0c186246f7383773a1e2e119be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a702a5c01619892ba277523042eff6b22" id="r_a702a5c01619892ba277523042eff6b22"><td class="memItemLeft" align="right" valign="top"><a id="a702a5c01619892ba277523042eff6b22" name="a702a5c01619892ba277523042eff6b22"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b> {0.0f}</td></tr>
-<tr class="separator:a702a5c01619892ba277523042eff6b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95844bbb5640369fd9d86499d73bf222" id="r_a95844bbb5640369fd9d86499d73bf222"><td class="memItemLeft" align="right" valign="top"><a id="a95844bbb5640369fd9d86499d73bf222" name="a95844bbb5640369fd9d86499d73bf222"></a>
+std::vector&lt; sf::Vector2f &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>nodePositions</b></td></tr>
+<tr class="memdesc:a95844bbb5640369fd9d86499d73bf222"><td class="mdescLeft">&#160;</td><td class="mdescRight">World-space node centers. <br /></td></tr>
+<tr class="separator:a95844bbb5640369fd9d86499d73bf222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac952203984d15f8702dd1f6cb4a310d9" id="r_ac952203984d15f8702dd1f6cb4a310d9"><td class="memItemLeft" align="right" valign="top"><a id="ac952203984d15f8702dd1f6cb4a310d9" name="ac952203984d15f8702dd1f6cb4a310d9"></a>
+std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>edges</b></td></tr>
+<tr class="memdesc:ac952203984d15f8702dd1f6cb4a310d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node index pairs. <br /></td></tr>
+<tr class="separator:ac952203984d15f8702dd1f6cb4a310d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Lightweight 2D vector detached from any graphics library. </p>
+<div class="textblock"><p>Pre-baked graph geometry ready for drawing. </p>
+<ul>
+<li>nodePositions[i] is the world position for node index <code>i</code>.</li>
+<li>edges contain pairs of node indices (u, v) drawn as straight segments. The pair values are indices into nodePositions.</li>
+</ul>
+<p>No guarantee is made about edge direction or (u &lt;= v) ordering. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/Easy_rider/Visualizers/<a class="el" href="VisualizerUtils_8h_source.html">VisualizerUtils.h</a></li>
 </ul>
@@ -126,7 +133,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b> {0.0f}</td></t
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>viz</b></li><li class="navelem"><a class="el" href="structviz_1_1Vec2.html">Vec2</a></li>
+    <li class="navelem"><a class="el" href="structGraphDrawData.html">GraphDrawData</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

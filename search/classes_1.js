@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['car_0',['Car',['../classCar.html',1,'']]],
-  ['congestionmodel_1',['CongestionModel',['../classCongestionModel.html',1,'']]]
+  ['callbacks_0',['Callbacks',['../structSfmlSettingsWindow_1_1Callbacks.html',1,'SfmlSettingsWindow']]],
+  ['car_1',['Car',['../classCar.html',1,'']]],
+  ['congestionmodel_2',['CongestionModel',['../classCongestionModel.html',1,'']]]
 ];

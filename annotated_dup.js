@@ -1,9 +1,5 @@
 var annotated_dup =
 [
-    [ "viz", null, [
-      [ "GraphDrawData", "structviz_1_1GraphDrawData.html", null ],
-      [ "Vec2", "structviz_1_1Vec2.html", null ]
-    ] ],
     [ "AStarStrategy", "classAStarStrategy.html", "classAStarStrategy" ],
     [ "Car", "classCar.html", null ],
     [ "CongestionModel", "classCongestionModel.html", "classCongestionModel" ],
@@ -12,20 +8,25 @@ var annotated_dup =
     [ "EdgeKeyHash", "structEdgeKeyHash.html", null ],
     [ "EdgeState", "structEdgeState.html", "structEdgeState" ],
     [ "Graph", "classGraph.html", "classGraph" ],
+    [ "GraphDrawData", "structGraphDrawData.html", "structGraphDrawData" ],
     [ "HighwayGenerator", "classHighwayGenerator.html", "classHighwayGenerator" ],
     [ "IDMParams", "structIDMParams.html", "structIDMParams" ],
     [ "Intersection", "classIntersection.html", "classIntersection" ],
     [ "LeaderInfo", "structLeaderInfo.html", "structLeaderInfo" ],
     [ "MotorwayGenerator", "classMotorwayGenerator.html", "classMotorwayGenerator" ],
+    [ "Parameters", "classParameters.html", null ],
     [ "Road", "classRoad.html", "classRoad" ],
     [ "RoadGenerator", "classRoadGenerator.html", "classRoadGenerator" ],
     [ "RouteStrategy", "classRouteStrategy.html", "classRouteStrategy" ],
+    [ "SfmlSettingsWindow", "classSfmlSettingsWindow.html", "classSfmlSettingsWindow" ],
     [ "SfmlSimulationVisualizer", "classSfmlSimulationVisualizer.html", "classSfmlSimulationVisualizer" ],
+    [ "SfmlStatsPanel", "classSfmlStatsPanel.html", "classSfmlStatsPanel" ],
     [ "Simulation", "classSimulation.html", "classSimulation" ],
     [ "SimulationVisualizer", "classSimulationVisualizer.html", "classSimulationVisualizer" ],
+    [ "StatsSnapshot", "structStatsSnapshot.html", "structStatsSnapshot" ],
     [ "StreetGenerator", "classStreetGenerator.html", "classStreetGenerator" ],
-    [ "TrafficEvents", "classTrafficEvents.html", "classTrafficEvents" ],
     [ "Truck", "classTruck.html", null ],
+    [ "UiMargins", "structUiMargins.html", null ],
     [ "Vehicle", "classVehicle.html", "classVehicle" ],
-    [ "VisualizerView", "structVisualizerView.html", null ]
+    [ "VisualizerView", "structVisualizerView.html", "structVisualizerView" ]
 ];

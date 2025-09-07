@@ -8,5 +8,5 @@ var searchData=
   ['intersection_5',['intersection',['../classIntersection.html',1,'Intersection'],['../classIntersection.html#a67497e3efe2793b23909052eeb82c4f3',1,'Intersection::Intersection()'],['../classIntersection.html#ae6087c977674f8338ef3b6a0fede4714',1,'Intersection::Intersection(int x, int y)']]],
   ['intersection_2ecpp_6',['Intersection.cpp',['../Intersection_8cpp.html',1,'']]],
   ['intersection_2eh_7',['Intersection.h',['../Intersection_8h.html',1,'']]],
-  ['isopen_8',['isopen',['../classSfmlSimulationVisualizer.html#a77dbcbe0be1dde9c2b0e596d137ae71d',1,'SfmlSimulationVisualizer::isOpen()'],['../classSimulationVisualizer.html#a5e26c3d6a109bc95589b2e65539cee50',1,'SimulationVisualizer::isOpen()']]]
+  ['isopen_8',['isopen',['../classSfmlSettingsWindow.html#ab0890b749a68c8b3405314f398698aa3',1,'SfmlSettingsWindow::isOpen()'],['../classSfmlSimulationVisualizer.html#a77dbcbe0be1dde9c2b0e596d137ae71d',1,'SfmlSimulationVisualizer::isOpen()'],['../classSimulationVisualizer.html#a5e26c3d6a109bc95589b2e65539cee50',1,'SimulationVisualizer::isOpen()']]]
 ];

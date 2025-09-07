@@ -129,9 +129,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>pause</b> ()</td></tr
 <tr class="memitem:af6d3f404c8c791cd05c6e5b6246dcbc2" id="r_af6d3f404c8c791cd05c6e5b6246dcbc2"><td class="memItemLeft" align="right" valign="top"><a id="af6d3f404c8c791cd05c6e5b6246dcbc2" name="af6d3f404c8c791cd05c6e5b6246dcbc2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
 <tr class="separator:af6d3f404c8c791cd05c6e5b6246dcbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36aa7ff3f88075284f50f6517b85867a" id="r_a36aa7ff3f88075284f50f6517b85867a"><td class="memItemLeft" align="right" valign="top"><a id="a36aa7ff3f88075284f50f6517b85867a" name="a36aa7ff3f88075284f50f6517b85867a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTimeScale</b> (double s)</td></tr>
-<tr class="separator:a36aa7ff3f88075284f50f6517b85867a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81ec581dfa49e501fc617afa63900bcd" id="r_a81ec581dfa49e501fc617afa63900bcd"><td class="memItemLeft" align="right" valign="top"><a id="a81ec581dfa49e501fc617afa63900bcd" name="a81ec581dfa49e501fc617afa63900bcd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (double dt)</td></tr>
 <tr class="memdesc:a81ec581dfa49e501fc617afa63900bcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance simulation by dt seconds (scaled by timeScale). <br /></td></tr>
@@ -165,6 +162,12 @@ const <a class="el" href="classCongestionModel.html">CongestionModel</a> &amp;&#
 <tr class="memitem:aecb2ae99f25bccfa7a3707a418d5a18e" id="r_aecb2ae99f25bccfa7a3707a418d5a18e"><td class="memItemLeft" align="right" valign="top"><a id="aecb2ae99f25bccfa7a3707a418d5a18e" name="aecb2ae99f25bccfa7a3707a418d5a18e"></a>
 <a class="el" href="classCongestionModel.html">CongestionModel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>congestion</b> ()</td></tr>
 <tr class="separator:aecb2ae99f25bccfa7a3707a418d5a18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03633b540804de549b3cca68e58ac018" id="r_a03633b540804de549b3cca68e58ac018"><td class="memItemLeft" align="right" valign="top"><a id="a03633b540804de549b3cca68e58ac018" name="a03633b540804de549b3cca68e58ac018"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getSimTime</b> () const noexcept</td></tr>
+<tr class="separator:a03633b540804de549b3cca68e58ac018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adacc866632a16ba5a531dd66e6e9bbb9" id="r_adacc866632a16ba5a531dd66e6e9bbb9"><td class="memItemLeft" align="right" valign="top"><a id="adacc866632a16ba5a531dd66e6e9bbb9" name="adacc866632a16ba5a531dd66e6e9bbb9"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>averageSpeed</b> () const noexcept</td></tr>
+<tr class="separator:adacc866632a16ba5a531dd66e6e9bbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Owns the world (graph), vehicles, and time integration loop. </p>

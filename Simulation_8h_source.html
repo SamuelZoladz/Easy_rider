@@ -132,50 +132,51 @@ $(document).ready(function(){initNavTree('Simulation_8h_source.html',''); initRe
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordtype">void</span> pause() { paused_ = <span class="keyword">true</span>; }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">void</span> stop() { running_ = <span class="keyword">false</span>; }</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">void</span> setTimeScale(<span class="keywordtype">double</span> s) { timeScale_ = s; }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSimulation.html#a81ec581dfa49e501fc617afa63900bcd">update</a>(<span class="keywordtype">double</span> dt);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classSimulation.html#aea051bf6021ffcc490f0576406fed896">spawnVehicleCar</a>(<span class="keywordtype">int</span> startId, <span class="keywordtype">int</span> goalId,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                      <span class="keyword">const</span> std::shared_ptr&lt;RouteStrategy&gt; &amp;strategy);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">int</span> spawnVehicleTruck(<span class="keywordtype">int</span> startId, <span class="keywordtype">int</span> goalId,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                        <span class="keyword">const</span> std::shared_ptr&lt;RouteStrategy&gt; &amp;strategy);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSimulation.html#a569af24e75f361b9465624ea47d49912">setStrategyForAll</a>(<span class="keyword">const</span> std::shared_ptr&lt;RouteStrategy&gt; &amp;strategy);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSimulation.html#a81ec581dfa49e501fc617afa63900bcd">update</a>(<span class="keywordtype">double</span> dt);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classSimulation.html#aea051bf6021ffcc490f0576406fed896">spawnVehicleCar</a>(<span class="keywordtype">int</span> startId, <span class="keywordtype">int</span> goalId,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                      <span class="keyword">const</span> std::shared_ptr&lt;RouteStrategy&gt; &amp;strategy);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">int</span> spawnVehicleTruck(<span class="keywordtype">int</span> startId, <span class="keywordtype">int</span> goalId,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                        <span class="keyword">const</span> std::shared_ptr&lt;RouteStrategy&gt; &amp;strategy);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSimulation.html#a569af24e75f361b9465624ea47d49912">setStrategyForAll</a>(<span class="keyword">const</span> std::shared_ptr&lt;RouteStrategy&gt; &amp;strategy);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  Stats stats()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Stats{vehicles_.size()}; }</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  Stats stats()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Stats{vehicles_.size()}; }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structSimulation_1_1SimSnapshotItem.html">   52</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structSimulation_1_1SimSnapshotItem.html">SimSnapshotItem</a> {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">int</span> <span class="keywordtype">id</span>{};</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">int</span> fromId{};</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">int</span> toId{};</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">double</span> sOnEdge{};</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">double</span> currentSpeed{};</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  };</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structSimulation_1_1SimSnapshotItem.html">   50</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structSimulation_1_1SimSnapshotItem.html">SimSnapshotItem</a> {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">int</span> <span class="keywordtype">id</span>{};</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">int</span> fromId{};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">int</span> toId{};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">double</span> sOnEdge{};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">double</span> currentSpeed{};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  };</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  std::vector&lt;SimSnapshotItem&gt; snapshot() <span class="keyword">const</span>; <span class="comment">// &lt;— DODANE</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">const</span> <a class="code hl_class" href="classGraph.html">Graph&lt;Intersection, Road&gt;</a> &amp;graph()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> graph_; }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_class" href="classGraph.html">Graph&lt;Intersection, Road&gt;</a> &amp;graph() { <span class="keywordflow">return</span> graph_; }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">const</span> <a class="code hl_class" href="classCongestionModel.html">CongestionModel</a> &amp;congestion()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> congestion_; }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_class" href="classCongestionModel.html">CongestionModel</a> &amp;congestion() { <span class="keywordflow">return</span> congestion_; }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> ensureInitialRoutes(<span class="keywordtype">int</span> vehIdx, <span class="keywordtype">int</span> startId, <span class="keywordtype">int</span> goalId,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                           <span class="keyword">const</span> std::shared_ptr&lt;RouteStrategy&gt; &amp;strategy);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <a class="code hl_class" href="classGraph.html">Graph&lt;Intersection, Road&gt;</a> graph_;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_class" href="classCongestionModel.html">CongestionModel</a> congestion_;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  std::vector&lt;std::unique_ptr&lt;Vehicle&gt;&gt; vehicles_;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordtype">bool</span> running_{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">bool</span> paused_{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">double</span> timeScale_{1.0};</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  std::vector&lt;SimSnapshotItem&gt; snapshot() <span class="keyword">const</span>; <span class="comment">// &lt;— DODANE</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">const</span> <a class="code hl_class" href="classGraph.html">Graph&lt;Intersection, Road&gt;</a> &amp;graph()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> graph_; }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_class" href="classGraph.html">Graph&lt;Intersection, Road&gt;</a> &amp;graph() { <span class="keywordflow">return</span> graph_; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keyword">const</span> <a class="code hl_class" href="classCongestionModel.html">CongestionModel</a> &amp;congestion()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> congestion_; }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_class" href="classCongestionModel.html">CongestionModel</a> &amp;congestion() { <span class="keywordflow">return</span> congestion_; }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">double</span> getSimTime() const noexcept;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">double</span> averageSpeed() const noexcept;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>private:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">void</span> ensureInitialRoutes(<span class="keywordtype">int</span> vehIdx, <span class="keywordtype">int</span> startId, <span class="keywordtype">int</span> goalId,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                           const std::shared_ptr&lt;<a class="code hl_class" href="classRouteStrategy.html">RouteStrategy</a>&gt; &amp;strategy);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_class" href="classGraph.html">Graph</a>&lt;<a class="code hl_class" href="classIntersection.html">Intersection</a>, <a class="code hl_class" href="classRoad.html">Road</a>&gt; graph_;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <a class="code hl_class" href="classCongestionModel.html">CongestionModel</a> congestion_;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  std::vector&lt;std::unique_ptr&lt;<a class="code hl_class" href="classVehicle.html">Vehicle</a>&gt;&gt; vehicles_;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">bool</span> running_{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">bool</span> paused_{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordtype">double</span> simTime_{0.0};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
 </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">// SIMULATION_H</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">// SIMULATION_H</span></div>
 <div class="ttc" id="aCongestionModel_8h_html"><div class="ttname"><a href="CongestionModel_8h.html">CongestionModel.h</a></div><div class="ttdoc">Tiered (halving) congestion model driven by Road capacity.</div></div>
 <div class="ttc" id="aGraph_8h_html"><div class="ttname"><a href="Graph_8h.html">Graph.h</a></div><div class="ttdoc">Directed, id-addressable graph template with node/edge concepts, id-&gt;index lookup,...</div></div>
 <div class="ttc" id="aIntersection_8h_html"><div class="ttname"><a href="Intersection_8h.html">Intersection.h</a></div><div class="ttdoc">Declaration of the Intersection class representing a point in 2D space with auto-assigned ids.</div></div>
@@ -183,11 +184,15 @@ $(document).ready(function(){initNavTree('Simulation_8h_source.html',''); initRe
 <div class="ttc" id="aRouteStrategy_8h_html"><div class="ttname"><a href="RouteStrategy_8h.html">RouteStrategy.h</a></div><div class="ttdoc">Strategy interface for route computation on Graph&lt;Intersection, Road&gt;.</div></div>
 <div class="ttc" id="aclassCongestionModel_html"><div class="ttname"><a href="classCongestionModel.html">CongestionModel</a></div><div class="ttdoc">Discrete tier-based halving model using capacity from Road.</div><div class="ttdef"><b>Definition</b> CongestionModel.h:58</div></div>
 <div class="ttc" id="aclassGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdoc">A templated graph storing nodes of type T and edges of type U.</div><div class="ttdef"><b>Definition</b> Graph.h:78</div></div>
+<div class="ttc" id="aclassIntersection_html"><div class="ttname"><a href="classIntersection.html">Intersection</a></div><div class="ttdoc">Represents a point (intersection) in a 2D coordinate system. IDs are auto-assigned from a static coun...</div><div class="ttdef"><b>Definition</b> Intersection.h:17</div></div>
+<div class="ttc" id="aclassRoad_html"><div class="ttname"><a href="classRoad.html">Road</a></div><div class="ttdoc">Represents a directed road connecting two intersections (by ids), with a computed length,...</div><div class="ttdef"><b>Definition</b> Road.h:19</div></div>
+<div class="ttc" id="aclassRouteStrategy_html"><div class="ttname"><a href="classRouteStrategy.html">RouteStrategy</a></div><div class="ttdef"><b>Definition</b> RouteStrategy.h:14</div></div>
 <div class="ttc" id="aclassSimulation_html"><div class="ttname"><a href="classSimulation.html">Simulation</a></div><div class="ttdoc">Owns the world (graph), vehicles, and time integration loop.</div><div class="ttdef"><b>Definition</b> Simulation.h:18</div></div>
-<div class="ttc" id="aclassSimulation_html_a569af24e75f361b9465624ea47d49912"><div class="ttname"><a href="classSimulation.html#a569af24e75f361b9465624ea47d49912">Simulation::setStrategyForAll</a></div><div class="ttdeci">void setStrategyForAll(const std::shared_ptr&lt; RouteStrategy &gt; &amp;strategy)</div><div class="ttdoc">Replace routing strategy for all vehicles.</div><div class="ttdef"><b>Definition</b> Simulation.cpp:151</div></div>
-<div class="ttc" id="aclassSimulation_html_a81ec581dfa49e501fc617afa63900bcd"><div class="ttname"><a href="classSimulation.html#a81ec581dfa49e501fc617afa63900bcd">Simulation::update</a></div><div class="ttdeci">void update(double dt)</div><div class="ttdoc">Advance simulation by dt seconds (scaled by timeScale).</div><div class="ttdef"><b>Definition</b> Simulation.cpp:43</div></div>
-<div class="ttc" id="aclassSimulation_html_aea051bf6021ffcc490f0576406fed896"><div class="ttname"><a href="classSimulation.html#aea051bf6021ffcc490f0576406fed896">Simulation::spawnVehicleCar</a></div><div class="ttdeci">int spawnVehicleCar(int startId, int goalId, const std::shared_ptr&lt; RouteStrategy &gt; &amp;strategy)</div><div class="ttdoc">Create and add a new vehicle; returns its id.</div><div class="ttdef"><b>Definition</b> Simulation.cpp:129</div></div>
-<div class="ttc" id="astructSimulation_1_1SimSnapshotItem_html"><div class="ttname"><a href="structSimulation_1_1SimSnapshotItem.html">Simulation::SimSnapshotItem</a></div><div class="ttdef"><b>Definition</b> Simulation.h:52</div></div>
+<div class="ttc" id="aclassSimulation_html_a569af24e75f361b9465624ea47d49912"><div class="ttname"><a href="classSimulation.html#a569af24e75f361b9465624ea47d49912">Simulation::setStrategyForAll</a></div><div class="ttdeci">void setStrategyForAll(const std::shared_ptr&lt; RouteStrategy &gt; &amp;strategy)</div><div class="ttdoc">Replace routing strategy for all vehicles.</div><div class="ttdef"><b>Definition</b> Simulation.cpp:154</div></div>
+<div class="ttc" id="aclassSimulation_html_a81ec581dfa49e501fc617afa63900bcd"><div class="ttname"><a href="classSimulation.html#a81ec581dfa49e501fc617afa63900bcd">Simulation::update</a></div><div class="ttdeci">void update(double dt)</div><div class="ttdoc">Advance simulation by dt seconds (scaled by timeScale).</div><div class="ttdef"><b>Definition</b> Simulation.cpp:45</div></div>
+<div class="ttc" id="aclassSimulation_html_aea051bf6021ffcc490f0576406fed896"><div class="ttname"><a href="classSimulation.html#aea051bf6021ffcc490f0576406fed896">Simulation::spawnVehicleCar</a></div><div class="ttdeci">int spawnVehicleCar(int startId, int goalId, const std::shared_ptr&lt; RouteStrategy &gt; &amp;strategy)</div><div class="ttdoc">Create and add a new vehicle; returns its id.</div><div class="ttdef"><b>Definition</b> Simulation.cpp:132</div></div>
+<div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdoc">Base vehicle with longitudinal dynamics (IDM) and routing policy.</div><div class="ttdef"><b>Definition</b> Vehicle.h:31</div></div>
+<div class="ttc" id="astructSimulation_1_1SimSnapshotItem_html"><div class="ttname"><a href="structSimulation_1_1SimSnapshotItem.html">Simulation::SimSnapshotItem</a></div><div class="ttdef"><b>Definition</b> Simulation.h:50</div></div>
 <div class="ttc" id="astructSimulation_1_1Stats_html"><div class="ttname"><a href="structSimulation_1_1Stats.html">Simulation::Stats</a></div><div class="ttdef"><b>Definition</b> Simulation.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
