@@ -1,15 +1,17 @@
 <map id="include/Easy_rider/Vehicles/IDM.h" name="include/Easy_rider/Vehicles/IDM.h">
-<area shape="rect" id="Node000001" title="Intelligent Driver Model (IDM) utilities." alt="" coords="245,5,386,45"/>
-<area shape="rect" id="Node000002" href="$Vehicle_8h_source.html" title=" " alt="" coords="244,93,387,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="318,59,318,93,313,93,313,59"/>
-<area shape="rect" id="Node000003" href="$Simulation_8h_source.html" title=" " alt="" coords="37,181,220,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="263,141,171,184,168,179,261,137"/>
-<area shape="rect" id="Node000006" href="$Car_8h_source.html" title=" " alt="" coords="245,181,386,221"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="318,147,318,181,313,181,313,147"/>
-<area shape="rect" id="Node000007" href="$Truck_8h_source.html" title=" " alt="" coords="410,181,551,221"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="365,137,446,179,443,184,363,142"/>
-<area shape="rect" id="Node000004" href="$SimulationVisualizer_8h.html" title="Abstract base for simulation visualizers (text or graphics)." alt="" coords="5,269,252,309"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="131,235,131,269,126,269,126,235"/>
-<area shape="rect" id="Node000005" href="$SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that renders the traffic graph, vehicles and UI." alt="" coords="28,357,229,412"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="131,323,131,357,126,357,126,323"/>
+<area shape="rect" id="Node000001" title="Intelligent Driver Model (IDM) utilities." alt="" coords="354,5,495,45"/>
+<area shape="rect" id="Node000002" href="$Vehicle_8h_source.html" title=" " alt="" coords="353,93,496,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="427,59,427,93,422,93,422,59"/>
+<area shape="rect" id="Node000003" href="$Simulation_8h_source.html" title=" " alt="" coords="147,181,329,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="373,141,280,184,278,179,370,137"/>
+<area shape="rect" id="Node000007" href="$Car_8h_source.html" title=" " alt="" coords="354,181,495,221"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="427,147,427,181,422,181,422,147"/>
+<area shape="rect" id="Node000008" href="$Truck_8h_source.html" title=" " alt="" coords="519,181,661,221"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="474,137,555,179,553,184,472,142"/>
+<area shape="rect" id="Node000004" href="$SimulationUtils_8h_source.html" title=" " alt="" coords="5,269,217,309"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="200,232,141,271,138,267,197,227"/>
+<area shape="rect" id="Node000005" href="$SimulationVisualizer_8h.html" title="Abstract base for simulation visualizers (text or graphics)." alt="" coords="241,269,488,309"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="279,227,338,267,335,271,276,232"/>
+<area shape="rect" id="Node000006" href="$SfmlSimulationVisualizer_8h.html" title="SFML&#45;based visualizer that renders the traffic graph, vehicles and UI." alt="" coords="264,357,465,412"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="367,323,367,357,362,357,362,323"/>
 </map>

@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "SimulationUtils", null, [
+      [ "FleetManager", "classSimulationUtils_1_1FleetManager.html", null ]
+    ] ],
     [ "AStarStrategy", "classAStarStrategy.html", "classAStarStrategy" ],
     [ "Car", "classCar.html", null ],
     [ "CongestionModel", "classCongestionModel.html", "classCongestionModel" ],
@@ -15,6 +18,7 @@ var annotated_dup =
     [ "LeaderInfo", "structLeaderInfo.html", "structLeaderInfo" ],
     [ "MotorwayGenerator", "classMotorwayGenerator.html", "classMotorwayGenerator" ],
     [ "Parameters", "classParameters.html", null ],
+    [ "RandomNetworkParams", "structRandomNetworkParams.html", null ],
     [ "Road", "classRoad.html", "classRoad" ],
     [ "RoadGenerator", "classRoadGenerator.html", "classRoadGenerator" ],
     [ "RouteStrategy", "classRouteStrategy.html", "classRouteStrategy" ],

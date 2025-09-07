@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['motorwaygenerator_0',['MotorwayGenerator',['../classMotorwayGenerator.html',1,'']]]
+  ['leaderinfo_0',['LeaderInfo',['../structLeaderInfo.html',1,'']]]
 ];

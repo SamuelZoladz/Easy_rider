@@ -5,6 +5,7 @@ var hierarchy =
     [ "DisjointSet", "structDisjointSet.html", null ],
     [ "EdgeKeyHash", "structEdgeKeyHash.html", null ],
     [ "EdgeState", "structEdgeState.html", null ],
+    [ "SimulationUtils::FleetManager", "classSimulationUtils_1_1FleetManager.html", null ],
     [ "Graph< T, U >", "classGraph.html", null ],
     [ "Graph< Intersection, Road >", "classGraph.html", null ],
     [ "GraphDrawData", "structGraphDrawData.html", null ],
@@ -12,6 +13,7 @@ var hierarchy =
     [ "Intersection", "classIntersection.html", null ],
     [ "LeaderInfo", "structLeaderInfo.html", null ],
     [ "Parameters", "classParameters.html", null ],
+    [ "RandomNetworkParams", "structRandomNetworkParams.html", null ],
     [ "Vehicle::RenderState", "structVehicle_1_1RenderState.html", null ],
     [ "Road", "classRoad.html", null ],
     [ "RoadGenerator", "classRoadGenerator.html", [

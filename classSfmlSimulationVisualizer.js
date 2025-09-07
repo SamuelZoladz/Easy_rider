@@ -10,7 +10,6 @@ var classSfmlSimulationVisualizer =
     [ "processEvents", "classSfmlSimulationVisualizer.html#a45370578c782c8ab622db4a2668acbfe", null ],
     [ "renderFrame", "classSfmlSimulationVisualizer.html#a77b860499496114c7a16a83f87805ad6", null ],
     [ "renderTo", "classSfmlSimulationVisualizer.html#ae3b2c99968bb54f4138e82c3046d546d", null ],
-    [ "restart", "classSfmlSimulationVisualizer.html#ac29dc4ef06b2b7b39dc3e8c02edcee50", null ],
     [ "resume", "classSfmlSimulationVisualizer.html#a828de7f54b711677bd5bb239e0ac3c0b", null ],
     [ "run", "classSfmlSimulationVisualizer.html#a96f30b586d406e86c5dd03225d6abf12", null ],
     [ "setPaused", "classSfmlSimulationVisualizer.html#a8caf4315939a76a21485e86a854d862b", null ],

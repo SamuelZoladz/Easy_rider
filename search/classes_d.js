@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uimargins_0',['UiMargins',['../structUiMargins.html',1,'']]]
+  ['truck_0',['Truck',['../classTruck.html',1,'']]]
 ];
