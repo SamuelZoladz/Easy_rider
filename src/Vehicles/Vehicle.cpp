@@ -219,6 +219,7 @@ void Vehicle::update(double dt) {
   if (route_.size() < 2 || routeIndex_ >= route_.size() - 1) {
     VLOG("update early exit: route.size=" << route_.size()
                                           << " routeIndex=" << routeIndex_);
+
     return;
   }
 

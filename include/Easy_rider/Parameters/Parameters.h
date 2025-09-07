@@ -101,6 +101,53 @@ public:
                      (c >> 24) & 0xFF);
   }
 
+  static void set_targetNodes(int v) { targetNodes_ = v; }
+  static int targetNodes() { return targetNodes_; }
+  static void set_minDistPx(int v) { minDistPx_ = v; }
+  static int minDistPx() { return minDistPx_; }
+
+  static void set_networkMargin(int v) { networkMargin_ = v; }
+  static int networkMargin() { return networkMargin_; }
+
+  static int networkMinX() { return networkMargin_; }
+  static int networkMaxX() {
+    return static_cast<int>(mainWindowWidth_) -
+           static_cast<int>(statsPanelWidth_) - networkMargin_;
+  }
+  static int networkMinY() { return networkMargin_; }
+  static int networkMaxY() {
+    return static_cast<int>(mainWindowHeight_) -
+           static_cast<int>(uiBottomHeight_) - networkMargin_;
+  }
+
+  static void set_motorwayThresholdRatio(double v) {
+    motorwayThresholdRatio_ = v;
+  }
+  static double motorwayThresholdRatio() { return motorwayThresholdRatio_; }
+
+  static void set_motorwayDefaultSpeed(int v) { motorwayDefaultSpeed_ = v; }
+  static int motorwayDefaultSpeed() { return motorwayDefaultSpeed_; }
+
+  static void set_motorwayCapacity(int v) { motorwayCapacity_ = v; }
+  static int motorwayCapacity() { return motorwayCapacity_; }
+
+  static void set_highwayDefaultSpeed(int v) { highwayDefaultSpeed_ = v; }
+  static int highwayDefaultSpeed() { return highwayDefaultSpeed_; }
+
+  static void set_highwayCapacity(int v) { highwayCapacity_ = v; }
+  static int highwayCapacity() { return highwayCapacity_; }
+
+  static void set_streetNumberOfNeighbors(int v) {
+    streetNumberOfNeighbors_ = v;
+  }
+  static int streetNumberOfNeighbors() { return streetNumberOfNeighbors_; }
+
+  static void set_streetDefaultSpeed(int v) { streetDefaultSpeed_ = v; }
+  static int streetDefaultSpeed() { return streetDefaultSpeed_; }
+
+  static void set_streetCapacity(int v) { streetCapacity_ = v; }
+  static int streetCapacity() { return streetCapacity_; }
+
 private:
   inline static float simulationSpeed_ = 1.0f;
   inline static std::string fontPath_ = "assets/fonts/arial.ttf";
@@ -108,9 +155,9 @@ private:
   inline static int settingsWindowWidth_ = 520;
 
   inline static unsigned frameRateLimit_ = 60;
-  inline static unsigned mainWindowWidth_ = 800;
+  inline static unsigned mainWindowWidth_ = 1280;
   inline static unsigned mainWindowHeight_ =
-      600; // Take into account the top bar size for closing the window.
+      650; // Take into account the top bar size for closing the window.
 
   inline static float uiBottomHeight_ = 100.f;
   inline static float statsPanelWidth_ = 120.f;
@@ -134,6 +181,21 @@ private:
   inline static uint32_t btnText_ = 0xFFE6EBF0;
   inline static uint32_t backgroundColor_ = 0xFF141619;
   inline static u_int32_t vechicleColor_ = 0xFFFF0000;
+
+  inline static int targetNodes_ = 30;
+  inline static int minDistPx_ = 30;
+  inline static int networkMargin_ = 50;
+
+  inline static double motorwayThresholdRatio_ = 0.07;
+  inline static int motorwayDefaultSpeed_ = 39;
+  inline static int motorwayCapacity_ = 4;
+
+  inline static int highwayDefaultSpeed_ = 25;
+  inline static int highwayCapacity_ = 2;
+
+  inline static int streetNumberOfNeighbors_ = 3;
+  inline static int streetDefaultSpeed_ = 14;
+  inline static int streetCapacity_ = 1;
 };
 
 #endif // PARAMETERS_H

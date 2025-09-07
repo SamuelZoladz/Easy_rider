@@ -62,6 +62,12 @@ public:
 
   double getSimTime() const noexcept;
   double averageSpeed() const noexcept;
+  const std::vector<std::unique_ptr<Vehicle>> &vehicles() const {
+    return vehicles_;
+  }
+  void setOnPostUpdate(std::function<void(double)> cb) {
+    onPostUpdate_ = std::move(cb);
+  }
 
 private:
   void ensureInitialRoutes(int vehIdx, int startId, int goalId);
@@ -72,6 +78,7 @@ private:
   bool running_{false};
   bool paused_{false};
   double simTime_{0.0};
+  std::function<void(double)> onPostUpdate_{};
 };
 
 #endif // SIMULATION_H

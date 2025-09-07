@@ -73,11 +73,6 @@ void SfmlSimulationVisualizer::resume() {
   }
 }
 
-void SfmlSimulationVisualizer::restart() {
-  // TODO: full restart of a new simulation session
-  simulation_->start();
-}
-
 void SfmlSimulationVisualizer::stop() {
   // Stops visualization by closing the window.
   closeWindow();

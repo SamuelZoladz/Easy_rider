@@ -7,8 +7,10 @@
 #include <string>
 
 namespace {
+constexpr int buttonCount = 3;
+
 // Buttons in the bottom bar
-enum class Btn : std::size_t { Restart = 0, Pause = 1, Stop = 2, Settings = 3 };
+enum class Btn : std::size_t { Pause = 0, Stop = 1, Settings = 2 };
 
 // Center a text inside a rectangle (with a small vertical tweak to match
 // visuals)
@@ -51,11 +53,11 @@ void SfmlSimulationVisualizer::layoutUi() {
   const float w = static_cast<float>(sz.x);
   const float h = Parameters::uiBottomHeight();
 
-  // Arrange 4 buttons centered horizontally within the panel.
-  constexpr std::array<const char *, 4> labels{"Restart", "Pause", "Stop",
-                                               "Settings"};
+  // Arrange 3 buttons centered horizontally within the panel.
+  constexpr std::array<const char *, buttonCount> labels{"Pause", "Stop",
+                                                         "Settings"};
   const float totalW =
-      4.f * Parameters::buttonWidth() + 3.f * Parameters::buttonGap();
+      buttonCount * Parameters::buttonWidth() + 3.f * Parameters::buttonGap();
   const float startX = std::max(Parameters::panelMargin(), (w - totalW) * 0.5f);
   const float y = (h - Parameters::buttonHeight()) * 0.5f;
 
@@ -124,9 +126,6 @@ void SfmlSimulationVisualizer::handleUiClick(float mx, float my) {
       continue;
 
     switch (static_cast<Btn>(i)) {
-    case Btn::Restart:
-      restart();
-      break;
     case Btn::Pause:
       paused_ ? resume() : pause();
       break;

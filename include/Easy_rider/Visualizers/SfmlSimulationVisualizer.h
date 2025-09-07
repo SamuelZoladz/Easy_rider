@@ -105,9 +105,6 @@ public:
   /// Restores the previous time scale (or 1.0 if unknown) and unpauses.
   void resume();
 
-  /// Ensures a window exists and resumes if paused.
-  void restart();
-
   /// Closes the window (stops visualization).
   void stop();
 

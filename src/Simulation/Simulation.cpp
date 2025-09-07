@@ -127,6 +127,8 @@ void Simulation::update(double dt) {
   for (auto &up : vehicles_) {
     up->update(step);
   }
+  if (onPostUpdate_)
+    onPostUpdate_(step);
 }
 
 int Simulation::spawnVehicleCar(int startId, int goalId,
