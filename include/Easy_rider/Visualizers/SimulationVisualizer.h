@@ -22,6 +22,15 @@ struct VisualizerView {
   float originX{0.0f};
   float originY{0.0f};
   float scale{1.0f};
+  float offsetX{0.0f};
+  float offsetY{0.0f};
+};
+
+struct UiMargins {
+  float left{0.0f};
+  float right{0.0f};
+  float top{0.0f};
+  float bottom{0.0f};
 };
 
 class SimulationVisualizer {

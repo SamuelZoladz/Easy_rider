@@ -86,24 +86,6 @@ int main() {
   sfviz.setGraphProvider([&G]() { return makeGraphDrawData(G); });
   sfviz.setVehicleProvider([&sim]() { return extractVehiclePositions(sim); });
 
-  const auto drawData = makeGraphDrawData(G);
-  auto [minX, minY, maxX, maxY] = bounds(drawData.nodePositions);
-  const float worldW = std::max(1.0f, maxX - minX);
-  const float worldH = std::max(1.0f, maxY - minY);
-  const float padPx = 20.0f;
-  // TODO To nie powinno być tak na pałe odejmowane - trzeba poprawić
-  const float scaleX = (kWinW - 100.f - 2.0f * padPx) / worldW;
-  const float scaleY = (kWinH - 100.f - 2.0f * padPx) / worldH;
-  const float scale = std::min(scaleX, scaleY);
-
-  Vec2 originWorld{minX - padPx / scale, minY - padPx / scale};
-
-  VisualizerView view;
-  view.originX = originWorld.x;
-  view.originY = originWorld.y;
-  view.scale = scale;
-  sfviz.setView(view);
-
   sfviz.setNodeRadius(7.0f);
   sfviz.setVehicleRadius(5.0f);
   sfviz.setEdgeThickness(4.f);

@@ -70,7 +70,8 @@ protected:
 
 private:
   static sf::Vector2f toScreen(const Vec2 &w, const VisualizerView &v) {
-    return {(w.x - v.originX) * v.scale, (w.y - v.originY) * v.scale};
+    return {v.offsetX + (w.x - v.originX) * v.scale,
+            v.offsetY + (w.y - v.originY) * v.scale};
   }
   void rebuildGraphCache();
   void drawGraph(sf::RenderTarget &target);
@@ -135,6 +136,13 @@ private:
   float nodeRadius_{5.0f};
   float vehicleRadius_{4.0f};
   float edgeThickness_{1.5f};
+
+  float statsPanelWidth_{100.0f};
+  float uiBottomHeight_{100.0f};
+  UiMargins uiMargins_{};         // lewo/prawo/góra/dół w pikselach
+  float contentPaddingPx_{12.0f}; // wewnętrzny padding sceny (px)
+  // Wyliczanie pozycji i skali grafu względem rozmiaru okna i marginesów UI
+  void graphPositioning(const std::vector<Vec2> &positions);
 
   bool paused_{false};
   bool graphCacheDirty_{true};

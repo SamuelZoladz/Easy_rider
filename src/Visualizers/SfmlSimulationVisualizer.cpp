@@ -86,7 +86,7 @@ void SfmlSimulationVisualizer::updateSceneViewport() {
   const float w = static_cast<float>(size.x);
   const float h = static_cast<float>(size.y);
 
-  const float uiHeightPx = 100.f;
+  const float uiHeightPx = uiBottomHeight_;
   const float panelH = std::min(uiHeightPx, h);
   const float vpH = std::max(0.f, (h - panelH) / h);
 
@@ -99,6 +99,12 @@ void SfmlSimulationVisualizer::updateSceneViewport() {
   uiView_.setViewport(sf::FloatRect(0.f, vpH, 1.f, 1.f - vpH));
 
   layoutUi();
+  // uaktualnij marginesy UI i oznacz cache do przebudowy
+  uiMargins_.left = 0.f;
+  uiMargins_.right = statsPanelWidth_;
+  uiMargins_.top = 0.f;
+  uiMargins_.bottom = uiBottomHeight_;
+  graphCacheDirty_ = true;
 }
 
 void SfmlSimulationVisualizer::setView(const VisualizerView &view) {
@@ -129,7 +135,7 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
                      }
                    }});
   statsPanel_.setFont(&uiFont_);
-  statsPanel_.setWidth(100.f);
+  statsPanel_.setWidth(statsPanelWidth_);
   statsPanel_.setHeight(uiTopBarHeight_);
   updateSceneViewport();
   layoutUi();
@@ -173,11 +179,14 @@ void SfmlSimulationVisualizer::drawStats(sf::RenderTarget &rt) {
 
   const sf::Vector2u sz = window_->getSize();
   const float h = static_cast<float>(sz.y);
-  const float panelH = h - 100.f;
+  const float panelH = h - uiBottomHeight_;
 
   uiTopBarHeight_ = panelH;
   statsPanel_.setHeight(panelH);
-  statsPanel_.setWidth(100.f);
+  statsPanel_.setWidth(statsPanelWidth_);
+  uiMargins_.right = statsPanelWidth_;
+  uiMargins_.bottom = uiBottomHeight_;
+  graphCacheDirty_ = true;
 
   statsPanel_.draw(rt, sz, snap);
 }
