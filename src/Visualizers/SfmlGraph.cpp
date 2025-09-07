@@ -1,7 +1,7 @@
 #include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
-#include <iostream>
+#include <limits>
 #include <string>
 
 void SfmlSimulationVisualizer::graphPositioning(
@@ -104,7 +104,6 @@ void SfmlSimulationVisualizer::rebuildGraphCache() {
   const float halfTWorld = std::max(0.f, edgeThickness_) * 0.5f * wpp;
 
   edgesVA_ = std::make_unique<sf::VertexArray>(sf::Triangles);
-  edgesVA_->clear();
 
   for (const auto &e : data.edges) {
     const sf::Vector2f a = data.nodePositions.at(e.first);  // świat

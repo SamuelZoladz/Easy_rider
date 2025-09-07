@@ -28,7 +28,7 @@ inline float clampf(float v, float lo, float hi) {
 }
 inline float toSliderT(float v, float vmin, float vmax) {
   v = clampf(v, vmin, vmax);
-  const float a = std::log10(vmin);
+  const float a = std::log10(std::min(vmin, 0.1f));
   const float b = std::log10(vmax);
   const float x = std::log10(v);
   return (x - a) / (b - a);

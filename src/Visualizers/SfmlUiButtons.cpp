@@ -1,3 +1,4 @@
+#include "Easy_rider/Parameters/Parameters.h"
 #include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
@@ -9,7 +10,7 @@ void SfmlSimulationVisualizer::initUiIfNeeded() {
     return;
 
   if (!uiFontLoaded_) {
-    const std::string fontPath = "assets/fonts/arial.ttf";
+    const std::string &fontPath = Parameters::fontPath();
     if (!uiFont_.loadFromFile(fontPath)) {
       throw std::runtime_error(
           "Font not found: " + fontPath +
@@ -38,7 +39,6 @@ void SfmlSimulationVisualizer::layoutUi() {
   const float startX = std::max(margin, (w - totalW) * 0.5f);
   const float y = (panelH - btnH) * 0.5f;
 
-  uiButtons_.clear();
   uiButtons_.push_back(
       {{startX + 0.f * (btnW + gap), y, btnW, btnH}, "Restart"});
   uiButtons_.push_back({{startX + 1.f * (btnW + gap), y, btnW, btnH}, "Pause"});

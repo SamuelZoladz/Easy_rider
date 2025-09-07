@@ -20,7 +20,6 @@ void SfmlSimulationVisualizer::processEvents() {
       window_->close();
     } else if (ev.type == sf::Event::Resized) {
       updateSceneViewport();
-      layoutUi();
     } else if (ev.type == sf::Event::MouseButtonPressed &&
                ev.mouseButton.button == sf::Mouse::Left) {
       sf::Vector2i pixel(ev.mouseButton.x, ev.mouseButton.y);
@@ -72,32 +71,35 @@ void SfmlSimulationVisualizer::stop() {
 
 void SfmlSimulationVisualizer::updateSceneViewport() {
   auto size = window_->getSize();
-  const float w = static_cast<float>(size.x);
-  const float h = static_cast<float>(size.y);
+  const float windowW = static_cast<float>(size.x);
+  const float windowH = static_cast<float>(size.y);
 
-  const float uiHeightPx = uiBottomHeight_;
-  const float panelH = std::min(uiHeightPx, h);
-  const float vpH = std::max(0.f, (h - panelH) / h);
+  // wysokość dolnego paska UI (px)
+  const float bottomUiHeightPx = std::min(uiBottomHeight_, windowH);
+  // wysokość górnej części (scena + ewentualne overlaye) w px
+  const float topContentHeightPx = std::max(0.f, windowH - bottomUiHeightPx);
+  const float topContentHeightFrac =
+      (windowH > 0.f) ? (topContentHeightPx / windowH) : 0.f;
 
-  // SCENA: tylko viewport (świat zostaje w układzie świata)
-  sceneView_.reset(sf::FloatRect(0.f, 0.f, w, std::max(0.f, h - panelH)));
-  sceneView_.setViewport(sf::FloatRect(0.f, 0.f, 1.f, vpH));
+  // SCENA: zajmuje górną część okna
+  sceneView_.reset(sf::FloatRect(0.f, 0.f, windowW, topContentHeightPx));
+  sceneView_.setViewport(sf::FloatRect(0.f, 0.f, 1.f, topContentHeightFrac));
 
-  // UI: ekranowe px
-  uiView_.reset(sf::FloatRect(0.f, 0.f, w, panelH));
-  uiView_.setViewport(sf::FloatRect(0.f, vpH, 1.f, 1.f - vpH));
+  // UI (dolny pasek): zajmuje dolną część okna
+  uiView_.reset(sf::FloatRect(0.f, 0.f, windowW, bottomUiHeightPx));
+  uiView_.setViewport(sf::FloatRect(0.f, topContentHeightFrac, 1.f,
+                                    1.f - topContentHeightFrac));
 
   layoutUi();
 
+  // marginesy w pikselach ekranu
   uiMargins_.left = 0.f;
-  uiMargins_.right = statsPanelWidth_;
   uiMargins_.top = 0.f;
+  uiMargins_.right = statsPanelWidth_;
   uiMargins_.bottom = uiBottomHeight_;
 
-  // zmiana viewportu wpływa na przelicznik px->świat (grubość linii)
   graphCacheDirty_ = true;
 }
-
 void SfmlSimulationVisualizer::setView(const VisualizerView &view) {
   SimulationVisualizer::setView(view);
   graphCacheDirty_ = true;
@@ -110,7 +112,7 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
       sf::VideoMode(width, height), title,
       sf::Style::Titlebar | sf::Style::Close);
   window_->setFramerateLimit(60);
-
+  initUiIfNeeded();
   uiView_ = window_->getDefaultView();
   sceneView_ = uiView_;
   settingsWindow_ = std::make_unique<SfmlSettingsWindow>(
@@ -169,11 +171,11 @@ void SfmlSimulationVisualizer::drawStats(sf::RenderTarget &rt) {
   snap.avgSpeed = simulation_->averageSpeed();
 
   const sf::Vector2u sz = window_->getSize();
-  const float h = static_cast<float>(sz.y);
-  const float panelH = h - uiBottomHeight_;
+  const float windowH = static_cast<float>(sz.y);
+  const float topContentHeightPx = std::max(0.f, windowH - uiBottomHeight_);
 
-  uiTopBarHeight_ = panelH;
-  statsPanel_.setHeight(panelH);
+  uiTopBarHeight_ = topContentHeightPx;
+  statsPanel_.setHeight(topContentHeightPx);
   statsPanel_.setWidth(statsPanelWidth_);
   uiMargins_.right = statsPanelWidth_;
   uiMargins_.bottom = uiBottomHeight_;
