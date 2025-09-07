@@ -106,19 +106,18 @@ $(document).ready(function(){initNavTree('Truck_8h_source.html',''); initResizab
 <div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classTruck.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="classTruck.html">Truck</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <a class="code hl_class" href="classTruck.html">Truck</a>(<span class="keyword">const</span> <a class="code hl_class" href="classGraph.html">Graph&lt;Intersection, Road&gt;</a> &amp;graph, <a class="code hl_class" href="classCongestionModel.html">CongestionModel</a> *congestion,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        std::shared_ptr&lt;RouteStrategy&gt; strategy)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      : <a class="code hl_class" href="classVehicle.html">Vehicle</a>(graph, congestion, std::move(strategy),</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                <a class="code hl_struct" href="structIDMParams.html">IDMParams</a>{<span class="comment">/*a*/</span> 15.0, <span class="comment">/*b*/</span> 20.0, <span class="comment">/*v0*/</span> 25.0,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                          <span class="comment">/*T*/</span> 1.8, <span class="comment">/*s0*/</span> 3.0, <span class="comment">/*delta*/</span> 4.0}) {}</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <a class="code hl_class" href="classTruck.html">Truck</a>(<span class="keyword">const</span> <a class="code hl_class" href="classGraph.html">Graph&lt;Intersection, Road&gt;</a> &amp;graph, <a class="code hl_class" href="classCongestionModel.html">CongestionModel</a> *congestion)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      : <a class="code hl_class" href="classVehicle.html">Vehicle</a>(graph, congestion,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                <a class="code hl_struct" href="structIDMParams.html">IDMParams</a>{<span class="comment">/*a*/</span> 15.0, <span class="comment">/*b*/</span> 20.0, <span class="comment">/*v0*/</span> 25.0,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                          <span class="comment">/*T*/</span> 1.8, <span class="comment">/*s0*/</span> 3.0, <span class="comment">/*delta*/</span> 4.0}) {}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif </span><span class="comment">// TRUCK_H</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif </span><span class="comment">// TRUCK_H</span></div>
 <div class="ttc" id="aclassCongestionModel_html"><div class="ttname"><a href="classCongestionModel.html">CongestionModel</a></div><div class="ttdoc">Discrete tier-based halving model using capacity from Road.</div><div class="ttdef"><b>Definition</b> CongestionModel.h:58</div></div>
 <div class="ttc" id="aclassGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdoc">A templated graph storing nodes of type T and edges of type U.</div><div class="ttdef"><b>Definition</b> Graph.h:78</div></div>
 <div class="ttc" id="aclassTruck_html"><div class="ttname"><a href="classTruck.html">Truck</a></div><div class="ttdoc">Heavy truck - lower acceleration and braking.</div><div class="ttdef"><b>Definition</b> Truck.h:10</div></div>
-<div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdoc">Base vehicle with longitudinal dynamics (IDM) and routing policy.</div><div class="ttdef"><b>Definition</b> Vehicle.h:31</div></div>
+<div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdoc">Base vehicle with longitudinal dynamics (IDM) and routing policy.</div><div class="ttdef"><b>Definition</b> Vehicle.h:34</div></div>
 <div class="ttc" id="astructIDMParams_html"><div class="ttname"><a href="structIDMParams.html">IDMParams</a></div><div class="ttdoc">Tunable parameters for IDM.</div><div class="ttdef"><b>Definition</b> IDM.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

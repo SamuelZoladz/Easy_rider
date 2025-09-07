@@ -143,9 +143,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4b02aafedba55024525540dc7e738a51" id="r_a4b02aafedba55024525540dc7e738a51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVehicle.html#a4b02aafedba55024525540dc7e738a51">Vehicle</a> (const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph, <a class="el" href="classCongestionModel.html">CongestionModel</a> *congestion, std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt; strategy, const <a class="el" href="structIDMParams.html">IDMParams</a> &amp;params)</td></tr>
-<tr class="memdesc:a4b02aafedba55024525540dc7e738a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classVehicle.html" title="Base vehicle with longitudinal dynamics (IDM) and routing policy.">Vehicle</a> with IDM configuration.  <br /></td></tr>
-<tr class="separator:a4b02aafedba55024525540dc7e738a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a153932dbc0da54c7cdb5e9bc5295ec2f" id="r_a153932dbc0da54c7cdb5e9bc5295ec2f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVehicle.html#a153932dbc0da54c7cdb5e9bc5295ec2f">Vehicle</a> (const <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classIntersection.html">Intersection</a>, <a class="el" href="classRoad.html">Road</a> &gt; &amp;graph, <a class="el" href="classCongestionModel.html">CongestionModel</a> *congestion, const <a class="el" href="structIDMParams.html">IDMParams</a> &amp;params)</td></tr>
+<tr class="memdesc:a153932dbc0da54c7cdb5e9bc5295ec2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classVehicle.html" title="Base vehicle with longitudinal dynamics (IDM) and routing policy.">Vehicle</a> with IDM configuration.  <br /></td></tr>
+<tr class="separator:a153932dbc0da54c7cdb5e9bc5295ec2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74829d3d2c320cad6530de1bb8bee8bf" id="r_a74829d3d2c320cad6530de1bb8bee8bf"><td class="memItemLeft" align="right" valign="top"><a id="a74829d3d2c320cad6530de1bb8bee8bf" name="a74829d3d2c320cad6530de1bb8bee8bf"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>id</b> () const</td></tr>
 <tr class="memdesc:a74829d3d2c320cad6530de1bb8bee8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique vehicle id. <br /></td></tr>
@@ -166,10 +166,13 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onCongestion<
 void&#160;</td><td class="memItemRight" valign="bottom"><b>recomputeRouteIfNeeded</b> ()</td></tr>
 <tr class="memdesc:ad2137b5b0e4d8855de2264d9a14a5c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to recompute route if cooldown has elapsed. <br /></td></tr>
 <tr class="separator:ad2137b5b0e4d8855de2264d9a14a5c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a572f626793e56a4bd235097a96b6f4aa" id="r_a572f626793e56a4bd235097a96b6f4aa"><td class="memItemLeft" align="right" valign="top"><a id="a572f626793e56a4bd235097a96b6f4aa" name="a572f626793e56a4bd235097a96b6f4aa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setStrategy</b> (std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt; s)</td></tr>
-<tr class="memdesc:a572f626793e56a4bd235097a96b6f4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace routing strategy for this vehicle. <br /></td></tr>
-<tr class="separator:a572f626793e56a4bd235097a96b6f4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c913b772950d3729fb27eb40f63f261" id="r_a4c913b772950d3729fb27eb40f63f261"><td class="memItemLeft" align="right" valign="top"><a id="a4c913b772950d3729fb27eb40f63f261" name="a4c913b772950d3729fb27eb40f63f261"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStrategy</b> (StrategyAlgoritm algo)</td></tr>
+<tr class="memdesc:a4c913b772950d3729fb27eb40f63f261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace routing strategy for this vehicle. <br /></td></tr>
+<tr class="separator:a4c913b772950d3729fb27eb40f63f261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2543dfd58e2b45afb9c9c65a86b2c98e" id="r_a2543dfd58e2b45afb9c9c65a86b2c98e"><td class="memItemLeft" align="right" valign="top"><a id="a2543dfd58e2b45afb9c9c65a86b2c98e" name="a2543dfd58e2b45afb9c9c65a86b2c98e"></a>
+const std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>strategy</b> () const</td></tr>
+<tr class="separator:a2543dfd58e2b45afb9c9c65a86b2c98e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39364919651d38f3cea91aacbbd2ea30" id="r_a39364919651d38f3cea91aacbbd2ea30"><td class="memItemLeft" align="right" valign="top">std::optional&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVehicle.html#a39364919651d38f3cea91aacbbd2ea30">currentNodeId</a> () const</td></tr>
 <tr class="separator:a39364919651d38f3cea91aacbbd2ea30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab405ed9a26e0f802af0ebfb543b8a293" id="r_ab405ed9a26e0f802af0ebfb543b8a293"><td class="memItemLeft" align="right" valign="top">std::optional&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVehicle.html#ab405ed9a26e0f802af0ebfb543b8a293">goalId</a> () const</td></tr>
@@ -281,8 +284,8 @@ std::optional&lt; <a class="el" href="structLeaderInfo.html">LeaderInfo</a> &gt;
 <li>When congestion is detected (e.g., on edge entry), the vehicle may recompute its route using the configured strategy after a cooldown. </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4b02aafedba55024525540dc7e738a51" name="a4b02aafedba55024525540dc7e738a51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b02aafedba55024525540dc7e738a51">&#9670;&#160;</a></span>Vehicle()</h2>
+<a id="a153932dbc0da54c7cdb5e9bc5295ec2f" name="a153932dbc0da54c7cdb5e9bc5295ec2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a153932dbc0da54c7cdb5e9bc5295ec2f">&#9670;&#160;</a></span>Vehicle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -298,12 +301,6 @@ std::optional&lt; <a class="el" href="structLeaderInfo.html">LeaderInfo</a> &gt;
           <td></td>
           <td class="paramtype"><a class="el" href="classCongestionModel.html">CongestionModel</a> *&#160;</td>
           <td class="paramname"><em>congestion</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classRouteStrategy.html">RouteStrategy</a> &gt;&#160;</td>
-          <td class="paramname"><em>strategy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -324,7 +321,6 @@ std::optional&lt; <a class="el" href="structLeaderInfo.html">LeaderInfo</a> &gt;
   <table class="params">
     <tr><td class="paramname">graph</td><td>World graph reference. </td></tr>
     <tr><td class="paramname">congestion</td><td>Congestion model pointer (can be null). </td></tr>
-    <tr><td class="paramname">strategy</td><td>Initial routing strategy. </td></tr>
     <tr><td class="paramname">params</td><td>Intelligent Driver Model parameters. </td></tr>
   </table>
   </dd>
