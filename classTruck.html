@@ -208,6 +208,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>accelLimit</b> () c
 <tr class="memitem:a3303d30e4a545376af4a699afda7b8f4 inherit pub_methods_classVehicle" id="r_a3303d30e4a545376af4a699afda7b8f4"><td class="memItemLeft" align="right" valign="top">
 double&#160;</td><td class="memItemRight" valign="bottom"><b>brakeLimit</b> () const</td></tr>
 <tr class="separator:a3303d30e4a545376af4a699afda7b8f4 inherit pub_methods_classVehicle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b84530b56ca2b6435d84676b55ff682 inherit pub_methods_classVehicle" id="r_a2b84530b56ca2b6435d84676b55ff682"><td class="memItemLeft" align="right" valign="top">
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasArrived</b> () const noexcept</td></tr>
+<tr class="separator:a2b84530b56ca2b6435d84676b55ff682 inherit pub_methods_classVehicle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e2dd35f2358efcbb318d5bc999681de inherit pub_methods_classVehicle" id="r_a8e2dd35f2358efcbb318d5bc999681de"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setOnRerouteApplied</b> (std::function&lt; void(int, double, double)&gt; cb)</td></tr>
+<tr class="separator:a8e2dd35f2358efcbb318d5bc999681de inherit pub_methods_classVehicle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -221,6 +227,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>enterEdge</b> (int fr
 <tr class="memitem:af19088b244262b6fed23a6bda5e8049c inherit pro_methods_classVehicle" id="r_af19088b244262b6fed23a6bda5e8049c"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>leaveEdge</b> ()</td></tr>
 <tr class="separator:af19088b244262b6fed23a6bda5e8049c inherit pro_methods_classVehicle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee4f8c8546c47dbbd7f96926e091204c inherit pro_methods_classVehicle" id="r_aee4f8c8546c47dbbd7f96926e091204c"><td class="memItemLeft" align="right" valign="top">
+double&#160;</td><td class="memItemRight" valign="bottom"><b>estimateRemainingETA</b> (const std::vector&lt; int &gt; &amp;path, std::size_t routeIndex, double sOnEdge) const</td></tr>
+<tr class="separator:aee4f8c8546c47dbbd7f96926e091204c inherit pro_methods_classVehicle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classVehicle"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classVehicle')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classVehicle.html">Vehicle</a></td></tr>
 <tr class="memitem:aad4efa6475abeb4ec18b4e39df8de422 inherit pro_attribs_classVehicle" id="r_aad4efa6475abeb4ec18b4e39df8de422"><td class="memItemLeft" align="right" valign="top">
 int&#160;</td><td class="memItemRight" valign="bottom"><b>id_</b> {}</td></tr>
@@ -266,6 +275,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>pendingReroute_</b> {
 <tr class="memitem:a40998dbd57af9838a3e43f1c25f0375b inherit pro_attribs_classVehicle" id="r_a40998dbd57af9838a3e43f1c25f0375b"><td class="memItemLeft" align="right" valign="top">
 std::optional&lt; <a class="el" href="structLeaderInfo.html">LeaderInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>leader_</b></td></tr>
 <tr class="separator:a40998dbd57af9838a3e43f1c25f0375b inherit pro_attribs_classVehicle"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ef43d52ed58ee321774457a73923625 inherit pro_attribs_classVehicle" id="r_a1ef43d52ed58ee321774457a73923625"><td class="memItemLeft" align="right" valign="top">
+std::function&lt; void(int, double, double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>onRerouteApplied_</b> {}</td></tr>
+<tr class="separator:a1ef43d52ed58ee321774457a73923625 inherit pro_attribs_classVehicle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Heavy truck - lower acceleration and braking. </p>

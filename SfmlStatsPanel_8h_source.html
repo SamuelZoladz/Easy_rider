@@ -109,42 +109,48 @@ $(document).ready(function(){initNavTree('SfmlStatsPanel_8h_source.html',''); in
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structStatsSnapshot.html#a4e122c7dfff36677cfd1c1a55f88ddb7">   21</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="structStatsSnapshot.html#a4e122c7dfff36677cfd1c1a55f88ddb7">simTimeSec</a> = 0.0;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structStatsSnapshot.html#a0b0cbd80e37b4b1a18878d352361ef52">   24</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="structStatsSnapshot.html#a0b0cbd80e37b4b1a18878d352361ef52">avgSpeed</a> = 0.0;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structStatsSnapshot.html#ae7d6c10d21e18bfd01a29e1c8c7910bf">   27</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="structStatsSnapshot.html#ae7d6c10d21e18bfd01a29e1c8c7910bf">rerouteSavedTime</a> = 0.0;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structStatsSnapshot.html#a076213b38290667d4e561a6c42b2f18f">   30</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="structStatsSnapshot.html#a076213b38290667d4e561a6c42b2f18f">rerouteCounts</a> = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classSfmlStatsPanel.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="classSfmlStatsPanel.html">SfmlStatsPanel</a> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSfmlStatsPanel.html#a2220c27f16757404c42a7a52c588c3dc">setWidth</a>(<span class="keywordtype">float</span> w);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSfmlStatsPanel.html#aafecf4838cbc2a26e9ed01791e5999a0">setFont</a>(<span class="keyword">const</span> sf::Font *font);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSfmlStatsPanel.html#af14d2181c1d90ad07288b8d500bfb49b">setHeight</a>(<span class="keywordtype">float</span> h);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classSfmlStatsPanel.html">   42</a></span><span class="keyword">class </span><a class="code hl_class" href="classSfmlStatsPanel.html">SfmlStatsPanel</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSfmlStatsPanel.html#a2220c27f16757404c42a7a52c588c3dc">setWidth</a>(<span class="keywordtype">float</span> w);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSfmlStatsPanel.html#a032aca59cb390e3176634f755667f75a">draw</a>(sf::RenderTarget &amp;rt, <span class="keyword">const</span> sf::Vector2u &amp;windowSize,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keyword">const</span> <a class="code hl_struct" href="structStatsSnapshot.html">StatsSnapshot</a> &amp;stats) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">float</span> width_{100.f};            </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">float</span> topBarH_{0.f};            </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">const</span> sf::Font *font_{<span class="keyword">nullptr</span>}; </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">void</span> drawPanel_(sf::RenderTarget &amp;rt, <span class="keyword">const</span> sf::Vector2u &amp;sz) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">void</span> drawTexts_(sf::RenderTarget &amp;rt, <span class="keyword">const</span> sf::Vector2u &amp;sz,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                  <span class="keyword">const</span> <a class="code hl_struct" href="structStatsSnapshot.html">StatsSnapshot</a> &amp;stats) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSfmlStatsPanel.html#aafecf4838cbc2a26e9ed01791e5999a0">setFont</a>(<span class="keyword">const</span> sf::Font *font);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSfmlStatsPanel.html#af14d2181c1d90ad07288b8d500bfb49b">setHeight</a>(<span class="keywordtype">float</span> h);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSfmlStatsPanel.html#a032aca59cb390e3176634f755667f75a">draw</a>(sf::RenderTarget &amp;rt, <span class="keyword">const</span> sf::Vector2u &amp;windowSize,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keyword">const</span> <a class="code hl_struct" href="structStatsSnapshot.html">StatsSnapshot</a> &amp;stats) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">float</span> width_{100.f};            </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">float</span> topBarH_{0.f};            </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">const</span> sf::Font *font_{<span class="keyword">nullptr</span>}; </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> drawPanel_(sf::RenderTarget &amp;rt, <span class="keyword">const</span> sf::Vector2u &amp;sz) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordtype">void</span> drawTexts_(sf::RenderTarget &amp;rt, <span class="keyword">const</span> sf::Vector2u &amp;sz,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                  <span class="keyword">const</span> <a class="code hl_struct" href="structStatsSnapshot.html">StatsSnapshot</a> &amp;stats) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif </span><span class="comment">// SFML_STATS_PANEL_H</span></div>
-<div class="ttc" id="aclassSfmlStatsPanel_html"><div class="ttname"><a href="classSfmlStatsPanel.html">SfmlStatsPanel</a></div><div class="ttdoc">Renders a minimalistic statistics panel on top of the SFML target.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.h:36</div></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">// SFML_STATS_PANEL_H</span></div>
+<div class="ttc" id="aclassSfmlStatsPanel_html"><div class="ttname"><a href="classSfmlStatsPanel.html">SfmlStatsPanel</a></div><div class="ttdoc">Renders a minimalistic statistics panel on top of the SFML target.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.h:42</div></div>
 <div class="ttc" id="aclassSfmlStatsPanel_html_a032aca59cb390e3176634f755667f75a"><div class="ttname"><a href="classSfmlStatsPanel.html#a032aca59cb390e3176634f755667f75a">SfmlStatsPanel::draw</a></div><div class="ttdeci">void draw(sf::RenderTarget &amp;rt, const sf::Vector2u &amp;windowSize, const StatsSnapshot &amp;stats) const</div><div class="ttdoc">Draw the stats panel and texts.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.cpp:27</div></div>
 <div class="ttc" id="aclassSfmlStatsPanel_html_a2220c27f16757404c42a7a52c588c3dc"><div class="ttname"><a href="classSfmlStatsPanel.html#a2220c27f16757404c42a7a52c588c3dc">SfmlStatsPanel::setWidth</a></div><div class="ttdeci">void setWidth(float w)</div><div class="ttdoc">Set the panel width (pixels). Defaults to 100px.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.cpp:23</div></div>
 <div class="ttc" id="aclassSfmlStatsPanel_html_aafecf4838cbc2a26e9ed01791e5999a0"><div class="ttname"><a href="classSfmlStatsPanel.html#aafecf4838cbc2a26e9ed01791e5999a0">SfmlStatsPanel::setFont</a></div><div class="ttdeci">void setFont(const sf::Font *font)</div><div class="ttdoc">Provide a font for labels.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.cpp:24</div></div>
 <div class="ttc" id="aclassSfmlStatsPanel_html_af14d2181c1d90ad07288b8d500bfb49b"><div class="ttname"><a href="classSfmlStatsPanel.html#af14d2181c1d90ad07288b8d500bfb49b">SfmlStatsPanel::setHeight</a></div><div class="ttdeci">void setHeight(float h)</div><div class="ttdoc">Set the top bar (panel) height (pixels) if the panel uses a header area.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.cpp:25</div></div>
 <div class="ttc" id="astructStatsSnapshot_html"><div class="ttname"><a href="structStatsSnapshot.html">StatsSnapshot</a></div><div class="ttdoc">Snapshot of values presented in the stats panel.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.h:19</div></div>
+<div class="ttc" id="astructStatsSnapshot_html_a076213b38290667d4e561a6c42b2f18f"><div class="ttname"><a href="structStatsSnapshot.html#a076213b38290667d4e561a6c42b2f18f">StatsSnapshot::rerouteCounts</a></div><div class="ttdeci">int rerouteCounts</div><div class="ttdoc">Total number of reroutes performed.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.h:30</div></div>
 <div class="ttc" id="astructStatsSnapshot_html_a0b0cbd80e37b4b1a18878d352361ef52"><div class="ttname"><a href="structStatsSnapshot.html#a0b0cbd80e37b4b1a18878d352361ef52">StatsSnapshot::avgSpeed</a></div><div class="ttdeci">double avgSpeed</div><div class="ttdoc">Average vehicle speed in world units per second.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.h:24</div></div>
 <div class="ttc" id="astructStatsSnapshot_html_a4e122c7dfff36677cfd1c1a55f88ddb7"><div class="ttname"><a href="structStatsSnapshot.html#a4e122c7dfff36677cfd1c1a55f88ddb7">StatsSnapshot::simTimeSec</a></div><div class="ttdeci">double simTimeSec</div><div class="ttdoc">Simulation time in seconds (virtual time).</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.h:21</div></div>
+<div class="ttc" id="astructStatsSnapshot_html_ae7d6c10d21e18bfd01a29e1c8c7910bf"><div class="ttname"><a href="structStatsSnapshot.html#ae7d6c10d21e18bfd01a29e1c8c7910bf">StatsSnapshot::rerouteSavedTime</a></div><div class="ttdeci">double rerouteSavedTime</div><div class="ttdoc">Total time saved by rerouting in seconds.</div><div class="ttdef"><b>Definition</b> SfmlStatsPanel.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
