@@ -93,6 +93,9 @@ public:
   static uint32_t buttonTextColor() { return btnText_; }
   static void set_backgroundColor(uint32_t v) { backgroundColor_ = v; }
   static uint32_t backgroundColor() { return backgroundColor_; }
+  static void set_vechicleColor(uint32_t v) { vechicleColor_ = v; }
+  static uint32_t vechicleColor() { return vechicleColor_; }
+
   static sf::Color argb(uint32_t c) {
     return sf::Color((c >> 16) & 0xFF, (c >> 8) & 0xFF, c & 0xFF,
                      (c >> 24) & 0xFF);
@@ -130,6 +133,7 @@ private:
   inline static uint32_t btnOutline_ = 0xFF5A6068;
   inline static uint32_t btnText_ = 0xFFE6EBF0;
   inline static uint32_t backgroundColor_ = 0xFF141619;
+  inline static u_int32_t vechicleColor_ = 0xFFFF0000;
 };
 
 #endif // PARAMETERS_H

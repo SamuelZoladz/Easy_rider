@@ -37,13 +37,11 @@ public:
   void update(double dt);
 
   /// @brief Create and add a new vehicle; returns its id.
-  int spawnVehicleCar(int startId, int goalId,
-                      const std::shared_ptr<RouteStrategy> &strategy);
-  int spawnVehicleTruck(int startId, int goalId,
-                        const std::shared_ptr<RouteStrategy> &strategy);
+  int spawnVehicleCar(int startId, int goalId, StrategyAlgoritm algo);
+  int spawnVehicleTruck(int startId, int goalId, StrategyAlgoritm algo);
 
   /// @brief Replace routing strategy for all vehicles.
-  void setStrategyForAll(const std::shared_ptr<RouteStrategy> &strategy);
+  void setStrategyForAll(StrategyAlgoritm algo);
 
   Stats stats() const { return Stats{vehicles_.size()}; }
 
@@ -66,8 +64,7 @@ public:
   double averageSpeed() const noexcept;
 
 private:
-  void ensureInitialRoutes(int vehIdx, int startId, int goalId,
-                           const std::shared_ptr<RouteStrategy> &strategy);
+  void ensureInitialRoutes(int vehIdx, int startId, int goalId);
 
   Graph<Intersection, Road> graph_;
   CongestionModel congestion_;

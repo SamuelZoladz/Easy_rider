@@ -28,6 +28,9 @@
  *  - When congestion is detected (e.g., on edge entry), the vehicle may
  *    recompute its route using the configured strategy after a cooldown.
  */
+
+enum class StrategyAlgoritm { Dijkstra, AStar };
+
 class Vehicle {
 public:
   virtual ~Vehicle() = default;
@@ -36,11 +39,10 @@ public:
    * @brief Construct a Vehicle with IDM configuration.
    * @param graph        World graph reference.
    * @param congestion   Congestion model pointer (can be null).
-   * @param strategy     Initial routing strategy.
    * @param params       Intelligent Driver Model parameters.
    */
   Vehicle(const Graph<Intersection, Road> &graph, CongestionModel *congestion,
-          std::shared_ptr<RouteStrategy> strategy, const IDMParams &params);
+          const IDMParams &params);
 
   /// @brief Unique vehicle id.
   int id() const { return id_; }
@@ -58,9 +60,9 @@ public:
   void recomputeRouteIfNeeded();
 
   /// @brief Replace routing strategy for this vehicle.
-  void setStrategy(std::shared_ptr<RouteStrategy> s) {
-    strategy_ = std::move(s);
-  }
+  void setStrategy(StrategyAlgoritm algo);
+
+  const std::shared_ptr<RouteStrategy> &strategy() const { return strategy_; }
 
   /// @brief @return current node id if exactly at a node, std::nullopt
   /// otherwise.

@@ -60,23 +60,11 @@ int main() {
   const int goalId = graph.getNodes().back().getId();
 
   Simulation sim(std::move(graph));
-  auto &G = sim.graph();
-
-  EdgeTimeFn carTimeFn = [&sim](const Road &e) {
-    return sim.congestion().edgeTime(e, /*car vmax*/ 50);
-  };
-  EdgeTimeFn truckTimeFn = [&sim](const Road &e) {
-    return sim.congestion().edgeTime(e, /*truck vmax*/ 25);
-  };
-
-  auto aStar = std::make_shared<AStarStrategy>(truckTimeFn);
-  auto dijkstra = std::make_shared<DijkstraStrategy>(carTimeFn);
-
-  sim.spawnVehicleCar(startId, goalId, aStar);
-  sim.spawnVehicleCar(startId, goalId, aStar);
-  sim.spawnVehicleCar(startId, goalId, aStar);
-  sim.spawnVehicleCar(startId, goalId, aStar);
-  sim.spawnVehicleTruck(startId, goalId, dijkstra);
+  sim.spawnVehicleCar(startId, goalId, StrategyAlgoritm::AStar);
+  sim.spawnVehicleCar(startId, goalId, StrategyAlgoritm::AStar);
+  sim.spawnVehicleCar(startId, goalId, StrategyAlgoritm::AStar);
+  sim.spawnVehicleCar(startId, goalId, StrategyAlgoritm::AStar);
+  sim.spawnVehicleTruck(startId, goalId, StrategyAlgoritm::Dijkstra);
 
   SfmlSimulationVisualizer sfviz;
   sfviz.attachSimulation(&sim);

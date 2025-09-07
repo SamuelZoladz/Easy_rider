@@ -6,12 +6,14 @@
 #include <algorithm>
 #include <cassert>
 #include <cmath>
-#include <iomanip>
 #include <iostream>
 #include <limits>
 
+#include "Easy_rider/RoutingStrategies/AStarStrategy.h"
+#include "Easy_rider/RoutingStrategies/DijkstraStrategy.h"
+
 namespace {
-static int s_nextVehicleId = 1;
+int s_nextVehicleId = 1;
 }
 
 // ===== Debug switches =====
@@ -39,13 +41,30 @@ static int s_nextVehicleId = 1;
 // ==========================
 
 Vehicle::Vehicle(const Graph<Intersection, Road> &graph,
-                 CongestionModel *congestion,
-                 std::shared_ptr<RouteStrategy> strategy,
-                 const IDMParams &params)
-    : id_(s_nextVehicleId++), strategy_(std::move(strategy)), graph_(&graph),
-      congestion_(congestion), idmParams_(params) {
+                 CongestionModel *congestion, const IDMParams &params)
+    : id_(s_nextVehicleId++), graph_(&graph), congestion_(congestion),
+      idmParams_(params) {
   VLOG("CTOR IDM v0=" << idmParams_.v0 << " a=" << idmParams_.a
                       << " b=" << idmParams_.b);
+}
+
+void Vehicle::setStrategy(StrategyAlgoritm algo) {
+  using EdgeTimeFn = std::function<double(const Road &)>;
+  EdgeTimeFn timeFn = [this](const Road &e) {
+    assert(congestion_ && "Vehicle must have a congestion model");
+    return congestion_->edgeTime(e, idmParams_.v0);
+  };
+
+  switch (algo) {
+  case StrategyAlgoritm::AStar:
+    strategy_ = std::make_shared<AStarStrategy>(std::move(timeFn));
+    break;
+  case StrategyAlgoritm::Dijkstra:
+    strategy_ = std::make_shared<DijkstraStrategy>(std::move(timeFn));
+    break;
+  }
+  pendingReroute_ = true;
+  sinceRecompute_ = recomputeCooldown_;
 }
 
 void Vehicle::setRoute(const std::vector<int> &routeIds) {

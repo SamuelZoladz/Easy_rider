@@ -81,6 +81,7 @@ void SfmlSimulationVisualizer::drawVehicles(sf::RenderTarget &target) const {
   target.setView(sceneView_);
   for (const auto &wpos : vehicles) {
     dot.setPosition(wpos);
+    dot.setFillColor(Parameters::argb(Parameters::vechicleColor()));
     target.draw(dot);
   }
   target.setView(old);

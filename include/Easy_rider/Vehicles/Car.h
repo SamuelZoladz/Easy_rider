@@ -9,9 +9,8 @@
  */
 class Car final : public Vehicle {
 public:
-  Car(const Graph<Intersection, Road> &graph, CongestionModel *congestion,
-      std::shared_ptr<RouteStrategy> strategy)
-      : Vehicle(graph, congestion, std::move(strategy),
+  Car(const Graph<Intersection, Road> &graph, CongestionModel *congestion)
+      : Vehicle(graph, congestion,
                 IDMParams{/*a*/ 35.0, /*b*/ 40.0, /*v0*/ 50.0,
                           /*T*/ 1.2, /*s0*/ 2.0, /*delta*/ 4.0}) {}
 };

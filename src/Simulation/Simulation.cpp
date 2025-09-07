@@ -129,44 +129,46 @@ void Simulation::update(double dt) {
   }
 }
 
-int Simulation::spawnVehicleCar(
-    int startId, int goalId, const std::shared_ptr<RouteStrategy> &strategy) {
-  auto veh = std::make_unique<Car>(graph_, &congestion_, strategy);
+int Simulation::spawnVehicleCar(int startId, int goalId,
+                                StrategyAlgoritm algo) {
+  auto veh = std::make_unique<Car>(graph_, &congestion_);
   int id = static_cast<int>(vehicles_.size());
   vehicles_.push_back(std::move(veh));
   SLOG("spawnVehicleCar idx=" << id << " start=" << startId
                               << " goal=" << goalId);
-  ensureInitialRoutes(id, startId, goalId, strategy);
+
+  vehicles_[static_cast<std::size_t>(id)]->setStrategy(algo);
+  ensureInitialRoutes(id, startId, goalId);
   return id;
 }
 
-int Simulation::spawnVehicleTruck(
-    int startId, int goalId, const std::shared_ptr<RouteStrategy> &strategy) {
-  auto veh = std::make_unique<Truck>(graph_, &congestion_, strategy);
+int Simulation::spawnVehicleTruck(int startId, int goalId,
+                                  StrategyAlgoritm algo) {
+  auto veh = std::make_unique<Truck>(graph_, &congestion_);
   int id = static_cast<int>(vehicles_.size());
   vehicles_.push_back(std::move(veh));
   SLOG("spawnVehicleTruck idx=" << id << " start=" << startId
                                 << " goal=" << goalId);
-  ensureInitialRoutes(id, startId, goalId, strategy);
+
+  vehicles_[static_cast<std::size_t>(id)]->setStrategy(algo);
+  ensureInitialRoutes(id, startId, goalId);
   return id;
 }
 
-void Simulation::setStrategyForAll(
-    const std::shared_ptr<RouteStrategy> &strategy) {
-  SLOG("setStrategyForAll");
+void Simulation::setStrategyForAll(StrategyAlgoritm algo) {
+  SLOG("setStrategyForAll(algo)");
   for (auto &v : vehicles_)
-    v->setStrategy(strategy);
+    v->setStrategy(algo);
 }
 
-void Simulation::ensureInitialRoutes(
-    int vehIdx, int startId, int goalId,
-    const std::shared_ptr<RouteStrategy> &strategy) {
+void Simulation::ensureInitialRoutes(int vehIdx, int startId, int goalId) {
   assert(vehIdx >= 0 && static_cast<std::size_t>(vehIdx) < vehicles_.size());
-  auto route = strategy->computeRoute(startId, goalId, graph_);
+  auto &veh = vehicles_[static_cast<std::size_t>(vehIdx)];
+  auto route = veh->strategy()->computeRoute(startId, goalId, graph_);
   SLOG("ensureInitialRoutes vehIdx=" << vehIdx << " start=" << startId
                                      << " goal=" << goalId
                                      << " routeSize=" << route.size());
-  vehicles_[static_cast<std::size_t>(vehIdx)]->setRoute(route);
+  veh->setRoute(route);
 }
 
 std::vector<Simulation::SimSnapshotItem> Simulation::snapshot() const {
