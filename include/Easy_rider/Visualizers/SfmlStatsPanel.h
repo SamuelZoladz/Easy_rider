@@ -51,7 +51,7 @@ public:
    * @param stats      Values to present.
    */
   void draw(sf::RenderTarget &rt, const sf::Vector2u &windowSize,
-            const StatsSnapshot &stats);
+            const StatsSnapshot &stats) const;
 
 private:
   float width_{100.f};            ///< Right-side panel width in pixels.

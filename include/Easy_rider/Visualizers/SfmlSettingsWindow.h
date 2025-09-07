@@ -41,10 +41,6 @@ public:
   SfmlSettingsWindow(SfmlSettingsWindow &&) = delete;
   SfmlSettingsWindow &operator=(SfmlSettingsWindow &&) = delete;
 
-  //===--------------------------------------------------------------------===//
-  // Window control
-  //===--------------------------------------------------------------------===//
-
   /// Open the settings window (no-op if already open). Triggers onOpen().
   void open();
 
@@ -73,9 +69,7 @@ private:
   const sf::Font &font_; ///< UI font.
   Callbacks cbs_;        ///< Open/close hooks.
 
-  bool dragging_ = false;       ///< True while the speed knob is being dragged.
-  const float speedMin_ = 0.1f; ///< Slider min (log scale).
-  const float speedMax_ = 10.f; ///< Slider max (log scale).
+  bool dragging_ = false; ///< True while the speed knob is being dragged.
 };
 
 #endif // SFML_SETTINGS_WINDOW_H

@@ -112,22 +112,7 @@ public:
   void stop();
 
   /// Opens settings UI (modal/auxiliary window).
-  void openSettings();
-
-  /// @brief Node (intersection) circle radius in pixels.
-  void setNodeRadius(float r) { nodeRadius_ = r; }
-
-  /// @brief Vehicle dot radius in pixels.
-  void setVehicleRadius(float r) { vehicleRadius_ = r; }
-
-  /**
-   * @brief Edge thickness in pixels (triangulated strips).
-   *        Marks the cached graph geometry as dirty.
-   */
-  void setEdgeThickness(float t) {
-    graphCacheDirty_ = true;
-    edgeThickness_ = t;
-  }
+  void openSettings() const;
 
 protected:
   /**
@@ -143,7 +128,7 @@ private:
   void drawGraph(sf::RenderTarget &target);
 
   /// Draw vehicle markers into the target.
-  void drawVehicles(sf::RenderTarget &target);
+  void drawVehicles(sf::RenderTarget &target) const;
 
   /**
    * @brief Simple clickable rectangle button shown in the right-side panel.
@@ -168,9 +153,6 @@ private:
   /// Update sceneView_ viewport so the scene does not render under side panels.
   void updateSceneViewport();
 
-  /// Compute scene placement and view scale from world positions & UI margins.
-  void graphPositioning(const std::vector<sf::Vector2f> &positions);
-
   std::unique_ptr<sf::RenderWindow> window_; ///< Main window (nullable).
   sf::View sceneView_;                       ///< World content view.
   sf::View uiView_;                          ///< UI overlay view.
@@ -180,8 +162,6 @@ private:
 
   std::unique_ptr<SfmlSettingsWindow> settingsWindow_; ///< Settings dialog.
 
-  float statsPanelWidth_{100.0f}; ///< Stats sub-panel width on the right (px).
-  float uiBottomHeight_{100.0f};  ///< Bottom UI bar height (px).
   float uiTopBarHeight_{0.0f};    ///< Top area occupied by stats (computed).
   UiMargins uiMargins_{};         ///< Left/Right/Top/Bottom outer margins (px).
   float contentPaddingPx_{12.0f}; ///< Inner padding for scene content (px).
@@ -191,10 +171,6 @@ private:
   bool uiFontLoaded_{false};        ///< True if uiFont_ was loaded.
 
   SfmlStatsPanel statsPanel_; ///< Stats drawer (owned component).
-
-  float nodeRadius_{5.0f};    ///< Node marker radius (px).
-  float vehicleRadius_{4.0f}; ///< Vehicle marker radius (px).
-  float edgeThickness_{1.5f}; ///< Edge thickness (px).
 
   bool paused_{false};         ///< If true, time-dependent drawing is paused.
   bool graphCacheDirty_{true}; ///< If true, graph cache must be rebuilt.

@@ -2,8 +2,25 @@
 #include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
+#include <array>
 #include <stdexcept>
 #include <string>
+
+namespace {
+// Buttons in the bottom bar
+enum class Btn : std::size_t { Restart = 0, Pause = 1, Stop = 2, Settings = 3 };
+
+// Center a text inside a rectangle (with a small vertical tweak to match
+// visuals)
+void centerTextInRect(sf::Text &txt, const sf::FloatRect &r,
+                      float yOffset = -2.f) {
+  const auto bounds = txt.getLocalBounds();
+  const float x = r.left + (r.width - bounds.width) * 0.5f - bounds.left;
+  const float y =
+      r.top + (r.height - bounds.height) * 0.5f - bounds.top + yOffset;
+  txt.setPosition(x, y);
+}
+} // namespace
 
 void SfmlSimulationVisualizer::initUiIfNeeded() {
   if (!window_)
@@ -27,24 +44,29 @@ void SfmlSimulationVisualizer::initUiIfNeeded() {
 void SfmlSimulationVisualizer::layoutUi() {
   if (!window_)
     return;
+
   uiButtons_.clear();
+
   const auto sz = window_->getSize();
   const float w = static_cast<float>(sz.x);
-  const float panelH = uiBottomHeight_;
+  const float h = Parameters::uiBottomHeight();
 
-  const float margin = 14.f;
-  const float btnW = 180.f, btnH = 48.f, gap = 10.f;
+  // Arrange 4 buttons centered horizontally within the panel.
+  constexpr std::array<const char *, 4> labels{"Restart", "Pause", "Stop",
+                                               "Settings"};
+  const float totalW =
+      4.f * Parameters::buttonWidth() + 3.f * Parameters::buttonGap();
+  const float startX = std::max(Parameters::panelMargin(), (w - totalW) * 0.5f);
+  const float y = (h - Parameters::buttonHeight()) * 0.5f;
 
-  const float totalW = 4.f * btnW + 3.f * gap;
-  const float startX = std::max(margin, (w - totalW) * 0.5f);
-  const float y = (panelH - btnH) * 0.5f;
-
-  uiButtons_.push_back(
-      {{startX + 0.f * (btnW + gap), y, btnW, btnH}, "Restart"});
-  uiButtons_.push_back({{startX + 1.f * (btnW + gap), y, btnW, btnH}, "Pause"});
-  uiButtons_.push_back({{startX + 2.f * (btnW + gap), y, btnW, btnH}, "Stop"});
-  uiButtons_.push_back(
-      {{startX + 3.f * (btnW + gap), y, btnW, btnH}, "Settings"});
+  for (std::size_t i = 0; i < labels.size(); ++i) {
+    const float x =
+        startX + static_cast<float>(i) *
+                     (Parameters::buttonWidth() + Parameters::buttonGap());
+    uiButtons_.push_back(
+        {{x, y, Parameters::buttonWidth(), Parameters::buttonHeight()},
+         labels[i]});
+  }
 }
 
 void SfmlSimulationVisualizer::drawUi(sf::RenderTarget &rt) {
@@ -54,41 +76,39 @@ void SfmlSimulationVisualizer::drawUi(sf::RenderTarget &rt) {
 
   const auto sz = window_->getSize();
   const float w = static_cast<float>(sz.x);
-  const float panelH = uiBottomHeight_;
+  const float h = Parameters::uiBottomHeight();
 
-  // panel w koordach UI: 0..w x 0..panelH
-  sf::RectangleShape panel({w, panelH});
+  // Bottom panel background
+  sf::RectangleShape panel({w, h});
   panel.setPosition(0.f, 0.f);
-  panel.setFillColor(sf::Color(32, 36, 40));
+  panel.setFillColor(Parameters::argb(Parameters::panelBg()));
   panel.setOutlineThickness(1.f);
-  panel.setOutlineColor(sf::Color(60, 64, 68));
+  panel.setOutlineColor(Parameters::argb(Parameters::panelOutline()));
   rt.draw(panel);
 
+  // Buttons
   for (std::size_t i = 0; i < uiButtons_.size(); ++i) {
     const auto &b = uiButtons_[i];
 
     sf::RectangleShape rect({b.rect.width, b.rect.height});
     rect.setPosition({b.rect.left, b.rect.top});
-    rect.setFillColor(sf::Color(56, 62, 68));
+    rect.setFillColor(Parameters::argb(Parameters::buttonBg()));
     rect.setOutlineThickness(2.f);
-    rect.setOutlineColor(sf::Color(90, 96, 104));
+    rect.setOutlineColor(Parameters::argb(Parameters::buttonOutline()));
     rt.draw(rect);
 
     if (uiFontLoaded_) {
       sf::Text txt;
       txt.setFont(uiFont_);
-      const bool isPauseBtn = (i == 1);
-      txt.setString(isPauseBtn ? (paused_ ? "Resume" : "Pause")
-                               : uiButtons_[i].label);
-      txt.setCharacterSize(18);
-      txt.setFillColor(sf::Color(230, 235, 240));
+      txt.setCharacterSize(Parameters::buttonTextSize());
+      txt.setFillColor(Parameters::argb(Parameters::buttonTextColor()));
 
-      auto bounds = txt.getLocalBounds();
-      float tx =
-          b.rect.left + (b.rect.width - bounds.width) * 0.5f - bounds.left;
-      float ty = b.rect.top + (b.rect.height - bounds.height) * 0.5f -
-                 bounds.top - 2.f;
-      txt.setPosition(tx, ty);
+      // Dynamic label for Pause/Resume button (index 1)
+      const bool isPause = (i == static_cast<std::size_t>(Btn::Pause));
+      txt.setString(isPause ? (paused_ ? "Resume" : "Pause")
+                            : uiButtons_[i].label);
+
+      centerTextInRect(txt, b.rect);
       rt.draw(txt);
     }
   }
@@ -98,18 +118,25 @@ void SfmlSimulationVisualizer::handleUiClick(float mx, float my) {
   if (!window_)
     return;
   initUiIfNeeded();
+
   for (std::size_t i = 0; i < uiButtons_.size(); ++i) {
-    if (uiButtons_[i].rect.contains(mx, my)) {
-      if (i == 0)
-        restart();
-      else if (i == 1) {
-        paused_ ? resume() : pause();
-      } else if (i == 2) {
-        stop();
-      } else if (i == 3) {
-        openSettings();
-      }
+    if (!uiButtons_[i].rect.contains(mx, my))
+      continue;
+
+    switch (static_cast<Btn>(i)) {
+    case Btn::Restart:
+      restart();
+      break;
+    case Btn::Pause:
+      paused_ ? resume() : pause();
+      break;
+    case Btn::Stop:
+      stop();
+      break;
+    case Btn::Settings:
+      openSettings();
       break;
     }
+    break;
   }
 }

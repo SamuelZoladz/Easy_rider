@@ -1,4 +1,5 @@
 #include "Easy_rider/Congestion/CongestionModel.h"
+#include "Easy_rider/Parameters/Parameters.h"
 #include "Easy_rider/RoadGenerators/HighwayGenerator.h"
 #include "Easy_rider/RoadGenerators/MotorwayGenerator.h"
 #include "Easy_rider/RoadGenerators/StreetGenerator.h"
@@ -10,7 +11,6 @@
 #include "Easy_rider/TrafficInfrastructure/Intersection.h"
 #include "Easy_rider/TrafficInfrastructure/Road.h"
 #include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
-#include "Easy_rider/Visualizers/VisualizerUtils.h"
 
 #include <algorithm>
 #include <memory>
@@ -78,16 +78,12 @@ int main() {
   sim.spawnVehicleCar(startId, goalId, aStar);
   sim.spawnVehicleTruck(startId, goalId, dijkstra);
 
-  const uint32_t kWinW = 800, kWinH = 600;
-
   SfmlSimulationVisualizer sfviz;
   sfviz.attachSimulation(&sim);
 
-  sfviz.setNodeRadius(7.0f);
-  sfviz.setVehicleRadius(5.0f);
-  sfviz.setEdgeThickness(4.f);
-
-  sfviz.openWindow(kWinW, kWinH, "Random Road Network — Simulation");
+  sfviz.openWindow(Parameters::mainWindowWidth(),
+                   Parameters::mainWindowHeight(),
+                   "Random Road Network — Simulation");
   sfviz.setTimeScale(1.0);
   sfviz.run();
 

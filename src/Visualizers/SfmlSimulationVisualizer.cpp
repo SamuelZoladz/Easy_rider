@@ -1,11 +1,11 @@
 #include "Easy_rider/Visualizers/SfmlSimulationVisualizer.h"
+#include "Easy_rider/Parameters/Parameters.h"
 #include "Easy_rider/Visualizers/SfmlSettingsWindow.h"
 #include <SFML/Graphics.hpp>
 #include <algorithm>
 #include <string>
 
 SfmlSimulationVisualizer::SfmlSimulationVisualizer() = default;
-
 SfmlSimulationVisualizer::~SfmlSimulationVisualizer() = default;
 
 void SfmlSimulationVisualizer::processEvents() {
@@ -14,17 +14,31 @@ void SfmlSimulationVisualizer::processEvents() {
 
   sf::Event ev{};
   while (window_->pollEvent(ev)) {
-    if (ev.type == sf::Event::Closed) {
-      if (settingsWindow_ && settingsWindow_->isOpen())
+    switch (ev.type) {
+    case sf::Event::Closed: {
+      if (settingsWindow_ && settingsWindow_->isOpen()) {
         settingsWindow_->close();
+      }
       window_->close();
-    } else if (ev.type == sf::Event::Resized) {
+      break;
+    }
+
+    case sf::Event::Resized: {
       updateSceneViewport();
-    } else if (ev.type == sf::Event::MouseButtonPressed &&
-               ev.mouseButton.button == sf::Mouse::Left) {
-      sf::Vector2i pixel(ev.mouseButton.x, ev.mouseButton.y);
-      sf::Vector2f ui = window_->mapPixelToCoords(pixel, uiView_);
-      handleUiClick(ui.x, ui.y);
+      break;
+    }
+
+    case sf::Event::MouseButtonPressed: {
+      if (ev.mouseButton.button == sf::Mouse::Left) {
+        const sf::Vector2f ui = window_->mapPixelToCoords(
+            {ev.mouseButton.x, ev.mouseButton.y}, uiView_);
+        handleUiClick(ui.x, ui.y);
+      }
+      break;
+    }
+
+    default:
+      break;
     }
   }
 }
@@ -60,7 +74,7 @@ void SfmlSimulationVisualizer::resume() {
 }
 
 void SfmlSimulationVisualizer::restart() {
-  // TODO: pełny restart nowej symulacji
+  // TODO: full restart of a new simulation session
   simulation_->start();
 }
 
@@ -74,32 +88,33 @@ void SfmlSimulationVisualizer::updateSceneViewport() {
   const float windowW = static_cast<float>(size.x);
   const float windowH = static_cast<float>(size.y);
 
-  // wysokość dolnego paska UI (px)
-  const float bottomUiHeightPx = std::min(uiBottomHeight_, windowH);
-  // wysokość górnej części (scena + ewentualne overlaye) w px
+  // Layout: top area = scene, bottom area = UI bar.
+  const float bottomUiHeightPx =
+      std::min(Parameters::uiBottomHeight(), windowH);
   const float topContentHeightPx = std::max(0.f, windowH - bottomUiHeightPx);
   const float topContentHeightFrac =
       (windowH > 0.f) ? (topContentHeightPx / windowH) : 0.f;
 
-  // SCENA: zajmuje górną część okna
+  // Scene view occupies the top portion.
   sceneView_.reset(sf::FloatRect(0.f, 0.f, windowW, topContentHeightPx));
   sceneView_.setViewport(sf::FloatRect(0.f, 0.f, 1.f, topContentHeightFrac));
 
-  // UI (dolny pasek): zajmuje dolną część okna
+  // UI view (bottom bar) occupies the remaining portion.
   uiView_.reset(sf::FloatRect(0.f, 0.f, windowW, bottomUiHeightPx));
   uiView_.setViewport(sf::FloatRect(0.f, topContentHeightFrac, 1.f,
                                     1.f - topContentHeightFrac));
 
   layoutUi();
 
-  // marginesy w pikselach ekranu
+  // Margins (in screen pixels) used by positioning code.
   uiMargins_.left = 0.f;
   uiMargins_.top = 0.f;
-  uiMargins_.right = statsPanelWidth_;
-  uiMargins_.bottom = uiBottomHeight_;
+  uiMargins_.right = Parameters::statsPanelWidth();
+  uiMargins_.bottom = Parameters::uiBottomHeight();
 
   graphCacheDirty_ = true;
 }
+
 void SfmlSimulationVisualizer::setView(const VisualizerView &view) {
   SimulationVisualizer::setView(view);
   graphCacheDirty_ = true;
@@ -111,10 +126,13 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
   window_ = std::make_unique<sf::RenderWindow>(
       sf::VideoMode(width, height), title,
       sf::Style::Titlebar | sf::Style::Close);
-  window_->setFramerateLimit(60);
+  window_->setFramerateLimit(Parameters::frameRateLimit());
+
   initUiIfNeeded();
   uiView_ = window_->getDefaultView();
   sceneView_ = uiView_;
+
+  // Settings sub-window (pauses simulation on open, restores on close).
   settingsWindow_ = std::make_unique<SfmlSettingsWindow>(
       uiFont_, SfmlSettingsWindow::Callbacks{
                    [this]() noexcept(noexcept(this->pause())) {
@@ -127,14 +145,17 @@ void SfmlSimulationVisualizer::openWindow(std::uint32_t width,
                        resume();
                      }
                    }});
+
+  // Stats panel setup.
   statsPanel_.setFont(&uiFont_);
-  statsPanel_.setWidth(statsPanelWidth_);
+  statsPanel_.setWidth(Parameters::statsPanelWidth());
   statsPanel_.setHeight(uiTopBarHeight_);
+
   updateSceneViewport();
   layoutUi();
 }
 
-void SfmlSimulationVisualizer::openSettings() {
+void SfmlSimulationVisualizer::openSettings() const {
   if (settingsWindow_)
     settingsWindow_->open();
 }
@@ -149,36 +170,47 @@ void SfmlSimulationVisualizer::closeWindow() {
 void SfmlSimulationVisualizer::renderFrame() {
   if (!window_)
     return;
+
   processEvents();
 
-  window_->clear(sf::Color(20, 22, 25));
+  const sf::Color bg = Parameters::argb(Parameters::backgroundColor());
+  window_->clear(bg);
 
+  // 1) Scene (graph + stats)
   window_->setView(sceneView_);
   renderTo(*window_);
   drawStats(*window_);
 
+  // 2) UI (screen-space bottom bar, buttons)
   window_->setView(uiView_);
   drawUi(*window_);
 
   window_->display();
+
+  // Tick the settings popup if present.
   if (settingsWindow_)
     settingsWindow_->tick();
 }
 
 void SfmlSimulationVisualizer::drawStats(sf::RenderTarget &rt) {
+  // Gather simulation stats for the overlay panel.
   StatsSnapshot snap;
   snap.simTimeSec = simulation_->getSimTime();
   snap.avgSpeed = simulation_->averageSpeed();
 
   const sf::Vector2u sz = window_->getSize();
   const float windowH = static_cast<float>(sz.y);
-  const float topContentHeightPx = std::max(0.f, windowH - uiBottomHeight_);
+  const float topContentHeightPx =
+      std::max(0.f, windowH - Parameters::uiBottomHeight());
 
+  // The stats panel occupies the right side across the scene area height.
   uiTopBarHeight_ = topContentHeightPx;
   statsPanel_.setHeight(topContentHeightPx);
-  statsPanel_.setWidth(statsPanelWidth_);
-  uiMargins_.right = statsPanelWidth_;
-  uiMargins_.bottom = uiBottomHeight_;
+  statsPanel_.setWidth(Parameters::statsPanelWidth());
+
+  // Update margins so graph/layout can account for the panel.
+  uiMargins_.right = Parameters::statsPanelWidth();
+  uiMargins_.bottom = Parameters::uiBottomHeight();
 
   statsPanel_.draw(rt, sz, snap);
 }
