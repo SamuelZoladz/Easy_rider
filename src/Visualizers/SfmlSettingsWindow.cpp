@@ -59,7 +59,7 @@ void SfmlSettingsWindow::open() {
   sf::VideoMode vm(520, 380);
   win_ = std::make_unique<sf::RenderWindow>(
       vm, "Settings", sf::Style::Titlebar | sf::Style::Close);
-  win_->setVerticalSyncEnabled(true);
+  win_->setFramerateLimit(60);
 }
 
 void SfmlSettingsWindow::close() {

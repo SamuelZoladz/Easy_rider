@@ -21,8 +21,8 @@ int main() {
   Graph<Intersection, Road> graph;
 
   std::mt19937 rng{std::random_device{}()};
-  std::uniform_int_distribution<int> distX{50, 750};
-  std::uniform_int_distribution<int> distY{50, 550};
+  std::uniform_int_distribution<int> distX{50, 650};
+  std::uniform_int_distribution<int> distY{50, 450};
 
   constexpr int kTargetCount = 30;
   constexpr int kMinDist = 30;

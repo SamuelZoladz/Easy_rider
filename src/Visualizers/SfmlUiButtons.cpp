@@ -29,8 +29,7 @@ void SfmlSimulationVisualizer::layoutUi() {
   uiButtons_.clear();
   const auto sz = window_->getSize();
   const float w = static_cast<float>(sz.x);
-  const float h = static_cast<float>(sz.y);
-  const float panelH = std::min(100.f, h);
+  const float panelH = uiBottomHeight_;
 
   const float margin = 14.f;
   const float btnW = 180.f, btnH = 48.f, gap = 10.f;
@@ -55,8 +54,7 @@ void SfmlSimulationVisualizer::drawUi(sf::RenderTarget &rt) {
 
   const auto sz = window_->getSize();
   const float w = static_cast<float>(sz.x);
-  const float h = static_cast<float>(sz.y);
-  const float panelH = std::min(100.f, h);
+  const float panelH = uiBottomHeight_;
 
   // panel w koordach UI: 0..w x 0..panelH
   sf::RectangleShape panel({w, panelH});

@@ -9,9 +9,9 @@
 #include <cmath>
 #include <vector>
 
-static Vec2 nodePosAdapter(const Intersection &n) {
+static sf::Vector2f nodePosAdapter(const Intersection &n) {
   auto [x, y] = n.getPosition();
-  return Vec2{static_cast<float>(x), static_cast<float>(y)};
+  return sf::Vector2f{static_cast<float>(x), static_cast<float>(y)};
 }
 
 static inline std::pair<std::size_t, std::size_t>
@@ -44,8 +44,8 @@ GraphDrawData makeGraphDrawData(const Graph<Intersection, Road> &g) {
   return out;
 }
 
-std::vector<Vec2> extractVehiclePositions(const Simulation &sim) {
-  std::vector<Vec2> pts;
+std::vector<sf::Vector2f> extractVehiclePositions(const Simulation &sim) {
+  std::vector<sf::Vector2f> pts;
   const auto &G = sim.graph();
   const auto snap = sim.snapshot();
   pts.reserve(snap.size());
@@ -63,8 +63,8 @@ std::vector<Vec2> extractVehiclePositions(const Simulation &sim) {
       t = static_cast<float>(std::clamp(v.sOnEdge / len, 0.0, 1.0));
     }
 
-    pts.push_back(
-        Vec2{static_cast<float>(x1) + dx * t, static_cast<float>(y1) + dy * t});
+    pts.push_back(sf::Vector2f{static_cast<float>(x1) + dx * t,
+                               static_cast<float>(y1) + dy * t});
   }
   return pts;
 }

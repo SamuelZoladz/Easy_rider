@@ -9,19 +9,12 @@
 #include "Easy_rider/TrafficInfrastructure/Intersection.h"
 #include "Easy_rider/TrafficInfrastructure/Road.h"
 
+#include <SFML/System/Vector2.hpp>
 #include <cstddef>
 #include <utility>
 #include <vector>
 
 class Simulation;
-
-/**
- * @brief Minimal 2D vector detached from any graphics library.
- */
-struct Vec2 {
-  float x{0.0f}; ///< World X coordinate.
-  float y{0.0f}; ///< World Y coordinate.
-};
 
 /**
  * @brief Pre-baked graph geometry ready for drawing.
@@ -33,7 +26,7 @@ struct Vec2 {
  * No guarantee is made about edge direction or (u <= v) ordering.
  */
 struct GraphDrawData {
-  std::vector<Vec2> nodePositions; ///< World-space node centers.
+  std::vector<sf::Vector2f> nodePositions; ///< World-space node centers.
   std::vector<std::pair<std::size_t, std::size_t>> edges; ///< Node index pairs.
 };
 
@@ -52,6 +45,7 @@ makeGraphDrawData(const Graph<Intersection, Road> &g);
  *
  * The order of returned positions is unspecified and may change frame-to-frame.
  */
-[[nodiscard]] std::vector<Vec2> extractVehiclePositions(const Simulation &sim);
+[[nodiscard]] std::vector<sf::Vector2f>
+extractVehiclePositions(const Simulation &sim);
 
 #endif // VISUALIZER_UTILS_H

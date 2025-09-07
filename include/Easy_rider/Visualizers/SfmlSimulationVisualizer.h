@@ -136,14 +136,6 @@ protected:
   void onSimulationAttached() override;
 
 private:
-  /**
-   * @brief Convert world coordinates to screen coordinates using current view.
-   */
-  static sf::Vector2f toScreen(const Vec2 &w, const VisualizerView &v) {
-    return {v.offsetX + (w.x - v.originX) * v.scale,
-            v.offsetY + (w.y - v.originY) * v.scale};
-  }
-
   /// Build (or rebuild) cached vertex arrays for graph edges & nodes.
   void rebuildGraphCache();
 
@@ -177,14 +169,14 @@ private:
   void updateSceneViewport();
 
   /// Compute scene placement and view scale from world positions & UI margins.
-  void graphPositioning(const std::vector<Vec2> &positions);
+  void graphPositioning(const std::vector<sf::Vector2f> &positions);
 
   std::unique_ptr<sf::RenderWindow> window_; ///< Main window (nullable).
   sf::View sceneView_;                       ///< World content view.
   sf::View uiView_;                          ///< UI overlay view.
 
   std::unique_ptr<sf::VertexArray> edgesVA_; ///< Cached edge.
-  std::unique_ptr<sf::VertexArray> nodesVA_; ///< Cached node.
+  std::vector<sf::Vector2f> nodesVA_;        ///< Cached node.
 
   std::unique_ptr<SfmlSettingsWindow> settingsWindow_; ///< Settings dialog.
 

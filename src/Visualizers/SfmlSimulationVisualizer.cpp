@@ -79,20 +79,22 @@ void SfmlSimulationVisualizer::updateSceneViewport() {
   const float panelH = std::min(uiHeightPx, h);
   const float vpH = std::max(0.f, (h - panelH) / h);
 
-  // SCENA: górna część (opcjonalnie ustaw też "world rect")
+  // SCENA: tylko viewport (świat zostaje w układzie świata)
   sceneView_.reset(sf::FloatRect(0.f, 0.f, w, std::max(0.f, h - panelH)));
   sceneView_.setViewport(sf::FloatRect(0.f, 0.f, 1.f, vpH));
 
-  // UI: rozmiar widoku = dokładnie (w x panelH), viewport = dolny pasek
+  // UI: ekranowe px
   uiView_.reset(sf::FloatRect(0.f, 0.f, w, panelH));
   uiView_.setViewport(sf::FloatRect(0.f, vpH, 1.f, 1.f - vpH));
 
   layoutUi();
-  // uaktualnij marginesy UI i oznacz cache do przebudowy
+
   uiMargins_.left = 0.f;
   uiMargins_.right = statsPanelWidth_;
   uiMargins_.top = 0.f;
   uiMargins_.bottom = uiBottomHeight_;
+
+  // zmiana viewportu wpływa na przelicznik px->świat (grubość linii)
   graphCacheDirty_ = true;
 }
 
@@ -175,7 +177,6 @@ void SfmlSimulationVisualizer::drawStats(sf::RenderTarget &rt) {
   statsPanel_.setWidth(statsPanelWidth_);
   uiMargins_.right = statsPanelWidth_;
   uiMargins_.bottom = uiBottomHeight_;
-  graphCacheDirty_ = true;
 
   statsPanel_.draw(rt, sz, snap);
 }
