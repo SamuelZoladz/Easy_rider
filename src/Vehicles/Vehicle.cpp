@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <cassert>
 #include <cmath>
-#include <iostream>
 #include <limits>
 
 #include "Easy_rider/RoutingStrategies/AStarStrategy.h"
@@ -14,39 +13,14 @@
 
 namespace {
 int s_nextVehicleId = 1;
-}
-
-// ===== Debug switches =====
-#ifndef VEH_DBG
-#define VEH_DBG 0
-#endif
-
-#if VEH_DBG
-#define VLOG_INIT()                                                            \
-  std::cout.setf(std::ios::fixed);                                             \
-  std::cout << std::setprecision(3)
-#define VLOG(MSG)                                                              \
-  do {                                                                         \
-    VLOG_INIT();                                                               \
-    std::cout << "[Vehicle#" << id_ << "] " << MSG << std::endl;               \
-  } while (0)
-#else
-#define VLOG_INIT()                                                            \
-  do {                                                                         \
-  } while (0)
-#define VLOG(MSG)                                                              \
-  do {                                                                         \
-  } while (0)
-#endif
-// ==========================
+constexpr double kTiny = 1e-9;
+constexpr double kDtFloor = 1e-3;
+} // namespace
 
 Vehicle::Vehicle(const Graph<Intersection, Road> &graph,
                  CongestionModel *congestion, const IDMParams &params)
     : id_(s_nextVehicleId++), graph_(&graph), congestion_(congestion),
-      idmParams_(params) {
-  VLOG("CTOR IDM v0=" << idmParams_.v0 << " a=" << idmParams_.a
-                      << " b=" << idmParams_.b);
-}
+      idmParams_(params) {}
 
 void Vehicle::setStrategy(StrategyAlgoritm algo) {
   using EdgeTimeFn = std::function<double(const Road &)>;
@@ -63,6 +37,8 @@ void Vehicle::setStrategy(StrategyAlgoritm algo) {
     strategy_ = std::make_shared<DijkstraStrategy>(std::move(timeFn));
     break;
   }
+
+  // Trigger a recompute soon after strategy change.
   pendingReroute_ = true;
   sinceRecompute_ = recomputeCooldown_;
 }
@@ -73,33 +49,22 @@ void Vehicle::setRoute(const std::vector<int> &routeIds) {
   edgeProgress_ = 0.0;
   currentSpeed_ = 0.0;
 
-  VLOG("setRoute size=" << route_.size() << " route: ");
-  if (!route_.empty()) {
-    std::cout << "  [Vehicle#" << id_ << "] route nodes: ";
-    for (std::size_t i = 0; i < route_.size(); ++i) {
-      if (i)
-        std::cout << " -> ";
-      std::cout << route_[i];
-    }
-    std::cout << std::endl;
-  }
-
-  if (route_.size() >= 2)
+  if (route_.size() >= 2) {
     enterEdge(route_[0], route_[1]);
-  else {
+  } else {
     currentEdge_ = {-1, -1};
-    VLOG("no drivable edge (route too short)");
   }
 }
 
 std::optional<int> Vehicle::currentNodeId() const {
-  // Exactly at a node if not on an edge or progress == 0 at edge start
+  // Exactly at a node if not on an edge or progress == 0 at edge start/end.
   if (currentEdge_.first < 0)
     return route_.empty() ? std::nullopt : std::optional<int>{route_[0]};
 
   const Road *e = findEdge(currentEdge_.first, currentEdge_.second);
   if (!e)
     return std::nullopt;
+
   if (edgeProgress_ <= 0.0)
     return currentEdge_.first;
   if (edgeProgress_ >= e->getLength())
@@ -108,15 +73,15 @@ std::optional<int> Vehicle::currentNodeId() const {
 }
 
 std::optional<int> Vehicle::goalId() const {
-  if (route_.size() >= 1)
+  if (!route_.empty())
     return route_.back();
   return std::nullopt;
 }
 
 const Road *Vehicle::findEdge(int fromId, int toId) const {
   try {
-    int uIdx = static_cast<int>(graph_->indexOfId(fromId));
-    int vIdx = static_cast<int>(graph_->indexOfId(toId));
+    const int uIdx = static_cast<int>(graph_->indexOfId(fromId));
+    const int vIdx = static_cast<int>(graph_->indexOfId(toId));
     for (const auto &nbr : graph_->outgoing(uIdx)) {
       if (nbr.first == vIdx)
         return &nbr.second.get();
@@ -132,35 +97,20 @@ void Vehicle::enterEdge(int fromId, int toId) {
   edgeProgress_ = 0.0;
   leader_.reset();
 
-  double len = -1.0;
-  if (const Road *e = findEdge(fromId, toId))
-    len = e->getLength();
-  VLOG("enterEdge " << fromId << " -> " << toId << " len=" << len);
-
   if (congestion_)
     congestion_->onEnterEdge(currentEdge_);
 
+  // If entering a slower edge, cap the current speed to local effective limit.
   if (const Road *e = findEdge(fromId, toId)) {
     const double vEff = congestion_ ? congestion_->effectiveSpeed(*e)
                                     : static_cast<double>(e->getMaxSpeed());
     const double vCap = std::min(idmParams_.v0, vEff);
-    if (currentSpeed_ > vCap) {
-      VLOG("edge entry cap: v=" << currentSpeed_ << " -> " << vCap << " on "
-                                << fromId << " -> " << toId);
+    if (currentSpeed_ > vCap)
       currentSpeed_ = vCap;
-    }
   }
 }
 
 void Vehicle::leaveEdge() {
-  double len = -1.0;
-  if (currentEdge_.first >= 0) {
-    if (const Road *e = findEdge(currentEdge_.first, currentEdge_.second))
-      len = e->getLength();
-  }
-  VLOG("leaveEdge " << currentEdge_.first << " -> " << currentEdge_.second
-                    << " progress=" << edgeProgress_ << "/" << len);
-
   if (congestion_ && currentEdge_.first >= 0)
     congestion_->onExitEdge(currentEdge_);
   currentEdge_ = {-1, -1};
@@ -168,8 +118,8 @@ void Vehicle::leaveEdge() {
 }
 
 bool Vehicle::hasArrived() const noexcept {
-  auto g = goalId();
-  auto n = currentNodeId();
+  const auto g = goalId();
+  const auto n = currentNodeId();
   const bool atEndIdx =
       (route_.size() >= 2 && routeIndex_ >= route_.size() - 1);
   return g.has_value() && n.has_value() && atEndIdx && (*g == *n);
@@ -180,117 +130,96 @@ double Vehicle::estimateRemainingETA(const std::vector<int> &path,
   if (!graph_ || !congestion_ || path.size() < 2 || idx >= path.size() - 1) {
     return 0.0;
   }
+
   double eta = 0.0;
-  {
-    const Road *e = findEdge(path[idx], path[idx + 1]);
-    if (e) {
-      const double len = std::max(0.0, e->getLength() - std::max(0.0, sOnEdge));
-      const double v = std::max(1e-6, congestion_->effectiveSpeed(*e));
-      eta += len / v;
-    }
+
+  // Remaining segment on the current edge.
+  if (const Road *e = findEdge(path[idx], path[idx + 1])) {
+    const double len = std::max(0.0, e->getLength() - std::max(0.0, sOnEdge));
+    const double v = std::max(kTiny, congestion_->effectiveSpeed(*e));
+    eta += len / v;
   }
 
+  // Full lengths of subsequent edges.
   for (std::size_t i = idx + 1; i + 1 < path.size(); ++i) {
-    const Road *e = findEdge(path[i], path[i + 1]);
-    if (e) {
+    if (const Road *e = findEdge(path[i], path[i + 1])) {
       const double len = std::max(0.0, e->getLength());
-      const double v = std::max(1e-6, congestion_->effectiveSpeed(*e));
+      const double v = std::max(kTiny, congestion_->effectiveSpeed(*e));
       eta += len / v;
     }
   }
   return eta;
 }
 
-void Vehicle::onCongestion() {
-  VLOG("onCongestion() flag pendingReroute_=true");
-  pendingReroute_ = true;
-}
+void Vehicle::onCongestion() { pendingReroute_ = true; }
 
 void Vehicle::recomputeRouteIfNeeded() {
-  VLOG("recomputeRouteIfNeeded since=" << sinceRecompute_
-                                       << " cooldown=" << recomputeCooldown_);
-  if (!strategy_ || sinceRecompute_ < recomputeCooldown_) {
-    VLOG("skip recompute (no strategy or cooldown not reached)");
+  if (!strategy_ || sinceRecompute_ < recomputeCooldown_)
     return;
-  }
-  auto goal = goalId();
-  if (!goal) {
-    VLOG("skip recompute (no goal)");
-    return;
-  }
 
-  int startId = currentNodeId().value_or(currentEdge_.second);
-  auto newRoute = strategy_->computeRoute(startId, *goal, *graph_);
-  VLOG("strategy_->computeRoute(" << startId << " -> " << *goal
-                                  << ") size=" << newRoute.size());
-
-  if (newRoute.size() < 2) {
-    VLOG("newRoute too short, abort recompute");
+  const auto goal = goalId();
+  if (!goal)
     return;
-  }
+
+  // If mid-edge, plan from the next node; otherwise from the current node.
+  const int startId = currentNodeId().value_or(currentEdge_.second);
+  const auto newRoute = strategy_->computeRoute(startId, *goal, *graph_);
+  if (newRoute.size() < 2)
+    return;
+
   if (newRoute == route_) {
-    VLOG("newRoute identical to current route, abort recompute");
     pendingReroute_ = false;
     return;
   }
+
+  // Compare ETAs from current situation vs. new route.
   const std::vector<int> oldRoute = route_;
   const std::size_t oldIdx = routeIndex_;
   const double oldS = currentNodeId() ? 0.0 : std::max(0.0, edgeProgress_);
-  double oldETA = estimateRemainingETA(oldRoute, oldIdx, oldS);
+  const double oldETA = estimateRemainingETA(oldRoute, oldIdx, oldS);
+
   double newETA = 0.0;
 
   if (currentNodeId()) {
-    if (currentEdge_.first >= 0)
-      leaveEdge();
-
-    double vKeep = currentSpeed_;
+    // At a node: switch immediately to the new route; preserve speed.
+    const double vKeep = currentSpeed_;
     setRoute(newRoute);
     currentSpeed_ = vKeep;
-    VLOG("recompute applied (at node), kept v=" << vKeep);
     newETA = estimateRemainingETA(newRoute, /*idx=*/0, /*sOnEdge=*/0.0);
   } else {
+    // Mid-edge: keep traversing the current edge, then follow newRoute.
     route_.assign(newRoute.begin(), newRoute.end());
     routeIndex_ = 0;
-    VLOG("recompute applied (on edge), routeIndex reset to 0");
     newETA = estimateRemainingETA(newRoute, /*idx=*/0,
                                   /*sOnEdge=*/std::max(0.0, edgeProgress_));
   }
 
-  setRoute(newRoute);
   pendingReroute_ = false;
   sinceRecompute_ = 0.0;
-  if (onRerouteApplied_) {
+
+  if (onRerouteApplied_)
     onRerouteApplied_(id_, oldETA, newETA);
-  }
 }
 
 void Vehicle::update(double dt) {
   sinceRecompute_ += dt;
 
-  if (route_.size() < 2 || routeIndex_ >= route_.size() - 1) {
-    VLOG("update early exit: route.size=" << route_.size()
-                                          << " routeIndex=" << routeIndex_);
-
+  if (dt <= 0.0)
     return;
-  }
+  if (route_.size() < 2 || routeIndex_ >= route_.size() - 1)
+    return;
 
   const Road *edge = findEdge(currentEdge_.first, currentEdge_.second);
-  if (!edge) {
-    VLOG("no current edge found for " << currentEdge_.first << " -> "
-                                      << currentEdge_.second);
+  if (!edge)
     return;
-  }
 
-  VLOG("update dt=" << dt << " idx=" << routeIndex_
-                    << " edge=" << currentEdge_.first << " -> "
-                    << currentEdge_.second << " s=" << edgeProgress_ << "/"
-                    << edge->getLength() << " v=" << currentSpeed_);
-
+  // Effective speed on current edge (congestion-aware), capped by vehicle v0.
   const double vEffCurRaw = congestion_
                                 ? congestion_->effectiveSpeed(*edge)
                                 : static_cast<double>(edge->getMaxSpeed());
   double v0_local = std::min(idmParams_.v0, vEffCurRaw);
 
+  // Lookahead: plan to match the next edge's cap by the end of this edge.
   if (routeIndex_ + 1 < static_cast<int>(route_.size()) - 1) {
     const int nextFrom = route_[routeIndex_ + 1];
     const int nextTo = route_[routeIndex_ + 2];
@@ -301,32 +230,23 @@ void Vehicle::update(double dt) {
       const double v0_next = std::min(idmParams_.v0, vEffNextRaw);
 
       const double s_rem = std::max(0.0, edge->getLength() - edgeProgress_);
-
       const double bPlan = std::max(0.1, idmParams_.b);
 
+      // Kinematic cap to ensure we can reach v0_next by the edge end.
       double vcap =
           std::sqrt(std::max(0.0, v0_next * v0_next + 2.0 * bPlan * s_rem));
-      vcap += 1e-6;
-      const double v0_before = v0_local;
+      vcap += kTiny;
       v0_local = std::min(v0_local, vcap);
-      VLOG("anticipatory cap: v0_cur=" << v0_before << " v0_next=" << v0_next
-                                       << " vcap=" << vcap
-                                       << " s_rem=" << s_rem);
     }
   }
 
   const double v0 = v0_local;
 
-  VLOG("limits vEffCur=" << vEffCurRaw << " edgeLimit=" << edge->getMaxSpeed()
-                         << " v0=" << v0);
-
+  // IDM acceleration based on leader info (if any).
   double accel = 0.0;
-  double gap = std::numeric_limits<double>::infinity();
-  double dv = 0.0; // closing speed = v - v_leader (>=0)
-
   if (leader_ && leader_->present) {
-    gap = std::max(0.0, leader_->gap);
-    dv = std::max(0.0, currentSpeed_ - leader_->leaderSpeed);
+    const double gap = std::max(0.0, leader_->gap);
+    const double dv = std::max(0.0, currentSpeed_ - leader_->leaderSpeed);
 
     accel = idm_accel(currentSpeed_, v0, gap, dv, idmParams_);
 
@@ -336,65 +256,44 @@ void Vehicle::update(double dt) {
       accel = aMax;
     if (accel < -bMax)
       accel = -bMax;
-
-    VLOG("IDM gap=" << (std::isinf(gap) ? 1e9 : gap) << " dv=" << dv
-                    << " accel(clamped)=" << accel);
   } else {
-    if (currentSpeed_ < v0)
-      accel = std::min(idmParams_.a, (v0 - currentSpeed_) / std::max(1e-3, dt));
-    else if (currentSpeed_ > v0)
+    // Free road: relax toward v0 within a single step.
+    if (currentSpeed_ < v0) {
       accel =
-          -std::min(idmParams_.b, (currentSpeed_ - v0) / std::max(1e-3, dt));
-    else
+          std::min(idmParams_.a, (v0 - currentSpeed_) / std::max(kDtFloor, dt));
+    } else if (currentSpeed_ > v0) {
+      accel = -std::min(idmParams_.b,
+                        (currentSpeed_ - v0) / std::max(kDtFloor, dt));
+    } else {
       accel = 0.0;
-    VLOG("LEGACY accel=" << accel);
+    }
   }
 
-  const double vBefore = currentSpeed_;
+  // Integrate speed with clamping to [0, v0] (if accelerating).
   const double vNext = currentSpeed_ + accel * dt;
-  if (accel >= 0.0) {
-    if (vNext > v0)
-      VLOG("cap on accel: vNext=" << vNext << " -> v0=" << v0);
-    currentSpeed_ = std::min(vNext, v0);
-  } else {
-    currentSpeed_ = std::max(0.0, vNext);
-  }
+  currentSpeed_ = (accel >= 0.0) ? std::min(vNext, v0) : std::max(0.0, vNext);
 
-  const double dist = currentSpeed_ * dt;
-  const double sBefore = edgeProgress_;
-  edgeProgress_ += dist;
+  // Advance along the edge.
+  edgeProgress_ += currentSpeed_ * dt;
 
-  VLOG("integrated v: " << vBefore << " -> " << currentSpeed_
-                        << " dist=" << dist << " s: " << sBefore << " -> "
-                        << edgeProgress_);
-
-  if (edgeProgress_ + 1e-9 >= edge->getLength()) {
-    VLOG("edge end reached at s=" << edgeProgress_
-                                  << " len=" << edge->getLength());
+  // Edge transition.
+  if (edgeProgress_ + kTiny >= edge->getLength()) {
     leaveEdge();
     ++routeIndex_;
     if (routeIndex_ >= route_.size() - 1) {
-      const int goal = goalId().value_or(-1);
-      VLOG("route finished. node=" << currentEdge_.second << " goal=" << goal
-                                   << " stopping with v=0");
-      currentSpeed_ = 0.0; // arrived
+      currentSpeed_ = 0.0; // Arrived
       return;
     }
-    VLOG("switch to next edge: " << route_[routeIndex_] << " -> "
-                                 << route_[routeIndex_ + 1]);
     enterEdge(route_[routeIndex_], route_[routeIndex_ + 1]);
 
-    // Congestion check at edge entry.
+    // If the new edge is congested, mark for re-route consideration.
     const Road *newEdge = findEdge(currentEdge_.first, currentEdge_.second);
     if (newEdge && congestion_ &&
         congestion_->effectiveSpeed(*newEdge) < newEdge->getMaxSpeed()) {
-      VLOG("entry congestion detected on edge " << currentEdge_.first << " -> "
-                                                << currentEdge_.second);
       onCongestion();
     }
 
     if (pendingReroute_) {
-      VLOG("pendingReroute_==true, trying recompute");
       recomputeRouteIfNeeded();
     }
   }

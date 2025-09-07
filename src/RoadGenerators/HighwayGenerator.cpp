@@ -72,8 +72,6 @@ void HighwayGenerator::generate(Graph<Intersection, Road> &graph) {
           (r2 == Result::Success || r2 == Result::AlreadyExists)) {
         ds.unite(ei.u, ei.v);
       }
-      // otherwise skip—later (longer) edges may connect these components
-      // without crossing.
     }
   }
 }
