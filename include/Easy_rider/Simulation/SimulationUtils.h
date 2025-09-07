@@ -45,10 +45,7 @@ std::vector<int> collectNodeIds(const Graph<Intersection, Road> &g);
 class FleetManager {
 public:
   FleetManager(Simulation &sim, const std::vector<int> &nodeIds, int targetCars,
-               int targetTrucks,
-               StrategyAlgoritm carAlg = StrategyAlgoritm::AStar,
-               StrategyAlgoritm truckAlg = StrategyAlgoritm::Dijkstra,
-               uint32_t seed = std::random_device{}());
+               int targetTrucks, uint32_t seed = std::random_device{}());
 
   void seedInitial();
   void topUpIfNeeded();
@@ -58,8 +55,7 @@ private:
   std::vector<int> nodeIds_;
   int targetCars_;
   int targetTrucks_;
-  StrategyAlgoritm carAlg_;
-  StrategyAlgoritm truckAlg_;
+  StrategyAlgoritm alg_;
   std::mt19937 rng_;
 
   int randomNode();

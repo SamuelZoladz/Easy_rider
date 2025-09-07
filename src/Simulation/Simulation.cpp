@@ -50,7 +50,15 @@ void Simulation::update(double dt) {
   simTime_ += step;
   SLOG("tick dt=" << dt << " timeScale=" << timeScale_ << " step=" << step
                   << " vehicles=" << vehicles_.size());
-
+  if (Parameters::isDijkstra() !=
+      (lastStrategy_ == StrategyAlgoritm::Dijkstra)) {
+    if (Parameters::isDijkstra()) {
+      lastStrategy_ = StrategyAlgoritm::Dijkstra;
+    } else {
+      lastStrategy_ = StrategyAlgoritm::AStar;
+    }
+    setStrategyForAll(lastStrategy_);
+  }
   // Build per-edge ordered lists (vehicles sorted by progress on each edge).
   std::unordered_map<EdgeKey, std::vector<std::pair<double, Vehicle *>>,
                      EdgeKeyHash>
@@ -63,7 +71,6 @@ void Simulation::update(double dt) {
       continue; // at node or no route
     lanes[e].push_back({v->edgeProgress(), v});
   }
-
   // Sort by progress along each edge.
   for (auto &kv : lanes) {
     auto &vec = kv.second;

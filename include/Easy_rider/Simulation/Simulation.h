@@ -2,6 +2,7 @@
 #define SIMULATION_H
 
 #include "Easy_rider/Congestion/CongestionModel.h"
+#include "Easy_rider/Parameters/Parameters.h"
 #include "Easy_rider/RoutingStrategies/RouteStrategy.h"
 #include "Easy_rider/TrafficInfrastructure/Graph.h"
 #include "Easy_rider/TrafficInfrastructure/Intersection.h"
@@ -22,7 +23,13 @@ public:
   };
 
   explicit Simulation(Graph<Intersection, Road> graph)
-      : graph_(std::move(graph)) {}
+      : graph_(std::move(graph)) {
+    if (Parameters::isDijkstra()) {
+      lastStrategy_ = StrategyAlgoritm::Dijkstra;
+    } else {
+      lastStrategy_ = StrategyAlgoritm::AStar;
+    }
+  }
 
   ~Simulation();
 
@@ -84,6 +91,7 @@ private:
   std::function<void(double)> onPostUpdate_{};
   std::size_t rerouteCount_{0};
   double rerouteSavedTime_{0.0};
+  StrategyAlgoritm lastStrategy_{StrategyAlgoritm::AStar};
 };
 
 #endif // SIMULATION_H

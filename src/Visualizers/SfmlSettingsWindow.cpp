@@ -20,6 +20,16 @@ constexpr float kTrackW = 480.f;
 constexpr float kTrackH = 6.f;
 constexpr float kKnobR = 10.f;
 
+// Algorithm radio buttons geometry
+constexpr float kAlgHeaderY = 200.f;
+constexpr float kRadioY = 240.f;
+constexpr float kRadioR = 8.f;
+constexpr float kOptionW = 160.f;   // clickable width per option
+constexpr float kOptionH = 26.f;    // clickable height per option
+constexpr float kOptionGapX = 40.f; // gap between options
+constexpr float kOptionPad = 6.f;   // extra hit padding
+constexpr float kRadioTextDX = 2.f * kRadioR + 8.f; // space from circle to text
+
 float clampf(float v, float lo, float hi) {
   return std::max(lo, std::min(v, hi));
 }
@@ -97,12 +107,35 @@ void SfmlSettingsWindow::processEvents_() {
       return;
     }
 
-    // Begin drag: left click on knob or track sets value immediately and grabs
-    // the knob for dragging.
+    // Begin drag OR click on algorithm radios.
     if (ev.type == sf::Event::MouseButtonPressed &&
         ev.mouseButton.button == sf::Mouse::Left) {
       const sf::Vector2f mp =
           win_->mapPixelToCoords({ev.mouseButton.x, ev.mouseButton.y});
+
+      // --- Algorithm radio clicks ---
+      const float opt1X = kPaddingX;
+      const float opt2X = opt1X + kOptionW + kOptionGapX;
+      const sf::FloatRect opt1Hit(
+          opt1X - kOptionPad, kRadioY - 0.5f * kOptionH - kOptionPad,
+          kOptionW + 2.f * kOptionPad, kOptionH + 2.f * kOptionPad);
+      const sf::FloatRect opt2Hit(
+          opt2X - kOptionPad, kRadioY - 0.5f * kOptionH - kOptionPad,
+          kOptionW + 2.f * kOptionPad, kOptionH + 2.f * kOptionPad);
+      if (opt1Hit.contains(mp)) {
+        if (algorithm_ != Algorithm::AStar) {
+          algorithm_ = Algorithm::AStar;
+          Parameters::set_isDijkstra(false);
+        }
+        continue;
+      }
+      if (opt2Hit.contains(mp)) {
+        if (algorithm_ != Algorithm::Dijkstra) {
+          algorithm_ = Algorithm::Dijkstra;
+          Parameters::set_isDijkstra(true);
+        }
+        continue;
+      }
 
       // Current knob center (log scale)
       const float tNow =
@@ -207,6 +240,51 @@ void SfmlSettingsWindow::render_() {
     knob.setFillColor(knobCol);
     win_->draw(knob);
   }
+  // Algorithm section (two radio buttons: A* and Dijkstra)
+  {
+    // Section header
+    sf::Text hdr;
+    hdr.setFont(font_);
+    hdr.setCharacterSize(18);
+    hdr.setFillColor(textColor);
+    hdr.setString("Pathfinding algorithm");
+    hdr.setPosition(kPaddingX, kAlgHeaderY);
+    win_->draw(hdr);
 
+    // Option positions
+    const float opt1X = kPaddingX;
+    const float opt2X = opt1X + kOptionW + kOptionGapX;
+
+    auto drawRadio = [&](float cx, const sf::String &label, bool selected) {
+      // Circle
+      sf::CircleShape outer(kRadioR);
+      outer.setOrigin(kRadioR, kRadioR);
+      outer.setPosition(cx + kRadioR, kRadioY);
+      outer.setFillColor(sf::Color::Transparent);
+      outer.setOutlineColor(textColor);
+      outer.setOutlineThickness(2.f);
+      win_->draw(outer);
+
+      if (selected) {
+        sf::CircleShape inner(kRadioR - 4.f);
+        inner.setOrigin(kRadioR - 4.f, kRadioR - 4.f);
+        inner.setPosition(cx + kRadioR, kRadioY);
+        inner.setFillColor(textColor);
+        win_->draw(inner);
+      }
+
+      // Label
+      sf::Text txt;
+      txt.setFont(font_);
+      txt.setCharacterSize(18);
+      txt.setFillColor(textColor);
+      txt.setString(label);
+      txt.setPosition(cx + kRadioTextDX, kRadioY - 12.f);
+      win_->draw(txt);
+    };
+
+    drawRadio(opt1X, "A*", algorithm_ == Algorithm::AStar);
+    drawRadio(opt2X, "Dijkstra", algorithm_ == Algorithm::Dijkstra);
+  }
   win_->display();
 }

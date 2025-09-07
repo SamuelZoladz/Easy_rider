@@ -16,6 +16,8 @@
 
 class SfmlSettingsWindow {
 public:
+  /// Pathfinding strategy selector.
+  enum class Algorithm { AStar, Dijkstra };
   /**
    * @brief Optional hooks invoked when the settings window opens/closes.
    *
@@ -57,6 +59,10 @@ public:
    */
   void tick();
 
+  /// Current algorithm getter/setter (host can use/set initial value).
+  [[nodiscard]] Algorithm algorithm() const { return algorithm_; }
+  void setAlgorithm(Algorithm a) { algorithm_ = a; }
+
 private:
   /// Poll and handle SFML events (close, mouse input, dragging).
   void processEvents_();
@@ -70,6 +76,9 @@ private:
   Callbacks cbs_;        ///< Open/close hooks.
 
   bool dragging_ = false; ///< True while the speed knob is being dragged.
+
+  Algorithm algorithm_ =
+      Algorithm::AStar; ///< Selected pathfinding algorithm (default: A*).
 };
 
 #endif // SFML_SETTINGS_WINDOW_H

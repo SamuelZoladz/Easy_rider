@@ -148,6 +148,9 @@ public:
   static void set_streetCapacity(int v) { streetCapacity_ = v; }
   static int streetCapacity() { return streetCapacity_; }
 
+  static void set_isDijkstra(bool v) { isDijkstra_ = v; }
+  static bool isDijkstra() { return isDijkstra_; }
+
 private:
   inline static float simulationSpeed_ = 1.0f;
   inline static std::string fontPath_ = "assets/fonts/arial.ttf";
@@ -196,6 +199,8 @@ private:
   inline static int streetNumberOfNeighbors_ = 3;
   inline static int streetDefaultSpeed_ = 14;
   inline static int streetCapacity_ = 1;
+
+  inline static bool isDijkstra_ = false;
 };
 
 #endif // PARAMETERS_H

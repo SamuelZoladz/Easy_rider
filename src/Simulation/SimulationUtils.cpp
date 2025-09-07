@@ -58,12 +58,13 @@ std::vector<int> collectNodeIds(const Graph<Intersection, Road> &g) {
 }
 
 FleetManager::FleetManager(Simulation &sim, const std::vector<int> &nodeIds,
-                           int targetCars, int targetTrucks,
-                           StrategyAlgoritm carAlg, StrategyAlgoritm truckAlg,
-                           uint32_t seed)
+                           int targetCars, int targetTrucks, uint32_t seed)
     : sim_(sim), nodeIds_(nodeIds), targetCars_(targetCars),
-      targetTrucks_(targetTrucks), carAlg_(carAlg), truckAlg_(truckAlg),
-      rng_(seed) {
+      targetTrucks_(targetTrucks), rng_(seed) {
+  if (Parameters::isDijkstra())
+    alg_ = StrategyAlgoritm::Dijkstra;
+  else
+    alg_ = StrategyAlgoritm::AStar;
   assert(nodeIds_.size() >= 2 && "Needs 2 Intersection at least.");
 }
 
@@ -89,14 +90,14 @@ void FleetManager::spawnOneCar() {
   auto [s, g] = randomDistinctPair();
   if (s < 0)
     return;
-  sim_.spawnVehicleCar(s, g, carAlg_);
+  sim_.spawnVehicleCar(s, g, alg_);
 }
 
 void FleetManager::spawnOneTruck() {
   auto [s, g] = randomDistinctPair();
   if (s < 0)
     return;
-  sim_.spawnVehicleTruck(s, g, truckAlg_);
+  sim_.spawnVehicleTruck(s, g, alg_);
 }
 
 void FleetManager::seedInitial() {
