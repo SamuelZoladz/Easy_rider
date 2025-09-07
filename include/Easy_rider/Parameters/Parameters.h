@@ -65,8 +65,17 @@ public:
   static float speedMin() { return speedMin_; }
   static float speedMax() { return speedMax_; }
 
-  static void set_edgeThickness(float v) { edgeThickness_ = v; }
-  static float edgeThickness() { return edgeThickness_; }
+  static void set_baseEdgeThickness(float v) { baseEdgeThickness_ = v; }
+  static float baseEdgeThickness() { return baseEdgeThickness_; }
+  static void set_slowEdgeThicknessFactor(float v) {
+    slowEdgeThicknessFacotr_ = v;
+  }
+  static float slowEdgeThicknessFactor() { return slowEdgeThicknessFacotr_; }
+  static void set_fastEdgeThicknessFactor(float v) {
+    fastEdgeThicknessFactor_ = v;
+  }
+  static float fastEdgeThicknessFactor() { return fastEdgeThicknessFactor_; }
+
   static void set_nodeRadius(float v) { nodeRadius_ = v; }
   static float nodeRadius() { return nodeRadius_; }
   static void set_vechicleRadius(float v) { vechicleRadius_ = v; }
@@ -111,8 +120,9 @@ private:
 
   inline static float speedMin_ = 0.1f, speedMax_ = 10.f;
 
-  inline static float edgeThickness_ = 2.f, nodeRadius_ = 7.f,
-                      vechicleRadius_ = 5.f;
+  inline static float baseEdgeThickness_ = 2.f, slowEdgeThicknessFacotr_ = 0.5f,
+                      fastEdgeThicknessFactor_ = 2.f;
+  inline static float nodeRadius_ = 7.f, vechicleRadius_ = 5.f;
 
   inline static uint32_t panelBg_ = 0xFF202428;
   inline static uint32_t panelOutline_ = 0xFF3C4044;

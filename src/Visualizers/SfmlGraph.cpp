@@ -8,14 +8,38 @@
 
 void SfmlSimulationVisualizer::rebuildGraphCache() {
   const auto data = makeGraphDrawData(simulation_->graph());
-  const float halfTWorld = std::max(0.1f, Parameters::edgeThickness()) * 0.5f;
+
+  // Base thickness
+  const float baseT = std::max(0.1f, Parameters::baseEdgeThickness());
 
   edgesVA_ = std::make_unique<sf::VertexArray>(sf::Triangles);
 
-  // Build quads (two triangles) for each edge.
-  for (const auto &e : data.edges) {
-    const sf::Vector2f a = data.nodePositions.at(e.first);
-    const sf::Vector2f b = data.nodePositions.at(e.second);
+  // Gathering min/max speeds to normalize thickness
+  const auto &modelEdges = simulation_->graph().getEdges();
+  float minSpeed = std::numeric_limits<float>::infinity();
+  float maxSpeed = -std::numeric_limits<float>::infinity();
+  for (const auto &e : modelEdges) {
+    const float v = static_cast<float>(e.getMaxSpeed());
+    if (v < minSpeed)
+      minSpeed = v;
+    if (v > maxSpeed)
+      maxSpeed = v;
+  }
+  const float denom = std::max(1e-6f, maxSpeed - minSpeed);
+
+  for (std::size_t i = 0; i < data.edges.size(); ++i) {
+    const auto &edgeIdxPair = data.edges[i];
+    const sf::Vector2f a = data.nodePositions.at(edgeIdxPair.first);
+    const sf::Vector2f b = data.nodePositions.at(edgeIdxPair.second);
+
+    // speed for this edge
+    const float v = static_cast<float>(modelEdges[i].getMaxSpeed());
+    const float tNorm = (denom > 1e-6f) ? (v - minSpeed) / denom : 0.5f;
+    const float thickness =
+        baseT * (Parameters::slowEdgeThicknessFactor() +
+                 tNorm * (Parameters::fastEdgeThicknessFactor() -
+                          Parameters::slowEdgeThicknessFactor()));
+    const float halfTWorld = thickness * 0.5f;
 
     sf::Vector2f d(b.x - a.x, b.y - a.y);
     const float len = std::sqrt(d.x * d.x + d.y * d.y);
@@ -24,10 +48,10 @@ void SfmlSimulationVisualizer::rebuildGraphCache() {
 
     const sf::Vector2f n(-d.y / len * halfTWorld, d.x / len * halfTWorld);
 
-    const sf::Vector2f v0 = sf::Vector2f(a.x + n.x, a.y + n.y);
-    const sf::Vector2f v1 = sf::Vector2f(b.x + n.x, b.y + n.y);
-    const sf::Vector2f v2 = sf::Vector2f(b.x - n.x, b.y - n.y);
-    const sf::Vector2f v3 = sf::Vector2f(a.x - n.x, a.y - n.y);
+    const sf::Vector2f v0(a.x + n.x, a.y + n.y);
+    const sf::Vector2f v1(b.x + n.x, b.y + n.y);
+    const sf::Vector2f v2(b.x - n.x, b.y - n.y);
+    const sf::Vector2f v3(a.x - n.x, a.y - n.y);
 
     edgesVA_->append(sf::Vertex(v0));
     edgesVA_->append(sf::Vertex(v1));
