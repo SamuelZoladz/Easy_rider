@@ -33,8 +33,6 @@ public:
   void pause() { paused_ = true; }
   void stop() { running_ = false; }
 
-  void setTimeScale(double s) { timeScale_ = s; }
-
   /// @brief Advance simulation by dt seconds (scaled by timeScale).
   void update(double dt);
 
@@ -64,6 +62,9 @@ public:
   const CongestionModel &congestion() const { return congestion_; }
   CongestionModel &congestion() { return congestion_; }
 
+  double getSimTime() const noexcept;
+  double averageSpeed() const noexcept;
+
 private:
   void ensureInitialRoutes(int vehIdx, int startId, int goalId,
                            const std::shared_ptr<RouteStrategy> &strategy);
@@ -73,7 +74,7 @@ private:
   std::vector<std::unique_ptr<Vehicle>> vehicles_;
   bool running_{false};
   bool paused_{false};
-  double timeScale_{1.0};
+  double simTime_{0.0};
 };
 
 #endif // SIMULATION_H

@@ -14,9 +14,11 @@
 #include <unordered_map>
 #include <utility>
 
+#include "Easy_rider/Parameters/Parameters.h"
+
 // ===== Debug switches =====
 #ifndef SIM_DBG
-#define SIM_DBG 1
+#define SIM_DBG 0
 #endif
 
 #if SIM_DBG
@@ -44,7 +46,8 @@ void Simulation::update(double dt) {
   if (!running_ || paused_)
     return;
 
-  const double step = dt * timeScale_;
+  const double step = dt * Parameters::simulationSpeed();
+  simTime_ += step;
   SLOG("tick dt=" << dt << " timeScale=" << timeScale_ << " step=" << step
                   << " vehicles=" << vehicles_.size());
 
@@ -178,4 +181,28 @@ std::vector<Simulation::SimSnapshotItem> Simulation::snapshot() const {
     ++idx;
   }
   return out;
+}
+
+double Simulation::getSimTime() const noexcept { return simTime_; }
+
+double Simulation::averageSpeed() const noexcept {
+  double sum = 0.0;
+  std::size_t count = 0;
+
+  for (const auto &up : vehicles_) {
+    if (up->renderState()) {
+      sum += up->currentSpeed();
+      ++count;
+    }
+  }
+
+  if (count == 0)
+    return 0.0;
+
+#if SIM_DBG
+  SLOG("averageSpeed count=" << count
+                             << " avg=" << (sum / static_cast<double>(count)));
+#endif
+
+  return sum / static_cast<double>(count);
 }
